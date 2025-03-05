@@ -4,7 +4,7 @@
       "command": "node",
       "args": ["dist/index.js"],
       "env": {
-        "ALCHEMY_API_KEY": "your-api-key-here",
+        "ALCHEMY_API_KEY": "KRdhdsBezoTMVajIknIxlXgBHc1Pprpw",
         "PORT": "3000"
       },
       "disabled": false,

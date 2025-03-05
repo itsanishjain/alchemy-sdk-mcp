@@ -1,5 +1,6 @@
 {
   "name": "alchemy-mcp",
+  "type": "module",
   "version": "1.0.0",
   "description": "MCP plugin for Alchemy SDK",
   "main": "dist/index.js",
