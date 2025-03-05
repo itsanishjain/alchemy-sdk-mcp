@@ -1,0 +1,3116 @@
+
+        expect(mock.history.get[1].params).toHaveProperty(
+          'contractAddresses',
+          contractAddresses
+        );
+        expect(mock.history.get[1].params).toHaveProperty(
+          'withMetadata',
+          expectedWithMetadata
+        );
+      }
+    );
+
+    it.each(paramCases)(
+      'can paginate starting from a given page key',
+      async (mockResponses, omitMetadata) => {
+        setupMock(mockResponses);
+        const ownedNfts = [];
+        for await (const ownedNft of alchemy.nft.getNftsForOwnerIterator(
+          ownerAddress,
+          {
+            pageKey: 'page-key0',
+            omitMetadata
+          }
+        )) {
+          ownedNfts.push(ownedNft);
+        }
+
+        expect(mock.history.get.length).toEqual(2);
+        expect(mock.history.get[0].params).toHaveProperty(
+          'pageKey',
+          'page-key0'
+        );
+        expect(mock.history.get[1].params).toHaveProperty(
+          'pageKey',
+          'page-key1'
+        );
+      }
+    );
+
+    const baseExpected = [
+      createOwnedBaseNft('0xCA1', '0x1', '1'),
+      createOwnedBaseNft('0xCA2', '0x2', '2'),
+      createOwnedBaseNft('0xCA2', '0x3', '1')
+    ];
+    const nftExpected = [
+      createOwnedNft('a', '0xCA1', '0x1', '1'),
+      createOwnedNft('b', '0xCA2', '0x2', '2', NftTokenType.ERC1155),
+      createOwnedNft('c', '0xCA2', '0x3', '1', NftTokenType.ERC1155)
+    ];
+    const responseCases: Array<
+      [
+        boolean,
+        RawGetBaseNftsResponse[] | RawGetNftsForOwnerResponse[],
+        OwnedBaseNft[] | OwnedNft[]
+      ]
+    > = [
+      [true, baseResponses, baseExpected],
+      [false, nftResponses, nftExpected]
+    ];
+    it.each(responseCases)(
+      'normalizes responses',
+      async (omitMetadata, mockResponses, expected) => {
+        setupMock(mockResponses);
+        const nfts = [];
+        for await (const ownedNft of alchemy.nft.getNftsForOwnerIterator(
+          ownerAddress,
+          {
+            contractAddresses,
+            omitMetadata
+          }
+        )) {
+          nfts.push(ownedNft);
+        }
+
+        expect(nfts).toEqual(expected);
+      }
+    );
+
+    it.each(responseCases)(
+      'yields NFTs until an error is thrown',
+      async (omitMetadata, mockResponses) => {
+        mock
+          .onGet()
+          .replyOnce(200, mockResponses[0])
+          .onGet()
+          .replyOnce(500, 'Internal Server Error');
+
+        const tokenIds: number[] = [];
+        try {
+          for await (const ownedNft of alchemy.nft.getNftsForOwnerIterator(
+            ownerAddress,
+            {
+              omitMetadata
+            }
+          )) {
+            tokenIds.push(fromHex(ownedNft.tokenId));
+          }
+          fail('getNftsIterator should have surfaced error');
+        } catch (e) {
+          expect(tokenIds).toEqual([1, 2]);
+          expect((e as Error).message).toContain('Internal Server Error');
+        }
+      }
+    );
+
+    it('uses the correct overload with no options', async () => {
+      setupMock(nftResponses);
+      for await (const ownedNft of alchemy.nft.getNftsForOwnerIterator(
+        ownerAddress
+      )) {
+        expect(ownedNft.raw).toBeDefined();
+      }
+    });
+  });
+
+  describe('getNftsForContract()', () => {
+    const contractAddress = '0xCA1';
+    const pageKey = 'page-key0';
+    const baseResponse: RawGetBaseNftsForContractResponse = {
+      nfts: [{ tokenId: '1' }, { tokenId: '2' }],
+      pageKey: 'page-key1'
+    };
+
+    const nftResponse: RawGetNftsForContractResponse = {
+      nfts: [
+        createRawNft(contractAddress, 'a', '1', NftTokenType.ERC1155),
+        createRawNft(contractAddress, 'b', '2', NftTokenType.ERC1155)
+      ],
+      pageKey: 'page-key1'
+    };
+
+    beforeEach(() => {
+      mock.onGet().reply(200, baseResponse);
+    });
+
+    const paramCases: Array<
+      [
+        RawGetBaseNftsForContractResponse | RawGetNftsForContractResponse,
+        boolean | undefined,
+        boolean
+      ]
+    > = [
+      [baseResponse, true, false],
+      [nftResponse, false, true],
+      [nftResponse, undefined, true]
+    ];
+    it.each(paramCases)(
+      'called with the correct parameters',
+      async (mockResponse, omitMetadata, expectedWithMetadata) => {
+        mock.onGet().reply(200, mockResponse);
+        await alchemy.nft.getNftsForContract(contractAddress, {
+          pageKey,
+          omitMetadata,
+          pageSize: 90,
+          tokenUriTimeoutInMs: 50
+        });
+        expect(mock.history.get.length).toEqual(1);
+        expect(mock.history.get[0].params).toHaveProperty(
+          'contractAddress',
+          contractAddress
+        );
+        expect(mock.history.get[0].params).toHaveProperty('pageKey', pageKey);
+        expect(mock.history.get[0].params).toHaveProperty(
+          'withMetadata',
+          expectedWithMetadata
+        );
+        expect(mock.history.get[0].params).toHaveProperty('limit', 90);
+        expect(mock.history.get[0].params).toHaveProperty(
+          'tokenUriTimeoutInMs',
+          50
+        );
+      }
+    );
+
+    const baseExpected: NftContractBaseNftsResponse = {
+      nfts: [createBaseNft('0xCA1', '1'), createBaseNft('0xCA1', '2')],
+      pageKey: 'page-key1'
+    };
+    const nftExpected: NftContractNftsResponse = {
+      nfts: [
+        createNft('a', '0xCA1', '1', NftTokenType.ERC1155),
+        createNft('b', '0xCA1', '2', NftTokenType.ERC1155)
+      ],
+      pageKey: 'page-key1'
+    };
+    const responseCases: Array<
+      [
+        boolean,
+        RawGetBaseNftsForContractResponse | RawGetNftsForContractResponse,
+        NftContractBaseNftsResponse | NftContractNftsResponse
+      ]
+    > = [
+      [true, baseResponse, baseExpected],
+      [false, nftResponse, nftExpected]
+    ];
+    it.each(responseCases)(
+      'normalizes responses',
+      async (omitMetadata, mockResponse, expected) => {
+        mock.onGet().reply(200, mockResponse);
+        const response = await alchemy.nft.getNftsForContract(contractAddress, {
+          pageKey,
+          omitMetadata
+        });
+        expect(response).toEqual(expected);
+      }
+    );
+
+    it.each(responseCases)('surfaces errors', async omitMetadata => {
+      mock.reset();
+      mock.onGet().reply(500, 'Internal Server Error');
+      await expect(
+        alchemy.nft.getNftsForContract(contractAddress, {
+          omitMetadata
+        })
+      ).rejects.toThrow('Internal Server Error');
+    });
+
+    it('uses the correct overload with no options', async () => {
+      mock.onGet().reply(200, nftResponse);
+      const response = await alchemy.nft.getNftsForContract(contractAddress);
+      response.nfts.forEach(nft => expect(nft.raw).toBeDefined());
+    });
+  });
+
+  describe('getNftsForContractIterator()', () => {
+    const contractAddress = '0xCA1';
+    const pageKey = 'page-key0';
+    const baseResponses: RawGetBaseNftsForContractResponse[] = [
+      {
+        nfts: [{ tokenId: '1' }, { tokenId: '2' }],
+        pageKey: 'page-key1'
+      },
+      {
+        nfts: [{ tokenId: '3' }],
+        pageKey: null
+      }
+    ];
+    const nftResponses: RawGetNftsForContractResponse[] = [
+      {
+        nfts: [
+          createRawNft(contractAddress, 'a', '1', NftTokenType.ERC721),
+          createRawNft(contractAddress, 'b', '2', NftTokenType.ERC721)
+        ],
+        pageKey: 'page-key1'
+      },
+      {
+        nfts: [createRawNft(contractAddress, 'c', '3', NftTokenType.ERC721)],
+        pageKey: null
+      }
+    ];
+
+    function setupMock(
+      mockResponses:
+        | RawGetBaseNftsForContractResponse[]
+        | RawGetNftsForContractResponse[]
+    ): void {
+      mock
+        .onGet()
+        .replyOnce(200, mockResponses[0])
+        .onGet()
+        .replyOnce(200, mockResponses[1]);
+    }
+
+    const paramCases: Array<
+      [
+        RawGetBaseNftsForContractResponse[] | RawGetNftsForContractResponse[],
+        boolean | undefined,
+        boolean
+      ]
+    > = [
+      [baseResponses, true, false],
+      [nftResponses, false, true],
+      [nftResponses, undefined, true]
+    ];
+    it.each(paramCases)(
+      'traverses all page keys and uses correct parameters',
+      async (mockResponses, omitMetadata, expectedWithMetadata) => {
+        setupMock(mockResponses);
+        const nfts = [];
+        for await (const nft of alchemy.nft.getNftsForContractIterator(
+          contractAddress,
+          {
+            omitMetadata
+          }
+        )) {
+          nfts.push(nft);
+        }
+        expect(mock.history.get.length).toEqual(2);
+        expect(mock.history.get[0].params.pageKey).toBeUndefined();
+        expect(mock.history.get[0].params).toHaveProperty(
+          'contractAddress',
+          contractAddress
+        );
+        expect(mock.history.get[0].params).toHaveProperty(
+          'withMetadata',
+          expectedWithMetadata
+        );
+        expect(mock.history.get[1].params).toHaveProperty(
+          'pageKey',
+          'page-key1'
+        );
+        expect(mock.history.get[1].params).toHaveProperty(
+          'withMetadata',
+          expectedWithMetadata
+        );
+      }
+    );
+
+    it.each(paramCases)(
+      'can paginate starting from a given page key',
+      async (mockResponses, omitMetadata) => {
+        setupMock(mockResponses);
+        const nfts = [];
+        for await (const nft of alchemy.nft.getNftsForContractIterator(
+          contractAddress,
+          {
+            pageKey,
+            omitMetadata
+          }
+        )) {
+          nfts.push(nft);
+        }
+        expect(nfts.length).toEqual(3);
+        expect(mock.history.get.length).toEqual(2);
+        expect(mock.history.get[0].params).toHaveProperty(
+          'pageKey',
+          'page-key0'
+        );
+        expect(mock.history.get[1].params).toHaveProperty(
+          'pageKey',
+          'page-key1'
+        );
+      }
+    );
+
+    const baseExpected = [
+      createBaseNft(contractAddress, '1'),
+      createBaseNft(contractAddress, '2'),
+      createBaseNft(contractAddress, '3')
+    ];
+    const nftExpected = [
+      createNft('a', contractAddress, '1', NftTokenType.ERC721),
+      createNft('b', contractAddress, '2', NftTokenType.ERC721),
+      createNft('c', contractAddress, '3', NftTokenType.ERC721)
+    ];
+    const responseCases: Array<
+      [
+        boolean,
+        RawGetBaseNftsForContractResponse[] | RawGetNftsForContractResponse[],
+        BaseNft[] | Nft[]
+      ]
+    > = [
+      [true, baseResponses, baseExpected],
+      [false, nftResponses, nftExpected]
+    ];
+    it.each(responseCases)(
+      'normalizes responses',
+      async (omitMetadata, mockResponses, expected) => {
+        setupMock(mockResponses);
+        const nfts = [];
+        for await (const ownedNft of alchemy.nft.getNftsForContractIterator(
+          contractAddress,
+          {
+            omitMetadata
+          }
+        )) {
+          nfts.push(ownedNft);
+        }
+
+        expect(nfts).toEqual(expected);
+      }
+    );
+
+    it.each(responseCases)(
+      'yields NFTs until an error is thrown',
+      async (omitMetadata, mockResponses) => {
+        mock
+          .onGet()
+          .replyOnce(200, mockResponses[0])
+          .onGet()
+          .replyOnce(500, 'Internal Server Error');
+        const tokenIds: string[] = [];
+        try {
+          for await (const nft of alchemy.nft.getNftsForContractIterator(
+            contractAddress,
+            {
+              omitMetadata
+            }
+          )) {
+            tokenIds.push(nft.tokenId);
+          }
+          fail('getNftsForNftContractIterator() should have surfaced error');
+        } catch (e) {
+          expect(tokenIds).toEqual(['1', '2']);
+          expect((e as Error).message).toContain('Internal Server Error');
+        }
+      }
+    );
+
+    it('uses the correct overload with no options', async () => {
+      setupMock(nftResponses);
+      for await (const nft of alchemy.nft.getNftsForContractIterator(
+        contractAddress
+      )) {
+        expect(nft.raw).toBeDefined();
+      }
+    });
+  });
+
+  describe('getOwnersForNft()', () => {
+    const contractAddress = '0xCA1';
+    const tokenIdHex = '0x1b7';
+    const tokenIdNumber = '439';
+    const owners = ['0x1', '0x2', '0x3'];
+    const pageKey = 'abcdefg';
+    const pageSize = 500;
+
+    beforeEach(() => {
+      mock.onGet().reply(200, {
+        owners
+      });
+    });
+
+    it('calls with the correct parameters', async () => {
+      await alchemy.nft.getOwnersForNft(contractAddress, tokenIdHex, {
+        pageKey,
+        pageSize
+      });
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[0].params).toHaveProperty(
+        'tokenId',
+        tokenIdNumber
+      );
+      expect(mock.history.get[0].params).toHaveProperty('pageKey', pageKey);
+      expect(mock.history.get[0].params).toHaveProperty('pageSize', pageSize);
+
+      const response = await alchemy.nft.getOwnersForNft(
+        contractAddress,
+        tokenIdNumber
+      );
+      expect(mock.history.get[0].params).toHaveProperty(
+        'tokenId',
+        tokenIdNumber
+      );
+
+      expect(response).toEqual({ owners });
+    });
+
+    it('retries with maxAttempts', async () => {
+      mock.reset();
+      mock.onGet().reply(429, 'Too many requests');
+
+      await expect(
+        alchemy.nft.getOwnersForNft(contractAddress, tokenIdHex)
+      ).rejects.toThrow('Too many requests');
+    });
+  });
+
+  describe('getOwnersForContract()', () => {
+    const contractAddress = '0xCA1';
+    const tokenIdHex = '0x1b7';
+    const owners = ['0x1', '0x2', '0x3'];
+
+    beforeEach(() => {
+      mock.onGet().reply(200, {
+        owners,
+        pageKey: null
+      });
+    });
+
+    it('calls with the correct parameters', async () => {
+      const response = await alchemy.nft.getOwnersForContract(contractAddress);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(response).toEqual({ owners, pageKey: undefined });
+    });
+
+    it('handles withTokenBalances=true', async () => {
+      const mockResponse: RawGetOwnersForContractWithTokenBalancesResponse = {
+        owners: [
+          {
+            ownerAddress: '0xABC',
+            tokenBalances: [
+              {
+                tokenId: '1',
+                balance: '1'
+              }
+            ]
+          },
+          {
+            ownerAddress: '0xDEF',
+            tokenBalances: [
+              {
+                tokenId: '2',
+                balance: '2'
+              }
+            ]
+          }
+        ],
+        pageKey: 'page-key2'
+      };
+      const expected: GetOwnersForContractWithTokenBalancesResponse = {
+        owners: [
+          {
+            ownerAddress: '0xABC',
+            tokenBalances: [
+              {
+                tokenId: '1',
+                balance: '1'
+              }
+            ]
+          },
+          {
+            ownerAddress: '0xDEF',
+            tokenBalances: [
+              {
+                tokenId: '2',
+                balance: '2'
+              }
+            ]
+          }
+        ],
+        pageKey: 'page-key2'
+      };
+      mock.reset();
+      mock.onGet().reply(200, mockResponse);
+      const response = await alchemy.nft.getOwnersForContract(contractAddress, {
+        withTokenBalances: true,
+        block: '0x0',
+        pageKey: 'page-key1'
+      });
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[0].params).toHaveProperty(
+        'withTokenBalances',
+        true
+      );
+      expect(response).toEqual(expected);
+    });
+
+    it('retries with maxAttempts', async () => {
+      mock.reset();
+      mock.onGet().reply(429, 'Too many requests');
+
+      await expect(
+        alchemy.nft.getOwnersForNft(contractAddress, tokenIdHex)
+      ).rejects.toThrow('Too many requests');
+    });
+  });
+
+  describe('getContractsForOwner()', () => {
+    const owner = 'vitalik.eth';
+    const contractAddress = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+    const tokenId = '27';
+    const name = 'NFT Contract Name';
+    const displayName = 'NFT Display Name';
+    const symbol = 'XNO';
+    const totalContractCount = 3;
+    const totalSupply = '1492';
+    const contractDeployer = '0xABC';
+    const deployedBlockNumber = 424242;
+    const rawOpenSeaContractMetadata = createRawOpenSeaCollectionMetadata();
+    const expectedOpenseaMetadata = {
+      floorPrice: 2.2998,
+      collectionName: 'Collection Name',
+      collectionSlug: 'collectionname',
+      safelistRequestStatus: OpenSeaSafelistRequestStatus.VERIFIED,
+      imageUrl: 'http://image.url',
+      bannerImageUrl: 'http://banner.url',
+      description: 'A sample description',
+      externalUrl: 'http://external.url',
+      twitterUsername: 'twitter-handle',
+      discordUrl: 'https://discord.gg/example',
+      lastIngestedAt: '2022-10-26T22:24:49.000Z'
+    };
+    const image: RawNftImage = {
+      cachedUrl: 'https://example.com/image.png',
+      thumbnailUrl: null,
+      pngUrl: null,
+      contentType: null,
+      size: null,
+      originalUrl: null
+    };
+
+    const templateResponse: RawGetContractsForOwnerResponse = {
+      pageKey: null,
+      totalCount: totalContractCount,
+      contracts: [
+        createRawContractForOwner(contractAddress, {
+          displayNft: { tokenId, name: displayName },
+          totalSupply: null
+        }),
+        createRawContractForOwner(contractAddress, {
+          displayNft: { tokenId, name: displayName },
+          tokenType: NftTokenType.ERC721,
+          symbol,
+          image,
+          name,
+          totalSupply: null
+        }),
+        createRawContractForOwner(contractAddress, {
+          displayNft: { tokenId, name: displayName },
+          isSpam: true,
+          tokenType: NftTokenType.ERC1155,
+          symbol,
+          name,
+          totalSupply,
+          openSeaMetadata: rawOpenSeaContractMetadata,
+          contractDeployer,
+          deployedBlockNumber,
+          image
+        })
+      ]
+    };
+
+    beforeEach(() => {
+      mock.onGet().reply(200, templateResponse);
+    });
+
+    it.each<[keyof GetContractsForOwnerOptions, any]>([
+      ['excludeFilters', [NftFilters.AIRDROPS]],
+      ['includeFilters', [NftFilters.SPAM]],
+      ['pageKey', 'a-page-key'],
+      ['pageSize', 50]
+    ])('calls with the correct parameters', async (fieldName, value) => {
+      await alchemy.nft.getContractsForOwner(owner, {
+        [fieldName]: value
+      });
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(fieldName, value);
+    });
+
+    it('returns the api response in the expected format', async () => {
+      const result = await alchemy.nft.getContractsForOwner(owner);
+
+      expect(result.totalCount).toEqual(totalContractCount);
+      expect(result.contracts.length).toEqual(totalContractCount);
+
+      expect(result.contracts[0].address).toEqual(contractAddress);
+      expect(result.contracts[0].displayNft.tokenId).toEqual(tokenId);
+      expect(result.contracts[0].totalSupply).toBeUndefined();
+
+      expect(result.contracts[1].address).toEqual(contractAddress);
+      expect(result.contracts[1].displayNft.tokenId).toEqual(tokenId);
+      expect(result.contracts[1].name).toEqual(name);
+      expect(result.contracts[1].tokenType).toEqual(NftTokenType.ERC721);
+      expect(result.contracts[1].symbol).toEqual(symbol);
+      expect(result.contracts[1].totalSupply).toBeUndefined();
+
+      expect(result.contracts[2].address).toEqual(contractAddress);
+      expect(result.contracts[2].displayNft.tokenId).toEqual(tokenId);
+      expect(result.contracts[2].name).toEqual(name);
+      expect(result.contracts[2].tokenType).toEqual(NftTokenType.ERC1155);
+      expect(result.contracts[2].symbol).toEqual(symbol);
+      expect(result.contracts[2].openSeaMetadata).toEqual(
+        expectedOpenseaMetadata
+      );
+      expect(result.contracts[2].totalSupply).toEqual(totalSupply);
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(400, 'Invalid include filters: []');
+
+      await expect(alchemy.nft.getContractsForOwner(owner)).rejects.toThrow(
+        'Invalid include filters: []'
+      );
+    });
+  });
+
+  describe('verifyNftOwnership()', () => {
+    const owner = '0xABC';
+    const addresses = ['0xCA1', '0xCA2'];
+    const rawValidAt = {
+      blockHash: '0x123abc',
+      blockNumber: 123,
+      blockTimestamp: null
+    };
+    const emptyResponse: RawGetBaseNftsResponse = {
+      ownedNfts: [],
+      totalCount: 0,
+      validAt: rawValidAt,
+      pageKey: null
+    };
+    const partialResponse: RawGetBaseNftsResponse = {
+      ownedNfts: [createRawOwnedBaseNft('0xCA2', '0x2', '2')],
+      totalCount: 1,
+      validAt: rawValidAt,
+      pageKey: null
+    };
+    const nftResponse: RawGetBaseNftsResponse = {
+      ownedNfts: [
+        createRawOwnedBaseNft('0xCA1', '0x1', '1'),
+        createRawOwnedBaseNft('0xCA2', '0x2', '2')
+      ],
+      totalCount: 2,
+      validAt: rawValidAt,
+      pageKey: null
+    };
+
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, emptyResponse);
+      await alchemy.nft.verifyNftOwnership(owner, addresses);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty('owner', owner);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddresses',
+        addresses
+      );
+      expect(mock.history.get[0].params).toHaveProperty('withMetadata', false);
+    });
+
+    it('throws if no contract address is passed in', async () => {
+      await expect(alchemy.nft.verifyNftOwnership(owner, [])).rejects.toThrow(
+        'Must provide at least one contract address'
+      );
+    });
+
+    const cases = [
+      [emptyResponse, { '0xCA1': false, '0xCA2': false }],
+      [partialResponse, { '0xCA1': false, '0xCA2': true }],
+      [nftResponse, { '0xCA1': true, '0xCA2': true }]
+    ];
+    it.each(cases)(
+      'returns the correct response for array inputs',
+      async (response, expected) => {
+        mock.onGet().reply(200, response);
+        const result = await alchemy.nft.verifyNftOwnership(owner, addresses);
+        expect(result).toEqual(expected);
+      }
+    );
+
+    const cases2 = [
+      [emptyResponse, false],
+      [partialResponse, true]
+    ];
+    it.each(cases2)(
+      'returns the correct response for inputs',
+      async (response, expected) => {
+        const address = '0xCA2';
+        mock.onGet().reply(200, response);
+        const result = await alchemy.nft.verifyNftOwnership(owner, address);
+        expect(result).toEqual(expected);
+      }
+    );
+
+    it('surfaces errors', async () => {
+      mock.onGet().reply(500, 'Internal Server Error');
+      await expect(
+        alchemy.nft.verifyNftOwnership(owner, addresses)
+      ).rejects.toThrow('Internal Server Error');
+    });
+  });
+
+  describe('isSpamNftContract', () => {
+    const spamContract = '0x000440f08436a7b866d1ae42db5e0be801da722a';
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, true);
+      await alchemy.nft.isSpamContract(spamContract);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        spamContract
+      );
+    });
+  });
+
+  describe('getSpamNftContracts', () => {
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, ['0xABC', '0xABD']);
+      await alchemy.nft.getSpamContracts();
+      expect(mock.history.get.length).toEqual(1);
+    });
+  });
+
+  describe('reportSpam', () => {
+    const spamContract = '0x000440f08436a7b866d1ae42db5e0be801da722a';
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, true);
+      await alchemy.nft.reportSpam(spamContract);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        spamContract
+      );
+    });
+  });
+
+  describe('isAirdropNft', () => {
+    const contract = '0x000440f08436a7b866d1ae42db5e0be801da722a';
+    const tokenId = '1';
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, true);
+      await alchemy.nft.isAirdropNft(contract, tokenId);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contract
+      );
+      expect(mock.history.get[0].params).toHaveProperty('tokenId', tokenId);
+    });
+  });
+
+  describe('getNftFloorPrice', () => {
+    const contractAddress = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+    const templateResponse: GetFloorPriceResponse = {
+      openSea: {
+        floorPrice: 90.969,
+        priceCurrency: 'ETH',
+        retrievedAt: '2022-06-29T19:31:18.816Z',
+        collectionUrl: 'https://opensea.io/collection/boredapeyachtclub'
+      },
+      looksRare: {
+        floorPrice: 86.2828,
+        priceCurrency: 'ETH',
+        retrievedAt: '2022-06-29T19:33:18.280Z',
+        collectionUrl:
+          'https://looksrare.org/collections/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'
+      }
+    };
+
+    beforeEach(() => {
+      mock.onGet().reply(200, templateResponse);
+    });
+
+    it('calls with the correct parameters', async () => {
+      await alchemy.nft.getFloorPrice(contractAddress);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+    });
+
+    it('retries with maxAttempts', async () => {
+      mock.reset();
+      mock.onGet().reply(429, 'Too many requests');
+
+      await expect(alchemy.nft.getFloorPrice(contractAddress)).rejects.toThrow(
+        'Too many requests'
+      );
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(500, 'Internal Server Error');
+      await expect(alchemy.nft.getFloorPrice(contractAddress)).rejects.toThrow(
+        'Internal Server Error'
+      );
+    });
+  });
+
+  describe('getNftSales', () => {
+    const contractAddress = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+    const marketplaceAddress = '0x000440f08436a7b866d1ae42db5e0be801da722a';
+    const tokenId = '42';
+    const buyerAddress = '0xa56c6b57127e8881fbe51046058d0ddc1bb9e24f';
+    const sellerAddress = '0xb60653cc0acff21cdf59e57bcd5de99e305a4c1c';
+    const templateResponse: RawGetNftSalesResponse = {
+      nftSales: [
+        createRawNftSale(
+          marketplaceAddress,
+          contractAddress,
+          tokenId,
+          NftSaleMarketplace.LOOKSRARE,
+          NftSaleTakerType.BUYER,
+          buyerAddress,
+          sellerAddress
+        ),
+        createRawNftSale(
+          marketplaceAddress,
+          contractAddress,
+          tokenId,
+          NftSaleMarketplace.SEAPORT,
+          NftSaleTakerType.SELLER,
+          buyerAddress,
+          sellerAddress
+        ),
+        createRawNftSale(
+          marketplaceAddress,
+          contractAddress,
+          tokenId,
+          NftSaleMarketplace.X2Y2,
+          NftSaleTakerType.SELLER,
+          buyerAddress,
+          sellerAddress
+        )
+      ],
+      validAt: {
+        blockNumber: 1337,
+        blockTimestamp: null,
+        blockHash: null
+      },
+      pageKey: null
+    };
+
+    beforeEach(() => {
+      mock.onGet().reply(200, templateResponse);
+    });
+
+    it('calls with the correct parameters (GetNftSalesByContractAddress)', async () => {
+      await alchemy.nft.getNftSales({ contractAddress, tokenId });
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[0].params).toHaveProperty('tokenId', tokenId);
+    });
+
+    it.each<[keyof GetNftSalesOptions, any]>([
+      ['buyerAddress', buyerAddress],
+      ['fromBlock', 0],
+      ['limit', 10],
+      ['marketplace', NftSaleMarketplace.LOOKSRARE],
+      ['order', SortingOrder.ASCENDING],
+      ['pageKey', '2'],
+      ['sellerAddress', sellerAddress],
+      ['taker', NftSaleTakerType.BUYER],
+      ['toBlock', 'latest']
+    ])(
+      'calls with the correct parameters (GetNftSales)',
+      async (fieldName, value) => {
+        await alchemy.nft.getNftSales({
+          [fieldName]: value
+        });
+
+        expect(mock.history.get.length).toEqual(1);
+        expect(mock.history.get[0].params).toHaveProperty(fieldName, value);
+      }
+    );
+
+    it('returns the api response in the expected format', async () => {
+      const result = await alchemy.nft.getNftSales({ contractAddress });
+
+      expect(result.nftSales.length).toEqual(3);
+
+      expect(result.nftSales[0].marketplace).toEqual(
+        NftSaleMarketplace.LOOKSRARE
+      );
+      expect(result.nftSales[0].taker).toEqual(NftSaleTakerType.BUYER);
+
+      expect(result.nftSales[1].marketplace).toEqual(
+        NftSaleMarketplace.SEAPORT
+      );
+      expect(result.nftSales[1].taker).toEqual(NftSaleTakerType.SELLER);
+
+      expect(result.nftSales[2].marketplace).toEqual(NftSaleMarketplace.X2Y2);
+      expect(result.nftSales[2].taker).toEqual(NftSaleTakerType.SELLER);
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(400, 'fromBlock should be a non-negative integer');
+
+      await expect(
+        alchemy.nft.getNftSales({ contractAddress })
+      ).rejects.toThrow('fromBlock should be a non-negative integer');
+    });
+  });
+
+  describe('computeRarity()', () => {
+    const contractAddress = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+    const tokenId = 7495;
+    const templateResponse: RawNftAttributeRarity[] = [
+      {
+        value: 'Aquamarine',
+        traitType: 'Background',
+        prevalence: 0.1266
+      },
+      {
+        value: 'Cyborg',
+        traitType: 'Eyes',
+        prevalence: 0.0108
+      }
+    ];
+    const expectedResult = templateResponse;
+
+    beforeEach(() => {
+      mock.onGet().reply(200, templateResponse);
+    });
+
+    it('calls with the correct parameters', async () => {
+      await alchemy.nft.computeRarity(contractAddress, tokenId);
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[0].params).toHaveProperty(
+        'tokenId',
+        tokenId.toString()
+      );
+    });
+
+    it('returns the api response in the expected format', async () => {
+      const result = await alchemy.nft.computeRarity(contractAddress, tokenId);
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(400, 'Could not fetch metadata for that NFT');
+
+      await expect(
+        alchemy.nft.computeRarity(contractAddress, tokenId)
+      ).rejects.toThrow('Could not fetch metadata for that NFT');
+    });
+  });
+
+  describe('searchContractMetadata()', () => {
+    const query = 'alchemy';
+    const address = '0xf6e12a3b482c8d51a0f66e6d80c496c310833389';
+    const name = 'NFT Contract Name';
+    const symbol = 'AXN';
+    const totalSupply = '1155';
+    const tokenType = NftTokenType.ERC721;
+
+    const rawNftContractResponse = createRawNftContract(address, {
+      tokenType,
+      name,
+      symbol,
+      totalSupply
+    });
+    const templateResponse = { contracts: [rawNftContractResponse] };
+    const expectedNftContract = getNftContractFromRaw(rawNftContractResponse);
+
+    beforeEach(() => {
+      mock.onGet().reply(200, templateResponse);
+    });
+
+    it('calls with the correct parameters', async () => {
+      await alchemy.nft.searchContractMetadata(query);
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty('query', query);
+    });
+
+    it('returns the api response in the expected format', async () => {
+      const response = await alchemy.nft.searchContractMetadata(query);
+
+      expect(response.contracts.length).toEqual(1);
+      verifyNftContractMetadata(
+        response.contracts[0],
+        expectedNftContract,
+        address,
+        name,
+        symbol,
+        totalSupply,
+        tokenType
+      );
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock
+        .onGet()
+        .reply(429, 'Your app has exceeded its concurrent requests capacity.');
+
+      await expect(alchemy.nft.searchContractMetadata(query)).rejects.toThrow(
+        'Your app has exceeded its concurrent requests capacity.'
+      );
+    });
+  });
+
+  describe('summarizeNftAttributes()', () => {
+    const contractAddress = '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d';
+    const templateResponse: NftAttributesResponse = {
+      contractAddress,
+      totalSupply: '1000',
+      summary: {
+        Background: {
+          Aquamarine: 3,
+          'New Punk Blue': 5
+        },
+        Eyes: {
+          Cyborg: 1,
+          Zombie: 7
+        }
+      }
+    };
+
+    it('calls with the correct parameters', async () => {
+      mock.onGet().reply(200, templateResponse);
+
+      const response = await alchemy.nft.summarizeNftAttributes(
+        contractAddress
+      );
+
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(response.contractAddress).toBeDefined();
+      expect(response.contractAddress).toEqual(contractAddress);
+      expect(response.totalSupply).toEqual(templateResponse.totalSupply);
+      expect(response.summary).toEqual(templateResponse.summary);
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(400, 'No NFTs found for that contract!');
+
+      await expect(
+        alchemy.nft.summarizeNftAttributes(contractAddress)
+      ).rejects.toThrow('No NFTs found for that contract!');
+    });
+  });
+
+  describe('refreshNftMetadata()', () => {
+    const originalTimestamp = '2022-02-16T17:12:00.280Z';
+    const updatedTimestamp = '2022-02-16T17:12:10.281Z';
+    const contractAddress = '0xCA1';
+    const tokenId = '66';
+    const tokenIdHex = '0x42';
+    const rawNftResponse = createRawNft(
+      contractAddress,
+      'title',
+      tokenIdHex,
+      NftTokenType.UNKNOWN,
+      { timeLastUpdated: originalTimestamp }
+    );
+    const rawNftResponseRefreshed = createRawNft(
+      contractAddress,
+      'title',
+      tokenIdHex,
+      NftTokenType.UNKNOWN,
+      { timeLastUpdated: updatedTimestamp }
+    );
+
+    function verifyCorrectParams(): void {
+      expect(mock.history.get.length).toEqual(2);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[0].params).toHaveProperty('tokenId', tokenId);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'refreshCache',
+        undefined
+      );
+      expect(mock.history.get[1].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(mock.history.get[1].params).toHaveProperty('tokenId', tokenId);
+      expect(mock.history.get[1].params).toHaveProperty('refreshCache', true);
+    }
+
+    function useRefreshTrue(): void {
+      mock.reset();
+      mock
+        .onGet()
+        .replyOnce(200, rawNftResponse)
+        .onGet()
+        .replyOnce(200, rawNftResponseRefreshed);
+    }
+
+    function useRefreshFalse(): void {
+      mock.reset();
+      mock
+        .onGet()
+        .replyOnce(200, rawNftResponse)
+        .onGet()
+        .replyOnce(200, rawNftResponse);
+    }
+
+    beforeEach(() => {
+      useRefreshTrue();
+    });
+
+    it('can be called with raw parameters', async () => {
+      const res = await alchemy.nft.refreshNftMetadata(
+        contractAddress,
+        tokenId
+      );
+      expect(res).toBe(true);
+      verifyCorrectParams();
+    });
+
+    it('returns false if metadata was not refreshed', async () => {
+      useRefreshFalse();
+      const res = await alchemy.nft.refreshNftMetadata(
+        contractAddress,
+        tokenId
+      );
+      expect(res).toBe(false);
+      verifyCorrectParams();
+    });
+
+    it('normalizes tokenId as a hex string', async () => {
+      const res = await alchemy.nft.refreshNftMetadata(
+        contractAddress,
+        tokenIdHex
+      );
+      expect(res).toBe(true);
+      verifyCorrectParams();
+    });
+
+    it('surfaces errors', async () => {
+      mock.reset();
+      mock.onGet().reply(500, 'Internal Server Error');
+      await expect(
+        alchemy.nft.refreshNftMetadata(contractAddress, tokenId)
+      ).rejects.toThrow('Internal Server Error');
+    });
+  });
+
+  describe('refreshNftContract', () => {
+    const contractAddress = '0xCA1';
+    const refreshResponse = {
+      contractAddress,
+      reingestionState: 'queued',
+      progress: '5'
+    };
+    beforeEach(() => {
+      mock.onGet().reply(200, refreshResponse);
+    });
+    it('calls with the correct parameters', async () => {
+      const response = await alchemy.nft.refreshContract(contractAddress);
+      expect(mock.history.get.length).toEqual(1);
+      expect(mock.history.get[0].params).toHaveProperty(
+        'contractAddress',
+        contractAddress
+      );
+      expect(response).toEqual({
+        contractAddress,
+        refreshState: NftRefreshState.QUEUED,
+        progress: '5'
+      });
+    });
+
+    it('retries with maxAttempts', async () => {
+      mock.reset();
+      mock.onGet().reply(429, 'Too many requests');
+
+      await expect(
+        alchemy.nft.refreshContract(contractAddress)
+      ).rejects.toThrow('Too many requests');
+    });
+  });
+
+  // TODO: add unit test coverage for the endpoint after overriding the ethers.js
+  // AlchemyProvider class, which would make mocking returns much easier.
+  describe('findContractDeployer()', () => {
+    it('binary search works', async () => {});
+    it('validates that the address is a contract', async () => {});
+    it('handles upper case input', async () => {});
+    it('handles errors', async () => {});
+  });
+
+  // TODO: Add unit tests once we've implemented MockProvider.
+  describe('getMintedNfts()', () => {});
+  describe('getTransfersForOwner()', () => {});
+
+  describe('getNftsForTransfers() helper method', () => {
+    let config: AlchemyConfig;
+
+    function create721Transfer(
+      contractAddress: string | null,
+      tokenId: string
+    ): AssetTransfersResult {
+      return {
+        uniqueId: 'mock-id',
+        category: AssetTransfersCategory.ERC721,
+        blockNum: '0xe4f5d',
+        from: '0xabc',
+        to: '0xdef',
+        value: null,
+        erc721TokenId: tokenId,
+        erc1155Metadata: null,
+        tokenId,
+        asset: null,
+        hash: '0xabcd',
+        rawContract: {
+          value: null,
+          address: contractAddress,
+          decimal: '0x0'
+        }
+      };
+    }
+
+    function create1155Transfer(
+      contractAddress: string,
+      tokenIds: string[]
+    ): AssetTransfersResult {
+      const metadata = tokenIds.map(id => ({
+        tokenId: id,
+        value: '0x1'
+      }));
+      return {
+        uniqueId: 'mock-id',
+        category: AssetTransfersCategory.ERC1155,
+        blockNum: '0xe4f5d',
+        from: '0xabc',
+        to: '0xdef',
+        value: null,
+        erc721TokenId: null,
+        erc1155Metadata: metadata,
+        tokenId: null,
+        asset: null,
+        hash: '0xabcd',
+        rawContract: {
+          value: null,
+          address: contractAddress,
+          decimal: '0x0'
+        }
+      };
+    }
+
+    beforeEach(() => {
+      config = new AlchemyConfig();
+    });
+
+    it('handles no transfers case', async () => {
+      const response = await getNftsForTransfers(config, {
+        transfers: []
+      });
+      expect(response.nfts).toEqual([]);
+    });
+
+    it('filters out transfers with no contract address', async () => {
+      const response = await getNftsForTransfers(config, {
+        transfers: [create721Transfer(null, '0x2')]
+      });
+      expect(response.nfts.length).toEqual(0);
+    });
+
+    it('flattens 1155 transfers', async () => {
+      const nftMetadataBatchResponse = {
+        nfts: [
+          createRawNft('0xabc', 'NFT1', '1', NftTokenType.ERC721),
+          createRawNft('0xdef', 'NFT2', '2', NftTokenType.ERC1155),
+          createRawNft('0xdef', 'NFT2', '3', NftTokenType.ERC1155)
+        ]
+      };
+      mock.onPost().reply(200, nftMetadataBatchResponse);
+      const transfers = [
+        create721Transfer('0xabc', '0x1'),
+        create1155Transfer('0xdef', ['0x2', '0x3'])
+      ];
+
+      const response = await getNftsForTransfers(config, {
+        transfers
+      });
+      expect(response.nfts.length).toEqual(3);
+      expect(mock.history.post.length).toEqual(1);
+
+      const expectedRequest = {
+        tokens: [
+          { contractAddress: '0xabc', tokenId: '0x1', tokenType: 'ERC721' },
+          { contractAddress: '0xdef', tokenId: '0x2', tokenType: 'ERC1155' },
+          { contractAddress: '0xdef', tokenId: '0x3', tokenType: 'ERC1155' }
+        ]
+      };
+      expect(mock.history.post[0].data).toEqual(
+        JSON.stringify(expectedRequest)
+      );
+    });
+
+    it('batches NFT metadata calls', async () => {
+      const nftMetadataBatchResponse1 = {
+        nfts: Array.from({ length: 100 }, (_, i) =>
+          createRawNft('0xdef', 'NFT', toHex(i), NftTokenType.ERC1155)
+        )
+      };
+      const nftMetadataBatchResponse2 = {
+        nfts: [createRawNft('0xdef', 'NFT', toHex(100), NftTokenType.ERC1155)]
+      };
+      mock
+        .onPost()
+        .reply(200, nftMetadataBatchResponse1)
+        .onPost()
+        .reply(200, nftMetadataBatchResponse2);
+
+      const transfers = [
+        create1155Transfer(
+          '0xdef',
+          Array.from({ length: 101 }, (_, i) => toHex(i))
+        )
+      ];
+      const response = await getNftsForTransfers(config, {
+        transfers
+      });
+      expect(response.nfts.length).toEqual(101);
+      expect(mock.history.post.length).toEqual(2);
+
+      const expectedRequest1 = {
+        tokens: Array.from({ length: 100 }, (_, i) => ({
+          contractAddress: '0xdef',
+          tokenId: toHex(i),
+          tokenType: 'ERC1155'
+        }))
+      };
+      const expectedRequest2 = {
+        tokens: [
+          {
+            contractAddress: '0xdef',
+            tokenId: toHex(100),
+            tokenType: 'ERC1155'
+          }
+        ]
+      };
+      expect(mock.history.post[0].data).toEqual(
+        JSON.stringify(expectedRequest1)
+      );
+      expect(mock.history.post[1].data).toEqual(
+        JSON.stringify(expectedRequest2)
+      );
+    });
+
+    it('returns separate NFTs for duplicate transfers', async () => {
+      const nftMetadataBatchResponse = {
+        nfts: [
+          createRawNft('0xabc', 'NFT1', '0x1', NftTokenType.ERC721),
+          createRawNft('0xdef', 'NFT2', '0x1', NftTokenType.ERC1155)
+        ]
+      };
+      mock.onPost().reply(200, nftMetadataBatchResponse);
+      const transfers = [
+        create721Transfer('0xabc', '0x1'),
+        create721Transfer('0xabc', '0x1'),
+        create1155Transfer('0xdef', ['0x2']),
+        create1155Transfer('0xdef', ['0x2'])
+      ];
+
+      const response = await getNftsForTransfers(config, {
+        transfers
+      });
+
+      // Should be 4 NFTs even though endpoint returned 2.
+      expect(response.nfts.length).toEqual(4);
+      expect(mock.history.post.length).toEqual(1);
+      expect(mock.history);
+    });
+  });
+});
+
+
+================================================================================
+File: test\unit\provider.test.ts
+Size: 2.03 kB
+================================================================================
+
+import { Alchemy, Network } from '../../src';
+import { RequestBatcher } from '../../src/internal/request-batcher';
+import { Mocked } from '../test-util';
+
+describe('AlchemyProvider', () => {
+  describe('translates Network to ethers', () => {
+    function testNetwork(network: Network) {
+      it(`should return a valid provider for ${network}`, async () => {
+        const alchemy = new Alchemy({
+          network
+        });
+        await alchemy.config.getWebSocketProvider();
+      });
+    }
+    for (const network of Object.values(Network)) {
+      testNetwork(network);
+    }
+  });
+
+  describe('supports batching', () => {
+    let alchemy: Alchemy;
+    let batcher: Mocked<RequestBatcher>;
+    beforeEach(async () => {
+      alchemy = new Alchemy({
+        batchRequests: true
+      });
+      const provider = await alchemy.config.getProvider();
+      batcher = provider.batcher as Mocked<RequestBatcher>;
+      batcher.enqueueRequest = jest.fn();
+    });
+    it('uses batcher when batching is enabled', async () => {
+      const mockReturn1 = {
+        jsonrpc: '2.0',
+        id: 1,
+        result: 'mock-return1'
+      };
+      const mockReturn2 = {
+        jsonrpc: '2.0',
+        id: 2,
+        result: 'mock-return2'
+      };
+      batcher.enqueueRequest
+        .mockResolvedValueOnce(mockReturn1)
+        .mockResolvedValueOnce(mockReturn2);
+      const p1 = alchemy.core.send('eth_blockNumber', []);
+      const p2 = alchemy.core.send('eth_getBalance', []);
+      expect(await p1).toEqual(mockReturn1);
+      expect(await p2).toEqual(mockReturn2);
+      expect(batcher.enqueueRequest.mock.calls.length).toEqual(2);
+    });
+  });
+
+  it('accepts a URL hard override', async () => {
+    const alchemy = new Alchemy({
+      apiKey: 'demo-key',
+      url: 'hardcoded-url'
+    });
+    const provider = await alchemy.config.getProvider();
+    expect(provider.connection.url).toEqual('hardcoded-url');
+    expect(provider.apiKey).toEqual('demo-key');
+  });
+});
+
+
+================================================================================
+File: test\unit\request-batcher.test.ts
+Size: 3.35 kB
+================================================================================
+
+import {
+  JsonRpcRequest,
+  JsonRpcResponse
+} from '../../src/internal/internal-types';
+import { RequestBatcher } from '../../src/internal/request-batcher';
+
+describe('RequestBatcher', () => {
+  let batcher: RequestBatcher;
+  let fetchJsonMock: jest.Mock;
+  beforeEach(() => {
+    fetchJsonMock = jest.fn();
+    batcher = new RequestBatcher(fetchJsonMock);
+  });
+
+  function blockNumberRequest(id: number): JsonRpcRequest {
+    return {
+      jsonrpc: '2.0',
+      id,
+      method: 'eth_blockNumber',
+      params: []
+    };
+  }
+
+  function blockNumberResponse(id: number, result: string): JsonRpcResponse {
+    return {
+      jsonrpc: '2.0',
+      id,
+      result
+    };
+  }
+
+  it('enqueues requests into batches', async () => {
+    fetchJsonMock.mockResolvedValueOnce([
+      blockNumberResponse(1, '0x1'),
+      blockNumberResponse(2, '0x2'),
+      blockNumberResponse(3, '0x3')
+    ]);
+    const bn1 = batcher.enqueueRequest(blockNumberRequest(1));
+    const bn2 = batcher.enqueueRequest(blockNumberRequest(2));
+    const bn3 = batcher.enqueueRequest(blockNumberRequest(3));
+    await bn2;
+    expect(await bn1).toEqual('0x1');
+    expect(await bn2).toEqual('0x2');
+    expect(await bn3).toEqual('0x3');
+    const rawRequest = fetchJsonMock.mock.calls[0][0];
+    expect(rawRequest.length).toEqual(3);
+  });
+
+  it('sends requests based on maximum batch size', async () => {
+    batcher = new RequestBatcher(fetchJsonMock, 2);
+    fetchJsonMock
+      .mockResolvedValueOnce([
+        blockNumberResponse(1, '0x1'),
+        blockNumberResponse(2, '0x2')
+      ])
+      .mockResolvedValueOnce([
+        blockNumberResponse(3, '0x3'),
+        blockNumberResponse(4, '0x4')
+      ]);
+
+    const bn1 = batcher.enqueueRequest(blockNumberRequest(1));
+    const bn2 = batcher.enqueueRequest(blockNumberRequest(2));
+    const bn3 = batcher.enqueueRequest(blockNumberRequest(3));
+    const bn4 = batcher.enqueueRequest(blockNumberRequest(4));
+    await bn4;
+    expect(await bn1).toEqual('0x1');
+    expect(await bn2).toEqual('0x2');
+    expect(await bn3).toEqual('0x3');
+    expect(await bn4).toEqual('0x4');
+
+    let rawRequest = fetchJsonMock.mock.calls[0][0];
+    expect(rawRequest.length).toEqual(2);
+    rawRequest = fetchJsonMock.mock.calls[1][0];
+    expect(rawRequest.length).toEqual(2);
+  });
+
+  it('surfaces errors in batches', async () => {
+    async function verifyThrows(
+      promise: Promise<any>,
+      expected: string
+    ): Promise<void> {
+      try {
+        await promise;
+      } catch (e) {
+        expect(e).toEqual(expected);
+        return;
+      }
+
+      throw new Error('Promise should have thrown' + expected);
+    }
+    batcher = new RequestBatcher(fetchJsonMock, 2);
+    fetchJsonMock
+      .mockRejectedValueOnce('Test error 1')
+      .mockRejectedValueOnce('Test error 2');
+
+    const bn1 = batcher.enqueueRequest(blockNumberRequest(1));
+    const bn2 = batcher.enqueueRequest(blockNumberRequest(2));
+    const bn3 = batcher.enqueueRequest(blockNumberRequest(3));
+    const bn4 = batcher.enqueueRequest(blockNumberRequest(4));
+    await verifyThrows(bn1, 'Test error 1');
+    await verifyThrows(bn2, 'Test error 1');
+    await verifyThrows(bn3, 'Test error 2');
+    await verifyThrows(bn4, 'Test error 2');
+  });
+});
+
+
+================================================================================
+File: test\unit\transact.test.ts
+Size: 1.3 kB
+================================================================================
+
+import {
+  GAS_OPTIMIZED_TX_FEE_MULTIPLES,
+  generateGasSpreadTransactions
+} from '../../src/api/transact-namespace';
+
+describe('Transact Namespace', () => {
+  it('generateGasSpreadTransactions() sets gas limits and fee spread', async () => {
+    const transaction = {
+      to: '0xa238b6008Bc2FBd9E386A5d4784511980cE504Cd',
+      value: 10000,
+      nonce: 2,
+      type: 2,
+      chainId: 5
+    };
+    const gasLimit = 123456;
+    const baseFee = 1000;
+    const priorityFee = 2000;
+    const gasTransactions = generateGasSpreadTransactions(
+      transaction,
+      gasLimit,
+      baseFee,
+      priorityFee
+    );
+
+    expect(gasTransactions.length).toEqual(5);
+    const multiples = [...GAS_OPTIMIZED_TX_FEE_MULTIPLES];
+    for (const rawTx of gasTransactions) {
+      expect(rawTx).not.toEqual(null);
+      expect(rawTx!.gasLimit).toEqual(gasLimit);
+      expect(rawTx!.value).toEqual(10000);
+      expect(rawTx!.nonce).toEqual(2);
+      expect(rawTx!.type).toEqual(2);
+      expect(rawTx!.chainId).toEqual(5);
+
+      const multiple = multiples.shift()!;
+      expect(rawTx!.maxPriorityFeePerGas).toEqual(priorityFee * multiple);
+      expect(rawTx!.maxFeePerGas).toEqual(
+        baseFee * multiple + priorityFee * multiple
+      );
+    }
+  });
+});
+
+
+================================================================================
+File: test\unit\wallet.test.ts
+Size: 1.88 kB
+================================================================================
+
+import { parseEther, parseUnits } from '@ethersproject/units';
+
+import { Alchemy, Network, Wallet } from '../../src';
+import {
+  TEST_WALLET_PRIVATE_KEY,
+  TEST_WALLET_PUBLIC_ADDRESS
+} from '../test-util';
+
+describe('Alchemy-Ethers Wallet', () => {
+  let alchemy: Alchemy;
+
+  beforeAll(async () => {
+    const settings = {
+      network: Network.ETH_MAINNET
+    };
+    alchemy = new Alchemy(settings);
+  });
+
+  it('returns a public address', async () => {
+    const wallet = new Wallet(TEST_WALLET_PRIVATE_KEY);
+    const address = await wallet.getAddress();
+    expect(address).toEqual(TEST_WALLET_PUBLIC_ADDRESS);
+  });
+
+  it('connects to an Alchemy Provider', async () => {
+    const wallet = new Wallet(TEST_WALLET_PRIVATE_KEY);
+    const address = await wallet.getAddress();
+    const provider = await alchemy.config.getProvider();
+
+    const connectedWallet = wallet.connect(await alchemy.config.getProvider());
+    expect(address).toEqual(TEST_WALLET_PUBLIC_ADDRESS);
+    expect(connectedWallet.provider).toEqual(provider);
+  });
+
+  it('signs a transaction properly', async () => {
+    const expectedRawTx =
+      '0x02f873050585012a05f2008504a817c80082520894a238b6008bc2fbd9e386a5d4784511980ce504cd87038d7ea4c6800080c080a00866018df11db9ff5a560bc838cafff9638996c1a8583cf52dde3f0419ec871da074c04fce3afe6adc419c8cac8ece0946a8ca4501a68b17e79f50cfbbd72f789e';
+    const transaction = {
+      to: '0xa238b6008Bc2FBd9E386A5d4784511980cE504Cd',
+      value: parseEther('0.001'),
+      gasLimit: '21000',
+      maxPriorityFeePerGas: parseUnits('5', 'gwei'),
+      maxFeePerGas: parseUnits('20', 'gwei'),
+      nonce: 5,
+      type: 2,
+      chainId: 5
+    };
+
+    const wallet = new Wallet(TEST_WALLET_PRIVATE_KEY);
+    const rawTx = await wallet.signTransaction(transaction);
+    expect(rawTx).toEqual(expectedRawTx);
+  });
+});
+
+
+================================================================================
+File: test\unit\websocket-backfiller.test.ts
+Size: 15.2 kB
+================================================================================
+
+import { Alchemy, AlchemyWebSocketProvider, fromHex, toHex } from '../../src';
+import { JsonRpcRequest } from '../../src/internal/internal-types';
+import {
+  GetLogsOptions,
+  WebsocketBackfiller
+} from '../../src/internal/websocket-backfiller';
+import { Mocked, makeLogsEvent, makeNewHeadsEvent } from '../test-util';
+
+describe('Backfill tests', () => {
+  const sdk = new Alchemy();
+  let provider: Mocked<AlchemyWebSocketProvider>;
+  let backfiller: WebsocketBackfiller;
+
+  function expectGetBlockCalled(blockNumber: number): void {
+    expect(
+      provider.send.mock.calls.some(
+        (call: string[]) =>
+          call[0] === 'eth_getBlockByNumber' &&
+          fromHex(call[1][0]) === blockNumber
+      )
+    ).toBe(true);
+  }
+
+  function expectGetBlockNotCalled(): void {
+    expect(
+      provider.send.mock.calls.some(
+        (call: string[]) => call[0] === 'eth_getBlockByNumber'
+      )
+    ).toBe(false);
+  }
+
+  beforeEach(async () => {
+    provider =
+      (await sdk.config.getWebSocketProvider()) as Mocked<AlchemyWebSocketProvider>;
+    backfiller = new WebsocketBackfiller(provider);
+    provider.send = jest.fn();
+    provider.sendBatch = jest.fn();
+  });
+
+  describe('getNewHeadsBackfill', () => {
+    function expectGetBlockRangeCalled(
+      startInclusive: number,
+      endExclusive: number
+    ): void {
+      expect(provider.sendBatch).toBeCalled();
+      const requestedBlockNumbers = provider.sendBatch.mock.calls[0][0].map(
+        (request: JsonRpcRequest) => fromHex(request.params![0])
+      );
+      const expectedRange: number[] = [];
+      for (let i = startInclusive; i < endExclusive; i++) {
+        expectedRange.push(i);
+      }
+      expect(requestedBlockNumbers).toEqual(expectedRange);
+    }
+
+    it('returns blocks from start block number if no previous events', async () => {
+      const newHeads = [
+        makeNewHeadsEvent(10, 'a'),
+        makeNewHeadsEvent(11, 'b'),
+        makeNewHeadsEvent(12, 'c')
+      ];
+      provider.send.mockResolvedValue(toHex(12));
+      provider.sendBatch.mockResolvedValue(newHeads);
+      const result = await backfiller.getNewHeadsBackfill(isCancelled, [], 9);
+      expect(result).toEqual(newHeads);
+      expectGetBlockRangeCalled(10, 13);
+    });
+
+    it('returns blocks since the latest event seen', async () => {
+      const previousHeads = [
+        makeNewHeadsEvent(10, 'a'),
+        makeNewHeadsEvent(11, 'b')
+      ];
+      const expected = [makeNewHeadsEvent(12, 'c'), makeNewHeadsEvent(13, 'd')];
+      provider.sendBatch.mockResolvedValue(expected);
+      provider.send
+        .mockResolvedValueOnce(toHex(13))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, 'b'));
+      const result = await backfiller.getNewHeadsBackfill(
+        isCancelled,
+        previousHeads,
+        9
+      );
+
+      // Verify that `getReorgHeads()` called `getBlockByNumber()` correctly.
+      expectGetBlockCalled(11);
+
+      // Verify that `getHeadEventsInRange()` fetched the correct range.
+      expectGetBlockRangeCalled(12, 14);
+      expect(result).toEqual(expected);
+    });
+
+    it('returns blocks since last reorg', async () => {
+      // This test simulates a reorg starting in block 11.
+      const previousHeads = [
+        makeNewHeadsEvent(9, 'z'),
+        makeNewHeadsEvent(10, 'a'),
+        makeNewHeadsEvent(11, 'b'),
+        makeNewHeadsEvent(12, 'c')
+      ];
+      const newHeads = [makeNewHeadsEvent(13, 'd'), makeNewHeadsEvent(14, 'e')];
+      provider.sendBatch.mockResolvedValue(newHeads);
+      provider.send
+        .mockResolvedValueOnce(toHex(14))
+        .mockResolvedValueOnce(makeNewHeadsEvent(12, "c'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, "b'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(10, 'a'));
+      const result = await backfiller.getNewHeadsBackfill(
+        isCancelled,
+        previousHeads,
+        9
+      );
+      const expected = [
+        makeNewHeadsEvent(11, "b'"),
+        makeNewHeadsEvent(12, "c'"),
+        makeNewHeadsEvent(13, 'd'),
+        makeNewHeadsEvent(14, 'e')
+      ];
+      expect(result).toEqual(expected);
+
+      // 10-12 should all be checked as part of `getReorgHeads()`. Block 9 should
+      // be ignored since block 10 matches.
+      expectGetBlockCalled(12);
+      expectGetBlockCalled(11);
+      expectGetBlockCalled(10);
+      expectGetBlockRangeCalled(13, 15);
+    });
+
+    it('returns all blocks from start if reorg goes that far', async () => {
+      const previousHeads = [
+        makeNewHeadsEvent(10, 'a'),
+        makeNewHeadsEvent(11, 'b'),
+        makeNewHeadsEvent(12, 'c')
+      ];
+      const newHeads = [makeNewHeadsEvent(13, 'd'), makeNewHeadsEvent(14, 'e')];
+      provider.sendBatch.mockResolvedValue(newHeads);
+      provider.send
+        .mockResolvedValueOnce(toHex(14))
+        .mockResolvedValueOnce(makeNewHeadsEvent(12, "c'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, "b'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(10, "a'"));
+      const result = await backfiller.getNewHeadsBackfill(
+        isCancelled,
+        previousHeads,
+        9
+      );
+      const expected = [
+        makeNewHeadsEvent(10, "a'"),
+        makeNewHeadsEvent(11, "b'"),
+        makeNewHeadsEvent(12, "c'"),
+        makeNewHeadsEvent(13, 'd'),
+        makeNewHeadsEvent(14, 'e')
+      ];
+      expect(result).toEqual(expected);
+      expectGetBlockCalled(12);
+      expectGetBlockCalled(11);
+      expectGetBlockCalled(10);
+      expectGetBlockRangeCalled(13, 15);
+    });
+
+    it('ignores re-org if more than maxBackfillBlocks behind', async () => {
+      // In this test, backfiller wants to backfill starting from block 10, but
+      // since the current block is 13, the backfiller should skip block 10 and
+      // backfill from block 11,
+      backfiller.setMaxBackfillBlock(3);
+      const previousHeads = [makeNewHeadsEvent(10, 'a')];
+      const newHeads = [
+        makeNewHeadsEvent(11, 'b'),
+        makeNewHeadsEvent(12, 'c'),
+        makeNewHeadsEvent(13, 'd')
+      ];
+      provider.sendBatch.mockResolvedValue(newHeads);
+      provider.send.mockResolvedValue(toHex(13));
+
+      const result = await backfiller.getNewHeadsBackfill(
+        isCancelled,
+        previousHeads,
+        9
+      );
+      expectGetBlockNotCalled();
+      expectGetBlockRangeCalled(11, 14);
+      expect(result).toEqual(newHeads);
+    });
+  });
+
+  describe('getLogsBackfill', () => {
+    function expectGetLogRangeCalled(
+      startInclusive: number,
+      endExclusive: number
+    ): void {
+      expect(provider.send).toBeCalled();
+      const options: GetLogsOptions[] = provider.send.mock.calls
+        .filter(call => call[0] === 'eth_getLogs')
+        .map(call => call[1][0]);
+      expect(options.length).toEqual(1);
+      const rangeFilter = options[0];
+      expect(startInclusive).toEqual(fromHex(rangeFilter.fromBlock!));
+      expect(endExclusive).toEqual(fromHex(rangeFilter.toBlock!) + 1);
+    }
+
+    it('returns logs from start block number if no previous logs', async () => {
+      const newLogs = [
+        makeLogsEvent(10, 'a'),
+        makeLogsEvent(11, 'b'),
+        makeLogsEvent(12, 'c')
+      ];
+      provider.send
+        .mockResolvedValueOnce(toHex(12))
+        .mockResolvedValueOnce(newLogs);
+      const result = await backfiller.getLogsBackfill(isCancelled, {}, [], 9);
+      expectGetLogRangeCalled(10, 13);
+      expect(result).toEqual(newLogs);
+    });
+
+    it('includes LogOptions filter when backfilling', async () => {
+      provider.send.mockResolvedValueOnce(toHex(10)).mockResolvedValueOnce([]);
+      const topics = [['0x1'], [], null];
+      await backfiller.getLogsBackfill(
+        isCancelled,
+        {
+          address: '0xABC',
+          topics
+        },
+        [],
+        9
+      );
+      const options: GetLogsOptions[] = provider.send.mock.calls
+        .filter(call => call[0] === 'eth_getLogs')
+        .map(call => call[1][0]);
+      expect(options.length).toEqual(1);
+      const rangeFilter = options[0];
+      expect(rangeFilter.address).toEqual('0xABC');
+      expect(rangeFilter.topics).toEqual(topics);
+    });
+
+    it('returns logs since the last log seen', async () => {
+      const previousLogs = [makeLogsEvent(10, 'a'), makeLogsEvent(11, 'b')];
+      const expected = [makeLogsEvent(12, 'c'), makeLogsEvent(13, 'd')];
+      provider.send
+        .mockResolvedValueOnce(toHex(13))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, 'b'))
+        .mockResolvedValueOnce(expected);
+      const result = await backfiller.getLogsBackfill(
+        isCancelled,
+        {},
+        previousLogs,
+        9
+      );
+
+      // Verify that `getCommonAncestorNumber()` called `getBlockByNumber()` correctly.
+      expectGetBlockCalled(11);
+
+      // Verify that `getLogsInRange()` fetched the correct range.
+      expectGetLogRangeCalled(11, 14);
+      expect(result).toEqual(expected);
+    });
+
+    it('returns logs since last reorg with removed property', async () => {
+      // This test simulates a reorg starting in block 11.
+      const previousLogs = [
+        makeLogsEvent(9, 'z'),
+        makeLogsEvent(10, 'a'),
+        makeLogsEvent(11, 'b'),
+        makeLogsEvent(12, 'c')
+      ];
+      const newLogs = [
+        makeLogsEvent(10, 'a'),
+        makeLogsEvent(11, "b'"),
+        makeLogsEvent(12, "c'"),
+        makeLogsEvent(13, 'd'),
+        makeLogsEvent(14, 'e')
+      ];
+      provider.send
+        .mockResolvedValueOnce(toHex(14))
+        .mockResolvedValueOnce(makeNewHeadsEvent(12, "c'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, "b'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(10, 'a'))
+        .mockResolvedValueOnce(newLogs);
+      const result = await backfiller.getLogsBackfill(
+        isCancelled,
+        {},
+        previousLogs,
+        9
+      );
+
+      // Logs that were part of a re-org should have `{removed: true}`.
+      const expected = [
+        makeLogsEvent(11, 'b', true),
+        makeLogsEvent(12, 'c', true),
+        makeLogsEvent(11, "b'"),
+        makeLogsEvent(12, "c'"),
+        makeLogsEvent(13, 'd'),
+        makeLogsEvent(14, 'e')
+      ];
+
+      // Check that `getCommonAncestorNumber()` checked in order, ignoring block
+      // 9 since block 10 matches.
+      expectGetBlockCalled(12);
+      expectGetBlockCalled(11);
+      expectGetBlockCalled(10);
+
+      // Since block 10 is the common ancestor, blocks 10-14 should be checked.
+      expectGetLogRangeCalled(10, 15);
+      expect(result).toEqual(expected);
+    });
+
+    it('returns all logs from if reorg goes that far', async () => {
+      // This tests when all previous logs are part of a re-org and that
+      // logs are not improperly de-duped.
+      const previousLogs = [
+        makeLogsEvent(10, 'a', false, 100),
+        makeLogsEvent(11, 'b', false, 100),
+        makeLogsEvent(12, 'c', false, 100)
+      ];
+      const newLogs = [
+        makeLogsEvent(10, "a'"),
+        makeLogsEvent(11, "b'"),
+        makeLogsEvent(12, "c'"),
+        makeLogsEvent(13, 'd'),
+        makeLogsEvent(14, 'e')
+      ];
+      provider.send
+        .mockResolvedValueOnce(toHex(14))
+        .mockResolvedValueOnce(makeNewHeadsEvent(12, "c'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, "b'"))
+        .mockResolvedValueOnce(makeNewHeadsEvent(10, "a'"))
+        .mockResolvedValueOnce(newLogs);
+      const result = await backfiller.getLogsBackfill(
+        isCancelled,
+        {},
+        previousLogs,
+        9
+      );
+      const expected = [
+        // Logs that were part of a reorg should have `removed` property.
+        makeLogsEvent(10, 'a', true, 100),
+        makeLogsEvent(11, 'b', true, 100),
+        makeLogsEvent(12, 'c', true, 100),
+        makeLogsEvent(10, "a'"),
+        makeLogsEvent(11, "b'"),
+        makeLogsEvent(12, "c'"),
+        makeLogsEvent(13, 'd'),
+        makeLogsEvent(14, 'e')
+      ];
+      expect(result).toEqual(expected);
+      expectGetBlockCalled(12);
+      expectGetBlockCalled(11);
+      expectGetBlockCalled(10);
+      expectGetLogRangeCalled(10, 15);
+    });
+
+    it('de-dupes logs in commonAncestorNumber block', async () => {
+      // Common ancestor block is 10.
+      const previousLogs = [
+        makeLogsEvent(10, 'a'),
+        makeLogsEvent(11, 'b', false, 5),
+        makeLogsEvent(11, 'b', false, 7)
+      ];
+      const newLogs = [
+        makeLogsEvent(11, 'b', false, 4),
+        makeLogsEvent(11, 'b', false, 5),
+        makeLogsEvent(11, 'b', false, 6),
+        makeLogsEvent(11, 'b', false, 7),
+        makeLogsEvent(11, 'b', false, 10),
+        makeLogsEvent(11, 'b', false, 11),
+        makeLogsEvent(12, 'c')
+      ];
+      provider.send
+        .mockResolvedValueOnce(toHex(12))
+        .mockResolvedValueOnce(makeNewHeadsEvent(11, 'b'))
+        .mockResolvedValueOnce(newLogs);
+
+      const result = await backfiller.getLogsBackfill(
+        isCancelled,
+        {},
+        previousLogs,
+        9
+      );
+
+      // Log indexes 4,5,6 should be omitted.
+      const expected = [
+        makeLogsEvent(11, 'b', false, 10),
+        makeLogsEvent(11, 'b', false, 11),
+        makeLogsEvent(12, 'c')
+      ];
+
+      expectGetBlockCalled(11);
+      expectGetLogRangeCalled(11, 13);
+      expect(result).toEqual(expected);
+    });
+
+    it('ignores re-org if more than maxBackfillBlocks behind', async () => {
+      // In this test, backfiller wants to backfill starting from block 10, but
+      // since the current block is 13, the backfiller should skip block 10 and
+      // backfill from block 11,
+      backfiller.setMaxBackfillBlock(3);
+      const previousLogs = [makeLogsEvent(10, 'a')];
+      const newLogs = [
+        makeLogsEvent(11, 'b'),
+        makeLogsEvent(12, 'c'),
+        makeLogsEvent(13, 'd')
+      ];
+      provider.send
+        .mockResolvedValueOnce(toHex(13))
+        .mockResolvedValueOnce(newLogs);
+
+      const result = await backfiller.getLogsBackfill(
+        isCancelled,
+        {},
+        previousLogs,
+        9
+      );
+      expectGetBlockNotCalled();
+      expectGetLogRangeCalled(11, 14);
+      expect(result).toEqual(newLogs);
+    });
+
+    it('fetches the block once per block number in previous logs', async () => {
+      const previousLogs = [
+        makeLogsEvent(10, 'a', false, 1),
+        makeLogsEvent(10, 'a', false, 2),
+        makeLogsEvent(10, 'a', false, 3)
+      ];
+
+      provider.send
+        .mockResolvedValueOnce(toHex(11))
+        .mockResolvedValueOnce(makeNewHeadsEvent(10, 'a'))
+        .mockResolvedValueOnce([]);
+
+      await backfiller.getLogsBackfill(isCancelled, {}, previousLogs, 9);
+      expect(
+        provider.send.mock.calls.filter(
+          (call: string[]) =>
+            call[0] === 'eth_getBlockByNumber' && fromHex(call[1][0]) === 10
+        ).length
+      ).toEqual(1);
+    });
+  });
+});
+
+const isCancelled = () => false;
+
+
+================================================================================
+File: test\unit\websocket-provider.test.ts
+Size: 29.78 kB
+================================================================================
+
+import { Server, WebSocket } from 'mock-socket';
+
+import { Formatter } from '@ethersproject/providers/lib/formatter';
+
+import {
+  Alchemy,
+  AlchemyConfig,
+  AlchemyMinedTransactionsEventFilter,
+  AlchemyPendingTransactionsEventFilter,
+  AlchemySubscription,
+  Network,
+  WebSocketNamespace,
+  toHex
+} from '../../src';
+import { AlchemyProvider } from '../../src/api/alchemy-provider';
+import { AlchemyWebSocketProvider } from '../../src/api/alchemy-websocket-provider';
+import {
+  EthersEvent,
+  getAlchemyEventTag
+} from '../../src/internal/ethers-event';
+import {
+  ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE,
+  ALCHEMY_PENDING_TRANSACTIONS_EVENT_TYPE
+} from '../../src/internal/internal-types';
+import {
+  LogsEvent,
+  LogsSubscriptionFilter,
+  NewHeadsEvent,
+  WebsocketBackfiller
+} from '../../src/internal/websocket-backfiller';
+import { noop } from '../../src/util/const';
+import {
+  Deferred,
+  Mocked,
+  makeLogsEvent,
+  makeNewHeadsEvent
+} from '../test-util';
+
+import SpyInstance = jest.SpyInstance;
+
+describe('AlchemyWebSocketProvider', () => {
+  let wsProvider: Mocked<AlchemyWebSocketProvider>;
+  let mockServer: Server;
+  let mockBackfiller: jest.SpyInstance;
+
+  interface MockServerOptions {
+    ethSubscribeIds?: Array<string>;
+    ethSubscribeMessages?: Array<Array<any>>;
+  }
+
+  /**
+   * Sets up the mock WebSocket server with default responses for heartbeat requests.
+   *
+   * @param options
+   */
+  function setupMockServer(options?: MockServerOptions): void {
+    mockServer.on('connection', socket => {
+      socket.on('message', (data: any) => {
+        const msg = JSON.parse(data);
+        if (msg.method && msg.method === 'eth_chainId') {
+          socket.send(
+            JSON.stringify({ jsonrpc: '2.0', result: '0x1', id: msg.id })
+          );
+        } else if (msg.method && msg.method === 'net_version') {
+          socket.send(
+            JSON.stringify({ jsonrpc: '2.0', result: '1', id: msg.id })
+          );
+        } else if (msg.method && msg.method === 'eth_blockNumber') {
+          socket.send(
+            JSON.stringify({ jsonrpc: '2.0', result: toHex(100), id: msg.id })
+          );
+        } else if (msg.method && msg.method === 'newHeads') {
+          socket.send(
+            JSON.stringify({ jsonrpc: '2.0', result: '0xdef', id: msg.id })
+          );
+        } else if (msg.method && msg.method === 'eth_subscribe') {
+          if (
+            options === undefined ||
+            options.ethSubscribeMessages === undefined ||
+            options.ethSubscribeIds === undefined
+          ) {
+            throw new Error('Expected mock return values for eth_subscribe');
+          }
+          const subId = options.ethSubscribeIds.shift();
+          const subMessages = options.ethSubscribeMessages.shift();
+          socket.send(
+            JSON.stringify({
+              jsonrpc: '2.0',
+              id: msg.id,
+              result: subId
+            })
+          );
+
+          for (const message of subMessages!) {
+            // Use `setImmediate()` to allow the first message to go through and
+            // be processed by the provider.
+            setImmediate(() =>
+              socket.send(
+                JSON.stringify({
+                  jsonrpc: '2.0',
+                  method: 'eth_subscription',
+                  params: {
+                    result: message,
+                    subscription: subId
+                  }
+                })
+              )
+            );
+          }
+        }
+      });
+    });
+  }
+
+  function initializeWebSocketProvider(): void {
+    AlchemyProvider.getAlchemyConnectionInfo = jest.fn().mockReturnValue({
+      url: 'ws://localhost:1234'
+    } as any);
+    wsProvider = new AlchemyWebSocketProvider(
+      {
+        network: Network.ETH_MAINNET,
+        apiKey: 'demo',
+        maxRetries: 5
+      } as AlchemyConfig,
+      WebSocket
+    ) as Mocked<AlchemyWebSocketProvider>;
+  }
+
+  function expectSubscribeCalled(spy: SpyInstance, expected: any): void {
+    const subCalls = spy.mock.calls.filter(call => call[0] === 'eth_subscribe');
+    expect(subCalls.length).toBeGreaterThan(0);
+    expect(subCalls[0][1]).toEqual(expected);
+  }
+
+  function serverSendsMessage(
+    messages: Array<any>,
+    subId: string,
+    deferred: Deferred<void>
+  ): void {
+    for (const message of messages) {
+      // Use setImmediate to allow provder to pick up message.
+      setImmediate(() => {
+        mockServer.clients()[0].send(
+          JSON.stringify({
+            jsonrpc: '2.0',
+            method: 'eth_subscription',
+            params: {
+              result: message,
+              subscription: subId
+            }
+          })
+        );
+      });
+    }
+
+    if (deferred) {
+      setImmediate(() => deferred.resolve());
+    }
+  }
+
+  beforeEach(async () => {
+    mockServer = new Server('ws://localhost:1234');
+  });
+
+  afterEach(async () => {
+    await wsProvider.destroy();
+    mockServer.close();
+    jest.restoreAllMocks();
+  });
+
+  it('handles json-rpc requests', async () => {
+    const mockBlockNumber = 100;
+    setupMockServer();
+    initializeWebSocketProvider();
+    const res = await wsProvider.getBlockNumber();
+    expect(res).toEqual(mockBlockNumber);
+  });
+
+  it('initializes and removes socket listeners', async () => {
+    setupMockServer();
+    initializeWebSocketProvider();
+
+    // Verify there are 3 listeners: 'message', 'reopen', and 'down'
+    expect(
+      Object.values(wsProvider._websocket.listeners).flat().length
+    ).toEqual(3);
+    await wsProvider.destroy();
+
+    // Verify the 3 listeners have been removed.
+    expect(
+      Object.values(wsProvider._websocket.listeners).flat().length
+    ).toEqual(0);
+  });
+
+  it('accepts a hard URL override', async () => {
+    setupMockServer();
+    initializeWebSocketProvider();
+    const alchemy = new Alchemy({
+      apiKey: 'demo-key',
+      url: 'wss://hardcoded-url.com'
+    });
+    const provider = await alchemy.config.getWebSocketProvider();
+    expect(provider._websocket.url).toEqual('wss://hardcoded-url.com');
+    expect(provider.apiKey).toEqual('demo-key');
+  });
+
+  describe('newHeads/on(block)', () => {
+    it('handles default ethers subscriptions', done => {
+      const sendSpy = jest.spyOn(AlchemyWebSocketProvider.prototype, 'send');
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        ethSubscribeMessages: [[{ number: toHex(100) }, { number: toHex(101) }]]
+      });
+      initializeWebSocketProvider();
+
+      let eventCount = 0;
+      const expected = [100, 101];
+      wsProvider.on('block', res => {
+        expect(res).toEqual(expected[eventCount]);
+        eventCount++;
+        if (eventCount === 2) {
+          expectSubscribeCalled(sendSpy, ['newHeads']);
+          done();
+        }
+      });
+    });
+
+    it('emits backfill and maps new virtual ids', done => {
+      // Test simulates:
+      // - Starting block number at 100 with 'newHeads' subscription.
+      // - Subscription returns block 100 then socket does down.
+      // - Backfill returns block 101, 102.
+      // - Virtual subscription returns block 103.
+      const ethSubscribeIds = ['0xabc', '0xdef'];
+      const ethSubscribeMessages = [
+        [makeNewHeadsEvent(100, 'a')],
+        [makeNewHeadsEvent(103, 'd')]
+      ];
+      setupMockServer({
+        ethSubscribeIds,
+        ethSubscribeMessages
+      });
+
+      mockBackfiller = jest
+        .spyOn(WebsocketBackfiller.prototype, 'getNewHeadsBackfill')
+        .mockImplementation(
+          (
+            _: () => boolean,
+            previousHeads: NewHeadsEvent[],
+            fromBlockNumber: number
+          ) => {
+            expect(previousHeads.length).toEqual(1);
+            expect(fromBlockNumber).toEqual(100);
+            return Promise.resolve([
+              makeNewHeadsEvent(101, 'b'),
+              makeNewHeadsEvent(102, 'c')
+            ]);
+          }
+        );
+      initializeWebSocketProvider();
+
+      const receivedHeads: number[] = [];
+      wsProvider.on('block', res => {
+        receivedHeads.push(res);
+        if (receivedHeads.length === 1) {
+          mockServer.clients()[0].close();
+        } else if (receivedHeads.length === 3) {
+          expect(mockBackfiller).toHaveBeenCalled();
+          expect(receivedHeads).toEqual([100, 101, 102]);
+        } else if (receivedHeads.length === 4) {
+          expect(receivedHeads).toEqual([100, 101, 102, 103]);
+          done();
+        }
+      });
+    });
+
+    it('buffers events when socket is down and dedupes after', done => {
+      // Test simulates
+      // - Starting block number at 100 with 'newHeads' subscription.
+      // - Subscription returns block 100 then socket does down.
+      // - Backfill begins.
+      // - Server sends blocks 101, 102 while backfill is happening
+      // - Backfill returns blocks 102, 103.
+      // - Verify that the block 101 is buffered and the block 102 is de-duped.
+      const ethSubscribeIds = ['0xabc', '0xdef'];
+      const ethSubscribeMessages = [[makeNewHeadsEvent(100, 'a')], []];
+      setupMockServer({
+        ethSubscribeIds,
+        ethSubscribeMessages
+      });
+
+      // Deferred promise that resolves after socket sends message on reopen
+      const serverMessageDeferred = new Deferred<void>();
+
+      // Deferred promise that resolves after provider enters backfill.
+      const backfillStartDeferred = new Deferred<void>();
+
+      const backfillHeads: NewHeadsEvent[] = [
+        makeNewHeadsEvent(101, 'b'),
+        makeNewHeadsEvent(102, 'c')
+      ];
+      mockBackfiller = jest
+        .spyOn(WebsocketBackfiller.prototype, 'getNewHeadsBackfill')
+        .mockImplementation(async () => {
+          backfillStartDeferred.resolve();
+          await serverMessageDeferred.promise;
+          return backfillHeads;
+        });
+      initializeWebSocketProvider();
+
+      const receivedHeads: number[] = [];
+      wsProvider.on('block', res => {
+        receivedHeads.push(res);
+        if (receivedHeads.length === 1) {
+          mockServer.clients()[0].close();
+
+          // Wait for backfill to start to send messages that should be buffered
+          void backfillStartDeferred.promise.then(() => {
+            serverSendsMessage(
+              [makeNewHeadsEvent(102, 'c'), makeNewHeadsEvent(103, 'd')],
+              '0xdef',
+              serverMessageDeferred
+            );
+          });
+        } else if (receivedHeads.length === 4) {
+          expect(receivedHeads).toEqual([100, 101, 102, 103]);
+          done();
+        }
+      });
+    });
+  });
+
+  describe('logs/on(filter)', () => {
+    const contractAddress = '0x65d25E3F2696B73b850daA07Dd1E267dCfa67F2D';
+
+    beforeEach(() => {
+      // Mock out the `Formatter` to avoid filling out all fields in mocks logs.
+      jest
+        .spyOn(Formatter.prototype, 'filterLog')
+        .mockImplementation((val: any) => val);
+    });
+
+    it('handles default ethers subscriptions', done => {
+      const sendSpy = jest.spyOn(AlchemyWebSocketProvider.prototype, 'send');
+      const logsEvents = [
+        makeLogsEvent(100, 'a', false),
+        makeLogsEvent(101, 'b', false)
+      ];
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        ethSubscribeMessages: [logsEvents]
+      });
+      initializeWebSocketProvider();
+
+      let eventCount = 0;
+      wsProvider.on({ address: contractAddress }, res => {
+        expect(res).toEqual(logsEvents[eventCount]);
+        eventCount++;
+        if (eventCount === 2) {
+          expectSubscribeCalled(sendSpy, [
+            'logs',
+            { address: contractAddress }
+          ]);
+          done();
+        }
+      });
+    });
+
+    it('emits backfill and maps new virtual ids', done => {
+      // Test simulates:
+      // - Starting block number at 100 with 'logs' subscription.
+      // - Subscription returns log for 100 then socket does down.
+      // - Backfill returns block 100 (re-org), 101, 102
+      // - Virtual subscription returns log for 103.
+      const ethSubscribeIds = ['0xabc', '0xdef'];
+      const ethSubscribeMessages = [
+        [makeLogsEvent(100, 'a')],
+        [makeLogsEvent(103, 'd')]
+      ];
+      const logsForSubscription = [
+        makeLogsEvent(100, 'a'),
+        makeLogsEvent(103, 'd')
+      ];
+      const logsForBackfill = [
+        makeLogsEvent(100, 'a', true),
+        makeLogsEvent(100, "a'"),
+        makeLogsEvent(101, 'b'),
+        makeLogsEvent(102, 'c')
+      ];
+      setupMockServer({
+        ethSubscribeIds,
+        ethSubscribeMessages
+      });
+
+      mockBackfiller = jest
+        .spyOn(WebsocketBackfiller.prototype, 'getLogsBackfill')
+        .mockImplementation(
+          (
+            _: () => boolean,
+            filter: LogsSubscriptionFilter,
+            previousLogs: LogsEvent[],
+            fromBlockNumber: number
+          ) => {
+            expect(previousLogs.length).toEqual(1);
+            expect(filter).toEqual({ address: contractAddress });
+            expect(fromBlockNumber).toEqual(100);
+            return Promise.resolve(logsForBackfill);
+          }
+        );
+      initializeWebSocketProvider();
+
+      const receivedLogs: LogsEvent[] = [];
+      wsProvider.on({ address: contractAddress }, res => {
+        receivedLogs.push(res);
+        if (receivedLogs.length === 1) {
+          mockServer.clients()[0].close();
+        } else if (receivedLogs.length === 5) {
+          expect(mockBackfiller).toHaveBeenCalled();
+          expect(receivedLogs).toEqual([
+            logsForSubscription[0],
+            ...logsForBackfill
+          ]);
+        } else if (receivedLogs.length === 6) {
+          expect(receivedLogs).toEqual([
+            logsForSubscription[0],
+            ...logsForBackfill,
+            logsForSubscription[1]
+          ]);
+          done();
+        }
+      });
+    });
+
+    it('buffers events when socket is down and dedupes after', done => {
+      // Test simulates
+      // - Starting block number at 100 with 'logs' subscription.
+      // - Subscription returns logs 100 then socket does down.
+      // - Backfill begins.
+      // - Server sends logs for 101, 102 while backfill is happening
+      // - Backfill returns logs for 102, some of which are dupes.
+      // - Verify that the logs for 101 are buffered and the logs for block 102
+      //   are de-duped.
+      const ethSubscribeIds = ['0xabc', '0xdef'];
+      const ethSubscribeMessages = [[makeLogsEvent(100, 'a')], []];
+      setupMockServer({
+        ethSubscribeIds,
+        ethSubscribeMessages
+      });
+
+      // Deferred promise that resolves after socket sends message on reopen
+      const serverMessageDeferred = new Deferred<void>();
+
+      // Deferred promise that resolves after provider enters backfill.
+      const backfillStartDeferred = new Deferred<void>();
+
+      const backfillLogs: LogsEvent[] = [
+        makeLogsEvent(101, 'b'),
+        makeLogsEvent(102, 'c', false, 2),
+        makeLogsEvent(102, 'c', false, 3)
+      ];
+      mockBackfiller = jest
+        .spyOn(WebsocketBackfiller.prototype, 'getLogsBackfill')
+        .mockImplementation(async () => {
+          backfillStartDeferred.resolve();
+          await serverMessageDeferred.promise;
+          return backfillLogs;
+        });
+      initializeWebSocketProvider();
+
+      const expectedLogs = [
+        makeLogsEvent(100, 'a'),
+        makeLogsEvent(101, 'b'),
+        makeLogsEvent(102, 'c', false, 2),
+        makeLogsEvent(102, 'c', false, 3),
+        makeLogsEvent(102, 'c', false, 4)
+      ];
+      const receivedLogs: LogsEvent[] = [];
+      wsProvider.on({ address: contractAddress }, res => {
+        receivedLogs.push(res);
+        if (receivedLogs.length === 1) {
+          mockServer.clients()[0].close();
+
+          // Wait for backfill to start to send messages that should be buffered
+          void backfillStartDeferred.promise.then(() => {
+            serverSendsMessage(
+              [
+                makeLogsEvent(102, 'c', false, 3),
+                makeLogsEvent(102, 'c', false, 4)
+              ],
+              '0xdef',
+              serverMessageDeferred
+            );
+          });
+        } else if (receivedLogs.length === 5) {
+          expect(receivedLogs).toEqual(expectedLogs);
+          done();
+        }
+      });
+    });
+  });
+
+  describe('alchemy_pendingTransactions', () => {
+    it('handles default subscriptions', done => {
+      const sendSpy = jest.spyOn(AlchemyWebSocketProvider.prototype, 'send');
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        // Can send dummy responses since we're only checking request params.
+        ethSubscribeMessages: [[{ blockNumber: 10 }, { blockNumber: 11 }]]
+      });
+      initializeWebSocketProvider();
+
+      let eventCount = 0;
+      const expected = [{ blockNumber: 10 }, { blockNumber: 11 }];
+      wsProvider.on(
+        {
+          method: AlchemySubscription.PENDING_TRANSACTIONS
+        },
+        res => {
+          expect(res).toEqual(expected[eventCount]);
+          eventCount++;
+          if (eventCount === 2) {
+            expectSubscribeCalled(sendSpy, [
+              AlchemySubscription.PENDING_TRANSACTIONS,
+              {}
+            ]);
+            done();
+          }
+        }
+      );
+    });
+
+    it('handles subscriptions with params', done => {
+      const contractAddress = '0x65d25E3F2696B73b850daA07Dd1E267dCfa67F2D';
+      const sendSpy = jest.spyOn(AlchemyWebSocketProvider.prototype, 'send');
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        // Can send dummy responses since we're only checking request params.
+        ethSubscribeMessages: [[{ blockNumber: 10 }, { blockNumber: 11 }]]
+      });
+      initializeWebSocketProvider();
+
+      let eventCount = 0;
+      const expected = [{ blockNumber: 10 }, { blockNumber: 11 }];
+      wsProvider.on(
+        {
+          method: AlchemySubscription.PENDING_TRANSACTIONS,
+          toAddress: contractAddress,
+          hashesOnly: true
+        },
+        res => {
+          expect(res).toEqual(expected[eventCount]);
+          eventCount++;
+          if (eventCount === 2) {
+            expectSubscribeCalled(sendSpy, [
+              AlchemySubscription.PENDING_TRANSACTIONS,
+              { toAddress: contractAddress, hashesOnly: true }
+            ]);
+            done();
+          }
+        }
+      );
+    });
+
+    function verifyRoundTrip(
+      event: AlchemyPendingTransactionsEventFilter,
+      expected: string
+    ) {
+      const serialized = getAlchemyEventTag(event);
+      expect(serialized).toEqual(expected);
+      const deserialized = new EthersEvent(expected, noop, true);
+      expect(deserialized.fromAddress).toEqual(event.fromAddress);
+      expect(deserialized.toAddress).toEqual(event.toAddress);
+      expect(deserialized.hashesOnly).toEqual(event.hashesOnly);
+    }
+
+    it('serializes and deserializes event tag properly', () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.PENDING_TRANSACTIONS,
+          fromAddress: '0xABC',
+          hashesOnly: true
+        },
+        ALCHEMY_PENDING_TRANSACTIONS_EVENT_TYPE + ':0xABC:*:true'
+      );
+
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.PENDING_TRANSACTIONS,
+          toAddress: ['0xABC', '0xDEF'],
+          hashesOnly: false
+        },
+        ALCHEMY_PENDING_TRANSACTIONS_EVENT_TYPE + ':*:0xABC|0xDEF:false'
+      );
+
+      verifyRoundTrip(
+        { method: AlchemySubscription.PENDING_TRANSACTIONS },
+        ALCHEMY_PENDING_TRANSACTIONS_EVENT_TYPE + ':*:*:*'
+      );
+    });
+
+    it('throws error for non-recognized method fields', async () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      const contractAddress = '0x65d25E3F2696B73b850daA07Dd1E267dCfa67F2D';
+      expect(() =>
+        wsProvider.on(
+          {
+            method: 'alchemy_invalidMethod',
+            toAddress: contractAddress
+          },
+          noop
+        )
+      ).toThrow('Invalid method name');
+    });
+  });
+
+  describe('methods', () => {
+    it('once() supports alchemy event', async () => {
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        ethSubscribeMessages: [
+          [
+            {
+              dummy: 'response'
+            }
+          ]
+        ]
+      });
+      initializeWebSocketProvider();
+      const result = new Deferred<void>();
+
+      wsProvider.once(
+        {
+          method: AlchemySubscription.PENDING_TRANSACTIONS,
+          fromAddress: '0xABC',
+          hashesOnly: true
+        },
+        res => {
+          expect(res).toEqual({ dummy: 'response' });
+          result.resolve();
+        }
+      );
+
+      // Check that the event was added to the list of subscribed events.
+      expect(wsProvider._events.length).toEqual(1);
+      await result.promise;
+      expect(wsProvider._events.length).toEqual(0);
+    });
+
+    it('off() supports alchemy event', () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      const event = {
+        method: AlchemySubscription.PENDING_TRANSACTIONS,
+        fromAddress: '0xABC'
+      };
+      const fn1 = (res: any) => {
+        JSON.stringify(res);
+      };
+      const fn2 = (res: any) => {
+        JSON.stringify(res).toLowerCase();
+      };
+      wsProvider.on(event, noop);
+      wsProvider.on(event, fn1);
+      wsProvider.on(event, fn2);
+      expect(wsProvider._events.length).toEqual(3);
+
+      // Specifying a listener deletes it.
+      wsProvider.off(event, fn1);
+      expect(wsProvider._events.length).toEqual(2);
+
+      // Omitting the listener deletes all remaining listeners.
+      wsProvider.off(event);
+      expect(wsProvider._events.length).toEqual(0);
+    });
+
+    it('removeAllListeners() supports alchemy event', () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      const event1 = {
+        method: AlchemySubscription.PENDING_TRANSACTIONS,
+        fromAddress: '0xABC'
+      };
+      const event2 = {
+        method: AlchemySubscription.PENDING_TRANSACTIONS,
+        fromAddress: '0xDEF'
+      };
+      const fn1 = (res: any) => {
+        JSON.stringify(res);
+      };
+      wsProvider.on(event1, noop);
+      wsProvider.on(event1, fn1);
+      wsProvider.on(event2, noop);
+
+      // Remove a specific listener
+      wsProvider.removeAllListeners(event1);
+      expect(wsProvider._events.length).toEqual(1);
+
+      // Remove all listeners
+      wsProvider.on(event1, noop);
+      wsProvider.removeAllListeners();
+      expect(wsProvider._events.length).toEqual(0);
+    });
+
+    it('listeners() and listenerCount() support alchemy event', async () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      const event1 = {
+        method: AlchemySubscription.PENDING_TRANSACTIONS,
+        fromAddress: '0xABC'
+      };
+      const event2 = {
+        method: AlchemySubscription.PENDING_TRANSACTIONS,
+        fromAddress: '0xDEF'
+      };
+      const fn1 = (res: any) => {
+        JSON.stringify(res);
+      };
+      wsProvider.on(event1, noop);
+      wsProvider.on(event1, fn1);
+      wsProvider.on(event2, noop);
+      expect((await wsProvider.listeners()).length).toEqual(3);
+      expect((await wsProvider.listeners(event1)).length).toEqual(2);
+      expect((await wsProvider.listeners(event2)).length).toEqual(1);
+
+      expect(await wsProvider.listenerCount()).toEqual(3);
+      expect(await wsProvider.listenerCount(event1)).toEqual(2);
+      expect(await wsProvider.listenerCount(event2)).toEqual(1);
+    });
+  });
+
+  describe('alchemy_minedTransactions', () => {
+    function verifyRoundTrip(
+      event: AlchemyMinedTransactionsEventFilter,
+      expected: string
+    ) {
+      const serialized = getAlchemyEventTag(event);
+      expect(serialized).toEqual(expected);
+      const deserialized = new EthersEvent(expected, noop, true);
+      expect(deserialized.addresses).toEqual(event.addresses);
+      expect(deserialized.includeRemoved).toEqual(event.includeRemoved);
+      expect(deserialized.hashesOnly).toEqual(event.hashesOnly);
+    }
+
+    it('handles subscriptions with params', done => {
+      const contractAddress = '0x65d25E3F2696B73b850daA07Dd1E267dCfa67F2D';
+      const sendSpy = jest.spyOn(AlchemyWebSocketProvider.prototype, 'send');
+      setupMockServer({
+        ethSubscribeIds: ['0xabc'],
+        // Can send dummy responses since we're only checking request params.
+        ethSubscribeMessages: [[{ blockNumber: 10 }, { blockNumber: 11 }]]
+      });
+      initializeWebSocketProvider();
+
+      let eventCount = 0;
+      const expected = [{ blockNumber: 10 }, { blockNumber: 11 }];
+      const addresses = [{ to: contractAddress }, { from: contractAddress }];
+      wsProvider.on(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS,
+          addresses,
+          hashesOnly: true
+        },
+        (res: any) => {
+          expect(res).toEqual(expected[eventCount]);
+          eventCount++;
+          if (eventCount === 2) {
+            expectSubscribeCalled(sendSpy, [
+              AlchemySubscription.MINED_TRANSACTIONS,
+              { addresses, hashesOnly: true }
+            ]);
+            done();
+          }
+        }
+      );
+    });
+
+    it('serializes and deserializes event tag properly', () => {
+      setupMockServer();
+      initializeWebSocketProvider();
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS
+        },
+        ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE + ':*:*:*'
+      );
+
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS,
+          includeRemoved: false
+        },
+        ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE + ':*:false:*'
+      );
+
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS,
+          hashesOnly: true
+        },
+        ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE + ':*:*:true'
+      );
+
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS
+        },
+        ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE + ':*:*:*'
+      );
+
+      verifyRoundTrip(
+        {
+          method: AlchemySubscription.MINED_TRANSACTIONS,
+          addresses: [
+            {
+              to: '0xABC'
+            },
+            {
+              from: '0xDEF'
+            },
+            { to: '0x123', from: '0x456' }
+          ]
+        },
+        ALCHEMY_MINED_TRANSACTIONS_EVENT_TYPE +
+          ':0xABC,*|*,0xDEF|0x123,0x456:*:*'
+      );
+    });
+  });
+});
+
+describe('WS provider supports ENS resolution', () => {
+  const sdk = new Alchemy();
+  let wsNamespace: Mocked<WebSocketNamespace>;
+
+  const ens1 = 'ens1.eth';
+  const ens1Raw = '0xABC';
+  const ens2 = 'ens2.eth';
+  const ens2Raw = '0xDEF';
+
+  beforeEach(() => {
+    wsNamespace = sdk.ws as Mocked<WebSocketNamespace>;
+    wsNamespace._resolveNameOrError = jest.fn();
+  });
+
+  it('processes mined transactions', async () => {
+    const minedEvent: AlchemyMinedTransactionsEventFilter = {
+      method: AlchemySubscription.MINED_TRANSACTIONS,
+      addresses: [
+        {
+          to: ens1
+        },
+        {
+          from: ens2
+        },
+        {
+          to: ens1Raw,
+          from: ens2Raw
+        }
+      ]
+    };
+
+    wsNamespace._resolveNameOrError
+      .mockResolvedValueOnce(ens1Raw)
+      .mockResolvedValueOnce(ens2Raw)
+      .mockResolvedValueOnce(ens1Raw)
+      .mockResolvedValueOnce(ens2Raw);
+
+    const res = (await wsNamespace._resolveEnsAlchemyEvent(
+      minedEvent
+    )) as AlchemyMinedTransactionsEventFilter;
+    expect(res.addresses![0]).toEqual({ to: ens1Raw });
+    expect(res.addresses![1]).toEqual({ from: ens2Raw });
+    expect(res.addresses![2]).toEqual({ to: ens1Raw, from: ens2Raw });
+  });
+
+  it('processes pending transactions with string inputs', async () => {
+    const pendingEvent: AlchemyPendingTransactionsEventFilter = {
+      method: AlchemySubscription.PENDING_TRANSACTIONS,
+      fromAddress: ens1,
+      toAddress: ens2
+    };
+
+    wsNamespace._resolveNameOrError
+      .mockResolvedValueOnce(ens1Raw)
+      .mockResolvedValueOnce(ens2Raw);
+    const res = (await wsNamespace._resolveEnsAlchemyEvent(
+      pendingEvent
+    )) as AlchemyPendingTransactionsEventFilter;
+    expect(res.fromAddress).toEqual(ens1Raw);
+    expect(res.toAddress).toEqual(ens2Raw);
+  });
+
+  it('processes pending transactions with array inputs', async () => {
+    const pendingEvent: AlchemyPendingTransactionsEventFilter = {
+      method: AlchemySubscription.PENDING_TRANSACTIONS,
+      fromAddress: [ens1, ens2Raw],
+      toAddress: [ens2, ens1Raw]
+    };
+
+    wsNamespace._resolveNameOrError
+      .mockResolvedValueOnce(ens1Raw)
+      .mockResolvedValueOnce(ens2Raw)
+      .mockResolvedValueOnce(ens2Raw)
+      .mockResolvedValueOnce(ens1Raw);
+    const res = (await wsNamespace._resolveEnsAlchemyEvent(
+      pendingEvent
+    )) as AlchemyPendingTransactionsEventFilter;
+    expect(res.fromAddress).toEqual([ens1Raw, ens2Raw]);
+    expect(res.toAddress).toEqual([ens2Raw, ens1Raw]);
+  });
+});
+
+
+================================================================================
+File: tsconfig.json
+Size: 692 B

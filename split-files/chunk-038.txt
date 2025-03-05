@@ -1,0 +1,3062 @@
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:32
+
+___
+
+### hash
+
+• **hash**: `string`
+
+#### Overrides
+
+Transaction.hash
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:24
+
+___
+
+### maxFeePerGas
+
+• `Optional` **maxFeePerGas**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+Transaction.maxFeePerGas
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:42
+
+___
+
+### maxPriorityFeePerGas
+
+• `Optional` **maxPriorityFeePerGas**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+Transaction.maxPriorityFeePerGas
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:41
+
+___
+
+### nonce
+
+• **nonce**: `number`
+
+#### Inherited from
+
+Transaction.nonce
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:30
+
+___
+
+### r
+
+• `Optional` **r**: `string`
+
+#### Inherited from
+
+Transaction.r
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:36
+
+___
+
+### raw
+
+• `Optional` **raw**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:30
+
+___
+
+### s
+
+• `Optional` **s**: `string`
+
+#### Inherited from
+
+Transaction.s
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:37
+
+___
+
+### timestamp
+
+• `Optional` **timestamp**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:27
+
+___
+
+### to
+
+• `Optional` **to**: `string`
+
+#### Inherited from
+
+Transaction.to
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:28
+
+___
+
+### type
+
+• `Optional` **type**: ``null`` \| `number`
+
+#### Inherited from
+
+Transaction.type
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:39
+
+___
+
+### v
+
+• `Optional` **v**: `number`
+
+#### Inherited from
+
+Transaction.v
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:38
+
+___
+
+### value
+
+• **value**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+Transaction.value
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:34
+
+## Methods
+
+### wait
+
+▸ **wait**(`confirmations?`): `Promise`<[`TransactionReceipt`](TransactionReceipt.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `confirmations?` | `number` |
+
+#### Returns
+
+`Promise`<[`TransactionReceipt`](TransactionReceipt.md)\>
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:31
+
+
+================================================================================
+File: docs-md\interfaces\TransactionWebhookParams.md
+Size: 1.09 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionWebhookParams
+
+# Interface: TransactionWebhookParams
+
+Params to pass in when calling [NotifyNamespace.createWebhook](../classes/NotifyNamespace.md#createwebhook) in order
+to create a [MinedTransactionWebhook](MinedTransactionWebhook.md) or [DroppedTransactionWebhook](DroppedTransactionWebhook.md).
+
+The webhook will be created on the app and network associated with the appId.
+To find the app id of a project, go to the Alchemy Dashboard in the Apps tab.
+After clicking on an app, the app id is the string in the URL following 'apps/'.
+
+This is a temporary workaround for now. We're planning on detecting the app
+id from the provided api key directly. Stay tuned!
+
+## Table of contents
+
+### Properties
+
+- [appId](TransactionWebhookParams.md#appid)
+
+## Properties
+
+### appId
+
+• **appId**: `string`
+
+The app id of the project to create the webhook on.
+
+#### Defined in
+
+[src/types/types.ts:1243](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1243)
+
+
+================================================================================
+File: docs-md\interfaces\TransferredNft.md
+Size: 6.17 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransferredNft
+
+# Interface: TransferredNft
+
+NFT with extra data for a single NFT that was transferred or minted.
+
+## Hierarchy
+
+- [`Nft`](Nft.md)
+
+  ↳ **`TransferredNft`**
+
+## Table of contents
+
+### Properties
+
+- [acquiredAt](TransferredNft.md#acquiredat)
+- [blockNumber](TransferredNft.md#blocknumber)
+- [collection](TransferredNft.md#collection)
+- [contract](TransferredNft.md#contract)
+- [description](TransferredNft.md#description)
+- [from](TransferredNft.md#from)
+- [image](TransferredNft.md#image)
+- [mint](TransferredNft.md#mint)
+- [name](TransferredNft.md#name)
+- [raw](TransferredNft.md#raw)
+- [timeLastUpdated](TransferredNft.md#timelastupdated)
+- [to](TransferredNft.md#to)
+- [tokenId](TransferredNft.md#tokenid)
+- [tokenType](TransferredNft.md#tokentype)
+- [tokenUri](TransferredNft.md#tokenuri)
+- [transactionHash](TransferredNft.md#transactionhash)
+
+## Properties
+
+### acquiredAt
+
+• `Optional` **acquiredAt**: [`AcquiredAt`](AcquiredAt.md)
+
+Time at which the NFT was most recently acquired by the user. Only
+available when specifying `orderBy: NftOrdering.TRANSFERTIME` in the
+request.
+
+#### Inherited from
+
+[Nft](Nft.md).[acquiredAt](Nft.md#acquiredat)
+
+#### Defined in
+
+[src/types/nft-types.ts:1278](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1278)
+
+___
+
+### blockNumber
+
+• **blockNumber**: `string`
+
+The block number as a hex string of when the transfer or mint occurred.
+
+#### Defined in
+
+[src/types/nft-types.ts:626](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L626)
+
+___
+
+### collection
+
+• `Optional` **collection**: [`BaseNftCollection`](BaseNftCollection.md)
+
+Collection metadata for the NFT, if available.
+
+#### Inherited from
+
+[Nft](Nft.md).[collection](Nft.md#collection)
+
+#### Defined in
+
+[src/types/nft-types.ts:1280](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1280)
+
+___
+
+### contract
+
+• **contract**: [`NftContractForNft`](NftContractForNft.md)
+
+The NFT's underlying contract and relevant contract metadata.
+
+#### Inherited from
+
+[Nft](Nft.md).[contract](Nft.md#contract)
+
+#### Defined in
+
+[src/types/nft-types.ts:1256](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1256)
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+The NFT description.
+
+#### Inherited from
+
+[Nft](Nft.md).[description](Nft.md#description)
+
+#### Defined in
+
+[src/types/nft-types.ts:1264](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1264)
+
+___
+
+### from
+
+• **from**: `string`
+
+The address the NFT was from. For minted NFTs, this field is the set to
+`0x0000000000000000000000000000000000000000`.
+
+#### Defined in
+
+[src/types/nft-types.ts:620](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L620)
+
+___
+
+### image
+
+• **image**: [`NftImage`](NftImage.md)
+
+Media URLs and information for the NFT
+
+#### Inherited from
+
+[Nft](Nft.md).[image](Nft.md#image)
+
+#### Defined in
+
+[src/types/nft-types.ts:1266](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1266)
+
+___
+
+### mint
+
+• `Optional` **mint**: [`NftMint`](NftMint.md)
+
+Mint information for the NFT.
+
+#### Inherited from
+
+[Nft](Nft.md).[mint](Nft.md#mint)
+
+#### Defined in
+
+[src/types/nft-types.ts:1282](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1282)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+The NFT name.
+
+#### Inherited from
+
+[Nft](Nft.md).[name](Nft.md#name)
+
+#### Defined in
+
+[src/types/nft-types.ts:1262](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1262)
+
+___
+
+### raw
+
+• **raw**: [`NftRawMetadata`](NftRawMetadata.md)
+
+The raw metadata for the NFT based on the metadata URI on the NFT contract.
+
+#### Inherited from
+
+[Nft](Nft.md).[raw](Nft.md#raw)
+
+#### Defined in
+
+[src/types/nft-types.ts:1268](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1268)
+
+___
+
+### timeLastUpdated
+
+• **timeLastUpdated**: `string`
+
+When the NFT was last updated in the blockchain. Represented in ISO-8601 format.
+
+#### Inherited from
+
+[Nft](Nft.md).[timeLastUpdated](Nft.md#timelastupdated)
+
+#### Defined in
+
+[src/types/nft-types.ts:1272](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1272)
+
+___
+
+### to
+
+• `Optional` **to**: `string`
+
+The address the NFT was sent or minted to.
+
+#### Defined in
+
+[src/types/nft-types.ts:622](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L622)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The NFT token ID as an integer string.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenId](Nft.md#tokenid)
+
+#### Defined in
+
+[src/types/nft-types.ts:1258](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1258)
+
+___
+
+### tokenType
+
+• **tokenType**: [`NftTokenType`](../enums/NftTokenType.md)
+
+The type of NFT.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenType](Nft.md#tokentype)
+
+#### Defined in
+
+[src/types/nft-types.ts:1260](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1260)
+
+___
+
+### tokenUri
+
+• `Optional` **tokenUri**: `string`
+
+URIs for accessing the NFT's metadata blob.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenUri](Nft.md#tokenuri)
+
+#### Defined in
+
+[src/types/nft-types.ts:1270](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1270)
+
+___
+
+### transactionHash
+
+• **transactionHash**: `string`
+
+The transaction hash where the transfer or mint occurred.
+
+#### Defined in
+
+[src/types/nft-types.ts:624](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L624)
+
+
+================================================================================
+File: docs-md\interfaces\TransfersNftResponse.md
+Size: 1.01 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransfersNftResponse
+
+# Interface: TransfersNftResponse
+
+Response object for NFT methods that fetch NFTs that were transferred or
+minted (ex: [NftNamespace.getTransfersForOwner](../classes/NftNamespace.md#gettransfersforowner) or
+[NftNamespace.getMintedNfts](../classes/NftNamespace.md#getmintednfts)).
+
+## Table of contents
+
+### Properties
+
+- [nfts](TransfersNftResponse.md#nfts)
+- [pageKey](TransfersNftResponse.md#pagekey)
+
+## Properties
+
+### nfts
+
+• **nfts**: [`TransferredNft`](TransferredNft.md)[]
+
+An array of NFTs.
+
+#### Defined in
+
+[src/types/nft-types.ts:607](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L607)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key to use to fetch the next group of NFTs.
+
+#### Defined in
+
+[src/types/nft-types.ts:609](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L609)
+
+
+================================================================================
+File: docs-md\interfaces\Webhook.md
+Size: 3.24 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / Webhook
+
+# Interface: Webhook
+
+SDK representation of a Webhook in the Notify API.
+
+## Hierarchy
+
+- **`Webhook`**
+
+  ↳ [`MinedTransactionWebhook`](MinedTransactionWebhook.md)
+
+  ↳ [`DroppedTransactionWebhook`](DroppedTransactionWebhook.md)
+
+  ↳ [`AddressActivityWebhook`](AddressActivityWebhook.md)
+
+  ↳ [`NftActivityWebhook`](NftActivityWebhook.md)
+
+  ↳ [`NftMetadataUpdateWebhook`](NftMetadataUpdateWebhook.md)
+
+  ↳ [`CustomGraphqlWebhook`](CustomGraphqlWebhook.md)
+
+## Table of contents
+
+### Properties
+
+- [appId](Webhook.md#appid)
+- [id](Webhook.md#id)
+- [isActive](Webhook.md#isactive)
+- [network](Webhook.md#network)
+- [signingKey](Webhook.md#signingkey)
+- [timeCreated](Webhook.md#timecreated)
+- [type](Webhook.md#type)
+- [url](Webhook.md#url)
+- [version](Webhook.md#version)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+The app id of the app used for the webhook. This field is only present on
+[MinedTransactionWebhook](MinedTransactionWebhook.md) and [DroppedTransactionWebhook](DroppedTransactionWebhook.md)
+
+#### Defined in
+
+[src/types/types.ts:1123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1123)
+
+___
+
+### id
+
+• **id**: `string`
+
+The webhook's unique id.
+
+#### Defined in
+
+[src/types/types.ts:1104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1104)
+
+___
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is currently active
+
+#### Defined in
+
+[src/types/types.ts:1112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1112)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network the webhook is on.
+
+#### Defined in
+
+[src/types/types.ts:1106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1106)
+
+___
+
+### signingKey
+
+• **signingKey**: `string`
+
+The signing key used to verify payloads for the webhook.
+
+#### Defined in
+
+[src/types/types.ts:1116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1116)
+
+___
+
+### timeCreated
+
+• **timeCreated**: `string`
+
+The creation time of the webhook as an ISO string.
+
+#### Defined in
+
+[src/types/types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1114)
+
+___
+
+### type
+
+• **type**: [`WebhookType`](../enums/WebhookType.md)
+
+The type of webhook.
+
+#### Defined in
+
+[src/types/types.ts:1108](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1108)
+
+___
+
+### url
+
+• **url**: `string`
+
+The url that the webhook sends its payload to.
+
+#### Defined in
+
+[src/types/types.ts:1110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1110)
+
+___
+
+### version
+
+• **version**: [`WebhookVersion`](../enums/WebhookVersion.md)
+
+The webhook version. All newly created webhooks default to V2.
+
+#### Defined in
+
+[src/types/types.ts:1118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1118)
+
+
+================================================================================
+File: docs-md\interfaces\WebhookAddressOverride.md
+Size: 701 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookAddressOverride
+
+# Interface: WebhookAddressOverride
+
+Params object when calling [NotifyNamespace.updateWebhook](../classes/NotifyNamespace.md#updatewebhook) to replace
+all existing addresses for a [AddressActivityWebhook](AddressActivityWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [newAddresses](WebhookAddressOverride.md#newaddresses)
+
+## Properties
+
+### newAddresses
+
+• **newAddresses**: `string`[]
+
+The new addresses to track. Existing addresses will be removed.
+
+#### Defined in
+
+[src/types/types.ts:1376](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1376)
+
+
+================================================================================
+File: docs-md\interfaces\WebhookAddressUpdate.md
+Size: 964 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookAddressUpdate
+
+# Interface: WebhookAddressUpdate
+
+Params object when calling [NotifyNamespace.updateWebhook](../classes/NotifyNamespace.md#updatewebhook) to add and
+remove addresses for a [AddressActivityWebhook](AddressActivityWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [addAddresses](WebhookAddressUpdate.md#addaddresses)
+- [removeAddresses](WebhookAddressUpdate.md#removeaddresses)
+
+## Properties
+
+### addAddresses
+
+• **addAddresses**: `string`[]
+
+The addresses to additionally track.
+
+#### Defined in
+
+[src/types/types.ts:1365](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1365)
+
+___
+
+### removeAddresses
+
+• **removeAddresses**: `string`[]
+
+Existing addresses to remove.
+
+#### Defined in
+
+[src/types/types.ts:1367](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1367)
+
+
+================================================================================
+File: docs-md\interfaces\WebhookNftFilterUpdate.md
+Size: 984 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookNftFilterUpdate
+
+# Interface: WebhookNftFilterUpdate
+
+Params object when calling [NotifyNamespace.updateWebhook](../classes/NotifyNamespace.md#updatewebhook) to add and
+remove NFT filters for a [NftActivityWebhook](NftActivityWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [addFilters](WebhookNftFilterUpdate.md#addfilters)
+- [removeFilters](WebhookNftFilterUpdate.md#removefilters)
+
+## Properties
+
+### addFilters
+
+• **addFilters**: [`NftFilter`](NftFilter.md)[]
+
+The filters to additionally track.
+
+#### Defined in
+
+[src/types/types.ts:1343](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1343)
+
+___
+
+### removeFilters
+
+• **removeFilters**: [`NftFilter`](NftFilter.md)[]
+
+Existing filters to remove.
+
+#### Defined in
+
+[src/types/types.ts:1345](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1345)
+
+
+================================================================================
+File: docs-md\interfaces\WebhookNftMetadataFilterUpdate.md
+Size: 1.09 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookNftMetadataFilterUpdate
+
+# Interface: WebhookNftMetadataFilterUpdate
+
+Params object when calling [NotifyNamespace.updateWebhook](../classes/NotifyNamespace.md#updatewebhook) to add and
+remove NFT filters for a [NftMetadataUpdateWebhook](NftMetadataUpdateWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [addMetadataFilters](WebhookNftMetadataFilterUpdate.md#addmetadatafilters)
+- [removeMetadataFilters](WebhookNftMetadataFilterUpdate.md#removemetadatafilters)
+
+## Properties
+
+### addMetadataFilters
+
+• **addMetadataFilters**: [`NftFilter`](NftFilter.md)[]
+
+The filters to additionally track.
+
+#### Defined in
+
+[src/types/types.ts:1354](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1354)
+
+___
+
+### removeMetadataFilters
+
+• **removeMetadataFilters**: [`NftFilter`](NftFilter.md)[]
+
+Existing filters to remove.
+
+#### Defined in
+
+[src/types/types.ts:1356](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1356)
+
+
+================================================================================
+File: docs-md\interfaces\WebhookStatusUpdate.md
+Size: 590 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookStatusUpdate
+
+# Interface: WebhookStatusUpdate
+
+Params object when calling [NotifyNamespace.updateWebhook](../classes/NotifyNamespace.md#updatewebhook) to mark a
+webhook as active or inactive.
+
+## Table of contents
+
+### Properties
+
+- [isActive](WebhookStatusUpdate.md#isactive)
+
+## Properties
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is active.
+
+#### Defined in
+
+[src/types/types.ts:1334](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1334)
+
+
+================================================================================
+File: docs-md\modules\Utils.md
+Size: 8.98 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / Utils
+
+# Namespace: Utils
+
+## Table of contents
+
+### Classes
+
+- [Interface](../classes/Utils.Interface.md)
+
+### Functions
+
+- [arrayify](Utils.md#arrayify)
+- [concat](Utils.md#concat)
+- [dnsEncode](Utils.md#dnsencode)
+- [formatEther](Utils.md#formatether)
+- [formatUnits](Utils.md#formatunits)
+- [hashMessage](Utils.md#hashmessage)
+- [hexConcat](Utils.md#hexconcat)
+- [hexDataLength](Utils.md#hexdatalength)
+- [hexDataSlice](Utils.md#hexdataslice)
+- [hexStripZeros](Utils.md#hexstripzeros)
+- [hexValue](Utils.md#hexvalue)
+- [hexZeroPad](Utils.md#hexzeropad)
+- [hexlify](Utils.md#hexlify)
+- [id](Utils.md#id)
+- [isBytes](Utils.md#isbytes)
+- [isBytesLike](Utils.md#isbyteslike)
+- [isHexString](Utils.md#ishexstring)
+- [isValidName](Utils.md#isvalidname)
+- [joinSignature](Utils.md#joinsignature)
+- [namehash](Utils.md#namehash)
+- [parseEther](Utils.md#parseether)
+- [parseUnits](Utils.md#parseunits)
+- [splitSignature](Utils.md#splitsignature)
+- [stripZeros](Utils.md#stripzeros)
+- [toUtf8Bytes](Utils.md#toutf8bytes)
+- [toUtf8String](Utils.md#toutf8string)
+- [zeroPad](Utils.md#zeropad)
+
+## Functions
+
+### arrayify
+
+▸ **arrayify**(`value`, `options?`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` \| `BytesLike` \| `Hexable` |
+| `options?` | `DataOptions` |
+
+#### Returns
+
+`Uint8Array`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:28
+
+___
+
+### concat
+
+▸ **concat**(`items`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `items` | readonly `BytesLike`[] |
+
+#### Returns
+
+`Uint8Array`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:29
+
+___
+
+### dnsEncode
+
+▸ **dnsEncode**(`name`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/hash/lib/namehash.d.ts:4
+
+___
+
+### formatEther
+
+▸ **formatEther**(`wei`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `wei` | [`BigNumberish`](../modules.md#bignumberish) |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/units/lib/index.d.ts:5
+
+___
+
+### formatUnits
+
+▸ **formatUnits**(`value`, `unitName?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | [`BigNumberish`](../modules.md#bignumberish) |
+| `unitName?` | [`BigNumberish`](../modules.md#bignumberish) |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/units/lib/index.d.ts:3
+
+___
+
+### hashMessage
+
+▸ **hashMessage**(`message`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` \| `Bytes` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/hash/lib/message.d.ts:3
+
+___
+
+### hexConcat
+
+▸ **hexConcat**(`items`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `items` | readonly `BytesLike`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:36
+
+___
+
+### hexDataLength
+
+▸ **hexDataLength**(`data`): `number`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:34
+
+___
+
+### hexDataSlice
+
+▸ **hexDataSlice**(`data`, `offset`, `endOffset?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `BytesLike` |
+| `offset` | `number` |
+| `endOffset?` | `number` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:35
+
+___
+
+### hexStripZeros
+
+▸ **hexStripZeros**(`value`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `BytesLike` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:38
+
+___
+
+### hexValue
+
+▸ **hexValue**(`value`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` \| `bigint` \| `BytesLike` \| `Hexable` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:37
+
+___
+
+### hexZeroPad
+
+▸ **hexZeroPad**(`value`, `length`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `BytesLike` |
+| `length` | `number` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:39
+
+___
+
+### hexlify
+
+▸ **hexlify**(`value`, `options?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `number` \| `bigint` \| `BytesLike` \| `Hexable` |
+| `options?` | `DataOptions` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:33
+
+___
+
+### id
+
+▸ **id**(`text`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `text` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/hash/lib/id.d.ts:1
+
+___
+
+### isBytes
+
+▸ **isBytes**(`value`): value is Bytes
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+value is Bytes
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:27
+
+___
+
+### isBytesLike
+
+▸ **isBytesLike**(`value`): value is BytesLike
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+value is BytesLike
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:26
+
+___
+
+### isHexString
+
+▸ **isHexString**(`value`, `length?`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `length?` | `number` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:32
+
+___
+
+### isValidName
+
+▸ **isValidName**(`name`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+node_modules/@ethersproject/hash/lib/namehash.d.ts:2
+
+___
+
+### joinSignature
+
+▸ **joinSignature**(`signature`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `signature` | `SignatureLike` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:41
+
+___
+
+### namehash
+
+▸ **namehash**(`name`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/hash/lib/namehash.d.ts:3
+
+___
+
+### parseEther
+
+▸ **parseEther**(`ether`): [`BigNumber`](../classes/BigNumber.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ether` | `string` |
+
+#### Returns
+
+[`BigNumber`](../classes/BigNumber.md)
+
+#### Defined in
+
+node_modules/@ethersproject/units/lib/index.d.ts:6
+
+___
+
+### parseUnits
+
+▸ **parseUnits**(`value`, `unitName?`): [`BigNumber`](../classes/BigNumber.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `string` |
+| `unitName?` | [`BigNumberish`](../modules.md#bignumberish) |
+
+#### Returns
+
+[`BigNumber`](../classes/BigNumber.md)
+
+#### Defined in
+
+node_modules/@ethersproject/units/lib/index.d.ts:4
+
+___
+
+### splitSignature
+
+▸ **splitSignature**(`signature`): `Signature`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `signature` | `SignatureLike` |
+
+#### Returns
+
+`Signature`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:40
+
+___
+
+### stripZeros
+
+▸ **stripZeros**(`value`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `BytesLike` |
+
+#### Returns
+
+`Uint8Array`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:30
+
+___
+
+### toUtf8Bytes
+
+▸ **toUtf8Bytes**(`str`, `form?`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `str` | `string` |
+| `form?` | `UnicodeNormalizationForm` |
+
+#### Returns
+
+`Uint8Array`
+
+#### Defined in
+
+node_modules/@ethersproject/strings/lib/utf8.d.ts:22
+
+___
+
+### toUtf8String
+
+▸ **toUtf8String**(`bytes`, `onError?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `bytes` | `BytesLike` |
+| `onError?` | `Utf8ErrorFunc` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/strings/lib/utf8.d.ts:25
+
+___
+
+### zeroPad
+
+▸ **zeroPad**(`value`, `length`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `BytesLike` |
+| `length` | `number` |
+
+#### Returns
+
+`Uint8Array`
+
+#### Defined in
+
+node_modules/@ethersproject/bytes/lib/index.d.ts:31
+
+
+================================================================================
+File: docs-md\modules.md
+Size: 23.03 kB
+================================================================================
+
+[alchemy-sdk](README.md) / Exports
+
+# alchemy-sdk
+
+## Table of contents
+
+### Namespaces
+
+- [Utils](modules/Utils.md)
+
+### Enumerations
+
+- [AlchemySubscription](enums/AlchemySubscription.md)
+- [AssetTransfersCategory](enums/AssetTransfersCategory.md)
+- [CommitmentLevel](enums/CommitmentLevel.md)
+- [DebugCallType](enums/DebugCallType.md)
+- [DebugTracerType](enums/DebugTracerType.md)
+- [DecodingAuthority](enums/DecodingAuthority.md)
+- [GetTransfersForOwnerTransferType](enums/GetTransfersForOwnerTransferType.md)
+- [HistoricalPriceInterval](enums/HistoricalPriceInterval.md)
+- [Network](enums/Network.md)
+- [NftCollectionMarketplace](enums/NftCollectionMarketplace.md)
+- [NftFilters](enums/NftFilters.md)
+- [NftOrdering](enums/NftOrdering.md)
+- [NftRefreshState](enums/NftRefreshState.md)
+- [NftSaleMarketplace](enums/NftSaleMarketplace.md)
+- [NftSaleTakerType](enums/NftSaleTakerType.md)
+- [NftSpamClassification](enums/NftSpamClassification.md)
+- [NftTokenType](enums/NftTokenType.md)
+- [OpenSeaSafelistRequestStatus](enums/OpenSeaSafelistRequestStatus.md)
+- [SimulateAssetType](enums/SimulateAssetType.md)
+- [SimulateChangeType](enums/SimulateChangeType.md)
+- [SortingOrder](enums/SortingOrder.md)
+- [TokenBalanceType](enums/TokenBalanceType.md)
+- [WebhookType](enums/WebhookType.md)
+- [WebhookVersion](enums/WebhookVersion.md)
+
+### Classes
+
+- [Alchemy](classes/Alchemy.md)
+- [AlchemyConfig](classes/AlchemyConfig.md)
+- [AlchemyProvider](classes/AlchemyProvider.md)
+- [AlchemyWebSocketProvider](classes/AlchemyWebSocketProvider.md)
+- [BigNumber](classes/BigNumber.md)
+- [Contract](classes/Contract.md)
+- [ContractFactory](classes/ContractFactory.md)
+- [CoreNamespace](classes/CoreNamespace.md)
+- [DebugNamespace](classes/DebugNamespace.md)
+- [NftNamespace](classes/NftNamespace.md)
+- [NotifyNamespace](classes/NotifyNamespace.md)
+- [PricesNamespace](classes/PricesNamespace.md)
+- [TransactNamespace](classes/TransactNamespace.md)
+- [Wallet](classes/Wallet.md)
+- [WebSocketNamespace](classes/WebSocketNamespace.md)
+
+### Interfaces
+
+- [AcquiredAt](interfaces/AcquiredAt.md)
+- [AddressActivityResponse](interfaces/AddressActivityResponse.md)
+- [AddressActivityWebhook](interfaces/AddressActivityWebhook.md)
+- [AddressWebhookParams](interfaces/AddressWebhookParams.md)
+- [AlchemyMinedTransactionsEventFilter](interfaces/AlchemyMinedTransactionsEventFilter.md)
+- [AlchemyPendingTransactionsEventFilter](interfaces/AlchemyPendingTransactionsEventFilter.md)
+- [AlchemySettings](interfaces/AlchemySettings.md)
+- [AssetTransfersMetadata](interfaces/AssetTransfersMetadata.md)
+- [AssetTransfersParams](interfaces/AssetTransfersParams.md)
+- [AssetTransfersResponse](interfaces/AssetTransfersResponse.md)
+- [AssetTransfersResult](interfaces/AssetTransfersResult.md)
+- [AssetTransfersWithMetadataParams](interfaces/AssetTransfersWithMetadataParams.md)
+- [AssetTransfersWithMetadataResponse](interfaces/AssetTransfersWithMetadataResponse.md)
+- [AssetTransfersWithMetadataResult](interfaces/AssetTransfersWithMetadataResult.md)
+- [BaseNft](interfaces/BaseNft.md)
+- [BaseNftCollection](interfaces/BaseNftCollection.md)
+- [Block](interfaces/Block.md)
+- [BlockWithTransactions](interfaces/BlockWithTransactions.md)
+- [ComputeRarityResponse](interfaces/ComputeRarityResponse.md)
+- [CustomGraphqlWebhook](interfaces/CustomGraphqlWebhook.md)
+- [CustomGraphqlWebhookConfig](interfaces/CustomGraphqlWebhookConfig.md)
+- [CustomGraphqlWebhookParams](interfaces/CustomGraphqlWebhookParams.md)
+- [DebugCallTrace](interfaces/DebugCallTrace.md)
+- [DebugCallTracer](interfaces/DebugCallTracer.md)
+- [DebugPrestate](interfaces/DebugPrestate.md)
+- [DebugPrestateTracer](interfaces/DebugPrestateTracer.md)
+- [DebugTransaction](interfaces/DebugTransaction.md)
+- [DecodedCallParam](interfaces/DecodedCallParam.md)
+- [DecodedDebugCallTrace](interfaces/DecodedDebugCallTrace.md)
+- [DecodedLog](interfaces/DecodedLog.md)
+- [DecodedLogInput](interfaces/DecodedLogInput.md)
+- [DeployResult](interfaces/DeployResult.md)
+- [DisplayNftForContract](interfaces/DisplayNftForContract.md)
+- [DroppedTransactionWebhook](interfaces/DroppedTransactionWebhook.md)
+- [ERC1155Metadata](interfaces/ERC1155Metadata.md)
+- [EventFilter](interfaces/EventFilter.md)
+- [FeeData](interfaces/FeeData.md)
+- [Filter](interfaces/Filter.md)
+- [FilterByBlockHash](interfaces/FilterByBlockHash.md)
+- [FloorPriceError](interfaces/FloorPriceError.md)
+- [FloorPriceMarketplace](interfaces/FloorPriceMarketplace.md)
+- [GetAddressesOptions](interfaces/GetAddressesOptions.md)
+- [GetAllWebhooksResponse](interfaces/GetAllWebhooksResponse.md)
+- [GetBaseNftsForContractOptions](interfaces/GetBaseNftsForContractOptions.md)
+- [GetBaseNftsForOwnerOptions](interfaces/GetBaseNftsForOwnerOptions.md)
+- [GetContractMetadataBatchResponse](interfaces/GetContractMetadataBatchResponse.md)
+- [GetContractsForOwnerOptions](interfaces/GetContractsForOwnerOptions.md)
+- [GetContractsForOwnerResponse](interfaces/GetContractsForOwnerResponse.md)
+- [GetFloorPriceResponse](interfaces/GetFloorPriceResponse.md)
+- [GetMintedNftsOptions](interfaces/GetMintedNftsOptions.md)
+- [GetNftMetadataBatchResponse](interfaces/GetNftMetadataBatchResponse.md)
+- [GetNftMetadataOptions](interfaces/GetNftMetadataOptions.md)
+- [GetNftSalesOptions](interfaces/GetNftSalesOptions.md)
+- [GetNftSalesOptionsByContractAddress](interfaces/GetNftSalesOptionsByContractAddress.md)
+- [GetNftSalesResponse](interfaces/GetNftSalesResponse.md)
+- [GetNftsForContractOptions](interfaces/GetNftsForContractOptions.md)
+- [GetNftsForOwnerOptions](interfaces/GetNftsForOwnerOptions.md)
+- [GetOwnersForContractOptions](interfaces/GetOwnersForContractOptions.md)
+- [GetOwnersForContractResponse](interfaces/GetOwnersForContractResponse.md)
+- [GetOwnersForContractWithTokenBalancesOptions](interfaces/GetOwnersForContractWithTokenBalancesOptions.md)
+- [GetOwnersForContractWithTokenBalancesResponse](interfaces/GetOwnersForContractWithTokenBalancesResponse.md)
+- [GetOwnersForNftOptions](interfaces/GetOwnersForNftOptions.md)
+- [GetOwnersForNftResponse](interfaces/GetOwnersForNftResponse.md)
+- [GetSpamContractsResponse](interfaces/GetSpamContractsResponse.md)
+- [GetTokenPriceByAddressResponse](interfaces/GetTokenPriceByAddressResponse.md)
+- [GetTokenPriceBySymbolRequest](interfaces/GetTokenPriceBySymbolRequest.md)
+- [GetTokenPriceBySymbolResponse](interfaces/GetTokenPriceBySymbolResponse.md)
+- [GetTokensForOwnerOptions](interfaces/GetTokensForOwnerOptions.md)
+- [GetTokensForOwnerResponse](interfaces/GetTokensForOwnerResponse.md)
+- [GetTransfersForContractOptions](interfaces/GetTransfersForContractOptions.md)
+- [GetTransfersForOwnerOptions](interfaces/GetTransfersForOwnerOptions.md)
+- [HistoricalPriceByAddressResponse](interfaces/HistoricalPriceByAddressResponse.md)
+- [HistoricalPriceBySymbolResponse](interfaces/HistoricalPriceBySymbolResponse.md)
+- [HistoricalPriceDataPoint](interfaces/HistoricalPriceDataPoint.md)
+- [IsAirdropNftResponse](interfaces/IsAirdropNftResponse.md)
+- [IsSpamContractResponse](interfaces/IsSpamContractResponse.md)
+- [Log](interfaces/Log.md)
+- [MinedTransactionWebhook](interfaces/MinedTransactionWebhook.md)
+- [Nft](interfaces/Nft.md)
+- [NftActivityWebhook](interfaces/NftActivityWebhook.md)
+- [NftAttributeRarity](interfaces/NftAttributeRarity.md)
+- [NftAttributesResponse](interfaces/NftAttributesResponse.md)
+- [NftCollection](interfaces/NftCollection.md)
+- [NftCollectionFloorPrice](interfaces/NftCollectionFloorPrice.md)
+- [NftContract](interfaces/NftContract.md)
+- [NftContractBaseNftsResponse](interfaces/NftContractBaseNftsResponse.md)
+- [NftContractForNft](interfaces/NftContractForNft.md)
+- [NftContractForOwner](interfaces/NftContractForOwner.md)
+- [NftContractNftsResponse](interfaces/NftContractNftsResponse.md)
+- [NftContractOwner](interfaces/NftContractOwner.md)
+- [NftContractTokenBalance](interfaces/NftContractTokenBalance.md)
+- [NftFilter](interfaces/NftFilter.md)
+- [NftFiltersResponse](interfaces/NftFiltersResponse.md)
+- [NftImage](interfaces/NftImage.md)
+- [NftMetadata](interfaces/NftMetadata.md)
+- [NftMetadataBatchOptions](interfaces/NftMetadataBatchOptions.md)
+- [NftMetadataBatchToken](interfaces/NftMetadataBatchToken.md)
+- [NftMetadataUpdateWebhook](interfaces/NftMetadataUpdateWebhook.md)
+- [NftMint](interfaces/NftMint.md)
+- [NftRawMetadata](interfaces/NftRawMetadata.md)
+- [NftSale](interfaces/NftSale.md)
+- [NftSaleFeeData](interfaces/NftSaleFeeData.md)
+- [NftSaleValidAt](interfaces/NftSaleValidAt.md)
+- [NftWebhookParams](interfaces/NftWebhookParams.md)
+- [OpenSeaCollectionMetadata](interfaces/OpenSeaCollectionMetadata.md)
+- [OwnedBaseNft](interfaces/OwnedBaseNft.md)
+- [OwnedBaseNftsResponse](interfaces/OwnedBaseNftsResponse.md)
+- [OwnedNft](interfaces/OwnedNft.md)
+- [OwnedNftsResponse](interfaces/OwnedNftsResponse.md)
+- [OwnedNftsValidAt](interfaces/OwnedNftsValidAt.md)
+- [OwnedToken](interfaces/OwnedToken.md)
+- [RawContract](interfaces/RawContract.md)
+- [RefreshContractResult](interfaces/RefreshContractResult.md)
+- [SearchContractMetadataResponse](interfaces/SearchContractMetadataResponse.md)
+- [SendPrivateTransactionOptions](interfaces/SendPrivateTransactionOptions.md)
+- [SimulateAssetChangesChange](interfaces/SimulateAssetChangesChange.md)
+- [SimulateAssetChangesError](interfaces/SimulateAssetChangesError.md)
+- [SimulateAssetChangesResponse](interfaces/SimulateAssetChangesResponse.md)
+- [SimulateExecutionResponse](interfaces/SimulateExecutionResponse.md)
+- [SimulationCallTrace](interfaces/SimulationCallTrace.md)
+- [SimulationDebugLog](interfaces/SimulationDebugLog.md)
+- [TokenAddressRequest](interfaces/TokenAddressRequest.md)
+- [TokenBalanceFailure](interfaces/TokenBalanceFailure.md)
+- [TokenBalanceSuccess](interfaces/TokenBalanceSuccess.md)
+- [TokenBalancesOptionsDefaultTokens](interfaces/TokenBalancesOptionsDefaultTokens.md)
+- [TokenBalancesOptionsErc20](interfaces/TokenBalancesOptionsErc20.md)
+- [TokenBalancesResponse](interfaces/TokenBalancesResponse.md)
+- [TokenBalancesResponseErc20](interfaces/TokenBalancesResponseErc20.md)
+- [TokenMetadataResponse](interfaces/TokenMetadataResponse.md)
+- [TokenPrice](interfaces/TokenPrice.md)
+- [TokenPriceByAddressResult](interfaces/TokenPriceByAddressResult.md)
+- [TokenPriceBySymbolResult](interfaces/TokenPriceBySymbolResult.md)
+- [TokenPriceError](interfaces/TokenPriceError.md)
+- [TransactionReceipt](interfaces/TransactionReceipt.md)
+- [TransactionReceiptsBlockHash](interfaces/TransactionReceiptsBlockHash.md)
+- [TransactionReceiptsBlockNumber](interfaces/TransactionReceiptsBlockNumber.md)
+- [TransactionReceiptsResponse](interfaces/TransactionReceiptsResponse.md)
+- [TransactionResponse](interfaces/TransactionResponse.md)
+- [TransactionWebhookParams](interfaces/TransactionWebhookParams.md)
+- [TransferredNft](interfaces/TransferredNft.md)
+- [TransfersNftResponse](interfaces/TransfersNftResponse.md)
+- [Webhook](interfaces/Webhook.md)
+- [WebhookAddressOverride](interfaces/WebhookAddressOverride.md)
+- [WebhookAddressUpdate](interfaces/WebhookAddressUpdate.md)
+- [WebhookNftFilterUpdate](interfaces/WebhookNftFilterUpdate.md)
+- [WebhookNftMetadataFilterUpdate](interfaces/WebhookNftMetadataFilterUpdate.md)
+- [WebhookStatusUpdate](interfaces/WebhookStatusUpdate.md)
+
+### Type aliases
+
+- [AddressWebhookUpdate](modules.md#addresswebhookupdate)
+- [AlchemyEventFilter](modules.md#alchemyeventfilter)
+- [AlchemyEventType](modules.md#alchemyeventtype)
+- [AlchemyMinedTransactionsAddress](modules.md#alchemyminedtransactionsaddress)
+- [BigNumberish](modules.md#bignumberish)
+- [BlockIdentifier](modules.md#blockidentifier)
+- [BlockTag](modules.md#blocktag)
+- [CustomGraphqlWebhookUpdate](modules.md#customgraphqlwebhookupdate)
+- [DebugPrestateTrace](modules.md#debugprestatetrace)
+- [EventType](modules.md#eventtype)
+- [HistoricalPriceResponse](modules.md#historicalpriceresponse)
+- [LogLevel](modules.md#loglevel)
+- [NftMetadataWebhookUpdate](modules.md#nftmetadatawebhookupdate)
+- [NftWebhookUpdate](modules.md#nftwebhookupdate)
+- [NonEmptyArray](modules.md#nonemptyarray)
+- [RequireAtLeastOne](modules.md#requireatleastone)
+- [TokenBalance](modules.md#tokenbalance)
+- [TransactionReceiptsParams](modules.md#transactionreceiptsparams)
+- [TransactionRequest](modules.md#transactionrequest)
+
+### Functions
+
+- [fromHex](modules.md#fromhex)
+- [isHex](modules.md#ishex)
+- [setLogLevel](modules.md#setloglevel)
+- [toHex](modules.md#tohex)
+
+## Type aliases
+
+### AddressWebhookUpdate
+
+Ƭ **AddressWebhookUpdate**: [`WebhookStatusUpdate`](interfaces/WebhookStatusUpdate.md) \| [`RequireAtLeastOne`](modules.md#requireatleastone)<[`WebhookAddressUpdate`](interfaces/WebhookAddressUpdate.md)\> \| [`WebhookAddressOverride`](interfaces/WebhookAddressOverride.md)
+
+Params object when calling [NotifyNamespace.updateWebhook](classes/NotifyNamespace.md#updatewebhook) to update a
+[AddressActivityWebhook](interfaces/AddressActivityWebhook.md).
+
+#### Defined in
+
+[src/types/types.ts:1405](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1405)
+
+___
+
+### AlchemyEventFilter
+
+Ƭ **AlchemyEventFilter**: [`AlchemyMinedTransactionsEventFilter`](interfaces/AlchemyMinedTransactionsEventFilter.md) \| [`AlchemyPendingTransactionsEventFilter`](interfaces/AlchemyPendingTransactionsEventFilter.md)
+
+This type represents the Alchemy's Subscription API endpoints as event
+filters compatible with other ethers events.
+
+#### Defined in
+
+[src/types/types.ts:804](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L804)
+
+___
+
+### AlchemyEventType
+
+Ƭ **AlchemyEventType**: [`EventType`](modules.md#eventtype) \| [`AlchemyEventFilter`](modules.md#alchemyeventfilter)
+
+Alchemy's event type that extends the default [EventType](modules.md#eventtype) interface to
+also include Alchemy's Subscription API.
+
+#### Defined in
+
+[src/types/types.ts:798](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L798)
+
+___
+
+### AlchemyMinedTransactionsAddress
+
+Ƭ **AlchemyMinedTransactionsAddress**: [`RequireAtLeastOne`](modules.md#requireatleastone)<{ `from?`: `string` ; `to?`: `string`  }\>
+
+Address filters for [AlchemyMinedTransactionsEventFilter](interfaces/AlchemyMinedTransactionsEventFilter.md). Requires at
+least one of the fields to be set.
+
+#### Defined in
+
+[src/types/types.ts:787](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L787)
+
+___
+
+### BigNumberish
+
+Ƭ **BigNumberish**: [`BigNumber`](classes/BigNumber.md) \| `Bytes` \| `bigint` \| `string` \| `number`
+
+#### Defined in
+
+node_modules/@ethersproject/bignumber/lib/bignumber.d.ts:2
+
+___
+
+### BlockIdentifier
+
+Ƭ **BlockIdentifier**: `string` \| [`CommitmentLevel`](enums/CommitmentLevel.md)
+
+The block identifier to specify which block to run a debug call in, used for
+methods in the [DebugNamespace](classes/DebugNamespace.md).
+
+#### Defined in
+
+[src/types/types.ts:1466](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1466)
+
+___
+
+### BlockTag
+
+Ƭ **BlockTag**: `string` \| `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:33
+
+___
+
+### CustomGraphqlWebhookUpdate
+
+Ƭ **CustomGraphqlWebhookUpdate**: [`WebhookStatusUpdate`](interfaces/WebhookStatusUpdate.md)
+
+Params object when calling [NotifyNamespace.updateWebhook](classes/NotifyNamespace.md#updatewebhook) to update a
+[CustomGraphqlWebhook](interfaces/CustomGraphqlWebhook.md).
+
+#### Defined in
+
+[src/types/types.ts:1399](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1399)
+
+___
+
+### DebugPrestateTrace
+
+Ƭ **DebugPrestateTrace**: `Record`<`string`, [`DebugPrestate`](interfaces/DebugPrestate.md)\>
+
+Debug result returned by a [DebugPrestateTracer](interfaces/DebugPrestateTracer.md).
+
+The keys are the addresses of the accounts, mapped to its corresponding state.
+
+#### Defined in
+
+[src/types/types.ts:1583](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1583)
+
+___
+
+### EventType
+
+Ƭ **EventType**: `string` \| (`string` \| `string`[])[] \| `EventFilter` \| `ForkEvent`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:121
+
+___
+
+### HistoricalPriceResponse
+
+Ƭ **HistoricalPriceResponse**: [`HistoricalPriceBySymbolResponse`](interfaces/HistoricalPriceBySymbolResponse.md) \| [`HistoricalPriceByAddressResponse`](interfaces/HistoricalPriceByAddressResponse.md)
+
+Type helper to infer the correct response type based on the request type.
+
+#### Defined in
+
+[src/types/prices-types.ts:172](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L172)
+
+___
+
+### LogLevel
+
+Ƭ **LogLevel**: ``"debug"`` \| ``"info"`` \| ``"warn"`` \| ``"error"`` \| ``"silent"``
+
+The level of verbosity for the logger.
+
+#### Defined in
+
+[src/util/logger.ts:22](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/util/logger.ts#L22)
+
+___
+
+### NftMetadataWebhookUpdate
+
+Ƭ **NftMetadataWebhookUpdate**: [`WebhookStatusUpdate`](interfaces/WebhookStatusUpdate.md) \| [`RequireAtLeastOne`](modules.md#requireatleastone)<[`WebhookNftMetadataFilterUpdate`](interfaces/WebhookNftMetadataFilterUpdate.md)\>
+
+Params object when calling [NotifyNamespace.updateWebhook](classes/NotifyNamespace.md#updatewebhook) to update a
+[NftMetadataUpdateWebhook](interfaces/NftMetadataUpdateWebhook.md).
+
+#### Defined in
+
+[src/types/types.ts:1391](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1391)
+
+___
+
+### NftWebhookUpdate
+
+Ƭ **NftWebhookUpdate**: [`WebhookStatusUpdate`](interfaces/WebhookStatusUpdate.md) \| [`RequireAtLeastOne`](modules.md#requireatleastone)<[`WebhookNftFilterUpdate`](interfaces/WebhookNftFilterUpdate.md)\>
+
+Params object when calling [NotifyNamespace.updateWebhook](classes/NotifyNamespace.md#updatewebhook) to update a
+[NftActivityWebhook](interfaces/NftActivityWebhook.md).
+
+#### Defined in
+
+[src/types/types.ts:1383](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1383)
+
+___
+
+### NonEmptyArray
+
+Ƭ **NonEmptyArray**<`T`\>: [`T`, ...T[]]
+
+Requires an array with at least one value.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+[src/types/types.ts:1609](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1609)
+
+___
+
+### RequireAtLeastOne
+
+Ƭ **RequireAtLeastOne**<`T`\>: { [K in keyof T]-?: Required<Pick<T, K\>\> & Partial<Pick<T, Exclude<keyof T, K\>\>\> }[keyof `T`]
+
+Requires at least one of the properties to be set.
+
+Implementation copied over from
+[https://learn.microsoft.com/en-us/javascript/api/@azure/keyvault-certificates/requireatleastone?view=azure-node-latest](https://learn.microsoft.com/en-us/javascript/api/@azure/keyvault-certificates/requireatleastone?view=azure-node-latest)
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+[src/types/types.ts:1603](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1603)
+
+___
+
+### TokenBalance
+
+Ƭ **TokenBalance**: [`TokenBalanceSuccess`](interfaces/TokenBalanceSuccess.md) \| [`TokenBalanceFailure`](interfaces/TokenBalanceFailure.md)
+
+#### Defined in
+
+[src/types/types.ts:244](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L244)
+
+___
+
+### TransactionReceiptsParams
+
+Ƭ **TransactionReceiptsParams**: [`TransactionReceiptsBlockNumber`](interfaces/TransactionReceiptsBlockNumber.md) \| [`TransactionReceiptsBlockHash`](interfaces/TransactionReceiptsBlockHash.md)
+
+The parameters to use with the [CoreNamespace.getTransactionReceipts](classes/CoreNamespace.md#gettransactionreceipts) method.
+
+#### Defined in
+
+[src/types/types.ts:648](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L648)
+
+___
+
+### TransactionRequest
+
+Ƭ **TransactionRequest**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `accessList?` | `AccessListish` |
+| `ccipReadEnabled?` | `boolean` |
+| `chainId?` | `number` |
+| `customData?` | `Record`<`string`, `any`\> |
+| `data?` | `BytesLike` |
+| `from?` | `string` |
+| `gasLimit?` | [`BigNumberish`](modules.md#bignumberish) |
+| `gasPrice?` | [`BigNumberish`](modules.md#bignumberish) |
+| `maxFeePerGas?` | [`BigNumberish`](modules.md#bignumberish) |
+| `maxPriorityFeePerGas?` | [`BigNumberish`](modules.md#bignumberish) |
+| `nonce?` | [`BigNumberish`](modules.md#bignumberish) |
+| `to?` | `string` |
+| `type?` | `number` |
+| `value?` | [`BigNumberish`](modules.md#bignumberish) |
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:7
+
+## Functions
+
+### fromHex
+
+▸ **fromHex**(`hexString`): `number`
+
+Converts a hex string to a decimal number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `hexString` | `string` | The hex string to convert. |
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[src/api/util.ts:9](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/util.ts#L9)
+
+___
+
+### isHex
+
+▸ **isHex**(`possibleHexString`): `boolean`
+
+Checks if a value is a hex string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `possibleHexString` | `string` | The value to check. |
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[src/api/util.ts:29](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/util.ts#L29)
+
+___
+
+### setLogLevel
+
+▸ **setLogLevel**(`logLevel`): `void`
+
+Configures the verbosity of logging. The default log level is `info`.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `logLevel` | [`LogLevel`](modules.md#loglevel) | The verbosity of logging. Can be any of the following values:    - `debug`: The most verbose logging level.   - `info`: The default logging level.   - `warn`: A logging level for non-critical issues.   - `error`: A logging level for critical issues.   - `silent`: Turn off all logging. |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/util/logger.ts:56](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/util/logger.ts#L56)
+
+___
+
+### toHex
+
+▸ **toHex**(`num`): `string`
+
+Converts a number to a hex string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `num` | `number` | The number to convert to hex. |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/api/util.ts:19](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/util.ts#L19)
+
+
+================================================================================
+File: docs-md\README.md
+Size: 21.16 kB
+================================================================================
+
+alchemy-sdk / [Exports](modules.md)
+
+Alchemy SDK for Javascript
+
+The Alchemy SDK is the most comprehensive, stable, and powerful Javascript SDK available today to interact with the blockchain.
+
+It supports the exact same syntax and functionality of the Ethers.js `AlchemyProvider` and `WebSocketProvider`, making it a 1:1 mapping for anyone using the Ethers.js `Provider`. However, it adds a significant amount of improved functionality on top of Ethers, such as easy access to Alchemy’s Enhanced and NFT APIs, robust WebSockets, and quality-of-life improvements such as automated retries.
+
+The SDK leverages Alchemy's hardened node infrastructure, guaranteeing best-in-class node reliability, scalability, and data correctness, and is undergoing active development by Alchemy's engineers.
+
+> 🙋‍♀️ **FEATURE REQUESTS:**
+>
+> We'd love your thoughts on what would improve your web3 dev process the most! If you have 5 minutes, tell us what you want on our [Feature Request feedback form](https://alchemyapi.typeform.com/sdk-feedback), and we'd love to build it for you.
+
+The SDK currently supports the following chains (chains with '(d)' after are deprecated):
+
+- **Ethereum**: Mainnet, Goerli (d), Sepolia, Holesky
+- **Polygon**: Mainnet, Mumbai (d), Amoy
+- **Optimism**: Mainnet, Goerli (d), Sepolia
+- **Arbitrum**: Mainnet, Goerli (d), Sepolia
+- **Astar**: Mainnet
+- **PolygonZKEVM**: Mainnet, Testnet(d), Cardona
+- **Base**: Mainnet, Goerli (d), Sepolia
+- **Zksync**: Mainnet, Sepolia
+- **Shape**: Mainnet, Sepolia
+- **Linea**: Mainnet, Sepolia
+- **Fantom**: Mainnet, Testnet
+- **Zetachain**: Mainnet, Testnet
+- **Arbnova**: Mainnet
+- **Blast**: Mainnet, Sepolia
+- **Mantle**: Mainnet, Sepolia
+- **Scroll**: Mainnet, Sepolia
+- **Gnosis**: Mainnet, Chiado
+- **BNB**: Mainnet, Testnet
+- **Avalanche**: Mainnet, Fuji
+- **Celo**: Mainnet, Alfajores
+- **Metis**: Mainnet
+- **OpBNB**: Mainnet, Testnet
+- **Berachain**: Mainnet, Bartio
+- **Soneium**: Mainnet, Minato
+- **Worldchain**: Mainnet, Sepolia
+- **Rootstock**: Mainnet, Testnet
+- **Flow**: Mainnet, Testnet
+- **Zora**: Mainnet, Sepolia
+- **Frax**: Mainnet, Sepolia
+- **Polynomial**: Mainnet, Sepolia
+- **Crossfi**: Mainnet, Testnet
+- **Apechain**: Mainnet, Curtis
+- **Lens**: Sepolia
+- **Geist**: Mainnet, Polter
+- **Lumia**: Prism, Testnet
+- **Unichain**: Sepolia
+- **Sonic**: Mainnet, Blaze
+- **XMTP**: Testnet
+- **Abstract**: Testnet
+- **Degen**: Mainnet
+- **Ink**: Mainnet, Sepolia
+
+You can find per-method documentation of the Alchemy SDK endpoints at the [Alchemy Docs linked in the sidebar](https://docs.alchemy.com/reference/alchemy-sdk-quickstart).
+
+## Getting started
+
+```
+npm install alchemy-sdk
+```
+
+After installing the app, you can then import and use the SDK:
+
+```ts
+import { Alchemy, Network } from 'alchemy-sdk';
+
+// Optional config object, but defaults to the API key 'demo' and Network 'eth-mainnet'.
+const settings = {
+  apiKey: 'demo', // Replace with your Alchemy API key.
+  network: Network.ETH_MAINNET // Replace with your network.
+};
+
+const alchemy = new Alchemy(settings);
+```
+
+> **ℹ️ Creating a unique Alchemy API Key**
+>
+> The public "demo" API key may be rate limited based on traffic. To create your own API key, **[sign up for an Alchemy account here](https://alchemy.com/?a=SDKquickstart)** and use the key created on your dashboard for the first app.
+
+The `Alchemy` object returned by `new Alchemy()` provides access to the Alchemy API. An optional config object can be passed in when initializing to set your API key, change the network, or specify the max number of retries.
+
+## Using the Alchemy SDK
+
+The Alchemy SDK currently supports the following namespaces:
+
+- `core`: All commonly-used Ethers.js Provider methods and Alchemy Enhanced API methods
+- `nft`: All Alchemy NFT API methods
+- `ws`: All WebSockets methods
+- `transact`: All Alchemy Transaction API methods
+- `notify`: CRUD endpoints for modifying Alchemy Notify Webhooks
+- `debug`: Methods to inspect and replay transactions and blocks
+
+If you are already using Ethers.js, you should be simply able to replace the Ethers.js Provider object with `alchemy.core` and it should work properly.
+
+> **ℹ️ ENS Name Resolution**
+>
+> The Alchemy SDK now supports ENS names (e.g. `vitalik.eth`) for every parameter where you can pass in a Externally Owned Address, or user address (e.g. `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`).
+
+```ts
+import { Alchemy, AlchemySubscription } from 'alchemy-sdk';
+
+// Using default settings - pass in a settings object to specify your API key and network
+const alchemy = new Alchemy();
+
+// Access standard Ethers.js JSON-RPC node request
+alchemy.core.getBlockNumber().then(console.log);
+
+// Access Alchemy Enhanced API requests
+alchemy.core
+  .getTokenBalances('0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE')
+  .then(console.log);
+
+// Access the Alchemy NFT API
+alchemy.nft.getNftsForOwner('vitalik.eth').then(console.log);
+
+// Access WebSockets and Alchemy-specific WS methods
+alchemy.ws.on(
+  {
+    method: AlchemySubscription.PENDING_TRANSACTIONS
+  },
+  res => console.log(res)
+);
+```
+
+The Alchemy SDK also supports a number of Ethers.js objects that streamline the development process:
+
+- [`Utils`](https://docs.ethers.io/v5/api/utils/): Equivalent to `ethers.utils`, this provides a number of common Ethers.js utility methods for developers.
+  - [`Interface`](https://docs.ethers.io/v5/api/utils/abi/interface/): Found in `Utils.Interface`, this class abstracts the encoding and decoding required to interact with contracts on the Ethereum network.
+- [`Contract`](https://docs.ethers.io/v5/api/contract/contract/): An abstraction for smart contract code deployed to the blockchain.
+- [`ContractFactory`](https://docs.ethers.io/v5/api/contract/contract-factory/): Allows developers to build a `Contract` object.
+- [`Wallet`](https://docs.ethers.io/v5/api/signer/#Wallet): An implementation of `Signer` that can sign transactions and messages using a private key as a standard Externally Owned Account.
+
+## Alchemy Settings
+
+An `AlchemySettings` object can be passed on instantiation to the Alchemy object, with the following optional parameters:
+
+- `apiKey`: API key that can be found in the Alchemy dashboard. Defaults to `demo`: a rate-limited public key.
+- `network`: Name of the network. Defaults to `Network.ETH_MAINNET`
+- `maxRetries`: The maximum number of retries to attempt if a request fails. Defaults to 5.
+- `url`: Optional URL endpoint to use for all requests. Setting this field will override the URL generated by the `network` and`apiKey` fields.
+- `authToken`: Alchemy auth token required to use the Notify API. This token can be found in the Alchemy Dashboard on the Notify tab.
+- `batchRequests`: Optional setting that automatically batches and sends json-rpc requests for higher throughput and reduced network IO. Defaults to false.
+- `requestTimeout`: Optional setting that sets the timeout for requests in milliseconds for the NFT and Notify namespaces. Defaults to no timeout.
+
+## Alchemy Core
+
+The core namespace contains all commonly-used [Ethers.js Provider](https://docs.ethers.io/v5/api/providers/api-providers/#AlchemyProvider) methods. If you are already using Ethers.js, you should be simply able to replace the Ethers.js Provider object with `alchemy.core` when accessing provider methods and it should just work.
+
+It also includes the majority of Alchemy Enhanced APIs, including:
+
+- `getTokenMetadata()`: Get the metadata for a token contract address.
+- `getTokenBalances()`: Gets the token balances for an owner given a list of contracts.
+- `getAssetTransfers()`: Get transactions for specific addresses.
+- `getTransactionReceipts()`: Gets all transaction receipts for a given block.
+
+You will also find the following utility methods:
+
+- `findContractDeployer()`: Find the contract deployer and block number for a given contract address.
+- `getTokensForOwner()`: Get all token balances and metadata for a given owner address
+
+### Accessing the full Ethers.js Provider
+
+To keep the package clean, we don't support certain uncommonly-used Ethers.js Provider methods as top-level methods in the Alchemy `core` namespace - for example, `provider.formatter`. If you'd like to access these methods, simply use the `alchemy.config.getProvider()` function to configure the
+Ethers.js Provider [AlchemyProvider](https://docs.ethers.io/v5/api/providers/api-providers/#AlchemyProvider) and return it.
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+async function runAlchemy() {
+  const ethersProvider = await alchemy.config.getProvider();
+  console.log(ethersProvider.formatter);
+}
+runAlchemy();
+```
+
+## Alchemy WebSockets
+
+In addition to the built-in Ethers.js listeners, the Alchemy SDK includes support for [Alchemy's Subscription API](https://docs.alchemy.com/alchemy/enhanced-apis/subscription-api-websockets). This allows you to subscribe to events and receive updates as they occur.
+
+The `alchemy.ws` instance can be used like the standard Ethers.js [WebSocketProvider](https://docs.ethers.io/v5/api/providers/other/#WebSocketProvider) to add listeners for Alchemy events:
+
+```ts
+import { Alchemy, AlchemySubscription } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+// Listen to all new pending transactions.
+alchemy.ws.on('block', res => console.log(res));
+
+// Listen to only the next transaction on the USDC contract.
+alchemy.ws.once(
+  {
+    method: AlchemySubscription.PENDING_TRANSACTIONS,
+    toAddress: 'vitalik.eth'
+  },
+  res => console.log(res)
+);
+
+// Remove all listeners.
+alchemy.ws.removeAllListeners();
+```
+
+The SDK brings multiple improvements to ensure correct WebSocket behavior in cases of temporary network failure or
+dropped connections. As with any network connection, you should not assume that a WebSocket will remain open forever
+without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get
+right. The Alchemy SDK automatically handles these failures with no configuration necessary. The main benefits are:
+
+- Resilient event delivery: Unlike standard Web3.js or Ethers.js, you will not permanently miss events which arrive
+  while the backing WebSocket is temporarily down. Instead, you will receive these events as soon as the connection
+  is reopened. Note that if the connection is down for more than 120 blocks (approximately 20 minutes), you may
+  still miss some events that were not part of the most recent 120 blocks.
+- Lowered rate of failure: Compared to standard Web3.js or Ethers.js, there are fewer failures when sending requests
+  over the WebSocket while the connection is down. The Alchemy SDK will attempt to send the requests once the connection
+  is reopened. Note that it is still possible, with a lower likelihood, for outgoing requests to be lost,
+  so you should still have error handling as with any network request.
+
+## Alchemy Transact
+
+The `transact` namespace contains methods used for simulating and sending transactions. The unique methods to the `transact` namespace are:
+
+- `sendPrivateTransaction()`: Send a private transaction through Flashbots.
+- `cancelPrivateTransaction()`: Cancel a private transaction sent with Flashbots.
+- `simulateAssetChanges()`: Simulate a transaction and get a list of asset changes.
+- `simulateExecution()`: Simulate a transaction and get a full list of internal transactions, logs, ABI decoded results and more.
+- `simulateAssetChangesBundle()`: Simulate a list of transactions in sequence and get a list of asset changes.
+- `simulateExecutionBundle()`: Simulate a list of transactions in sequence and get a full list of internal transactions, logs, ABI decoded results and more.
+
+The `transact` namespace also aliases over several commonly used methods from the `core` namespace for convenience:
+
+- `getTransaction()`: Returns the transaction for the given transaction hash.
+- `sendTransaction()`: Sends a standard transaction to the network to be mined.
+- `waitForTransaction()`: Waits for a transaction to be mined and returns the transaction receipt.
+
+## Alchemy NFT API
+
+The SDK currently supports the following [NFT API](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api) endpoints
+under the `alchemy.nft` namespace:
+
+- `getNftMetadata()`: Get the NFT metadata for an NFT contract address and tokenId.
+- `getNftMetadataBatch()`: Get the NFT metadata for multiple NFT contract addresses/token id pairs.
+- `getContractMetadata()`: Get the metadata associated with an NFT contract
+- `getContractMetadataBatch()`: Get the metadata associated with multiple NFT contracts in a single request.
+- `getContractsForOwner()`: Get all NFT contracts that the provided owner address owns.
+- `getNftsForOwner()`: Get NFTs for an owner address.
+- `getNftsForOwnerIterator()`: Get NFTs for an owner address as an async iterator (handles paging automatically).
+- `getNftsForContract()`: Get all NFTs for a contract address.
+- `getNftsForContractIterator()`: Get all NFTs for a contract address as an async iterator (handles paging
+  automatically).
+- `getOwnersForNft()`: Get all the owners for a given NFT contract address and a particular token ID.
+- `getOwnersForContract()`: Get all the owners for a given NFT contract address.
+- `getMintedNfts()`: Get all the NFTs minted by the owner address.
+- `getTransfersForOwner()`: Get all the NFT transfers for a given owner address.
+- `getTransfersForContract()`: Get all the NFT transfers for a given NFT contract address.
+- `verifyNftOwnership()`: Check whether the provided owner address owns the provided NFT contract addresses.
+- `isSpamContract()`: Check whether the given NFT contract address is a spam contract as defined by Alchemy (see the [NFT API FAQ](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/nft-api-faq#nft-spam-classification))
+- `getSpamContracts()`: Returns a list of all spam contracts marked by Alchemy.
+- `reportSpam()`: Report feedback that a given NFT contract address is a spam contract as defined by Alchemy.
+- `isAirdropNft()`: Check whether the given NFT token is marked as an airdrop or not. Airdrops are defined as NFTs that were minted to a user address in a transaction sent by a different address.
+- `refreshNftMetadata()`: Refresh the cached NFT metadata for a contract address and a single tokenId.
+- `refreshContract()`: Enqueues the specified contract address to have all token ids' metadata refreshed.
+- `getFloorPrice()`: Return the floor prices of a NFT contract by marketplace.
+- `computeRarity()`: Get the rarity of each attribute of an NFT.
+- `getNftSales()`: Returns NFT sales that have happened through on-chain marketplaces.
+- `summarizeNftAttributes()`: Get the summary of attribute prevalence for all NFTs in a contract.
+- `searchContractMetadata()`: Search for a keyword across metadata of all ERC-721 and ERC-1155 smart contracts.
+
+### Pagination
+
+The Alchemy NFT endpoints return 100 results per page. To get the next page, you can pass in the `pageKey` returned by
+the
+previous call. To simplify paginating through all results, the SDK provides the `getNftsIterator()`
+and `getNftsForContractIterator()` functions that automatically paginate through all NFTs and yields them via
+an `AsyncIterable`.
+
+Here's an example of how to paginate through all the NFTs in Vitalik's ENS address:
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+async function main() {
+  const ownerAddress = 'vitalik.eth';
+  for await (const nft of alchemy.nft.getNftsForOwnerIterator(ownerAddress)) {
+    console.log('ownedNft:', nft);
+  }
+}
+
+main();
+```
+
+### SDK vs API Differences
+
+The NFT API in the SDK standardizes response types to reduce developer friction, but note this results in some
+differences compared to the Alchemy REST endpoints:
+
+- Methods referencing `Collection` have been renamed to use the name `Contract` for greater accuracy: e.g. `getNftsForContract`.
+- Some methods have different naming that the REST API counterparts in order to provide a consistent API interface (
+  e.g. `getNftsForOwner()` is `alchemy_getNfts`, `getOwnersForNft()` is `alchemy_getOwnersForToken`).
+- SDK standardizes to `omitMetadata` parameter (vs. `withMetadata`).
+- Standardization to `pageKey` parameter for pagination (vs. `nextToken`/`startToken`)
+- Empty `TokenUri` fields are omitted.
+- Token ID is always normalized to an integer string on `BaseNft` and `Nft`.
+- Some fields omitted in the REST response are included in the SDK response in order to return an `Nft` object.
+- Some fields in the SDK's `Nft` object are named differently than the REST response.
+
+## Alchemy Notify
+
+The [Alchemy Notify API](https://docs.alchemy.com/reference/notify-api-quickstart) helps developers set up webhooks in their apps. The namespace provides methods to programmatically create, read, update, and delete your webhooks along with typings for the different webhooks. To learn more about Webhooks, please refer to the [Alchemy documentation](https://docs.alchemy.com/reference/notify-api-quickstart#what-are-webhooks).
+
+Methods on the `NotifyNamespace` can be accessed via `alchemy.notify`. To use the methods, you must include your team's auth token in the `authToken` field of `AlchemySettings` when instantiating the SDK. The auth token can be found on the Alchemy Dashboard in the Notify Tab.
+
+Methods include:
+
+- `getAllWebhooks()`: Get all webhooks on your team.
+- `getAddresses()`: Get all addresses tracked for the provided Address Activity Webhook.
+- `getNftFilters()`: Get all NFT filters tracked for the provided NFT Activity Webhook.
+- `createWebhook()`: Create a new webhook.
+- `updateWebhook()`: Update an existing webhook's active status or tracked addresses and NFT filters.
+- `deleteWebhook()`: Delete the provided webhook.
+
+## Alchemy Debug
+
+Methods on the `DebugNamespace` can be accessed via `alchemy.debug`. These methods are used for inspecting and debugging transactions.
+
+Methods include:
+
+- `traceCall()`: Run an `eth_call` with the context of the provided block execution using the final state of the parent block as the base.
+- `traceTransaction()`: Run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it and will then attempt to execute the transaction that corresponds to the given hash.
+- `traceBlock()`: Replay a block that has already been mined.
+
+## Documentation
+
+The SDK is documented via `tsdoc` comments in the source code. The generated types and documentation are included when
+using an IDE. To browse the documentation separately, you can view the generated API interfaces
+in `etc/alchemy-sdk.api.md`. You can view generated Markdown files for each endpoint in the `docs-md` directory,
+or as a webpage by opening `docs/index.html` in your browser.
+
+## Usage Examples
+
+Below are a few usage examples.
+
+> **ℹ️ More Examples **
+>
+> You can also go here: [Examples Using the Alchemy SDK](https://docs.alchemy.com/reference/using-the-alchemy-sdk).
+
+### Getting the NFTs owned by an address
+
+```ts
+import { Alchemy, NftExcludeFilters } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+// Get how many NFTs an address owns.
+alchemy.nft.getNftsForOwner('vitalik.eth').then(nfts => {
+  console.log(nfts.totalCount);
+});
+
+// Get all the image urls for all the NFTs an address owns.
+async function main() {
+  for await (const nft of alchemy.nft.getNftsForOwnerIterator('vitalik.eth')) {
+    console.log(nft.media);
+  }
+}
+
+main();
+
+// Filter out spam NFTs.
+alchemy.nft
+  .getNftsForOwner('vitalik.eth', {
+    excludeFilters: [NftExcludeFilters.SPAM]
+  })
+  .then(console.log);
+```
+
+### Getting all the owners of the BAYC NFT
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+// Bored Ape Yacht Club contract address.
+const baycAddress = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D';
+
+async function main() {
+  for await (const nft of alchemy.nft.getNftsForContractIterator(baycAddress, {
+    // Omit the NFT metadata for smaller payloads.
+    omitMetadata: true
+  })) {
+    await alchemy.nft
+      .getOwnersForNft(nft.contract.address, nft.tokenId)
+      .then(response =>
+        console.log('owners:', response.owners, 'tokenId:', nft.tokenId)
+      );
+  }
+}
+
+main();
+```
+
+### Get all outbound transfers for a provided address
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+alchemy.core.getTokenBalances('vitalik.eth').then(console.log);
+```
+
+## Questions and Feedback
+
+If you have any questions, issues, or feedback, please file an issue
+on [GitHub](https://github.com/alchemyplatform/alchemy-sdk-js/issues), or drop us a message on
+our [Discord](https://discord.com/invite/alchemyplatform) channel for the SDK.
+
+
+================================================================================
+File: inject-version.js
+Size: 445 B
+================================================================================
+
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const { version } = require('./package.json');
+
+const VERSION_FILE_PATH = 'src/version.ts';
+
+fs.writeFileSync(
+  path.resolve(__dirname, VERSION_FILE_PATH),
+  `// This file is autogenerated by injectVersion.js. Any changes will be
+// overwritten on commit!
+export const VERSION = '${version}';
+`
+);
+console.log(`Wrote version to ${VERSION_FILE_PATH}.`);
+
+
+================================================================================
+File: jest.config.js
+Size: 209 B
+================================================================================
+
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  moduleNameMapper: {
+    '^axios$': require.resolve('axios')
+  }
+};
+
+
+================================================================================
+File: LICENSE
+Size: 1.09 kB
+================================================================================
+
+MIT License
+
+Copyright (c) 2022 Alchemy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+================================================================================
+File: package.json
+Size: 3.58 kB
+================================================================================
+
+{
+  "name": "alchemy-sdk",
+  "version": "3.5.3",
+  "description": "Extended Ethers.js SDK for Alchemy APIs",
+  "author": "Alchemy",
+  "license": "MIT",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "prepublishOnly": "yarn build && yarn run lint && yarn run test",
+    "prebuild": "yarn clean && tsc --emitDeclarationOnly --declaration -p tsconfig.json",
+    "build": "rollup -c",
+    "clean": "rm -rf dist",
+    "format": "prettier --write '**/*.{html,js,json,md,ts}'",
+    "format-file": "prettier --write",
+    "lint": "eslint -c .eslintrc.js '**/*.ts' --ignore-path '.gitignore'",
+    "lint-file": "eslint --fix",
+    "test": "jest test/unit",
+    "test-integration": "jest test/integration --testTimeout=20000",
+    "docs": "typedoc --plugin none --out docs src/index.ts",
+    "docs-md": "typedoc --plugin typedoc-plugin-markdown --out docs-md src/index.ts",
+    "prepare": "husky install"
+  },
+  "main": "dist/cjs/index.js",
+  "main-es": "dist/es/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    "node": {
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/cjs/index.js"
+    },
+    "package.json": "./package.json",
+    "types": "./dist/src/index.d.ts",
+    "default": "./dist/esm/index.js"
+  },
+  "types": "./dist/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemyplatform/alchemy-sdk-js.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "lint-staged": {
+    "**/*.ts": [
+      "yarn lint-file --fix",
+      "yarn format-file"
+    ],
+    "package.json": [
+      "node ./inject-version.js",
+      "git add src/version.ts"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/alchemyplatform/alchemy-sdk-js/issues"
+  },
+  "homepage": "https://github.com/alchemyplatform/alchemy-sdk-js#readme",
+  "dependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/abstract-provider": "^5.7.0",
+    "@ethersproject/bignumber": "^5.7.0",
+    "@ethersproject/bytes": "^5.7.0",
+    "@ethersproject/contracts": "^5.7.0",
+    "@ethersproject/hash": "^5.7.0",
+    "@ethersproject/networks": "^5.7.0",
+    "@ethersproject/providers": "^5.7.0",
+    "@ethersproject/units": "^5.7.0",
+    "@ethersproject/wallet": "^5.7.0",
+    "@ethersproject/web": "^5.7.0",
+    "axios": "^1.7.4",
+    "sturdy-websocket": "^0.2.1",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@size-limit/preset-big-lib": "^7.0.8",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.1",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "axios-mock-adapter": "^1.22.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.11.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^7.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "mock-socket": "^9.1.4",
+    "prettier": "2.6.0",
+    "prettier-plugin-jsdoc": "^0.3.38",
+    "rollup": "^2.70.1",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "size-limit": "^7.0.8",
+    "ts-jest": "^27.1.4",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.22.15",
+    "typedoc-plugin-markdown": "^3.12.1",
+    "typescript": "^4.5.5"
+  },
+  "resolutions": {
+    "elliptic": "6.5.7",
+    "ws": "7.5.10"
+  },
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "dist/index.cjs.js",
+      "limit": "100 kB"
+    }
+  ]
+}
+
+
+================================================================================
+File: README.md
+Size: 21.16 kB
+================================================================================
+
+Alchemy SDK for Javascript
+
+The Alchemy SDK is the most comprehensive, stable, and powerful Javascript SDK available today to interact with the blockchain.
+
+It supports the exact same syntax and functionality of the Ethers.js `AlchemyProvider` and `WebSocketProvider`, making it a 1:1 mapping for anyone using the Ethers.js `Provider`. However, it adds a significant amount of improved functionality on top of Ethers, such as easy access to Alchemy’s Enhanced and NFT APIs, robust WebSockets, and quality-of-life improvements such as automated retries.
+
+The SDK leverages Alchemy's hardened node infrastructure, guaranteeing best-in-class node reliability, scalability, and data correctness, and is undergoing active development by Alchemy's engineers.
+
+> 🙋‍♀️ **FEATURE REQUESTS:**
+>
+> We'd love your thoughts on what would improve your web3 dev process the most! If you have 5 minutes, tell us what you want on our [Feature Request feedback form](https://alchemyapi.typeform.com/sdk-feedback), and we'd love to build it for you.
+
+The SDK currently supports the following chains (chains with '(d)' after are deprecated):
+
+- **Ethereum**: Mainnet, Goerli (d), Sepolia, Holesky
+- **Polygon**: Mainnet, Mumbai (d), Amoy
+- **Optimism**: Mainnet, Goerli (d), Sepolia
+- **Arbitrum**: Mainnet, Goerli (d), Sepolia
+- **Astar**: Mainnet
+- **PolygonZKEVM**: Mainnet, Testnet(d), Cardona
+- **Base**: Mainnet, Goerli (d), Sepolia
+- **Zksync**: Mainnet, Sepolia
+- **Shape**: Mainnet, Sepolia
+- **Linea**: Mainnet, Sepolia
+- **Fantom**: Mainnet, Testnet
+- **Zetachain**: Mainnet, Testnet
+- **Arbnova**: Mainnet
+- **Blast**: Mainnet, Sepolia
+- **Mantle**: Mainnet, Sepolia
+- **Scroll**: Mainnet, Sepolia
+- **Gnosis**: Mainnet, Chiado
+- **BNB**: Mainnet, Testnet
+- **Avalanche**: Mainnet, Fuji
+- **Celo**: Mainnet, Alfajores
+- **Metis**: Mainnet
+- **OpBNB**: Mainnet, Testnet
+- **Berachain**: Mainnet, Bartio
+- **Soneium**: Mainnet, Minato
+- **Worldchain**: Mainnet, Sepolia
+- **Rootstock**: Mainnet, Testnet
+- **Flow**: Mainnet, Testnet
+- **Zora**: Mainnet, Sepolia
+- **Frax**: Mainnet, Sepolia
+- **Polynomial**: Mainnet, Sepolia
+- **Crossfi**: Mainnet, Testnet
+- **Apechain**: Mainnet, Curtis
+- **Lens**: Sepolia
+- **Geist**: Mainnet, Polter
+- **Lumia**: Prism, Testnet
+- **Unichain**: Mainnet, Sepolia
+- **Sonic**: Mainnet, Blaze
+- **XMTP**: Testnet
+- **Abstract**: Mainnet, Testnet
+- **Degen**: Mainnet
+- **Ink**: Mainnet, Sepolia
+- **Sei**: Testnet
+
+You can find per-method documentation of the Alchemy SDK endpoints at the [Alchemy Docs linked in the sidebar](https://docs.alchemy.com/reference/alchemy-sdk-quickstart).
+
+## Getting started
+
+```
+npm install alchemy-sdk
+```
+
+After installing the app, you can then import and use the SDK:
+
+```ts
+import { Alchemy, Network } from 'alchemy-sdk';
+
+// Optional config object, but defaults to the API key 'demo' and Network 'eth-mainnet'.
+const settings = {
+  apiKey: 'demo', // Replace with your Alchemy API key.
+  network: Network.ETH_MAINNET // Replace with your network.
+};
+
+const alchemy = new Alchemy(settings);
+```
+
+> **ℹ️ Creating a unique Alchemy API Key**
+>
+> The public "demo" API key may be rate limited based on traffic. To create your own API key, **[sign up for an Alchemy account here](https://alchemy.com/?a=SDKquickstart)** and use the key created on your dashboard for the first app.
+
+The `Alchemy` object returned by `new Alchemy()` provides access to the Alchemy API. An optional config object can be passed in when initializing to set your API key, change the network, or specify the max number of retries.
+
+## Using the Alchemy SDK
+
+The Alchemy SDK currently supports the following namespaces:
+
+- `core`: All commonly-used Ethers.js Provider methods and Alchemy Enhanced API methods
+- `nft`: All Alchemy NFT API methods
+- `ws`: All WebSockets methods
+- `transact`: All Alchemy Transaction API methods
+- `notify`: CRUD endpoints for modifying Alchemy Notify Webhooks
+- `debug`: Methods to inspect and replay transactions and blocks
+
+If you are already using Ethers.js, you should be simply able to replace the Ethers.js Provider object with `alchemy.core` and it should work properly.
+
+> **ℹ️ ENS Name Resolution**
+>
+> The Alchemy SDK now supports ENS names (e.g. `vitalik.eth`) for every parameter where you can pass in a Externally Owned Address, or user address (e.g. `0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045`).
+
+```ts
+import { Alchemy, AlchemySubscription } from 'alchemy-sdk';
+
+// Using default settings - pass in a settings object to specify your API key and network
+const alchemy = new Alchemy();
+
+// Access standard Ethers.js JSON-RPC node request
+alchemy.core.getBlockNumber().then(console.log);
+
+// Access Alchemy Enhanced API requests
+alchemy.core
+  .getTokenBalances('0x3f5CE5FBFe3E9af3971dD833D26bA9b5C936f0bE')
+  .then(console.log);
+
+// Access the Alchemy NFT API
+alchemy.nft.getNftsForOwner('vitalik.eth').then(console.log);
+
+// Access WebSockets and Alchemy-specific WS methods
+alchemy.ws.on(
+  {
+    method: AlchemySubscription.PENDING_TRANSACTIONS
+  },
+  res => console.log(res)
+);
+```
+
+The Alchemy SDK also supports a number of Ethers.js objects that streamline the development process:
+
+- [`Utils`](https://docs.ethers.io/v5/api/utils/): Equivalent to `ethers.utils`, this provides a number of common Ethers.js utility methods for developers.
+  - [`Interface`](https://docs.ethers.io/v5/api/utils/abi/interface/): Found in `Utils.Interface`, this class abstracts the encoding and decoding required to interact with contracts on the Ethereum network.
+- [`Contract`](https://docs.ethers.io/v5/api/contract/contract/): An abstraction for smart contract code deployed to the blockchain.
+- [`ContractFactory`](https://docs.ethers.io/v5/api/contract/contract-factory/): Allows developers to build a `Contract` object.
+- [`Wallet`](https://docs.ethers.io/v5/api/signer/#Wallet): An implementation of `Signer` that can sign transactions and messages using a private key as a standard Externally Owned Account.
+
+## Alchemy Settings
+
+An `AlchemySettings` object can be passed on instantiation to the Alchemy object, with the following optional parameters:
+
+- `apiKey`: API key that can be found in the Alchemy dashboard. Defaults to `demo`: a rate-limited public key.
+- `network`: Name of the network. Defaults to `Network.ETH_MAINNET`
+- `maxRetries`: The maximum number of retries to attempt if a request fails. Defaults to 5.
+- `url`: Optional URL endpoint to use for all requests. Setting this field will override the URL generated by the `network` and`apiKey` fields.
+- `authToken`: Alchemy auth token required to use the Notify API. This token can be found in the Alchemy Dashboard on the Notify tab.
+- `batchRequests`: Optional setting that automatically batches and sends json-rpc requests for higher throughput and reduced network IO. Defaults to false.
+- `requestTimeout`: Optional setting that sets the timeout for requests in milliseconds for the NFT and Notify namespaces. Defaults to no timeout.
+
+## Alchemy Core
+
+The core namespace contains all commonly-used [Ethers.js Provider](https://docs.ethers.io/v5/api/providers/api-providers/#AlchemyProvider) methods. If you are already using Ethers.js, you should be simply able to replace the Ethers.js Provider object with `alchemy.core` when accessing provider methods and it should just work.
+
+It also includes the majority of Alchemy Enhanced APIs, including:
+
+- `getTokenMetadata()`: Get the metadata for a token contract address.
+- `getTokenBalances()`: Gets the token balances for an owner given a list of contracts.
+- `getAssetTransfers()`: Get transactions for specific addresses.
+- `getTransactionReceipts()`: Gets all transaction receipts for a given block.
+
+You will also find the following utility methods:
+
+- `findContractDeployer()`: Find the contract deployer and block number for a given contract address.
+- `getTokensForOwner()`: Get all token balances and metadata for a given owner address
+
+### Accessing the full Ethers.js Provider
+
+To keep the package clean, we don't support certain uncommonly-used Ethers.js Provider methods as top-level methods in the Alchemy `core` namespace - for example, `provider.formatter`. If you'd like to access these methods, simply use the `alchemy.config.getProvider()` function to configure the
+Ethers.js Provider [AlchemyProvider](https://docs.ethers.io/v5/api/providers/api-providers/#AlchemyProvider) and return it.
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+async function runAlchemy() {
+  const ethersProvider = await alchemy.config.getProvider();
+  console.log(ethersProvider.formatter);
+}
+runAlchemy();
+```
+
+## Alchemy WebSockets
+
+In addition to the built-in Ethers.js listeners, the Alchemy SDK includes support for [Alchemy's Subscription API](https://docs.alchemy.com/alchemy/enhanced-apis/subscription-api-websockets). This allows you to subscribe to events and receive updates as they occur.
+
+The `alchemy.ws` instance can be used like the standard Ethers.js [WebSocketProvider](https://docs.ethers.io/v5/api/providers/other/#WebSocketProvider) to add listeners for Alchemy events:
+
+```ts
+import { Alchemy, AlchemySubscription } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+// Listen to all new pending transactions.
+alchemy.ws.on('block', res => console.log(res));
+
+// Listen to only the next transaction on the USDC contract.
+alchemy.ws.once(
+  {
+    method: AlchemySubscription.PENDING_TRANSACTIONS,
+    toAddress: 'vitalik.eth'
+  },
+  res => console.log(res)
+);
+
+// Remove all listeners.
+alchemy.ws.removeAllListeners();
+```
+
+The SDK brings multiple improvements to ensure correct WebSocket behavior in cases of temporary network failure or
+dropped connections. As with any network connection, you should not assume that a WebSocket will remain open forever
+without interruption, but correctly handling dropped connections and reconnection by hand can be challenging to get
+right. The Alchemy SDK automatically handles these failures with no configuration necessary. The main benefits are:
+
+- Resilient event delivery: Unlike standard Web3.js or Ethers.js, you will not permanently miss events which arrive
+  while the backing WebSocket is temporarily down. Instead, you will receive these events as soon as the connection
+  is reopened. Note that if the connection is down for more than 120 blocks (approximately 20 minutes), you may
+  still miss some events that were not part of the most recent 120 blocks.
+- Lowered rate of failure: Compared to standard Web3.js or Ethers.js, there are fewer failures when sending requests
+  over the WebSocket while the connection is down. The Alchemy SDK will attempt to send the requests once the connection
+  is reopened. Note that it is still possible, with a lower likelihood, for outgoing requests to be lost,
+  so you should still have error handling as with any network request.
+
+## Alchemy Transact
+
+The `transact` namespace contains methods used for simulating and sending transactions. The unique methods to the `transact` namespace are:
+
+- `sendPrivateTransaction()`: Send a private transaction through Flashbots.
+- `cancelPrivateTransaction()`: Cancel a private transaction sent with Flashbots.
+- `simulateAssetChanges()`: Simulate a transaction and get a list of asset changes.
+- `simulateExecution()`: Simulate a transaction and get a full list of internal transactions, logs, ABI decoded results and more.
+- `simulateAssetChangesBundle()`: Simulate a list of transactions in sequence and get a list of asset changes.
+- `simulateExecutionBundle()`: Simulate a list of transactions in sequence and get a full list of internal transactions, logs, ABI decoded results and more.
+
+The `transact` namespace also aliases over several commonly used methods from the `core` namespace for convenience:
+
+- `getTransaction()`: Returns the transaction for the given transaction hash.
+- `sendTransaction()`: Sends a standard transaction to the network to be mined.
+- `waitForTransaction()`: Waits for a transaction to be mined and returns the transaction receipt.
+
+## Alchemy NFT API
+
+The SDK currently supports the following [NFT API](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api) endpoints
+under the `alchemy.nft` namespace:
+
+- `getNftMetadata()`: Get the NFT metadata for an NFT contract address and tokenId.
+- `getNftMetadataBatch()`: Get the NFT metadata for multiple NFT contract addresses/token id pairs.
+- `getContractMetadata()`: Get the metadata associated with an NFT contract
+- `getContractMetadataBatch()`: Get the metadata associated with multiple NFT contracts in a single request.
+- `getContractsForOwner()`: Get all NFT contracts that the provided owner address owns.
+- `getNftsForOwner()`: Get NFTs for an owner address.
+- `getNftsForOwnerIterator()`: Get NFTs for an owner address as an async iterator (handles paging automatically).
+- `getNftsForContract()`: Get all NFTs for a contract address.
+- `getNftsForContractIterator()`: Get all NFTs for a contract address as an async iterator (handles paging
+  automatically).
+- `getOwnersForNft()`: Get all the owners for a given NFT contract address and a particular token ID.
+- `getOwnersForContract()`: Get all the owners for a given NFT contract address.
+- `getMintedNfts()`: Get all the NFTs minted by the owner address.
+- `getTransfersForOwner()`: Get all the NFT transfers for a given owner address.
+- `getTransfersForContract()`: Get all the NFT transfers for a given NFT contract address.
+- `verifyNftOwnership()`: Check whether the provided owner address owns the provided NFT contract addresses.
+- `isSpamContract()`: Check whether the given NFT contract address is a spam contract as defined by Alchemy (see the [NFT API FAQ](https://docs.alchemy.com/alchemy/enhanced-apis/nft-api/nft-api-faq#nft-spam-classification))
+- `getSpamContracts()`: Returns a list of all spam contracts marked by Alchemy.
+- `reportSpam()`: Report feedback that a given NFT contract address is a spam contract as defined by Alchemy.
+- `isAirdropNft()`: Check whether the given NFT token is marked as an airdrop or not. Airdrops are defined as NFTs that were minted to a user address in a transaction sent by a different address.
+- `refreshNftMetadata()`: Refresh the cached NFT metadata for a contract address and a single tokenId.
+- `refreshContract()`: Enqueues the specified contract address to have all token ids' metadata refreshed.
+- `getFloorPrice()`: Return the floor prices of a NFT contract by marketplace.
+- `computeRarity()`: Get the rarity of each attribute of an NFT.
+- `getNftSales()`: Returns NFT sales that have happened through on-chain marketplaces.
+- `summarizeNftAttributes()`: Get the summary of attribute prevalence for all NFTs in a contract.
+- `searchContractMetadata()`: Search for a keyword across metadata of all ERC-721 and ERC-1155 smart contracts.
+
+### Pagination
+
+The Alchemy NFT endpoints return 100 results per page. To get the next page, you can pass in the `pageKey` returned by
+the
+previous call. To simplify paginating through all results, the SDK provides the `getNftsIterator()`
+and `getNftsForContractIterator()` functions that automatically paginate through all NFTs and yields them via
+an `AsyncIterable`.
+
+Here's an example of how to paginate through all the NFTs in Vitalik's ENS address:
+
+```ts
+import { Alchemy } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+async function main() {
+  const ownerAddress = 'vitalik.eth';
+  for await (const nft of alchemy.nft.getNftsForOwnerIterator(ownerAddress)) {
+    console.log('ownedNft:', nft);
+  }
+}
+
+main();
+```
+
+### SDK vs API Differences
+
+The NFT API in the SDK standardizes response types to reduce developer friction, but note this results in some
+differences compared to the Alchemy REST endpoints:
+
+- Methods referencing `Collection` have been renamed to use the name `Contract` for greater accuracy: e.g. `getNftsForContract`.
+- Some methods have different naming that the REST API counterparts in order to provide a consistent API interface (
+  e.g. `getNftsForOwner()` is `alchemy_getNfts`, `getOwnersForNft()` is `alchemy_getOwnersForToken`).
+- SDK standardizes to `omitMetadata` parameter (vs. `withMetadata`).
+- Standardization to `pageKey` parameter for pagination (vs. `nextToken`/`startToken`)
+- Empty `TokenUri` fields are omitted.
+- Token ID is always normalized to an integer string on `BaseNft` and `Nft`.
+- Some fields omitted in the REST response are included in the SDK response in order to return an `Nft` object.
+- Some fields in the SDK's `Nft` object are named differently than the REST response.
+
+## Alchemy Notify
+
+The [Alchemy Notify API](https://docs.alchemy.com/reference/notify-api-quickstart) helps developers set up webhooks in their apps. The namespace provides methods to programmatically create, read, update, and delete your webhooks along with typings for the different webhooks. To learn more about Webhooks, please refer to the [Alchemy documentation](https://docs.alchemy.com/reference/notify-api-quickstart#what-are-webhooks).
+
+Methods on the `NotifyNamespace` can be accessed via `alchemy.notify`. To use the methods, you must include your team's auth token in the `authToken` field of `AlchemySettings` when instantiating the SDK. The auth token can be found on the Alchemy Dashboard in the Notify Tab.
+
+Methods include:
+
+- `getAllWebhooks()`: Get all webhooks on your team.
+- `getAddresses()`: Get all addresses tracked for the provided Address Activity Webhook.
+- `getNftFilters()`: Get all NFT filters tracked for the provided NFT Activity Webhook.
+- `createWebhook()`: Create a new webhook.
+- `updateWebhook()`: Update an existing webhook's active status or tracked addresses and NFT filters.
+- `deleteWebhook()`: Delete the provided webhook.
+
+## Alchemy Debug
+
+Methods on the `DebugNamespace` can be accessed via `alchemy.debug`. These methods are used for inspecting and debugging transactions.
+
+Methods include:
+
+- `traceCall()`: Run an `eth_call` with the context of the provided block execution using the final state of the parent block as the base.
+- `traceTransaction()`: Run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it and will then attempt to execute the transaction that corresponds to the given hash.
+- `traceBlock()`: Replay a block that has already been mined.
+
+## Documentation
+
+The SDK is documented via `tsdoc` comments in the source code. The generated types and documentation are included when
+using an IDE. To browse the documentation separately, you can view the generated API interfaces
+in `etc/alchemy-sdk.api.md`. You can view generated Markdown files for each endpoint in the `docs-md` directory,
+or as a webpage by opening `docs/index.html` in your browser.
+
+## Usage Examples
+
+Below are a few usage examples.
+
+> **ℹ️ More Examples **
+>
+> You can also go here: [Examples Using the Alchemy SDK](https://docs.alchemy.com/reference/using-the-alchemy-sdk).
+
+### Getting the NFTs owned by an address
+
+```ts
+import { Alchemy, NftExcludeFilters } from 'alchemy-sdk';
+
+const alchemy = new Alchemy();
+
+// Get how many NFTs an address owns.
+alchemy.nft.getNftsForOwner('vitalik.eth').then(nfts => {

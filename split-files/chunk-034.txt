@@ -1,0 +1,4152 @@
+
+[src/api/notify-namespace.ts:180](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L180)
+
+___
+
+### sendWebhookRequest
+
+▸ `Private` **sendWebhookRequest**<`Response`\>(`restApiName`, `methodName`, `params`, `overrides?`): `Promise`<`Response`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `Response` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `restApiName` | `string` |
+| `methodName` | `string` |
+| `params` | `Object` |
+| `overrides?` | `AxiosRequestConfig`<`any`\> |
+
+#### Returns
+
+`Promise`<`Response`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:591](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L591)
+
+___
+
+### updateWebhook
+
+▸ **updateWebhook**(`nftWebhook`, `update`): `Promise`<`void`\>
+
+Update a [NftActivityWebhook](../interfaces/NftActivityWebhook.md)'s active status or NFT filters.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `nftWebhook` | [`NftActivityWebhook`](../interfaces/NftActivityWebhook.md) | The NFT activity webhook to update. |
+| `update` | [`NftWebhookUpdate`](../modules.md#nftwebhookupdate) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:209](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L209)
+
+▸ **updateWebhook**(`nftWebhookId`, `update`): `Promise`<`void`\>
+
+Update a [NftActivityWebhook](../interfaces/NftActivityWebhook.md)'s active status or NFT filters.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `nftWebhookId` | `string` | The id of the NFT activity webhook. |
+| `update` | [`NftWebhookUpdate`](../modules.md#nftwebhookupdate) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:220](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L220)
+
+▸ **updateWebhook**(`nftMetadataWebhookId`, `update`): `Promise`<`void`\>
+
+Update a [NftMetadataUpdateWebhook](../interfaces/NftMetadataUpdateWebhook.md)'s active status or NFT filters.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `nftMetadataWebhookId` | `string` | The id of the NFT activity webhook. |
+| `update` | [`NftMetadataWebhookUpdate`](../modules.md#nftmetadatawebhookupdate) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:228](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L228)
+
+▸ **updateWebhook**(`customGraphqlWebhookId`, `update`): `Promise`<`void`\>
+
+Update a [CustomGraphqlWebhook](../interfaces/CustomGraphqlWebhook.md)'s active status.
+The graphql query associated with the webhook is immutable.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `customGraphqlWebhookId` | `string` | The id of the custom webhook. |
+| `update` | [`WebhookStatusUpdate`](../interfaces/WebhookStatusUpdate.md) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:240](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L240)
+
+▸ **updateWebhook**(`addressWebhook`, `update`): `Promise`<`void`\>
+
+Update a [AddressActivityWebhook](../interfaces/AddressActivityWebhook.md)'s active status or addresses.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `addressWebhook` | [`AddressActivityWebhook`](../interfaces/AddressActivityWebhook.md) | The address activity webhook to update. |
+| `update` | [`AddressWebhookUpdate`](../modules.md#addresswebhookupdate) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:251](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L251)
+
+▸ **updateWebhook**(`addressWebhookId`, `update`): `Promise`<`void`\>
+
+Update a [AddressActivityWebhook](../interfaces/AddressActivityWebhook.md)'s active status or addresses.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `addressWebhookId` | `string` | The id of the address activity webhook. |
+| `update` | [`AddressWebhookUpdate`](../modules.md#addresswebhookupdate) | Object containing the update. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/api/notify-namespace.ts:262](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L262)
+
+___
+
+### verifyConfig
+
+▸ `Private` **verifyConfig**(): `void`
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/api/notify-namespace.ts:582](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/notify-namespace.ts#L582)
+
+
+================================================================================
+File: docs-md\classes\PricesNamespace.md
+Size: 4.42 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / PricesNamespace
+
+# Class: PricesNamespace
+
+The Prices namespace contains methods for getting token price data.
+
+Do not call this constructor directly. Instead, instantiate an Alchemy object
+with `const alchemy = new Alchemy(config)` and then access the prices namespace
+via `alchemy.prices`.
+
+## Table of contents
+
+### Methods
+
+- [getHistoricalPriceByAddress](PricesNamespace.md#gethistoricalpricebyaddress)
+- [getHistoricalPriceBySymbol](PricesNamespace.md#gethistoricalpricebysymbol)
+- [getTokenPriceByAddress](PricesNamespace.md#gettokenpricebyaddress)
+- [getTokenPriceBySymbol](PricesNamespace.md#gettokenpricebysymbol)
+
+## Methods
+
+### getHistoricalPriceByAddress
+
+▸ **getHistoricalPriceByAddress**(`network`, `address`, `startTime`, `endTime`, `interval`): `Promise`<[`HistoricalPriceByAddressResponse`](../interfaces/HistoricalPriceByAddressResponse.md)\>
+
+Get historical token prices by network and contract address.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `network` | [`Network`](../enums/Network.md) | The network where the token contract is deployed |
+| `address` | `string` | The token contract address |
+| `startTime` | `string` \| `number` | Start time in ISO-8601 string format or Unix timestamp in seconds |
+| `endTime` | `string` \| `number` | End time in ISO-8601 string format or Unix timestamp in seconds |
+| `interval` | [`HistoricalPriceInterval`](../enums/HistoricalPriceInterval.md) | Time interval between data points |
+
+#### Returns
+
+`Promise`<[`HistoricalPriceByAddressResponse`](../interfaces/HistoricalPriceByAddressResponse.md)\>
+
+Promise containing historical token price data
+
+#### Defined in
+
+[src/api/prices-namespace.ts:91](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/prices-namespace.ts#L91)
+
+___
+
+### getHistoricalPriceBySymbol
+
+▸ **getHistoricalPriceBySymbol**(`symbol`, `startTime`, `endTime`, `interval`): `Promise`<[`HistoricalPriceBySymbolResponse`](../interfaces/HistoricalPriceBySymbolResponse.md)\>
+
+Get historical token prices by token symbol.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `symbol` | `string` | The token symbol to get historical prices for |
+| `startTime` | `string` \| `number` | Start time in ISO-8601 string format or Unix timestamp in seconds |
+| `endTime` | `string` \| `number` | End time in ISO-8601 string format or Unix timestamp in seconds |
+| `interval` | [`HistoricalPriceInterval`](../enums/HistoricalPriceInterval.md) | Time interval between data points |
+
+#### Returns
+
+`Promise`<[`HistoricalPriceBySymbolResponse`](../interfaces/HistoricalPriceBySymbolResponse.md)\>
+
+Promise containing historical token price data
+
+#### Defined in
+
+[src/api/prices-namespace.ts:65](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/prices-namespace.ts#L65)
+
+___
+
+### getTokenPriceByAddress
+
+▸ **getTokenPriceByAddress**(`addresses`): `Promise`<[`GetTokenPriceByAddressResponse`](../interfaces/GetTokenPriceByAddressResponse.md)\>
+
+Get token prices by network and contract address pairs.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `addresses` | [`TokenAddressRequest`](../interfaces/TokenAddressRequest.md)[] | Array of network/address pairs to get prices for |
+
+#### Returns
+
+`Promise`<[`GetTokenPriceByAddressResponse`](../interfaces/GetTokenPriceByAddressResponse.md)\>
+
+Promise containing token price data
+
+#### Defined in
+
+[src/api/prices-namespace.ts:36](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/prices-namespace.ts#L36)
+
+___
+
+### getTokenPriceBySymbol
+
+▸ **getTokenPriceBySymbol**(`symbols`): `Promise`<[`GetTokenPriceBySymbolResponse`](../interfaces/GetTokenPriceBySymbolResponse.md)\>
+
+Get token prices by token symbol.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `symbols` | `string`[] | Array of token symbols to get prices for |
+
+#### Returns
+
+`Promise`<[`GetTokenPriceBySymbolResponse`](../interfaces/GetTokenPriceBySymbolResponse.md)\>
+
+Promise containing token price data
+
+#### Defined in
+
+[src/api/prices-namespace.ts:49](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/prices-namespace.ts#L49)
+
+
+================================================================================
+File: docs-md\classes\TransactNamespace.md
+Size: 11.59 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactNamespace
+
+# Class: TransactNamespace
+
+The Transact namespace contains methods used for sending transactions and
+checking on the state of submitted transactions.
+
+Do not call this constructor directly. Instead, instantiate an Alchemy object
+with `const alchemy = new Alchemy(config)` and then access the transact
+namespace via `alchemy.transact`.
+
+## Table of contents
+
+### Methods
+
+- [cancelPrivateTransaction](TransactNamespace.md#cancelprivatetransaction)
+- [estimateGas](TransactNamespace.md#estimategas)
+- [getMaxPriorityFeePerGas](TransactNamespace.md#getmaxpriorityfeepergas)
+- [getTransaction](TransactNamespace.md#gettransaction)
+- [sendPrivateTransaction](TransactNamespace.md#sendprivatetransaction)
+- [sendTransaction](TransactNamespace.md#sendtransaction)
+- [simulateAssetChanges](TransactNamespace.md#simulateassetchanges)
+- [simulateAssetChangesBundle](TransactNamespace.md#simulateassetchangesbundle)
+- [simulateExecution](TransactNamespace.md#simulateexecution)
+- [simulateExecutionBundle](TransactNamespace.md#simulateexecutionbundle)
+- [waitForTransaction](TransactNamespace.md#waitfortransaction)
+
+## Methods
+
+### cancelPrivateTransaction
+
+▸ **cancelPrivateTransaction**(`transactionHash`): `Promise`<`boolean`\>
+
+Stops the provided private transaction from being submitted for future
+blocks. A transaction can only be cancelled if the request is signed by the
+same key as the [sendPrivateTransaction](TransactNamespace.md#sendprivatetransaction) call submitting the
+transaction in first place.
+
+Please note that fast mode transactions cannot be cancelled using this method.
+
+Returns a boolean indicating whether the cancellation was successful.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transactionHash` | `string` | Transaction hash of private tx to be cancelled |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:86](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L86)
+
+___
+
+### estimateGas
+
+▸ **estimateGas**(`transaction`): `Promise`<[`BigNumber`](BigNumber.md)\>
+
+Returns an estimate of the amount of gas that would be required to submit
+transaction to the network.
+
+An estimate may not be accurate since there could be another transaction on
+the network that was not accounted for, but after being mined affects the
+relevant state.
+
+This is an alias for [CoreNamespace.estimateGas](CoreNamespace.md#estimategas).
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> | The transaction to estimate gas for. |
+
+#### Returns
+
+`Promise`<[`BigNumber`](BigNumber.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:258](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L258)
+
+___
+
+### getMaxPriorityFeePerGas
+
+▸ **getMaxPriorityFeePerGas**(): `Promise`<`number`\>
+
+Returns a fee per gas (in wei) that is an estimate of how much you can pay
+as a priority fee, or "tip", to get a transaction included in the current block.
+
+This number is generally used to set the `maxPriorityFeePerGas` field in a
+transaction request.
+
+#### Returns
+
+`Promise`<`number`\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:274](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L274)
+
+___
+
+### getTransaction
+
+▸ **getTransaction**(`transactionHash`): `Promise`<``null`` \| [`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+Returns the transaction with hash or null if the transaction is unknown.
+
+If a transaction has not been mined, this method will search the
+transaction pool. Various backends may have more restrictive transaction
+pool access (e.g. if the gas price is too low or the transaction was only
+recently sent and not yet indexed) in which case this method may also return null.
+
+NOTE: This is an alias for [CoreNamespace.getTransaction](CoreNamespace.md#gettransaction).
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transactionHash` | `string` \| `Promise`<`string`\> | The hash of the transaction to get. |
+
+#### Returns
+
+`Promise`<``null`` \| [`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:221](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L221)
+
+___
+
+### sendPrivateTransaction
+
+▸ **sendPrivateTransaction**(`signedTransaction`, `maxBlockNumber?`, `options?`): `Promise`<`string`\>
+
+Used to send a single transaction to Flashbots. Flashbots will attempt to
+send the transaction to miners for the next 25 blocks.
+
+Returns the transaction hash of the submitted transaction.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `signedTransaction` | `string` | The raw, signed transaction as a hash. |
+| `maxBlockNumber?` | `number` | Optional highest block number in which the   transaction should be included. |
+| `options?` | [`SendPrivateTransactionOptions`](../interfaces/SendPrivateTransactionOptions.md) | Options to configure the request. |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:54](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L54)
+
+___
+
+### sendTransaction
+
+▸ **sendTransaction**(`signedTransaction`): `Promise`<[`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+Submits transaction to the network to be mined. The transaction must be
+signed, and be valid (i.e. the nonce is correct and the account has
+sufficient balance to pay for the transaction).
+
+NOTE: This is an alias for [CoreNamespace.sendTransaction](CoreNamespace.md#sendtransaction).
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `signedTransaction` | `string` \| `Promise`<`string`\> | The signed transaction to send. |
+
+#### Returns
+
+`Promise`<[`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:238](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L238)
+
+___
+
+### simulateAssetChanges
+
+▸ **simulateAssetChanges**(`transaction`, `blockIdentifier?`): `Promise`<[`SimulateAssetChangesResponse`](../interfaces/SimulateAssetChangesResponse.md)\>
+
+Simulates the asset changes resulting from a single transaction.
+
+Returns list of asset changes that occurred during the transaction
+simulation. Note that this method does not run the transaction on the
+blockchain.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | [`DebugTransaction`](../interfaces/DebugTransaction.md) | The transaction to simulate. |
+| `blockIdentifier?` | `string` | Optional block identifier to simulate the transaction in. |
+
+#### Returns
+
+`Promise`<[`SimulateAssetChangesResponse`](../interfaces/SimulateAssetChangesResponse.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:137](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L137)
+
+___
+
+### simulateAssetChangesBundle
+
+▸ **simulateAssetChangesBundle**(`transactions`, `blockIdentifier?`): `Promise`<[`SimulateAssetChangesResponse`](../interfaces/SimulateAssetChangesResponse.md)[]\>
+
+Simulates the asset changes resulting from a list of transactions simulated
+in sequence.
+
+Returns a list of asset changes for each transaction during simulation.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transactions` | [`DebugTransaction`](../interfaces/DebugTransaction.md)[] | Transactions list of max 3 transactions to simulate. |
+| `blockIdentifier?` | `string` | Optional block identifier to simulate the transaction in. |
+
+#### Returns
+
+`Promise`<[`SimulateAssetChangesResponse`](../interfaces/SimulateAssetChangesResponse.md)[]\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:109](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L109)
+
+___
+
+### simulateExecution
+
+▸ **simulateExecution**(`transaction`, `blockIdentifier?`): `Promise`<[`SimulateExecutionResponse`](../interfaces/SimulateExecutionResponse.md)\>
+
+Simulates a single transaction and the resulting and returns list of
+decoded traces and logs that occurred during the transaction simulation.
+
+Note that this method does not run the transaction on the blockchain.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | [`DebugTransaction`](../interfaces/DebugTransaction.md) | The transaction to simulate. |
+| `blockIdentifier?` | `string` | Optional block identifier to simulate the transaction in. |
+
+#### Returns
+
+`Promise`<[`SimulateExecutionResponse`](../interfaces/SimulateExecutionResponse.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:191](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L191)
+
+___
+
+### simulateExecutionBundle
+
+▸ **simulateExecutionBundle**(`transactions`, `blockIdentifier?`): `Promise`<[`SimulateExecutionResponse`](../interfaces/SimulateExecutionResponse.md)[]\>
+
+Simulates a list of transactions in sequence and returns list of decoded
+traces and logs that occurred for each transaction during simulation.
+
+Note that this method does not run any transactions on the blockchain.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transactions` | [`DebugTransaction`](../interfaces/DebugTransaction.md)[] | Transactions list of max 3 transactions to simulate. |
+| `blockIdentifier?` | `string` | Optional block identifier to simulate the transaction in. |
+
+#### Returns
+
+`Promise`<[`SimulateExecutionResponse`](../interfaces/SimulateExecutionResponse.md)[]\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:164](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L164)
+
+___
+
+### waitForTransaction
+
+▸ **waitForTransaction**(`transactionHash`, `confirmations?`, `timeout?`): `Promise`<``null`` \| [`TransactionReceipt`](../interfaces/TransactionReceipt.md)\>
+
+Returns a promise which will not resolve until specified transaction hash is mined.
+
+If {@link confirmations} is 0, this method is non-blocking and if the
+transaction has not been mined returns null. Otherwise, this method will
+block until the transaction has confirmed blocks mined on top of the block
+in which it was mined.
+
+NOTE: This is an alias for [CoreNamespace.waitForTransaction](CoreNamespace.md#waitfortransaction).
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transactionHash` | `string` | The hash of the transaction to wait for. |
+| `confirmations?` | `number` | The number of blocks to wait for. |
+| `timeout?` | `number` | The maximum time to wait for the transaction to confirm. |
+
+#### Returns
+
+`Promise`<``null`` \| [`TransactionReceipt`](../interfaces/TransactionReceipt.md)\>
+
+#### Defined in
+
+[src/api/transact-namespace.ts:299](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/transact-namespace.ts#L299)
+
+
+================================================================================
+File: docs-md\classes\Utils.Interface.md
+Size: 12.04 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / [Utils](../modules/Utils.md) / Interface
+
+# Class: Interface
+
+[Utils](../modules/Utils.md).Interface
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Utils.Interface.md#constructor)
+
+### Properties
+
+- [\_abiCoder](Utils.Interface.md#_abicoder)
+- [\_isInterface](Utils.Interface.md#_isinterface)
+- [deploy](Utils.Interface.md#deploy)
+- [errors](Utils.Interface.md#errors)
+- [events](Utils.Interface.md#events)
+- [fragments](Utils.Interface.md#fragments)
+- [functions](Utils.Interface.md#functions)
+- [structs](Utils.Interface.md#structs)
+
+### Methods
+
+- [\_decodeParams](Utils.Interface.md#_decodeparams)
+- [\_encodeParams](Utils.Interface.md#_encodeparams)
+- [decodeErrorResult](Utils.Interface.md#decodeerrorresult)
+- [decodeEventLog](Utils.Interface.md#decodeeventlog)
+- [decodeFunctionData](Utils.Interface.md#decodefunctiondata)
+- [decodeFunctionResult](Utils.Interface.md#decodefunctionresult)
+- [encodeDeploy](Utils.Interface.md#encodedeploy)
+- [encodeErrorResult](Utils.Interface.md#encodeerrorresult)
+- [encodeEventLog](Utils.Interface.md#encodeeventlog)
+- [encodeFilterTopics](Utils.Interface.md#encodefiltertopics)
+- [encodeFunctionData](Utils.Interface.md#encodefunctiondata)
+- [encodeFunctionResult](Utils.Interface.md#encodefunctionresult)
+- [format](Utils.Interface.md#format)
+- [getError](Utils.Interface.md#geterror)
+- [getEvent](Utils.Interface.md#getevent)
+- [getEventTopic](Utils.Interface.md#geteventtopic)
+- [getFunction](Utils.Interface.md#getfunction)
+- [getSighash](Utils.Interface.md#getsighash)
+- [parseError](Utils.Interface.md#parseerror)
+- [parseLog](Utils.Interface.md#parselog)
+- [parseTransaction](Utils.Interface.md#parsetransaction)
+- [getAbiCoder](Utils.Interface.md#getabicoder)
+- [getAddress](Utils.Interface.md#getaddress)
+- [getEventTopic](Utils.Interface.md#geteventtopic-1)
+- [getSighash](Utils.Interface.md#getsighash-1)
+- [isInterface](Utils.Interface.md#isinterface)
+
+## Constructors
+
+### constructor
+
+• **new Interface**(`fragments`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fragments` | `string` \| readonly (`string` \| `Fragment` \| `JsonFragment`)[] |
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:52
+
+## Properties
+
+### \_abiCoder
+
+• `Readonly` **\_abiCoder**: `AbiCoder`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:50
+
+___
+
+### \_isInterface
+
+• `Readonly` **\_isInterface**: `boolean`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:51
+
+___
+
+### deploy
+
+• `Readonly` **deploy**: `ConstructorFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:49
+
+___
+
+### errors
+
+• `Readonly` **errors**: `Object`
+
+#### Index signature
+
+▪ [name: `string`]: `ErrorFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:37
+
+___
+
+### events
+
+• `Readonly` **events**: `Object`
+
+#### Index signature
+
+▪ [name: `string`]: `EventFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:40
+
+___
+
+### fragments
+
+• `Readonly` **fragments**: readonly `Fragment`[]
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:36
+
+___
+
+### functions
+
+• `Readonly` **functions**: `Object`
+
+#### Index signature
+
+▪ [name: `string`]: `FunctionFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:43
+
+___
+
+### structs
+
+• `Readonly` **structs**: `Object`
+
+#### Index signature
+
+▪ [name: `string`]: `any`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:46
+
+## Methods
+
+### \_decodeParams
+
+▸ **_decodeParams**(`params`, `data`): `Result`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `params` | readonly `ParamType`[] |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`Result`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:63
+
+___
+
+### \_encodeParams
+
+▸ **_encodeParams**(`params`, `values`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `params` | readonly `ParamType`[] |
+| `values` | readonly `any`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:64
+
+___
+
+### decodeErrorResult
+
+▸ **decodeErrorResult**(`fragment`, `data`): `Result`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fragment` | `string` \| `ErrorFragment` |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`Result`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:66
+
+___
+
+### decodeEventLog
+
+▸ **decodeEventLog**(`eventFragment`, `data`, `topics?`): `Result`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventFragment` | `string` \| `EventFragment` |
+| `data` | `BytesLike` |
+| `topics?` | readonly `string`[] |
+
+#### Returns
+
+`Result`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:77
+
+___
+
+### decodeFunctionData
+
+▸ **decodeFunctionData**(`functionFragment`, `data`): `Result`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `functionFragment` | `string` \| `FunctionFragment` |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`Result`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:68
+
+___
+
+### decodeFunctionResult
+
+▸ **decodeFunctionResult**(`functionFragment`, `data`): `Result`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `functionFragment` | `string` \| `FunctionFragment` |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`Result`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:70
+
+___
+
+### encodeDeploy
+
+▸ **encodeDeploy**(`values?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `values?` | readonly `any`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:65
+
+___
+
+### encodeErrorResult
+
+▸ **encodeErrorResult**(`fragment`, `values?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fragment` | `string` \| `ErrorFragment` |
+| `values?` | readonly `any`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:67
+
+___
+
+### encodeEventLog
+
+▸ **encodeEventLog**(`eventFragment`, `values`): `Object`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventFragment` | `string` \| `EventFragment` |
+| `values` | readonly `any`[] |
+
+#### Returns
+
+`Object`
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `string` |
+| `topics` | `string`[] |
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:73
+
+___
+
+### encodeFilterTopics
+
+▸ **encodeFilterTopics**(`eventFragment`, `values`): (`string` \| `string`[])[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventFragment` | `string` \| `EventFragment` |
+| `values` | readonly `any`[] |
+
+#### Returns
+
+(`string` \| `string`[])[]
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:72
+
+___
+
+### encodeFunctionData
+
+▸ **encodeFunctionData**(`functionFragment`, `values?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `functionFragment` | `string` \| `FunctionFragment` |
+| `values?` | readonly `any`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:69
+
+___
+
+### encodeFunctionResult
+
+▸ **encodeFunctionResult**(`functionFragment`, `values?`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `functionFragment` | `string` \| `FunctionFragment` |
+| `values?` | readonly `any`[] |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:71
+
+___
+
+### format
+
+▸ **format**(`format?`): `string` \| `string`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `format?` | `string` |
+
+#### Returns
+
+`string` \| `string`[]
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:53
+
+___
+
+### getError
+
+▸ **getError**(`nameOrSignatureOrSighash`): `ErrorFragment`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `nameOrSignatureOrSighash` | `string` |
+
+#### Returns
+
+`ErrorFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:60
+
+___
+
+### getEvent
+
+▸ **getEvent**(`nameOrSignatureOrTopic`): `EventFragment`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `nameOrSignatureOrTopic` | `string` |
+
+#### Returns
+
+`EventFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:59
+
+___
+
+### getEventTopic
+
+▸ **getEventTopic**(`eventFragment`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventFragment` | `string` \| `EventFragment` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:62
+
+___
+
+### getFunction
+
+▸ **getFunction**(`nameOrSignatureOrSighash`): `FunctionFragment`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `nameOrSignatureOrSighash` | `string` |
+
+#### Returns
+
+`FunctionFragment`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:58
+
+___
+
+### getSighash
+
+▸ **getSighash**(`fragment`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fragment` | `string` \| `ErrorFragment` \| `FunctionFragment` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:61
+
+___
+
+### parseError
+
+▸ **parseError**(`data`): `ErrorDescription`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `BytesLike` |
+
+#### Returns
+
+`ErrorDescription`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:86
+
+___
+
+### parseLog
+
+▸ **parseLog**(`log`): `LogDescription`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `log` | `Object` |
+| `log.data` | `string` |
+| `log.topics` | `string`[] |
+
+#### Returns
+
+`LogDescription`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:82
+
+___
+
+### parseTransaction
+
+▸ **parseTransaction**(`tx`): `TransactionDescription`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `tx` | `Object` |
+| `tx.data` | `string` |
+| `tx.value?` | [`BigNumberish`](../modules.md#bignumberish) |
+
+#### Returns
+
+`TransactionDescription`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:78
+
+___
+
+### getAbiCoder
+
+▸ `Static` **getAbiCoder**(): `AbiCoder`
+
+#### Returns
+
+`AbiCoder`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:54
+
+___
+
+### getAddress
+
+▸ `Static` **getAddress**(`address`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:55
+
+___
+
+### getEventTopic
+
+▸ `Static` **getEventTopic**(`eventFragment`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `eventFragment` | `EventFragment` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:57
+
+___
+
+### getSighash
+
+▸ `Static` **getSighash**(`fragment`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `fragment` | `ErrorFragment` \| `FunctionFragment` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:56
+
+___
+
+### isInterface
+
+▸ `Static` **isInterface**(`value`): value is Interface
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+value is Interface
+
+#### Defined in
+
+node_modules/@ethersproject/abi/lib/interface.d.ts:87
+
+
+================================================================================
+File: docs-md\classes\Wallet.md
+Size: 16.54 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / Wallet
+
+# Class: Wallet
+
+The Wallet class inherits Signer and can sign transactions and messages using
+a private key as a standard Externally Owned Account (EOA).
+
+SDK's custom implementation of Ethers.js's 'Wallet'.
+
+Primary difference from Ethers.js 'Wallet' is that you can pass in either a
+Provider or an Alchemy object. This implementation will intelligently detect
+the format and set the provider accordingly.
+
+**`override`**
+
+## Hierarchy
+
+- `Wallet`
+
+  ↳ **`Wallet`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Wallet.md#constructor)
+
+### Properties
+
+- [\_isSigner](Wallet.md#_issigner)
+- [\_mnemonic](Wallet.md#_mnemonic)
+- [\_signingKey](Wallet.md#_signingkey)
+- [address](Wallet.md#address)
+- [alchemyProviderPromise](Wallet.md#alchemyproviderpromise)
+- [provider](Wallet.md#provider)
+
+### Accessors
+
+- [mnemonic](Wallet.md#mnemonic)
+- [privateKey](Wallet.md#privatekey)
+- [publicKey](Wallet.md#publickey)
+
+### Methods
+
+- [\_checkProvider](Wallet.md#_checkprovider)
+- [\_signTypedData](Wallet.md#_signtypeddata)
+- [call](Wallet.md#call)
+- [checkTransaction](Wallet.md#checktransaction)
+- [connect](Wallet.md#connect)
+- [encrypt](Wallet.md#encrypt)
+- [estimateGas](Wallet.md#estimategas)
+- [getAddress](Wallet.md#getaddress)
+- [getBalance](Wallet.md#getbalance)
+- [getChainId](Wallet.md#getchainid)
+- [getFeeData](Wallet.md#getfeedata)
+- [getGasPrice](Wallet.md#getgasprice)
+- [getTransactionCount](Wallet.md#gettransactioncount)
+- [getWallet](Wallet.md#getwallet)
+- [populateTransaction](Wallet.md#populatetransaction)
+- [resolveName](Wallet.md#resolvename)
+- [sendTransaction](Wallet.md#sendtransaction)
+- [signMessage](Wallet.md#signmessage)
+- [signTransaction](Wallet.md#signtransaction)
+- [createRandom](Wallet.md#createrandom)
+- [fromEncryptedJson](Wallet.md#fromencryptedjson)
+- [fromEncryptedJsonSync](Wallet.md#fromencryptedjsonsync)
+- [fromMnemonic](Wallet.md#frommnemonic)
+- [isSigner](Wallet.md#issigner)
+
+## Constructors
+
+### constructor
+
+• **new Wallet**(`privateKey`, `alchemyOrProvider?`)
+
+Overload permits users to pass in either a standard Provider or an Alchemy
+object. The constructor will detect the object type and handle appropriately.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `privateKey` | `BytesLike` \| `ExternallyOwnedAccount` \| `SigningKey` |
+| `alchemyOrProvider?` | [`Alchemy`](Alchemy.md) \| `Provider` |
+
+#### Overrides
+
+EthersWallet.constructor
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:39](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L39)
+
+## Properties
+
+### \_isSigner
+
+• `Readonly` **\_isSigner**: `boolean`
+
+#### Inherited from
+
+EthersWallet.\_isSigner
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-signer/lib/index.d.ts:29
+
+___
+
+### \_mnemonic
+
+• `Readonly` **\_mnemonic**: () => `Mnemonic`
+
+#### Type declaration
+
+▸ (): `Mnemonic`
+
+##### Returns
+
+`Mnemonic`
+
+#### Inherited from
+
+EthersWallet.\_mnemonic
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:12
+
+___
+
+### \_signingKey
+
+• `Readonly` **\_signingKey**: () => `SigningKey`
+
+#### Type declaration
+
+▸ (): `SigningKey`
+
+##### Returns
+
+`SigningKey`
+
+#### Inherited from
+
+EthersWallet.\_signingKey
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:11
+
+___
+
+### address
+
+• `Readonly` **address**: `string`
+
+#### Inherited from
+
+EthersWallet.address
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:9
+
+___
+
+### alchemyProviderPromise
+
+• `Private` `Optional` **alchemyProviderPromise**: `Promise`<`Provider`\>
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:31](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L31)
+
+___
+
+### provider
+
+• `Readonly` **provider**: `Provider`
+
+#### Inherited from
+
+EthersWallet.provider
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:10
+
+## Accessors
+
+### mnemonic
+
+• `get` **mnemonic**(): `Mnemonic`
+
+#### Returns
+
+`Mnemonic`
+
+#### Inherited from
+
+EthersWallet.mnemonic
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:14
+
+___
+
+### privateKey
+
+• `get` **privateKey**(): `string`
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+EthersWallet.privateKey
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:15
+
+___
+
+### publicKey
+
+• `get` **publicKey**(): `string`
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+EthersWallet.publicKey
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:16
+
+## Methods
+
+### \_checkProvider
+
+▸ **_checkProvider**(`operation?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `operation?` | `string` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+EthersWallet.\_checkProvider
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-signer/lib/index.d.ts:42
+
+___
+
+### \_signTypedData
+
+▸ **_signTypedData**(`domain`, `types`, `value`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `domain` | `TypedDataDomain` |
+| `types` | `Record`<`string`, `TypedDataField`[]\> |
+| `value` | `Record`<`string`, `any`\> |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Inherited from
+
+EthersWallet.\_signTypedData
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:21
+
+___
+
+### call
+
+▸ **call**(`transaction`, `blockTag?`): `Promise`<`string`\>
+
+Returns the result of calling using the transactionRequest, with this
+account address being used as the from field.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> | To make a call on |
+| `blockTag?` | [`BlockTag`](../modules.md#blocktag) | The block to make the call on |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Overrides
+
+EthersWallet.call
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:102](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L102)
+
+___
+
+### checkTransaction
+
+▸ **checkTransaction**(`transaction`): `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> |
+
+#### Returns
+
+`Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\>
+
+#### Inherited from
+
+EthersWallet.checkTransaction
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-signer/lib/index.d.ts:40
+
+___
+
+### connect
+
+▸ **connect**(`provider`): `Wallet`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `provider` | `Provider` |
+
+#### Returns
+
+`Wallet`
+
+#### Inherited from
+
+EthersWallet.connect
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:18
+
+___
+
+### encrypt
+
+▸ **encrypt**(`password`, `options?`, `progressCallback?`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `password` | `string` \| `Bytes` |
+| `options?` | `any` |
+| `progressCallback?` | `ProgressCallback` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Inherited from
+
+EthersWallet.encrypt
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:22
+
+___
+
+### estimateGas
+
+▸ **estimateGas**(`transaction`): `Promise`<[`BigNumber`](BigNumber.md)\>
+
+Returns the result of estimating the cost to send the transactionRequest,
+with this account address being used as the from field.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> | Transaction to estimate the gas on |
+
+#### Returns
+
+`Promise`<[`BigNumber`](BigNumber.md)\>
+
+#### Overrides
+
+EthersWallet.estimateGas
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:90](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L90)
+
+___
+
+### getAddress
+
+▸ **getAddress**(): `Promise`<`string`\>
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Inherited from
+
+EthersWallet.getAddress
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:17
+
+___
+
+### getBalance
+
+▸ **getBalance**(`blockTag?`): `Promise`<[`BigNumber`](BigNumber.md)\>
+
+Returns the balance of this wallet at blockTag.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `blockTag?` | [`BlockTag`](../modules.md#blocktag) | The block to check the balance of |
+
+#### Returns
+
+`Promise`<[`BigNumber`](BigNumber.md)\>
+
+#### Overrides
+
+EthersWallet.getBalance
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:66](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L66)
+
+___
+
+### getChainId
+
+▸ **getChainId**(): `Promise`<`number`\>
+
+Returns the chain ID this wallet is connected to.
+
+**`override`**
+
+#### Returns
+
+`Promise`<`number`\>
+
+#### Overrides
+
+EthersWallet.getChainId
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:142](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L142)
+
+___
+
+### getFeeData
+
+▸ **getFeeData**(): `Promise`<[`FeeData`](../interfaces/FeeData.md)\>
+
+Returns the current recommended FeeData to use in a transaction.
+
+For an EIP-1559 transaction, the maxFeePerGas and maxPriorityFeePerGas
+should be used.
+
+For legacy transactions and networks which do not support EIP-1559, the
+gasPrice should be used.
+
+**`override`**
+
+#### Returns
+
+`Promise`<[`FeeData`](../interfaces/FeeData.md)\>
+
+#### Overrides
+
+EthersWallet.getFeeData
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:166](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L166)
+
+___
+
+### getGasPrice
+
+▸ **getGasPrice**(): `Promise`<[`BigNumber`](BigNumber.md)\>
+
+Returns the current gas price.
+
+**`override`**
+
+#### Returns
+
+`Promise`<[`BigNumber`](BigNumber.md)\>
+
+#### Overrides
+
+EthersWallet.getGasPrice
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:151](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L151)
+
+___
+
+### getTransactionCount
+
+▸ **getTransactionCount**(`blockTag?`): `Promise`<`number`\>
+
+Returns the number of transactions this account has ever sent. This is the
+value required to be included in transactions as the nonce.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `blockTag?` | [`BlockTag`](../modules.md#blocktag) | The block to check the transaction count on |
+
+#### Returns
+
+`Promise`<`number`\>
+
+#### Overrides
+
+EthersWallet.getTransactionCount
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:77](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L77)
+
+___
+
+### getWallet
+
+▸ `Private` **getWallet**(): `Promise`<`Wallet`\>
+
+#### Returns
+
+`Promise`<`Wallet`\>
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:182](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L182)
+
+___
+
+### populateTransaction
+
+▸ **populateTransaction**(`transaction`): `Promise`<[`TransactionRequest`](../modules.md#transactionrequest)\>
+
+Populates ALL keys for a transaction and checks that `from` matches this
+`Signer`. Resolves ENS names and populates fields like `gasPrice`, `gasLimit`,
+`nonce`, and `chainId` if they are not provided.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> | The transaction to populate. |
+
+#### Returns
+
+`Promise`<[`TransactionRequest`](../modules.md#transactionrequest)\>
+
+#### Overrides
+
+EthersWallet.populateTransaction
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:117](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L117)
+
+___
+
+### resolveName
+
+▸ **resolveName**(`name`): `Promise`<`string`\>
+
+Looks up the address of name. If the name is not owned, or does not have a
+Resolver configured, or the Resolver does not have an address configured,
+null is returned.
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | Name of the ENS address |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Overrides
+
+EthersWallet.resolveName
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:178](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L178)
+
+___
+
+### sendTransaction
+
+▸ **sendTransaction**(`transaction`): `Promise`<[`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+Populates all fields in a transaction, signs it and sends it to the network
+
+**`override`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Deferrable`<[`TransactionRequest`](../modules.md#transactionrequest)\> | The transaction to send. |
+
+#### Returns
+
+`Promise`<[`TransactionResponse`](../interfaces/TransactionResponse.md)\>
+
+#### Overrides
+
+EthersWallet.sendTransaction
+
+#### Defined in
+
+[src/api/alchemy-wallet.ts:131](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/alchemy-wallet.ts#L131)
+
+___
+
+### signMessage
+
+▸ **signMessage**(`message`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` \| `Bytes` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Inherited from
+
+EthersWallet.signMessage
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:20
+
+___
+
+### signTransaction
+
+▸ **signTransaction**(`transaction`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `transaction` | [`TransactionRequest`](../modules.md#transactionrequest) |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Inherited from
+
+EthersWallet.signTransaction
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:19
+
+___
+
+### createRandom
+
+▸ `Static` **createRandom**(`options?`): `Wallet`
+
+ Static methods to create Wallet instances.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options?` | `any` |
+
+#### Returns
+
+`Wallet`
+
+#### Inherited from
+
+EthersWallet.createRandom
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:26
+
+___
+
+### fromEncryptedJson
+
+▸ `Static` **fromEncryptedJson**(`json`, `password`, `progressCallback?`): `Promise`<`Wallet`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `string` |
+| `password` | `string` \| `Bytes` |
+| `progressCallback?` | `ProgressCallback` |
+
+#### Returns
+
+`Promise`<`Wallet`\>
+
+#### Inherited from
+
+EthersWallet.fromEncryptedJson
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:27
+
+___
+
+### fromEncryptedJsonSync
+
+▸ `Static` **fromEncryptedJsonSync**(`json`, `password`): `Wallet`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `string` |
+| `password` | `string` \| `Bytes` |
+
+#### Returns
+
+`Wallet`
+
+#### Inherited from
+
+EthersWallet.fromEncryptedJsonSync
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:28
+
+___
+
+### fromMnemonic
+
+▸ `Static` **fromMnemonic**(`mnemonic`, `path?`, `wordlist?`): `Wallet`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `mnemonic` | `string` |
+| `path?` | `string` |
+| `wordlist?` | `Wordlist` |
+
+#### Returns
+
+`Wallet`
+
+#### Inherited from
+
+EthersWallet.fromMnemonic
+
+#### Defined in
+
+node_modules/@ethersproject/wallet/lib/index.d.ts:29
+
+___
+
+### isSigner
+
+▸ `Static` **isSigner**(`value`): value is Signer
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+value is Signer
+
+#### Inherited from
+
+EthersWallet.isSigner
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-signer/lib/index.d.ts:43
+
+
+================================================================================
+File: docs-md\classes\WebSocketNamespace.md
+Size: 5.18 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebSocketNamespace
+
+# Class: WebSocketNamespace
+
+The Websocket namespace contains all subscription related functions that
+allow you to subscribe to events and receive updates as they occur. The
+underlying WebSocket provider has additional logic to handle reconnections
+and automatically backfills missed events.
+
+Do not call this constructor directly. Instead, instantiate an Alchemy object
+with `const alchemy = new Alchemy(config)` and then access the core namespace
+via `alchemy.ws`.
+
+## Table of contents
+
+### Methods
+
+- [listenerCount](WebSocketNamespace.md#listenercount)
+- [listeners](WebSocketNamespace.md#listeners)
+- [off](WebSocketNamespace.md#off)
+- [on](WebSocketNamespace.md#on)
+- [once](WebSocketNamespace.md#once)
+- [removeAllListeners](WebSocketNamespace.md#removealllisteners)
+
+## Methods
+
+### listenerCount
+
+▸ **listenerCount**(`eventName?`): `Promise`<`number`\>
+
+Returns the number of listeners for the provided {@link eventName} event. If
+no event is provided, the total number of listeners for all events is returned.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName?` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to get the number of listeners for. |
+
+#### Returns
+
+`Promise`<`number`\>
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L104)
+
+___
+
+### listeners
+
+▸ **listeners**(`eventName?`): `Promise`<`Listener`[]\>
+
+Returns an array of listeners for the provided {@link eventName} event. If
+no event is provided, all listeners will be included.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName?` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to get the listeners for. |
+
+#### Returns
+
+`Promise`<`Listener`[]\>
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L118)
+
+___
+
+### off
+
+▸ **off**(`eventName`, `listener?`): [`WebSocketNamespace`](WebSocketNamespace.md)
+
+Removes the provided {@link listener} for the {@link eventName} event. If no
+listener is provided, all listeners for the event will be removed.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to unlisten to. |
+| `listener?` | `Listener` | The listener to remove. |
+
+#### Returns
+
+[`WebSocketNamespace`](WebSocketNamespace.md)
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:70](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L70)
+
+___
+
+### on
+
+▸ **on**(`eventName`, `listener`): [`WebSocketNamespace`](WebSocketNamespace.md)
+
+Adds a listener to be triggered for each {@link eventName} event. Also
+includes Alchemy's Subscription API events. See [AlchemyEventType](../modules.md#alchemyeventtype) for
+how to use them.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to listen for. |
+| `listener` | `Listener` | The listener to call when the event is triggered. |
+
+#### Returns
+
+[`WebSocketNamespace`](WebSocketNamespace.md)
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:35](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L35)
+
+___
+
+### once
+
+▸ **once**(`eventName`, `listener`): [`WebSocketNamespace`](WebSocketNamespace.md)
+
+Adds a listener to be triggered for only the next {@link eventName} event,
+after which it will be removed. Also includes Alchemy's Subscription API
+events. See [AlchemyEventType](../modules.md#alchemyeventtype) for how to use them.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to listen for. |
+| `listener` | `Listener` | The listener to call when the event is triggered. |
+
+#### Returns
+
+[`WebSocketNamespace`](WebSocketNamespace.md)
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:53](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L53)
+
+___
+
+### removeAllListeners
+
+▸ **removeAllListeners**(`eventName?`): [`WebSocketNamespace`](WebSocketNamespace.md)
+
+Remove all listeners for the provided {@link eventName} event. If no event
+is provided, all events and their listeners are removed.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `eventName?` | [`AlchemyEventType`](../modules.md#alchemyeventtype) | The event to remove all listeners for. |
+
+#### Returns
+
+[`WebSocketNamespace`](WebSocketNamespace.md)
+
+#### Defined in
+
+[src/api/websocket-namespace.ts:86](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/api/websocket-namespace.ts#L86)
+
+
+================================================================================
+File: docs-md\enums\AlchemySubscription.md
+Size: 972 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AlchemySubscription
+
+# Enumeration: AlchemySubscription
+
+Method names for Alchemy's custom Subscription API endpoints.
+
+This value is provided in the `method` field when creating an event filter on
+the Websocket Namespace.
+
+## Table of contents
+
+### Enumeration members
+
+- [MINED\_TRANSACTIONS](AlchemySubscription.md#mined_transactions)
+- [PENDING\_TRANSACTIONS](AlchemySubscription.md#pending_transactions)
+
+## Enumeration members
+
+### MINED\_TRANSACTIONS
+
+• **MINED\_TRANSACTIONS** = `"alchemy_minedTransactions"`
+
+#### Defined in
+
+[src/types/types.ts:695](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L695)
+
+___
+
+### PENDING\_TRANSACTIONS
+
+• **PENDING\_TRANSACTIONS** = `"alchemy_pendingTransactions"`
+
+#### Defined in
+
+[src/types/types.ts:694](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L694)
+
+
+================================================================================
+File: docs-md\enums\AssetTransfersCategory.md
+Size: 2.34 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersCategory
+
+# Enumeration: AssetTransfersCategory
+
+Categories of transfers to use with the [AssetTransfersParams](../interfaces/AssetTransfersParams.md) request
+object when using [CoreNamespace.getAssetTransfers](../classes/CoreNamespace.md#getassettransfers).
+
+## Table of contents
+
+### Enumeration members
+
+- [ERC1155](AssetTransfersCategory.md#erc1155)
+- [ERC20](AssetTransfersCategory.md#erc20)
+- [ERC721](AssetTransfersCategory.md#erc721)
+- [EXTERNAL](AssetTransfersCategory.md#external)
+- [INTERNAL](AssetTransfersCategory.md#internal)
+- [SPECIALNFT](AssetTransfersCategory.md#specialnft)
+
+## Enumeration members
+
+### ERC1155
+
+• **ERC1155** = `"erc1155"`
+
+ERC1155 transfers.
+
+#### Defined in
+
+[src/types/types.ts:461](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L461)
+
+___
+
+### ERC20
+
+• **ERC20** = `"erc20"`
+
+ERC20 transfers.
+
+#### Defined in
+
+[src/types/types.ts:455](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L455)
+
+___
+
+### ERC721
+
+• **ERC721** = `"erc721"`
+
+ERC721 transfers.
+
+#### Defined in
+
+[src/types/types.ts:458](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L458)
+
+___
+
+### EXTERNAL
+
+• **EXTERNAL** = `"external"`
+
+Top level ETH transactions that occur where the `fromAddress` is an
+external user-created address. External addresses have private keys and are
+accessed by users.
+
+#### Defined in
+
+[src/types/types.ts:445](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L445)
+
+___
+
+### INTERNAL
+
+• **INTERNAL** = `"internal"`
+
+Top level ETH transactions that occur where the `fromAddress` is an
+internal, smart contract address. For example, a smart contract calling
+another smart contract or sending
+
+#### Defined in
+
+[src/types/types.ts:452](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L452)
+
+___
+
+### SPECIALNFT
+
+• **SPECIALNFT** = `"specialnft"`
+
+Special contracts that don't follow ERC 721/1155, (ex: CryptoKitties).
+
+#### Defined in
+
+[src/types/types.ts:464](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L464)
+
+
+================================================================================
+File: docs-md\enums\CommitmentLevel.md
+Size: 2.38 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / CommitmentLevel
+
+# Enumeration: CommitmentLevel
+
+Commitment level of the target block with using methods in the
+[DebugNamespace](../classes/DebugNamespace.md)
+
+## Table of contents
+
+### Enumeration members
+
+- [EARLIEST](CommitmentLevel.md#earliest)
+- [FINALIZED](CommitmentLevel.md#finalized)
+- [LATEST](CommitmentLevel.md#latest)
+- [PENDING](CommitmentLevel.md#pending)
+- [SAFE](CommitmentLevel.md#safe)
+
+## Enumeration members
+
+### EARLIEST
+
+• **EARLIEST** = `"earliest"`
+
+The lowest numbered block available that is usually the first block created.
+
+#### Defined in
+
+[src/types/types.ts:1459](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1459)
+
+___
+
+### FINALIZED
+
+• **FINALIZED** = `"finalized"`
+
+The most recent secure block that has been accepted by >2/3 of validators.
+This block is very unlikely to be re-orged. This is only available on
+[Network.ETH_GOERLI](Network.md#eth_goerli) and [Network.ETH_SEPOLIA](Network.md#eth_sepolia).
+
+#### Defined in
+
+[src/types/types.ts:1455](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1455)
+
+___
+
+### LATEST
+
+• **LATEST** = `"latest"`
+
+The most recent block in the canonical chain observed by Alchemy. Note that
+this block may be re-orged out of the canonical chain.
+
+#### Defined in
+
+[src/types/types.ts:1443](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1443)
+
+___
+
+### PENDING
+
+• **PENDING** = `"pending"`
+
+Sample next block inferred by Alchemy built on top of the latest block.
+This contains the set of transactions taken from the local mempool and
+is a proxy for blocks that have not been mined yet.
+
+#### Defined in
+
+[src/types/types.ts:1438](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1438)
+
+___
+
+### SAFE
+
+• **SAFE** = `"safe"`
+
+The most recent crypto-economically secure block that cannot be re-orged
+outside of manual intervention driven by community coordination. This is
+only available on [Network.ETH_GOERLI](Network.md#eth_goerli) and [Network.ETH_SEPOLIA](Network.md#eth_sepolia).
+
+#### Defined in
+
+[src/types/types.ts:1449](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1449)
+
+
+================================================================================
+File: docs-md\enums\DebugCallType.md
+Size: 1.16 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugCallType
+
+# Enumeration: DebugCallType
+
+The type of call in a debug call trace.
+
+## Table of contents
+
+### Enumeration members
+
+- [CALL](DebugCallType.md#call)
+- [CREATE](DebugCallType.md#create)
+- [DELEGATECALL](DebugCallType.md#delegatecall)
+- [STATICCALL](DebugCallType.md#staticcall)
+
+## Enumeration members
+
+### CALL
+
+• **CALL** = `"CALL"`
+
+#### Defined in
+
+[src/types/types.ts:994](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L994)
+
+___
+
+### CREATE
+
+• **CREATE** = `"CREATE"`
+
+#### Defined in
+
+[src/types/types.ts:993](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L993)
+
+___
+
+### DELEGATECALL
+
+• **DELEGATECALL** = `"DELEGATECALL"`
+
+#### Defined in
+
+[src/types/types.ts:996](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L996)
+
+___
+
+### STATICCALL
+
+• **STATICCALL** = `"STATICCALL"`
+
+#### Defined in
+
+[src/types/types.ts:995](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L995)
+
+
+================================================================================
+File: docs-md\enums\DebugTracerType.md
+Size: 824 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugTracerType
+
+# Enumeration: DebugTracerType
+
+The type of tracer to use when running debug methods in the
+[DebugNamespace](../classes/DebugNamespace.md).
+
+## Table of contents
+
+### Enumeration members
+
+- [CALL\_TRACER](DebugTracerType.md#call_tracer)
+- [PRESTATE\_TRACER](DebugTracerType.md#prestate_tracer)
+
+## Enumeration members
+
+### CALL\_TRACER
+
+• **CALL\_TRACER** = `"callTracer"`
+
+#### Defined in
+
+[src/types/types.ts:1473](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1473)
+
+___
+
+### PRESTATE\_TRACER
+
+• **PRESTATE\_TRACER** = `"prestateTracer"`
+
+#### Defined in
+
+[src/types/types.ts:1474](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1474)
+
+
+================================================================================
+File: docs-md\enums\DecodingAuthority.md
+Size: 584 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DecodingAuthority
+
+# Enumeration: DecodingAuthority
+
+Authority used to decode calls and logs when using the
+[TransactNamespace.simulateExecution](../classes/TransactNamespace.md#simulateexecution) method.
+
+## Table of contents
+
+### Enumeration members
+
+- [ETHERSCAN](DecodingAuthority.md#etherscan)
+
+## Enumeration members
+
+### ETHERSCAN
+
+• **ETHERSCAN** = `"ETHERSCAN"`
+
+#### Defined in
+
+[src/types/types.ts:957](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L957)
+
+
+================================================================================
+File: docs-md\enums\GetTransfersForOwnerTransferType.md
+Size: 789 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / GetTransfersForOwnerTransferType
+
+# Enumeration: GetTransfersForOwnerTransferType
+
+The type of transfer for the request. Note that using `TO` will also include
+NFTs that were minted by the owner.
+
+## Table of contents
+
+### Enumeration members
+
+- [FROM](GetTransfersForOwnerTransferType.md#from)
+- [TO](GetTransfersForOwnerTransferType.md#to)
+
+## Enumeration members
+
+### FROM
+
+• **FROM** = `"FROM"`
+
+#### Defined in
+
+[src/types/types.ts:572](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L572)
+
+___
+
+### TO
+
+• **TO** = `"TO"`
+
+#### Defined in
+
+[src/types/types.ts:571](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L571)
+
+
+================================================================================
+File: docs-md\enums\HistoricalPriceInterval.md
+Size: 1.08 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / HistoricalPriceInterval
+
+# Enumeration: HistoricalPriceInterval
+
+Valid time intervals for historical price data.
+
+## Table of contents
+
+### Enumeration members
+
+- [FIVE\_MINUTE](HistoricalPriceInterval.md#five_minute)
+- [ONE\_DAY](HistoricalPriceInterval.md#one_day)
+- [ONE\_HOUR](HistoricalPriceInterval.md#one_hour)
+
+## Enumeration members
+
+### FIVE\_MINUTE
+
+• **FIVE\_MINUTE** = `"5m"`
+
+5-minute intervals
+
+#### Defined in
+
+[src/types/prices-types.ts:112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L112)
+
+___
+
+### ONE\_DAY
+
+• **ONE\_DAY** = `"1d"`
+
+1-day intervals
+
+#### Defined in
+
+[src/types/prices-types.ts:116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L116)
+
+___
+
+### ONE\_HOUR
+
+• **ONE\_HOUR** = `"1h"`
+
+1-hour intervals
+
+#### Defined in
+
+[src/types/prices-types.ts:114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L114)
+
+
+================================================================================
+File: docs-md\enums\Network.md
+Size: 21.6 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / Network
+
+# Enumeration: Network
+
+The supported networks by Alchemy. Note that some functions are not available
+on all networks. Please refer to the Alchemy documentation for which APIs are
+available on which networks
+[https://docs.alchemy.com/alchemy/apis/feature-support-by-chain](https://docs.alchemy.com/alchemy/apis/feature-support-by-chain)
+
+## Table of contents
+
+### Enumeration members
+
+- [ABSTRACT\_TESTNET](Network.md#abstract_testnet)
+- [APECHAIN\_CURTIS](Network.md#apechain_curtis)
+- [APECHAIN\_MAINNET](Network.md#apechain_mainnet)
+- [ARBNOVA\_MAINNET](Network.md#arbnova_mainnet)
+- [ARB\_GOERLI](Network.md#arb_goerli)
+- [ARB\_MAINNET](Network.md#arb_mainnet)
+- [ARB\_SEPOLIA](Network.md#arb_sepolia)
+- [ASTAR\_MAINNET](Network.md#astar_mainnet)
+- [AVAX\_FUJI](Network.md#avax_fuji)
+- [AVAX\_MAINNET](Network.md#avax_mainnet)
+- [BASE\_GOERLI](Network.md#base_goerli)
+- [BASE\_MAINNET](Network.md#base_mainnet)
+- [BASE\_SEPOLIA](Network.md#base_sepolia)
+- [BERACHAIN\_BARTIO](Network.md#berachain_bartio)
+- [BERACHAIN\_MAINNET](Network.md#berachain_mainnet)
+- [BLAST\_MAINNET](Network.md#blast_mainnet)
+- [BLAST\_SEPOLIA](Network.md#blast_sepolia)
+- [BNB\_MAINNET](Network.md#bnb_mainnet)
+- [BNB\_TESTNET](Network.md#bnb_testnet)
+- [CELO\_ALFAJORES](Network.md#celo_alfajores)
+- [CELO\_MAINNET](Network.md#celo_mainnet)
+- [CROSSFI\_MAINNET](Network.md#crossfi_mainnet)
+- [CROSSFI\_TESTNET](Network.md#crossfi_testnet)
+- [DEGEN\_MAINNET](Network.md#degen_mainnet)
+- [ETH\_GOERLI](Network.md#eth_goerli)
+- [ETH\_HOLESKY](Network.md#eth_holesky)
+- [ETH\_MAINNET](Network.md#eth_mainnet)
+- [ETH\_SEPOLIA](Network.md#eth_sepolia)
+- [FANTOM\_MAINNET](Network.md#fantom_mainnet)
+- [FANTOM\_TESTNET](Network.md#fantom_testnet)
+- [FLOW\_MAINNET](Network.md#flow_mainnet)
+- [FLOW\_TESTNET](Network.md#flow_testnet)
+- [FRAX\_MAINNET](Network.md#frax_mainnet)
+- [FRAX\_SEPOLIA](Network.md#frax_sepolia)
+- [GEIST\_MAINNET](Network.md#geist_mainnet)
+- [GEIST\_POLTER](Network.md#geist_polter)
+- [GNOSIS\_CHIADO](Network.md#gnosis_chiado)
+- [GNOSIS\_MAINNET](Network.md#gnosis_mainnet)
+- [INK\_MAINNET](Network.md#ink_mainnet)
+- [INK\_SEPOLIA](Network.md#ink_sepolia)
+- [LENS\_SEPOLIA](Network.md#lens_sepolia)
+- [LINEA\_MAINNET](Network.md#linea_mainnet)
+- [LINEA\_SEPOLIA](Network.md#linea_sepolia)
+- [LUMIA\_PRISM](Network.md#lumia_prism)
+- [LUMIA\_TESTNET](Network.md#lumia_testnet)
+- [MANTLE\_MAINNET](Network.md#mantle_mainnet)
+- [MANTLE\_SEPOLIA](Network.md#mantle_sepolia)
+- [MATIC\_AMOY](Network.md#matic_amoy)
+- [MATIC\_MAINNET](Network.md#matic_mainnet)
+- [MATIC\_MUMBAI](Network.md#matic_mumbai)
+- [METIS\_MAINNET](Network.md#metis_mainnet)
+- [OPBNB\_MAINNET](Network.md#opbnb_mainnet)
+- [OPBNB\_TESTNET](Network.md#opbnb_testnet)
+- [OPT\_GOERLI](Network.md#opt_goerli)
+- [OPT\_MAINNET](Network.md#opt_mainnet)
+- [OPT\_SEPOLIA](Network.md#opt_sepolia)
+- [POLYGONZKEVM\_CARDONA](Network.md#polygonzkevm_cardona)
+- [POLYGONZKEVM\_MAINNET](Network.md#polygonzkevm_mainnet)
+- [POLYGONZKEVM\_TESTNET](Network.md#polygonzkevm_testnet)
+- [POLYNOMIAL\_MAINNET](Network.md#polynomial_mainnet)
+- [POLYNOMIAL\_SEPOLIA](Network.md#polynomial_sepolia)
+- [ROOTSTOCK\_MAINNET](Network.md#rootstock_mainnet)
+- [ROOTSTOCK\_TESTNET](Network.md#rootstock_testnet)
+- [SCROLL\_MAINNET](Network.md#scroll_mainnet)
+- [SCROLL\_SEPOLIA](Network.md#scroll_sepolia)
+- [SHAPE\_MAINNET](Network.md#shape_mainnet)
+- [SHAPE\_SEPOLIA](Network.md#shape_sepolia)
+- [SONEIUM\_MAINNET](Network.md#soneium_mainnet)
+- [SONEIUM\_MINATO](Network.md#soneium_minato)
+- [SONIC\_BLAZE](Network.md#sonic_blaze)
+- [SONIC\_MAINNET](Network.md#sonic_mainnet)
+- [UNICHAIN\_SEPOLIA](Network.md#unichain_sepolia)
+- [WORLDCHAIN\_MAINNET](Network.md#worldchain_mainnet)
+- [WORLDCHAIN\_SEPOLIA](Network.md#worldchain_sepolia)
+- [XMTP\_TESTNET](Network.md#xmtp_testnet)
+- [ZETACHAIN\_MAINNET](Network.md#zetachain_mainnet)
+- [ZETACHAIN\_TESTNET](Network.md#zetachain_testnet)
+- [ZKSYNC\_MAINNET](Network.md#zksync_mainnet)
+- [ZKSYNC\_SEPOLIA](Network.md#zksync_sepolia)
+- [ZORA\_MAINNET](Network.md#zora_mainnet)
+- [ZORA\_SEPOLIA](Network.md#zora_sepolia)
+
+## Enumeration members
+
+### ABSTRACT\_TESTNET
+
+• **ABSTRACT\_TESTNET** = `"abstract-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:182](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L182)
+
+___
+
+### APECHAIN\_CURTIS
+
+• **APECHAIN\_CURTIS** = `"apechain-curtis"`
+
+#### Defined in
+
+[src/types/types.ts:172](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L172)
+
+___
+
+### APECHAIN\_MAINNET
+
+• **APECHAIN\_MAINNET** = `"apechain-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:171](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L171)
+
+___
+
+### ARBNOVA\_MAINNET
+
+• **ARBNOVA\_MAINNET** = `"arbnova-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:135](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L135)
+
+___
+
+### ARB\_GOERLI
+
+• **ARB\_GOERLI** = `"arb-goerli"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L110)
+
+___
+
+### ARB\_MAINNET
+
+• **ARB\_MAINNET** = `"arb-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:108](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L108)
+
+___
+
+### ARB\_SEPOLIA
+
+• **ARB\_SEPOLIA** = `"arb-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:111](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L111)
+
+___
+
+### ASTAR\_MAINNET
+
+• **ASTAR\_MAINNET** = `"astar-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L116)
+
+___
+
+### AVAX\_FUJI
+
+• **AVAX\_FUJI** = `"avax-fuji"`
+
+#### Defined in
+
+[src/types/types.ts:147](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L147)
+
+___
+
+### AVAX\_MAINNET
+
+• **AVAX\_MAINNET** = `"avax-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:146](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L146)
+
+___
+
+### BASE\_GOERLI
+
+• **BASE\_GOERLI** = `"base-goerli"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L123)
+
+___
+
+### BASE\_MAINNET
+
+• **BASE\_MAINNET** = `"base-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:121](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L121)
+
+___
+
+### BASE\_SEPOLIA
+
+• **BASE\_SEPOLIA** = `"base-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:124](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L124)
+
+___
+
+### BERACHAIN\_BARTIO
+
+• **BERACHAIN\_BARTIO** = `"berachain-bartio"`
+
+#### Defined in
+
+[src/types/types.ts:153](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L153)
+
+___
+
+### BERACHAIN\_MAINNET
+
+• **BERACHAIN\_MAINNET** = `"berachain-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:154](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L154)
+
+___
+
+### BLAST\_MAINNET
+
+• **BLAST\_MAINNET** = `"blast-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:136](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L136)
+
+___
+
+### BLAST\_SEPOLIA
+
+• **BLAST\_SEPOLIA** = `"blast-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:137](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L137)
+
+___
+
+### BNB\_MAINNET
+
+• **BNB\_MAINNET** = `"bnb-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:144](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L144)
+
+___
+
+### BNB\_TESTNET
+
+• **BNB\_TESTNET** = `"bnb-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:145](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L145)
+
+___
+
+### CELO\_ALFAJORES
+
+• **CELO\_ALFAJORES** = `"celo-alfajores"`
+
+#### Defined in
+
+[src/types/types.ts:149](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L149)
+
+___
+
+### CELO\_MAINNET
+
+• **CELO\_MAINNET** = `"celo-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:148](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L148)
+
+___
+
+### CROSSFI\_MAINNET
+
+• **CROSSFI\_MAINNET** = `"crossfi-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:169](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L169)
+
+___
+
+### CROSSFI\_TESTNET
+
+• **CROSSFI\_TESTNET** = `"crossfi-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:170](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L170)
+
+___
+
+### DEGEN\_MAINNET
+
+• **DEGEN\_MAINNET** = `"degen-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:183](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L183)
+
+___
+
+### ETH\_GOERLI
+
+• **ETH\_GOERLI** = `"eth-goerli"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:101](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L101)
+
+___
+
+### ETH\_HOLESKY
+
+• **ETH\_HOLESKY** = `"eth-holesky"`
+
+#### Defined in
+
+[src/types/types.ts:103](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L103)
+
+___
+
+### ETH\_MAINNET
+
+• **ETH\_MAINNET** = `"eth-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:99](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L99)
+
+___
+
+### ETH\_SEPOLIA
+
+• **ETH\_SEPOLIA** = `"eth-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:102](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L102)
+
+___
+
+### FANTOM\_MAINNET
+
+• **FANTOM\_MAINNET** = `"fantom-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:131](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L131)
+
+___
+
+### FANTOM\_TESTNET
+
+• **FANTOM\_TESTNET** = `"fantom-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:132](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L132)
+
+___
+
+### FLOW\_MAINNET
+
+• **FLOW\_MAINNET** = `"flow-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:161](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L161)
+
+___
+
+### FLOW\_TESTNET
+
+• **FLOW\_TESTNET** = `"flow-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:162](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L162)
+
+___
+
+### FRAX\_MAINNET
+
+• **FRAX\_MAINNET** = `"frax-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:165](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L165)
+
+___
+
+### FRAX\_SEPOLIA
+
+• **FRAX\_SEPOLIA** = `"frax-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:166](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L166)
+
+___
+
+### GEIST\_MAINNET
+
+• **GEIST\_MAINNET** = `"geist-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:174](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L174)
+
+___
+
+### GEIST\_POLTER
+
+• **GEIST\_POLTER** = `"geist-polter"`
+
+#### Defined in
+
+[src/types/types.ts:175](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L175)
+
+___
+
+### GNOSIS\_CHIADO
+
+• **GNOSIS\_CHIADO** = `"gnosis-chiado"`
+
+#### Defined in
+
+[src/types/types.ts:143](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L143)
+
+___
+
+### GNOSIS\_MAINNET
+
+• **GNOSIS\_MAINNET** = `"gnosis-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:142](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L142)
+
+___
+
+### INK\_MAINNET
+
+• **INK\_MAINNET** = `"ink-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:184](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L184)
+
+___
+
+### INK\_SEPOLIA
+
+• **INK\_SEPOLIA** = `"ink-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:185](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L185)
+
+___
+
+### LENS\_SEPOLIA
+
+• **LENS\_SEPOLIA** = `"lens-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:173](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L173)
+
+___
+
+### LINEA\_MAINNET
+
+• **LINEA\_MAINNET** = `"linea-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:129](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L129)
+
+___
+
+### LINEA\_SEPOLIA
+
+• **LINEA\_SEPOLIA** = `"linea-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:130](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L130)
+
+___
+
+### LUMIA\_PRISM
+
+• **LUMIA\_PRISM** = `"lumia-prism"`
+
+#### Defined in
+
+[src/types/types.ts:176](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L176)
+
+___
+
+### LUMIA\_TESTNET
+
+• **LUMIA\_TESTNET** = `"lumia-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:177](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L177)
+
+___
+
+### MANTLE\_MAINNET
+
+• **MANTLE\_MAINNET** = `"mantle-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:138](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L138)
+
+___
+
+### MANTLE\_SEPOLIA
+
+• **MANTLE\_SEPOLIA** = `"mantle-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:139](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L139)
+
+___
+
+### MATIC\_AMOY
+
+• **MATIC\_AMOY** = `"polygon-amoy"`
+
+#### Defined in
+
+[src/types/types.ts:115](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L115)
+
+___
+
+### MATIC\_MAINNET
+
+• **MATIC\_MAINNET** = `"polygon-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L112)
+
+___
+
+### MATIC\_MUMBAI
+
+• **MATIC\_MUMBAI** = `"polygon-mumbai"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L114)
+
+___
+
+### METIS\_MAINNET
+
+• **METIS\_MAINNET** = `"metis-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:150](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L150)
+
+___
+
+### OPBNB\_MAINNET
+
+• **OPBNB\_MAINNET** = `"opbnb-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:151](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L151)
+
+___
+
+### OPBNB\_TESTNET
+
+• **OPBNB\_TESTNET** = `"opbnb-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:152](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L152)
+
+___
+
+### OPT\_GOERLI
+
+• **OPT\_GOERLI** = `"opt-goerli"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L106)
+
+___
+
+### OPT\_MAINNET
+
+• **OPT\_MAINNET** = `"opt-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L104)
+
+___
+
+### OPT\_SEPOLIA
+
+• **OPT\_SEPOLIA** = `"opt-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:107](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L107)
+
+___
+
+### POLYGONZKEVM\_CARDONA
+
+• **POLYGONZKEVM\_CARDONA** = `"polygonzkevm-cardona"`
+
+#### Defined in
+
+[src/types/types.ts:120](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L120)
+
+___
+
+### POLYGONZKEVM\_MAINNET
+
+• **POLYGONZKEVM\_MAINNET** = `"polygonzkevm-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:117](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L117)
+
+___
+
+### POLYGONZKEVM\_TESTNET
+
+• **POLYGONZKEVM\_TESTNET** = `"polygonzkevm-testnet"`
+
+**`deprecated`**
+
+#### Defined in
+
+[src/types/types.ts:119](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L119)
+
+___
+
+### POLYNOMIAL\_MAINNET
+
+• **POLYNOMIAL\_MAINNET** = `"polynomial-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:167](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L167)
+
+___
+
+### POLYNOMIAL\_SEPOLIA
+
+• **POLYNOMIAL\_SEPOLIA** = `"polynomial-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:168](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L168)
+
+___
+
+### ROOTSTOCK\_MAINNET
+
+• **ROOTSTOCK\_MAINNET** = `"rootstock-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:159](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L159)
+
+___
+
+### ROOTSTOCK\_TESTNET
+
+• **ROOTSTOCK\_TESTNET** = `"rootstock-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:160](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L160)
+
+___
+
+### SCROLL\_MAINNET
+
+• **SCROLL\_MAINNET** = `"scroll-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:140](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L140)
+
+___
+
+### SCROLL\_SEPOLIA
+
+• **SCROLL\_SEPOLIA** = `"scroll-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:141](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L141)
+
+___
+
+### SHAPE\_MAINNET
+
+• **SHAPE\_MAINNET** = `"shape-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:127](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L127)
+
+___
+
+### SHAPE\_SEPOLIA
+
+• **SHAPE\_SEPOLIA** = `"shape-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:128](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L128)
+
+___
+
+### SONEIUM\_MAINNET
+
+• **SONEIUM\_MAINNET** = `"soneium-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:155](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L155)
+
+___
+
+### SONEIUM\_MINATO
+
+• **SONEIUM\_MINATO** = `"soneium-minato"`
+
+#### Defined in
+
+[src/types/types.ts:156](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L156)
+
+___
+
+### SONIC\_BLAZE
+
+• **SONIC\_BLAZE** = `"sonic-blaze"`
+
+#### Defined in
+
+[src/types/types.ts:180](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L180)
+
+___
+
+### SONIC\_MAINNET
+
+• **SONIC\_MAINNET** = `"sonic-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:179](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L179)
+
+___
+
+### UNICHAIN\_SEPOLIA
+
+• **UNICHAIN\_SEPOLIA** = `"unichain-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:178](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L178)
+
+___
+
+### WORLDCHAIN\_MAINNET
+
+• **WORLDCHAIN\_MAINNET** = `"worldchain-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:157](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L157)
+
+___
+
+### WORLDCHAIN\_SEPOLIA
+
+• **WORLDCHAIN\_SEPOLIA** = `"worldchain-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:158](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L158)
+
+___
+
+### XMTP\_TESTNET
+
+• **XMTP\_TESTNET** = `"xmtp-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:181](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L181)
+
+___
+
+### ZETACHAIN\_MAINNET
+
+• **ZETACHAIN\_MAINNET** = `"zetachain-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:133](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L133)
+
+___
+
+### ZETACHAIN\_TESTNET
+
+• **ZETACHAIN\_TESTNET** = `"zetachain-testnet"`
+
+#### Defined in
+
+[src/types/types.ts:134](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L134)
+
+___
+
+### ZKSYNC\_MAINNET
+
+• **ZKSYNC\_MAINNET** = `"zksync-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:125](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L125)
+
+___
+
+### ZKSYNC\_SEPOLIA
+
+• **ZKSYNC\_SEPOLIA** = `"zksync-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:126](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L126)
+
+___
+
+### ZORA\_MAINNET
+
+• **ZORA\_MAINNET** = `"zora-mainnet"`
+
+#### Defined in
+
+[src/types/types.ts:163](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L163)
+
+___
+
+### ZORA\_SEPOLIA
+
+• **ZORA\_SEPOLIA** = `"zora-sepolia"`
+
+#### Defined in
+
+[src/types/types.ts:164](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L164)
+
+
+================================================================================
+File: docs-md\enums\NftCollectionMarketplace.md
+Size: 583 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftCollectionMarketplace
+
+# Enumeration: NftCollectionMarketplace
+
+Enum representing the supported NFT marketplaces on a
+[NftCollectionFloorPrice](../interfaces/NftCollectionFloorPrice.md) object.
+
+## Table of contents
+
+### Enumeration members
+
+- [OPENSEA](NftCollectionMarketplace.md#opensea)
+
+## Enumeration members
+
+### OPENSEA
+
+• **OPENSEA** = `"OpenSea"`
+
+#### Defined in
+
+[src/types/nft-types.ts:1226](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1226)
+
+
+================================================================================
+File: docs-md\enums\NftFilters.md
+Size: 929 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftFilters
+
+# Enumeration: NftFilters
+
+Enum of NFT filters that can be applied to a [getNftsForOwner](../classes/NftNamespace.md#getnftsforowner) or a
+[getContractsForOwner](../classes/NftNamespace.md#getcontractsforowner) request.
+
+**`beta`**
+
+## Table of contents
+
+### Enumeration members
+
+- [AIRDROPS](NftFilters.md#airdrops)
+- [SPAM](NftFilters.md#spam)
+
+## Enumeration members
+
+### AIRDROPS
+
+• **AIRDROPS** = `"AIRDROPS"`
+
+NFTs that have been airdropped to a user.
+
+#### Defined in
+
+[src/types/nft-types.ts:210](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L210)
+
+___
+
+### SPAM
+
+• **SPAM** = `"SPAM"`
+
+NFTs that have been classified as spam.
+
+#### Defined in
+
+[src/types/nft-types.ts:207](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L207)
+
+
+================================================================================
+File: docs-md\enums\NftOrdering.md
+Size: 642 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftOrdering
+
+# Enumeration: NftOrdering
+
+Enum of ordering that can be applied to a [getNftsForOwner](../classes/NftNamespace.md#getnftsforowner) or a
+[getContractsForOwner](../classes/NftNamespace.md#getcontractsforowner) response.
+
+**`beta`**
+
+## Table of contents
+
+### Enumeration members
+
+- [TRANSFERTIME](NftOrdering.md#transfertime)
+
+## Enumeration members
+
+### TRANSFERTIME
+
+• **TRANSFERTIME** = `"TRANSFERTIME"`
+
+#### Defined in
+
+[src/types/nft-types.ts:220](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L220)
+
+
+================================================================================
+File: docs-md\enums\NftRefreshState.md
+Size: 2.14 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftRefreshState
+
+# Enumeration: NftRefreshState
+
+The current state of the NFT contract refresh process.
+
+## Table of contents
+
+### Enumeration members
+
+- [ALREADY\_QUEUED](NftRefreshState.md#already_queued)
+- [DOES\_NOT\_EXIST](NftRefreshState.md#does_not_exist)
+- [FINISHED](NftRefreshState.md#finished)
+- [IN\_PROGRESS](NftRefreshState.md#in_progress)
+- [QUEUED](NftRefreshState.md#queued)
+- [QUEUE\_FAILED](NftRefreshState.md#queue_failed)
+
+## Enumeration members
+
+### ALREADY\_QUEUED
+
+• **ALREADY\_QUEUED** = `"already_queued"`
+
+The contract has already been queued for refresh.
+
+#### Defined in
+
+[src/types/nft-types.ts:898](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L898)
+
+___
+
+### DOES\_NOT\_EXIST
+
+• **DOES\_NOT\_EXIST** = `"does_not_exist"`
+
+The provided contract is not an NFT or does not contain metadata.
+
+#### Defined in
+
+[src/types/nft-types.ts:895](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L895)
+
+___
+
+### FINISHED
+
+• **FINISHED** = `"finished"`
+
+The contract refresh is complete.
+
+#### Defined in
+
+[src/types/nft-types.ts:904](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L904)
+
+___
+
+### IN\_PROGRESS
+
+• **IN\_PROGRESS** = `"in_progress"`
+
+The contract is currently being refreshed.
+
+#### Defined in
+
+[src/types/nft-types.ts:901](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L901)
+
+___
+
+### QUEUED
+
+• **QUEUED** = `"queued"`
+
+The contract refresh has been queued and await execution.
+
+#### Defined in
+
+[src/types/nft-types.ts:907](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L907)
+
+___
+
+### QUEUE\_FAILED
+
+• **QUEUE\_FAILED** = `"queue_failed"`
+
+The contract was unable to be queued due to an internal error.
+
+#### Defined in
+
+[src/types/nft-types.ts:910](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L910)
+
+
+================================================================================
+File: docs-md\enums\NftSaleMarketplace.md
+Size: 2.02 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSaleMarketplace
+
+# Enumeration: NftSaleMarketplace
+
+Enum representing the supported NFT marketplaces by the
+[NftNamespace.getNftSales](../classes/NftNamespace.md#getnftsales) method.
+
+## Table of contents
+
+### Enumeration members
+
+- [BLUR](NftSaleMarketplace.md#blur)
+- [CRYPTOPUNKS](NftSaleMarketplace.md#cryptopunks)
+- [LOOKSRARE](NftSaleMarketplace.md#looksrare)
+- [SEAPORT](NftSaleMarketplace.md#seaport)
+- [UNKNOWN](NftSaleMarketplace.md#unknown)
+- [WYVERN](NftSaleMarketplace.md#wyvern)
+- [X2Y2](NftSaleMarketplace.md#x2y2)
+
+## Enumeration members
+
+### BLUR
+
+• **BLUR** = `"blur"`
+
+#### Defined in
+
+[src/types/nft-types.ts:814](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L814)
+
+___
+
+### CRYPTOPUNKS
+
+• **CRYPTOPUNKS** = `"cryptopunks"`
+
+#### Defined in
+
+[src/types/nft-types.ts:813](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L813)
+
+___
+
+### LOOKSRARE
+
+• **LOOKSRARE** = `"looksrare"`
+
+#### Defined in
+
+[src/types/nft-types.ts:810](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L810)
+
+___
+
+### SEAPORT
+
+• **SEAPORT** = `"seaport"`
+
+#### Defined in
+
+[src/types/nft-types.ts:809](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L809)
+
+___
+
+### UNKNOWN
+
+• **UNKNOWN** = `"unknown"`
+
+#### Defined in
+
+[src/types/nft-types.ts:815](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L815)
+
+___
+
+### WYVERN
+
+• **WYVERN** = `"wyvern"`
+
+#### Defined in
+
+[src/types/nft-types.ts:812](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L812)
+
+___
+
+### X2Y2
+
+• **X2Y2** = `"x2y2"`
+
+#### Defined in
+
+[src/types/nft-types.ts:811](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L811)
+
+
+================================================================================
+File: docs-md\enums\NftSaleTakerType.md
+Size: 771 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSaleTakerType
+
+# Enumeration: NftSaleTakerType
+
+Enum for specifying the taker type for the [NftNamespace.getNftSales](../classes/NftNamespace.md#getnftsales)
+method.
+
+## Table of contents
+
+### Enumeration members
+
+- [BUYER](NftSaleTakerType.md#buyer)
+- [SELLER](NftSaleTakerType.md#seller)
+
+## Enumeration members
+
+### BUYER
+
+• **BUYER** = `"buyer"`
+
+#### Defined in
+
+[src/types/nft-types.ts:839](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L839)
+
+___
+
+### SELLER
+
+• **SELLER** = `"seller"`
+
+#### Defined in
+
+[src/types/nft-types.ts:840](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L840)
+
+
+================================================================================
+File: docs-md\enums\NftSpamClassification.md
+Size: 3.95 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSpamClassification
+
+# Enumeration: NftSpamClassification
+
+Potential reasons why an NFT contract was classified as spam.
+
+## Table of contents
+
+### Enumeration members
+
+- [Erc721DishonestTotalSupply](NftSpamClassification.md#erc721dishonesttotalsupply)
+- [Erc721TooManyOwners](NftSpamClassification.md#erc721toomanyowners)
+- [Erc721TooManyTokens](NftSpamClassification.md#erc721toomanytokens)
+- [HighAirdropPercent](NftSpamClassification.md#highairdroppercent)
+- [HighHoneyPotOwnerPercent](NftSpamClassification.md#highhoneypotownerpercent)
+- [HighHoneyPotPercent](NftSpamClassification.md#highhoneypotpercent)
+- [HoneyPotsOwnMultipleTokens](NftSpamClassification.md#honeypotsownmultipletokens)
+- [LowDistinctOwnersPercent](NftSpamClassification.md#lowdistinctownerspercent)
+- [MostlyHoneyPotOwners](NftSpamClassification.md#mostlyhoneypotowners)
+- [NoSalesActivity](NftSpamClassification.md#nosalesactivity)
+- [OwnedByMostHoneyPots](NftSpamClassification.md#ownedbymosthoneypots)
+- [Unknown](NftSpamClassification.md#unknown)
+
+## Enumeration members
+
+### Erc721DishonestTotalSupply
+
+• **Erc721DishonestTotalSupply** = `"Erc721DishonestTotalSupply"`
+
+#### Defined in
+
+[src/types/nft-types.ts:68](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L68)
+
+___
+
+### Erc721TooManyOwners
+
+• **Erc721TooManyOwners** = `"Erc721TooManyOwners"`
+
+#### Defined in
+
+[src/types/nft-types.ts:66](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L66)
+
+___
+
+### Erc721TooManyTokens
+
+• **Erc721TooManyTokens** = `"Erc721TooManyTokens"`
+
+#### Defined in
+
+[src/types/nft-types.ts:67](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L67)
+
+___
+
+### HighAirdropPercent
+
+• **HighAirdropPercent** = `"HighAirdropPercent"`
+
+#### Defined in
+
+[src/types/nft-types.ts:76](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L76)
+
+___
+
+### HighHoneyPotOwnerPercent
+
+• **HighHoneyPotOwnerPercent** = `"HighHoneyPotOwnerPercent"`
+
+#### Defined in
+

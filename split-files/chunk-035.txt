@@ -1,0 +1,4049 @@
+
+[src/types/nft-types.ts:72](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L72)
+
+___
+
+### HighHoneyPotPercent
+
+• **HighHoneyPotPercent** = `"HighHoneyPotPercent"`
+
+#### Defined in
+
+[src/types/nft-types.ts:73](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L73)
+
+___
+
+### HoneyPotsOwnMultipleTokens
+
+• **HoneyPotsOwnMultipleTokens** = `"HoneyPotsOwnMultipleTokens"`
+
+#### Defined in
+
+[src/types/nft-types.ts:74](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L74)
+
+___
+
+### LowDistinctOwnersPercent
+
+• **LowDistinctOwnersPercent** = `"LowDistinctOwnersPercent"`
+
+#### Defined in
+
+[src/types/nft-types.ts:71](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L71)
+
+___
+
+### MostlyHoneyPotOwners
+
+• **MostlyHoneyPotOwners** = `"MostlyHoneyPotOwners"`
+
+#### Defined in
+
+[src/types/nft-types.ts:69](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L69)
+
+___
+
+### NoSalesActivity
+
+• **NoSalesActivity** = `"NoSalesActivity"`
+
+#### Defined in
+
+[src/types/nft-types.ts:75](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L75)
+
+___
+
+### OwnedByMostHoneyPots
+
+• **OwnedByMostHoneyPots** = `"OwnedByMostHoneyPots"`
+
+#### Defined in
+
+[src/types/nft-types.ts:70](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L70)
+
+___
+
+### Unknown
+
+• **Unknown** = `"Unknown"`
+
+#### Defined in
+
+[src/types/nft-types.ts:77](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L77)
+
+
+================================================================================
+File: docs-md\enums\NftTokenType.md
+Size: 1.53 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftTokenType
+
+# Enumeration: NftTokenType
+
+An enum for specifying the token type on NFTs.
+
+## Table of contents
+
+### Enumeration members
+
+- [ERC1155](NftTokenType.md#erc1155)
+- [ERC721](NftTokenType.md#erc721)
+- [NOT\_A\_CONTRACT](NftTokenType.md#not_a_contract)
+- [NO\_SUPPORTED\_NFT\_STANDARD](NftTokenType.md#no_supported_nft_standard)
+- [UNKNOWN](NftTokenType.md#unknown)
+
+## Enumeration members
+
+### ERC1155
+
+• **ERC1155** = `"ERC1155"`
+
+#### Defined in
+
+[src/types/nft-types.ts:13](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L13)
+
+___
+
+### ERC721
+
+• **ERC721** = `"ERC721"`
+
+#### Defined in
+
+[src/types/nft-types.ts:12](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L12)
+
+___
+
+### NOT\_A\_CONTRACT
+
+• **NOT\_A\_CONTRACT** = `"NOT_A_CONTRACT"`
+
+#### Defined in
+
+[src/types/nft-types.ts:15](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L15)
+
+___
+
+### NO\_SUPPORTED\_NFT\_STANDARD
+
+• **NO\_SUPPORTED\_NFT\_STANDARD** = `"NO_SUPPORTED_NFT_STANDARD"`
+
+#### Defined in
+
+[src/types/nft-types.ts:14](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L14)
+
+___
+
+### UNKNOWN
+
+• **UNKNOWN** = `"UNKNOWN"`
+
+#### Defined in
+
+[src/types/nft-types.ts:16](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L16)
+
+
+================================================================================
+File: docs-md\enums\OpenSeaSafelistRequestStatus.md
+Size: 1.47 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OpenSeaSafelistRequestStatus
+
+# Enumeration: OpenSeaSafelistRequestStatus
+
+An OpenSea collection's approval status.
+
+## Table of contents
+
+### Enumeration members
+
+- [APPROVED](OpenSeaSafelistRequestStatus.md#approved)
+- [NOT\_REQUESTED](OpenSeaSafelistRequestStatus.md#not_requested)
+- [REQUESTED](OpenSeaSafelistRequestStatus.md#requested)
+- [VERIFIED](OpenSeaSafelistRequestStatus.md#verified)
+
+## Enumeration members
+
+### APPROVED
+
+• **APPROVED** = `"approved"`
+
+Collections that are approved on open sea and can be found in search results.
+
+#### Defined in
+
+[src/types/types.ts:667](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L667)
+
+___
+
+### NOT\_REQUESTED
+
+• **NOT\_REQUESTED** = `"not_requested"`
+
+Brand new collections.
+
+#### Defined in
+
+[src/types/types.ts:671](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L671)
+
+___
+
+### REQUESTED
+
+• **REQUESTED** = `"requested"`
+
+Collections that requested safelisting on OpenSea.
+
+#### Defined in
+
+[src/types/types.ts:669](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L669)
+
+___
+
+### VERIFIED
+
+• **VERIFIED** = `"verified"`
+
+Verified collection.
+
+#### Defined in
+
+[src/types/types.ts:665](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L665)
+
+
+================================================================================
+File: docs-md\enums\SimulateAssetType.md
+Size: 1.94 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateAssetType
+
+# Enumeration: SimulateAssetType
+
+Asset type returned when calling [TransactNamespace.simulateAssetChanges](../classes/TransactNamespace.md#simulateassetchanges).
+Allows you to determine if the assets approved or / and transferred are
+native, tokens or NFTs.
+
+## Table of contents
+
+### Enumeration members
+
+- [ERC1155](SimulateAssetType.md#erc1155)
+- [ERC20](SimulateAssetType.md#erc20)
+- [ERC721](SimulateAssetType.md#erc721)
+- [NATIVE](SimulateAssetType.md#native)
+- [SPECIAL\_NFT](SimulateAssetType.md#special_nft)
+
+## Enumeration members
+
+### ERC1155
+
+• **ERC1155** = `"ERC1155"`
+
+ERC1155 approval or transfers.
+
+#### Defined in
+
+[src/types/types.ts:837](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L837)
+
+___
+
+### ERC20
+
+• **ERC20** = `"ERC20"`
+
+ERC20 approval or transfers.
+
+#### Defined in
+
+[src/types/types.ts:833](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L833)
+
+___
+
+### ERC721
+
+• **ERC721** = `"ERC721"`
+
+ERC721 approval or transfers.
+
+#### Defined in
+
+[src/types/types.ts:835](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L835)
+
+___
+
+### NATIVE
+
+• **NATIVE** = `"NATIVE"`
+
+Native transfers that involve the currency of the chain the simulation is
+run on (ex: ETH for Ethereum, MATIC for Polygon, ETH for Arbitrum).
+
+#### Defined in
+
+[src/types/types.ts:831](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L831)
+
+___
+
+### SPECIAL\_NFT
+
+• **SPECIAL\_NFT** = `"SPECIAL_NFT"`
+
+Special contracts that don't follow ERC 721/1155.Currently limited to
+CryptoKitties and CryptoPunks.
+
+#### Defined in
+
+[src/types/types.ts:842](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L842)
+
+
+================================================================================
+File: docs-md\enums\SimulateChangeType.md
+Size: 1.11 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateChangeType
+
+# Enumeration: SimulateChangeType
+
+Change type returned when calling [TransactNamespace.simulateAssetChanges](../classes/TransactNamespace.md#simulateassetchanges).
+
+## Table of contents
+
+### Enumeration members
+
+- [APPROVE](SimulateChangeType.md#approve)
+- [TRANSFER](SimulateChangeType.md#transfer)
+
+## Enumeration members
+
+### APPROVE
+
+• **APPROVE** = `"APPROVE"`
+
+Represents a transaction that approved or disapproved permissions for a
+contract.
+
+APPROVE without token ID → approve all tokens
+APPROVE without amount → approve all amount
+APPROVE with zero amount → approval being cleared
+
+#### Defined in
+
+[src/types/types.ts:857](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L857)
+
+___
+
+### TRANSFER
+
+• **TRANSFER** = `"TRANSFER"`
+
+Represents a transaction that transferred tokens from one address to another.
+
+#### Defined in
+
+[src/types/types.ts:862](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L862)
+
+
+================================================================================
+File: docs-md\enums\SortingOrder.md
+Size: 711 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SortingOrder
+
+# Enumeration: SortingOrder
+
+Enum for representing the supported sorting orders of the API.
+
+## Table of contents
+
+### Enumeration members
+
+- [ASCENDING](SortingOrder.md#ascending)
+- [DESCENDING](SortingOrder.md#descending)
+
+## Enumeration members
+
+### ASCENDING
+
+• **ASCENDING** = `"asc"`
+
+#### Defined in
+
+[src/types/types.ts:604](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L604)
+
+___
+
+### DESCENDING
+
+• **DESCENDING** = `"desc"`
+
+#### Defined in
+
+[src/types/types.ts:605](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L605)
+
+
+================================================================================
+File: docs-md\enums\TokenBalanceType.md
+Size: 1.07 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalanceType
+
+# Enumeration: TokenBalanceType
+
+Token Types for the `getTokenBalances()` endpoint.
+
+## Table of contents
+
+### Enumeration members
+
+- [DEFAULT\_TOKENS](TokenBalanceType.md#default_tokens)
+- [ERC20](TokenBalanceType.md#erc20)
+
+## Enumeration members
+
+### DEFAULT\_TOKENS
+
+• **DEFAULT\_TOKENS** = `"DEFAULT_TOKENS"`
+
+Option to fetch the top 100 tokens by 24-hour volume. This option is only
+available on Mainnet in Ethereum, Polygon, and Arbitrum.
+
+#### Defined in
+
+[src/types/types.ts:194](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L194)
+
+___
+
+### ERC20
+
+• **ERC20** = `"erc20"`
+
+Option to fetch the set of ERC-20 tokens that the address as ever held. his
+list is produced by an address's historical transfer activity and includes
+all tokens that the address has ever received.
+
+#### Defined in
+
+[src/types/types.ts:201](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L201)
+
+
+================================================================================
+File: docs-md\enums\WebhookType.md
+Size: 1.86 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookType
+
+# Enumeration: WebhookType
+
+The type of [Webhook](../interfaces/Webhook.md).
+
+## Table of contents
+
+### Enumeration members
+
+- [ADDRESS\_ACTIVITY](WebhookType.md#address_activity)
+- [DROPPED\_TRANSACTION](WebhookType.md#dropped_transaction)
+- [GRAPHQL](WebhookType.md#graphql)
+- [MINED\_TRANSACTION](WebhookType.md#mined_transaction)
+- [NFT\_ACTIVITY](WebhookType.md#nft_activity)
+- [NFT\_METADATA\_UPDATE](WebhookType.md#nft_metadata_update)
+
+## Enumeration members
+
+### ADDRESS\_ACTIVITY
+
+• **ADDRESS\_ACTIVITY** = `"ADDRESS_ACTIVITY"`
+
+#### Defined in
+
+[src/types/types.ts:1136](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1136)
+
+___
+
+### DROPPED\_TRANSACTION
+
+• **DROPPED\_TRANSACTION** = `"DROPPED_TRANSACTION"`
+
+#### Defined in
+
+[src/types/types.ts:1135](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1135)
+
+___
+
+### GRAPHQL
+
+• **GRAPHQL** = `"GRAPHQL"`
+
+#### Defined in
+
+[src/types/types.ts:1139](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1139)
+
+___
+
+### MINED\_TRANSACTION
+
+• **MINED\_TRANSACTION** = `"MINED_TRANSACTION"`
+
+#### Defined in
+
+[src/types/types.ts:1134](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1134)
+
+___
+
+### NFT\_ACTIVITY
+
+• **NFT\_ACTIVITY** = `"NFT_ACTIVITY"`
+
+#### Defined in
+
+[src/types/types.ts:1137](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1137)
+
+___
+
+### NFT\_METADATA\_UPDATE
+
+• **NFT\_METADATA\_UPDATE** = `"NFT_METADATA_UPDATE"`
+
+#### Defined in
+
+[src/types/types.ts:1138](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1138)
+
+
+================================================================================
+File: docs-md\enums\WebhookVersion.md
+Size: 667 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / WebhookVersion
+
+# Enumeration: WebhookVersion
+
+The version of the webhook. All newly created webhooks default to V2.
+
+## Table of contents
+
+### Enumeration members
+
+- [V1](WebhookVersion.md#v1)
+- [V2](WebhookVersion.md#v2)
+
+## Enumeration members
+
+### V1
+
+• **V1** = `"V1"`
+
+#### Defined in
+
+[src/types/types.ts:1128](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1128)
+
+___
+
+### V2
+
+• **V2** = `"V2"`
+
+#### Defined in
+
+[src/types/types.ts:1129](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1129)
+
+
+================================================================================
+File: docs-md\interfaces\AcquiredAt.md
+Size: 854 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AcquiredAt
+
+# Interface: AcquiredAt
+
+Block time and number at which an NFT was acquired.
+
+## Table of contents
+
+### Properties
+
+- [blockNumber](AcquiredAt.md#blocknumber)
+- [blockTimestamp](AcquiredAt.md#blocktimestamp)
+
+## Properties
+
+### blockNumber
+
+• `Optional` **blockNumber**: `number`
+
+Block number of the block at which an NFT was last acquired.
+
+#### Defined in
+
+[src/types/nft-types.ts:86](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L86)
+
+___
+
+### blockTimestamp
+
+• `Optional` **blockTimestamp**: `string`
+
+Timestamp of the block at which an NFT was last acquired.
+
+#### Defined in
+
+[src/types/nft-types.ts:83](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L83)
+
+
+================================================================================
+File: docs-md\interfaces\AddressActivityResponse.md
+Size: 1.16 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AddressActivityResponse
+
+# Interface: AddressActivityResponse
+
+Response object for the [NotifyNamespace.getAddresses](../classes/NotifyNamespace.md#getaddresses) method.
+
+## Table of contents
+
+### Properties
+
+- [addresses](AddressActivityResponse.md#addresses)
+- [pageKey](AddressActivityResponse.md#pagekey)
+- [totalCount](AddressActivityResponse.md#totalcount)
+
+## Properties
+
+### addresses
+
+• **addresses**: `string`[]
+
+The addresses for the webhook.
+
+#### Defined in
+
+[src/types/types.ts:1217](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1217)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key used to fetch the remaining addresses.
+
+#### Defined in
+
+[src/types/types.ts:1221](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1221)
+
+___
+
+### totalCount
+
+• **totalCount**: `number`
+
+The total number of addresses.
+
+#### Defined in
+
+[src/types/types.ts:1219](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1219)
+
+
+================================================================================
+File: docs-md\interfaces\AddressActivityWebhook.md
+Size: 3.96 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AddressActivityWebhook
+
+# Interface: AddressActivityWebhook
+
+An Address Activity Webhook tracks ETH, ERC20, ERC721, and ERC1155 transfers
+for the provided addresses. This can be used to notify your app with
+real-time state changes when your tracked addresses send or receive tokens.
+
+## Hierarchy
+
+- [`Webhook`](Webhook.md)
+
+  ↳ **`AddressActivityWebhook`**
+
+## Table of contents
+
+### Properties
+
+- [appId](AddressActivityWebhook.md#appid)
+- [id](AddressActivityWebhook.md#id)
+- [isActive](AddressActivityWebhook.md#isactive)
+- [network](AddressActivityWebhook.md#network)
+- [signingKey](AddressActivityWebhook.md#signingkey)
+- [timeCreated](AddressActivityWebhook.md#timecreated)
+- [type](AddressActivityWebhook.md#type)
+- [url](AddressActivityWebhook.md#url)
+- [version](AddressActivityWebhook.md#version)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+The app id of the app used for the webhook. This field is only present on
+[MinedTransactionWebhook](MinedTransactionWebhook.md) and [DroppedTransactionWebhook](DroppedTransactionWebhook.md)
+
+#### Inherited from
+
+[Webhook](Webhook.md).[appId](Webhook.md#appid)
+
+#### Defined in
+
+[src/types/types.ts:1123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1123)
+
+___
+
+### id
+
+• **id**: `string`
+
+The webhook's unique id.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[id](Webhook.md#id)
+
+#### Defined in
+
+[src/types/types.ts:1104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1104)
+
+___
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is currently active
+
+#### Inherited from
+
+[Webhook](Webhook.md).[isActive](Webhook.md#isactive)
+
+#### Defined in
+
+[src/types/types.ts:1112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1112)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network the webhook is on.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[network](Webhook.md#network)
+
+#### Defined in
+
+[src/types/types.ts:1106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1106)
+
+___
+
+### signingKey
+
+• **signingKey**: `string`
+
+The signing key used to verify payloads for the webhook.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[signingKey](Webhook.md#signingkey)
+
+#### Defined in
+
+[src/types/types.ts:1116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1116)
+
+___
+
+### timeCreated
+
+• **timeCreated**: `string`
+
+The creation time of the webhook as an ISO string.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[timeCreated](Webhook.md#timecreated)
+
+#### Defined in
+
+[src/types/types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1114)
+
+___
+
+### type
+
+• **type**: [`ADDRESS_ACTIVITY`](../enums/WebhookType.md#address_activity)
+
+The type of webhook.
+
+#### Overrides
+
+[Webhook](Webhook.md).[type](Webhook.md#type)
+
+#### Defined in
+
+[src/types/types.ts:1166](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1166)
+
+___
+
+### url
+
+• **url**: `string`
+
+The url that the webhook sends its payload to.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[url](Webhook.md#url)
+
+#### Defined in
+
+[src/types/types.ts:1110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1110)
+
+___
+
+### version
+
+• **version**: [`WebhookVersion`](../enums/WebhookVersion.md)
+
+The webhook version. All newly created webhooks default to V2.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[version](Webhook.md#version)
+
+#### Defined in
+
+[src/types/types.ts:1118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1118)
+
+
+================================================================================
+File: docs-md\interfaces\AddressWebhookParams.md
+Size: 1.07 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AddressWebhookParams
+
+# Interface: AddressWebhookParams
+
+Params to pass in when calling [NotifyNamespace.createWebhook](../classes/NotifyNamespace.md#createwebhook) in order
+to create a [AddressActivityWebhook](AddressActivityWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [addresses](AddressWebhookParams.md#addresses)
+- [network](AddressWebhookParams.md#network)
+
+## Properties
+
+### addresses
+
+• **addresses**: `string`[]
+
+Array of addresses the webhook should activity for.
+
+#### Defined in
+
+[src/types/types.ts:1299](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1299)
+
+___
+
+### network
+
+• `Optional` **network**: [`Network`](../enums/Network.md)
+
+Optional network to create the webhook on. If omitted, the webhook will be
+created on network of the app provided in the api key config.
+
+#### Defined in
+
+[src/types/types.ts:1304](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1304)
+
+
+================================================================================
+File: docs-md\interfaces\AlchemyMinedTransactionsEventFilter.md
+Size: 2.5 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AlchemyMinedTransactionsEventFilter
+
+# Interface: AlchemyMinedTransactionsEventFilter
+
+Event filter for the [AlchemyWebSocketProvider.on](../classes/AlchemyWebSocketProvider.md#on) and
+[AlchemyWebSocketProvider.once](../classes/AlchemyWebSocketProvider.md#once) methods to use Alchemy's custom
+`alchemy_minedTransactions` endpoint.
+
+Returns the transaction information for all mined transactions that match the
+provided filter. For full documentation, see:
+[https://docs.alchemy.com/reference/alchemy-minedtransactions](https://docs.alchemy.com/reference/alchemy-minedtransactions)
+
+Note that excluding all optional parameters will return transaction
+information for ALL mined transactions.
+
+## Table of contents
+
+### Properties
+
+- [addresses](AlchemyMinedTransactionsEventFilter.md#addresses)
+- [hashesOnly](AlchemyMinedTransactionsEventFilter.md#hashesonly)
+- [includeRemoved](AlchemyMinedTransactionsEventFilter.md#includeremoved)
+- [method](AlchemyMinedTransactionsEventFilter.md#method)
+
+## Properties
+
+### addresses
+
+• `Optional` **addresses**: [`NonEmptyArray`](../modules.md#nonemptyarray)<[`AlchemyMinedTransactionsAddress`](../modules.md#alchemyminedtransactionsaddress)\>
+
+Address filters to subscribe to. Defaults to all transactions if omitted.
+Limit 100 address filters. Requires a non-empty array.
+
+#### Defined in
+
+[src/types/types.ts:767](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L767)
+
+___
+
+### hashesOnly
+
+• `Optional` **hashesOnly**: `boolean`
+
+Whether to only include transaction hashes and exclude the rest of the
+transaction response for a smaller payload. Defaults to false (by default,
+the entire transaction response is included).
+
+#### Defined in
+
+[src/types/types.ts:780](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L780)
+
+___
+
+### includeRemoved
+
+• `Optional` **includeRemoved**: `boolean`
+
+Whether to include transactions that were removed from the mempool.
+Defaults to false.
+
+#### Defined in
+
+[src/types/types.ts:773](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L773)
+
+___
+
+### method
+
+• **method**: [`MINED_TRANSACTIONS`](../enums/AlchemySubscription.md#mined_transactions)
+
+#### Defined in
+
+[src/types/types.ts:761](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L761)
+
+
+================================================================================
+File: docs-md\interfaces\AlchemyPendingTransactionsEventFilter.md
+Size: 3.05 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AlchemyPendingTransactionsEventFilter
+
+# Interface: AlchemyPendingTransactionsEventFilter
+
+Event filter for the [AlchemyWebSocketProvider.on](../classes/AlchemyWebSocketProvider.md#on) and
+[AlchemyWebSocketProvider.once](../classes/AlchemyWebSocketProvider.md#once) methods to use Alchemy's custom
+`alchemy_pendingTransactions` endpoint.
+
+Returns the transaction information for all pending transactions that match a
+given filter. For full documentation, see:
+[https://docs.alchemy.com/reference/alchemy-pendingtransactions](https://docs.alchemy.com/reference/alchemy-pendingtransactions)
+
+Note that excluding all optional parameters will return transaction
+information for ALL pending transactions that are added to the mempool.
+
+## Table of contents
+
+### Properties
+
+- [fromAddress](AlchemyPendingTransactionsEventFilter.md#fromaddress)
+- [hashesOnly](AlchemyPendingTransactionsEventFilter.md#hashesonly)
+- [method](AlchemyPendingTransactionsEventFilter.md#method)
+- [toAddress](AlchemyPendingTransactionsEventFilter.md#toaddress)
+
+## Properties
+
+### fromAddress
+
+• `Optional` **fromAddress**: `string` \| `string`[]
+
+Filter pending transactions sent FROM the provided address or array of
+addresses.
+
+If a [AlchemyPendingTransactionsEventFilter.toAddress](AlchemyPendingTransactionsEventFilter.md#toaddress) is also
+present, then this filter will return transactions sent from the
+`fromAddress` OR transactions received by the `toAddress`.
+
+#### Defined in
+
+[src/types/types.ts:723](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L723)
+
+___
+
+### hashesOnly
+
+• `Optional` **hashesOnly**: `boolean`
+
+Whether to only include transaction hashes and exclude the rest of the
+transaction response for a smaller payload. Defaults to false (by default,
+the entire transaction response is included).
+
+Note that setting only [hashesOnly](AlchemyPendingTransactionsEventFilter.md#hashesonly) to true will return the same
+response as subscribing to `newPendingTransactions`.
+
+#### Defined in
+
+[src/types/types.ts:743](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L743)
+
+___
+
+### method
+
+• **method**: [`PENDING_TRANSACTIONS`](../enums/AlchemySubscription.md#pending_transactions)
+
+#### Defined in
+
+[src/types/types.ts:713](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L713)
+
+___
+
+### toAddress
+
+• `Optional` **toAddress**: `string` \| `string`[]
+
+Filter pending transactions sent TO the provided address or array of
+addresses.
+
+If a [AlchemyPendingTransactionsEventFilter.fromAddress](AlchemyPendingTransactionsEventFilter.md#fromaddress) is also
+present, then this filter will return transactions sent from the
+`fromAddress` OR transactions received by the `toAddress`.
+
+#### Defined in
+
+[src/types/types.ts:733](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L733)
+
+
+================================================================================
+File: docs-md\interfaces\AlchemySettings.md
+Size: 4 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AlchemySettings
+
+# Interface: AlchemySettings
+
+Options object used to configure the Alchemy SDK.
+
+## Table of contents
+
+### Properties
+
+- [apiKey](AlchemySettings.md#apikey)
+- [authToken](AlchemySettings.md#authtoken)
+- [batchRequests](AlchemySettings.md#batchrequests)
+- [connectionInfoOverrides](AlchemySettings.md#connectioninfooverrides)
+- [maxRetries](AlchemySettings.md#maxretries)
+- [network](AlchemySettings.md#network)
+- [requestTimeout](AlchemySettings.md#requesttimeout)
+- [url](AlchemySettings.md#url)
+
+## Properties
+
+### apiKey
+
+• `Optional` **apiKey**: `string`
+
+The Alchemy API key that can be found in the Alchemy dashboard.
+
+Defaults to: "demo" (a rate-limited public API key)
+
+#### Defined in
+
+[src/types/types.ts:31](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L31)
+
+___
+
+### authToken
+
+• `Optional` **authToken**: `string`
+
+Alchemy auth token required to use the Notify API. This token can be found
+in the Alchemy Dashboard on the Notify tab.
+
+#### Defined in
+
+[src/types/types.ts:57](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L57)
+
+___
+
+### batchRequests
+
+• `Optional` **batchRequests**: `boolean`
+
+Optional setting that automatically batches and sends json-rpc requests for
+higher throughput and reduced network IO. Defaults to false.
+
+This implementation is based on the `JsonRpcBatchProvider` in ethers.
+
+#### Defined in
+
+[src/types/types.ts:71](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L71)
+
+___
+
+### connectionInfoOverrides
+
+• `Optional` **connectionInfoOverrides**: `Partial`<`ConnectionInfo`\>
+
+Optional overrides on the Ethers `ConnectionInfo` object used to configure
+the underlying JsonRpcProvider. This field is for advanced users who want
+to customize the provider's behavior.
+
+This override is applied last, so it will override any other
+AlchemySettings properties that affect the connection.
+
+Note that modifying the ConnectionInfo may break Alchemy SDK's default
+connection/url logic. It also does not affect `nft` and `notify`
+namespaces.
+
+[https://docs.ethers.org/v5/api/utils/web/#ConnectionInfo](https://docs.ethers.org/v5/api/utils/web/#ConnectionInfo)
+
+#### Defined in
+
+[src/types/types.ts:87](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L87)
+
+___
+
+### maxRetries
+
+• `Optional` **maxRetries**: `number`
+
+The maximum number of retries to attempt if a request fails. Defaults to 5.
+
+#### Defined in
+
+[src/types/types.ts:42](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L42)
+
+___
+
+### network
+
+• `Optional` **network**: [`Network`](../enums/Network.md)
+
+The name of the network. Once configured, the network cannot be changed. To
+use a different network, instantiate a new `Alchemy` instance.
+
+Defaults to: Network.ETH_MAINNET
+
+#### Defined in
+
+[src/types/types.ts:39](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L39)
+
+___
+
+### requestTimeout
+
+• `Optional` **requestTimeout**: `number`
+
+Optional Request timeout provided in `ms` while using NFT and NOTIFY API.
+Default to 0 (No timeout).
+
+#### Defined in
+
+[src/types/types.ts:63](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L63)
+
+___
+
+### url
+
+• `Optional` **url**: `string`
+
+Optional URL endpoint to use for all requests. Setting this field will
+override the URL generated by the [network](AlchemySettings.md#network) and [apiKey](AlchemySettings.md#apikey) fields.
+
+This field is useful for testing or for using a custom node endpoint. Note
+that not all methods will work with custom URLs.
+
+#### Defined in
+
+[src/types/types.ts:51](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L51)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersMetadata.md
+Size: 691 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersMetadata
+
+# Interface: AssetTransfersMetadata
+
+The metadata object for a [AssetTransfersResult](AssetTransfersResult.md) when the
+[AssetTransfersParams.withMetadata](AssetTransfersParams.md#withmetadata) field is set to true.
+
+## Table of contents
+
+### Properties
+
+- [blockTimestamp](AssetTransfersMetadata.md#blocktimestamp)
+
+## Properties
+
+### blockTimestamp
+
+• **blockTimestamp**: `string`
+
+Timestamp of the block from which the transaction event originated.
+
+#### Defined in
+
+[src/types/types.ts:563](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L563)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersParams.md
+Size: 4.53 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersParams
+
+# Interface: AssetTransfersParams
+
+Parameters for the [CoreNamespace.getAssetTransfers](../classes/CoreNamespace.md#getassettransfers) method.
+
+## Hierarchy
+
+- **`AssetTransfersParams`**
+
+  ↳ [`AssetTransfersWithMetadataParams`](AssetTransfersWithMetadataParams.md)
+
+## Table of contents
+
+### Properties
+
+- [category](AssetTransfersParams.md#category)
+- [contractAddresses](AssetTransfersParams.md#contractaddresses)
+- [excludeZeroValue](AssetTransfersParams.md#excludezerovalue)
+- [fromAddress](AssetTransfersParams.md#fromaddress)
+- [fromBlock](AssetTransfersParams.md#fromblock)
+- [maxCount](AssetTransfersParams.md#maxcount)
+- [order](AssetTransfersParams.md#order)
+- [pageKey](AssetTransfersParams.md#pagekey)
+- [toAddress](AssetTransfersParams.md#toaddress)
+- [toBlock](AssetTransfersParams.md#toblock)
+- [withMetadata](AssetTransfersParams.md#withmetadata)
+
+## Properties
+
+### category
+
+• **category**: [`AssetTransfersCategory`](../enums/AssetTransfersCategory.md)[]
+
+REQUIRED field. An array of categories to get transfers for.
+
+#### Defined in
+
+[src/types/types.ts:405](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L405)
+
+___
+
+### contractAddresses
+
+• `Optional` **contractAddresses**: `string`[]
+
+List of contract addresses to filter for - only applies to "erc20",
+"erc721", "erc1155" transfers. Defaults to all address if omitted.
+
+#### Defined in
+
+[src/types/types.ts:396](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L396)
+
+___
+
+### excludeZeroValue
+
+• `Optional` **excludeZeroValue**: `boolean`
+
+Whether to exclude transfers with zero value. Note that zero value is
+different than null value. Defaults to `true` if omitted.
+
+#### Defined in
+
+[src/types/types.ts:402](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L402)
+
+___
+
+### fromAddress
+
+• `Optional` **fromAddress**: `string`
+
+The from address to filter transfers by. This value defaults to a wildcard
+for all addresses if omitted.
+
+#### Defined in
+
+[src/types/types.ts:384](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L384)
+
+___
+
+### fromBlock
+
+• `Optional` **fromBlock**: `string`
+
+The starting block to check for transfers. This value is inclusive and
+defaults to `0x0` if omitted.
+
+#### Defined in
+
+[src/types/types.ts:366](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L366)
+
+___
+
+### maxCount
+
+• `Optional` **maxCount**: `number`
+
+The maximum number of results to return per page. Defaults to 1000 if omitted.
+
+#### Defined in
+
+[src/types/types.ts:408](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L408)
+
+___
+
+### order
+
+• `Optional` **order**: [`SortingOrder`](../enums/SortingOrder.md)
+
+Whether to return results in ascending or descending order by block number.
+Defaults to ascending if omitted.
+
+#### Defined in
+
+[src/types/types.ts:378](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L378)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key from an existing [OwnedBaseNftsResponse](OwnedBaseNftsResponse.md)
+[AssetTransfersResult](AssetTransfersResult.md)to use for pagination.
+
+#### Defined in
+
+[src/types/types.ts:414](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L414)
+
+___
+
+### toAddress
+
+• `Optional` **toAddress**: `string`
+
+The to address to filter transfers by. This value defaults to a wildcard
+for all address if omitted.
+
+#### Defined in
+
+[src/types/types.ts:390](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L390)
+
+___
+
+### toBlock
+
+• `Optional` **toBlock**: `string`
+
+The ending block to check for transfers. This value is inclusive and
+defaults to the latest block if omitted.
+
+#### Defined in
+
+[src/types/types.ts:372](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L372)
+
+___
+
+### withMetadata
+
+• `Optional` **withMetadata**: `boolean`
+
+Whether to include additional metadata about each transfer event. Defaults
+to `false` if omitted.
+
+#### Defined in
+
+[src/types/types.ts:420](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L420)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersResponse.md
+Size: 879 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersResponse
+
+# Interface: AssetTransfersResponse
+
+Response object for the [CoreNamespace.getAssetTransfers](../classes/CoreNamespace.md#getassettransfers) method.
+
+## Table of contents
+
+### Properties
+
+- [pageKey](AssetTransfersResponse.md#pagekey)
+- [transfers](AssetTransfersResponse.md#transfers)
+
+## Properties
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Page key for the next page of results, if one exists.
+
+#### Defined in
+
+[src/types/types.ts:475](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L475)
+
+___
+
+### transfers
+
+• **transfers**: [`AssetTransfersResult`](AssetTransfersResult.md)[]
+
+#### Defined in
+
+[src/types/types.ts:473](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L473)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersResult.md
+Size: 4.22 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersResult
+
+# Interface: AssetTransfersResult
+
+Represents a transfer event that is returned in a [AssetTransfersResponse](AssetTransfersResponse.md).
+
+## Hierarchy
+
+- **`AssetTransfersResult`**
+
+  ↳ [`AssetTransfersWithMetadataResult`](AssetTransfersWithMetadataResult.md)
+
+## Table of contents
+
+### Properties
+
+- [asset](AssetTransfersResult.md#asset)
+- [blockNum](AssetTransfersResult.md#blocknum)
+- [category](AssetTransfersResult.md#category)
+- [erc1155Metadata](AssetTransfersResult.md#erc1155metadata)
+- [erc721TokenId](AssetTransfersResult.md#erc721tokenid)
+- [from](AssetTransfersResult.md#from)
+- [hash](AssetTransfersResult.md#hash)
+- [rawContract](AssetTransfersResult.md#rawcontract)
+- [to](AssetTransfersResult.md#to)
+- [tokenId](AssetTransfersResult.md#tokenid)
+- [uniqueId](AssetTransfersResult.md#uniqueid)
+- [value](AssetTransfersResult.md#value)
+
+## Properties
+
+### asset
+
+• **asset**: ``null`` \| `string`
+
+Returns the token's symbol or ETH for other transfers. `null` if the
+information was not available.
+
+#### Defined in
+
+[src/types/types.ts:535](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L535)
+
+___
+
+### blockNum
+
+• **blockNum**: `string`
+
+The block number where the transfer occurred.
+
+#### Defined in
+
+[src/types/types.ts:502](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L502)
+
+___
+
+### category
+
+• **category**: [`AssetTransfersCategory`](../enums/AssetTransfersCategory.md)
+
+The category of the transfer.
+
+#### Defined in
+
+[src/types/types.ts:499](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L499)
+
+___
+
+### erc1155Metadata
+
+• **erc1155Metadata**: ``null`` \| [`ERC1155Metadata`](ERC1155Metadata.md)[]
+
+A list of ERC1155 metadata objects if the asset transferred is an ERC1155
+token. `null` if not an ERC1155 transfer.
+
+#### Defined in
+
+[src/types/types.ts:526](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L526)
+
+___
+
+### erc721TokenId
+
+• **erc721TokenId**: ``null`` \| `string`
+
+The raw ERC721 token id of the transfer as a hex string. `null` if not an
+ERC721 transfer.
+
+#### Defined in
+
+[src/types/types.ts:520](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L520)
+
+___
+
+### from
+
+• **from**: `string`
+
+The from address of the transfer.
+
+#### Defined in
+
+[src/types/types.ts:505](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L505)
+
+___
+
+### hash
+
+• **hash**: `string`
+
+The transaction hash of the transfer transaction.
+
+#### Defined in
+
+[src/types/types.ts:538](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L538)
+
+___
+
+### rawContract
+
+• **rawContract**: [`RawContract`](RawContract.md)
+
+Information about the raw contract of the asset transferred.
+
+#### Defined in
+
+[src/types/types.ts:541](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L541)
+
+___
+
+### to
+
+• **to**: ``null`` \| `string`
+
+The to address of the transfer.
+
+#### Defined in
+
+[src/types/types.ts:508](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L508)
+
+___
+
+### tokenId
+
+• **tokenId**: ``null`` \| `string`
+
+The token id of the token transferred.
+
+#### Defined in
+
+[src/types/types.ts:529](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L529)
+
+___
+
+### uniqueId
+
+• **uniqueId**: `string`
+
+The unique ID of the transfer.
+
+#### Defined in
+
+[src/types/types.ts:496](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L496)
+
+___
+
+### value
+
+• **value**: ``null`` \| `number`
+
+Converted asset transfer value as a number (raw value divided by contract
+decimal). `null` if ERC721 transfer or contract decimal not available.
+
+#### Defined in
+
+[src/types/types.ts:514](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L514)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersWithMetadataParams.md
+Size: 6.03 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersWithMetadataParams
+
+# Interface: AssetTransfersWithMetadataParams
+
+Parameters for the [CoreNamespace.getAssetTransfers](../classes/CoreNamespace.md#getassettransfers) method that
+includes metadata.
+
+## Hierarchy
+
+- [`AssetTransfersParams`](AssetTransfersParams.md)
+
+  ↳ **`AssetTransfersWithMetadataParams`**
+
+## Table of contents
+
+### Properties
+
+- [category](AssetTransfersWithMetadataParams.md#category)
+- [contractAddresses](AssetTransfersWithMetadataParams.md#contractaddresses)
+- [excludeZeroValue](AssetTransfersWithMetadataParams.md#excludezerovalue)
+- [fromAddress](AssetTransfersWithMetadataParams.md#fromaddress)
+- [fromBlock](AssetTransfersWithMetadataParams.md#fromblock)
+- [maxCount](AssetTransfersWithMetadataParams.md#maxcount)
+- [order](AssetTransfersWithMetadataParams.md#order)
+- [pageKey](AssetTransfersWithMetadataParams.md#pagekey)
+- [toAddress](AssetTransfersWithMetadataParams.md#toaddress)
+- [toBlock](AssetTransfersWithMetadataParams.md#toblock)
+- [withMetadata](AssetTransfersWithMetadataParams.md#withmetadata)
+
+## Properties
+
+### category
+
+• **category**: [`AssetTransfersCategory`](../enums/AssetTransfersCategory.md)[]
+
+REQUIRED field. An array of categories to get transfers for.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[category](AssetTransfersParams.md#category)
+
+#### Defined in
+
+[src/types/types.ts:405](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L405)
+
+___
+
+### contractAddresses
+
+• `Optional` **contractAddresses**: `string`[]
+
+List of contract addresses to filter for - only applies to "erc20",
+"erc721", "erc1155" transfers. Defaults to all address if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[contractAddresses](AssetTransfersParams.md#contractaddresses)
+
+#### Defined in
+
+[src/types/types.ts:396](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L396)
+
+___
+
+### excludeZeroValue
+
+• `Optional` **excludeZeroValue**: `boolean`
+
+Whether to exclude transfers with zero value. Note that zero value is
+different than null value. Defaults to `true` if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[excludeZeroValue](AssetTransfersParams.md#excludezerovalue)
+
+#### Defined in
+
+[src/types/types.ts:402](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L402)
+
+___
+
+### fromAddress
+
+• `Optional` **fromAddress**: `string`
+
+The from address to filter transfers by. This value defaults to a wildcard
+for all addresses if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[fromAddress](AssetTransfersParams.md#fromaddress)
+
+#### Defined in
+
+[src/types/types.ts:384](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L384)
+
+___
+
+### fromBlock
+
+• `Optional` **fromBlock**: `string`
+
+The starting block to check for transfers. This value is inclusive and
+defaults to `0x0` if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[fromBlock](AssetTransfersParams.md#fromblock)
+
+#### Defined in
+
+[src/types/types.ts:366](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L366)
+
+___
+
+### maxCount
+
+• `Optional` **maxCount**: `number`
+
+The maximum number of results to return per page. Defaults to 1000 if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[maxCount](AssetTransfersParams.md#maxcount)
+
+#### Defined in
+
+[src/types/types.ts:408](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L408)
+
+___
+
+### order
+
+• `Optional` **order**: [`SortingOrder`](../enums/SortingOrder.md)
+
+Whether to return results in ascending or descending order by block number.
+Defaults to ascending if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[order](AssetTransfersParams.md#order)
+
+#### Defined in
+
+[src/types/types.ts:378](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L378)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key from an existing [OwnedBaseNftsResponse](OwnedBaseNftsResponse.md)
+[AssetTransfersResult](AssetTransfersResult.md)to use for pagination.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[pageKey](AssetTransfersParams.md#pagekey)
+
+#### Defined in
+
+[src/types/types.ts:414](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L414)
+
+___
+
+### toAddress
+
+• `Optional` **toAddress**: `string`
+
+The to address to filter transfers by. This value defaults to a wildcard
+for all address if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[toAddress](AssetTransfersParams.md#toaddress)
+
+#### Defined in
+
+[src/types/types.ts:390](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L390)
+
+___
+
+### toBlock
+
+• `Optional` **toBlock**: `string`
+
+The ending block to check for transfers. This value is inclusive and
+defaults to the latest block if omitted.
+
+#### Inherited from
+
+[AssetTransfersParams](AssetTransfersParams.md).[toBlock](AssetTransfersParams.md#toblock)
+
+#### Defined in
+
+[src/types/types.ts:372](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L372)
+
+___
+
+### withMetadata
+
+• **withMetadata**: ``true``
+
+Whether to include additional metadata about each transfer event. Defaults
+to `false` if omitted.
+
+#### Overrides
+
+[AssetTransfersParams](AssetTransfersParams.md).[withMetadata](AssetTransfersParams.md#withmetadata)
+
+#### Defined in
+
+[src/types/types.ts:430](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L430)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersWithMetadataResponse.md
+Size: 985 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersWithMetadataResponse
+
+# Interface: AssetTransfersWithMetadataResponse
+
+Response object for the [CoreNamespace.getAssetTransfers](../classes/CoreNamespace.md#getassettransfers) method when
+the [AssetTransfersWithMetadataParams](AssetTransfersWithMetadataParams.md) are used.
+
+## Table of contents
+
+### Properties
+
+- [pageKey](AssetTransfersWithMetadataResponse.md#pagekey)
+- [transfers](AssetTransfersWithMetadataResponse.md#transfers)
+
+## Properties
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+#### Defined in
+
+[src/types/types.ts:486](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L486)
+
+___
+
+### transfers
+
+• **transfers**: [`AssetTransfersWithMetadataResult`](AssetTransfersWithMetadataResult.md)[]
+
+#### Defined in
+
+[src/types/types.ts:485](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L485)
+
+
+================================================================================
+File: docs-md\interfaces\AssetTransfersWithMetadataResult.md
+Size: 6.23 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / AssetTransfersWithMetadataResult
+
+# Interface: AssetTransfersWithMetadataResult
+
+Represents a transfer event that is returned in a
+[AssetTransfersResponse](AssetTransfersResponse.md) when [AssetTransfersWithMetadataParams](AssetTransfersWithMetadataParams.md) are used.
+
+## Hierarchy
+
+- [`AssetTransfersResult`](AssetTransfersResult.md)
+
+  ↳ **`AssetTransfersWithMetadataResult`**
+
+## Table of contents
+
+### Properties
+
+- [asset](AssetTransfersWithMetadataResult.md#asset)
+- [blockNum](AssetTransfersWithMetadataResult.md#blocknum)
+- [category](AssetTransfersWithMetadataResult.md#category)
+- [erc1155Metadata](AssetTransfersWithMetadataResult.md#erc1155metadata)
+- [erc721TokenId](AssetTransfersWithMetadataResult.md#erc721tokenid)
+- [from](AssetTransfersWithMetadataResult.md#from)
+- [hash](AssetTransfersWithMetadataResult.md#hash)
+- [metadata](AssetTransfersWithMetadataResult.md#metadata)
+- [rawContract](AssetTransfersWithMetadataResult.md#rawcontract)
+- [to](AssetTransfersWithMetadataResult.md#to)
+- [tokenId](AssetTransfersWithMetadataResult.md#tokenid)
+- [uniqueId](AssetTransfersWithMetadataResult.md#uniqueid)
+- [value](AssetTransfersWithMetadataResult.md#value)
+
+## Properties
+
+### asset
+
+• **asset**: ``null`` \| `string`
+
+Returns the token's symbol or ETH for other transfers. `null` if the
+information was not available.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[asset](AssetTransfersResult.md#asset)
+
+#### Defined in
+
+[src/types/types.ts:535](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L535)
+
+___
+
+### blockNum
+
+• **blockNum**: `string`
+
+The block number where the transfer occurred.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[blockNum](AssetTransfersResult.md#blocknum)
+
+#### Defined in
+
+[src/types/types.ts:502](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L502)
+
+___
+
+### category
+
+• **category**: [`AssetTransfersCategory`](../enums/AssetTransfersCategory.md)
+
+The category of the transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[category](AssetTransfersResult.md#category)
+
+#### Defined in
+
+[src/types/types.ts:499](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L499)
+
+___
+
+### erc1155Metadata
+
+• **erc1155Metadata**: ``null`` \| [`ERC1155Metadata`](ERC1155Metadata.md)[]
+
+A list of ERC1155 metadata objects if the asset transferred is an ERC1155
+token. `null` if not an ERC1155 transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[erc1155Metadata](AssetTransfersResult.md#erc1155metadata)
+
+#### Defined in
+
+[src/types/types.ts:526](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L526)
+
+___
+
+### erc721TokenId
+
+• **erc721TokenId**: ``null`` \| `string`
+
+The raw ERC721 token id of the transfer as a hex string. `null` if not an
+ERC721 transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[erc721TokenId](AssetTransfersResult.md#erc721tokenid)
+
+#### Defined in
+
+[src/types/types.ts:520](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L520)
+
+___
+
+### from
+
+• **from**: `string`
+
+The from address of the transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[from](AssetTransfersResult.md#from)
+
+#### Defined in
+
+[src/types/types.ts:505](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L505)
+
+___
+
+### hash
+
+• **hash**: `string`
+
+The transaction hash of the transfer transaction.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[hash](AssetTransfersResult.md#hash)
+
+#### Defined in
+
+[src/types/types.ts:538](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L538)
+
+___
+
+### metadata
+
+• **metadata**: [`AssetTransfersMetadata`](AssetTransfersMetadata.md)
+
+Additional metadata about the transfer event.
+
+#### Defined in
+
+[src/types/types.ts:552](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L552)
+
+___
+
+### rawContract
+
+• **rawContract**: [`RawContract`](RawContract.md)
+
+Information about the raw contract of the asset transferred.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[rawContract](AssetTransfersResult.md#rawcontract)
+
+#### Defined in
+
+[src/types/types.ts:541](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L541)
+
+___
+
+### to
+
+• **to**: ``null`` \| `string`
+
+The to address of the transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[to](AssetTransfersResult.md#to)
+
+#### Defined in
+
+[src/types/types.ts:508](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L508)
+
+___
+
+### tokenId
+
+• **tokenId**: ``null`` \| `string`
+
+The token id of the token transferred.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[tokenId](AssetTransfersResult.md#tokenid)
+
+#### Defined in
+
+[src/types/types.ts:529](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L529)
+
+___
+
+### uniqueId
+
+• **uniqueId**: `string`
+
+The unique ID of the transfer.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[uniqueId](AssetTransfersResult.md#uniqueid)
+
+#### Defined in
+
+[src/types/types.ts:496](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L496)
+
+___
+
+### value
+
+• **value**: ``null`` \| `number`
+
+Converted asset transfer value as a number (raw value divided by contract
+decimal). `null` if ERC721 transfer or contract decimal not available.
+
+#### Inherited from
+
+[AssetTransfersResult](AssetTransfersResult.md).[value](AssetTransfersResult.md#value)
+
+#### Defined in
+
+[src/types/types.ts:514](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L514)
+
+
+================================================================================
+File: docs-md\interfaces\BaseNft.md
+Size: 1.06 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / BaseNft
+
+# Interface: BaseNft
+
+Alchemy representation of an NFT that doesn't contain metadata.
+
+The BaseNft object does not hold any metadata information and only contains
+the NFT contract and token ID. The Nft object additionally contains the NFT
+metadata, token URI information, and media.
+
+## Hierarchy
+
+- **`BaseNft`**
+
+  ↳ [`OwnedBaseNft`](OwnedBaseNft.md)
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](BaseNft.md#contractaddress)
+- [tokenId](BaseNft.md#tokenid)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The contract address of the NFT.
+
+#### Defined in
+
+[src/types/nft-types.ts:1240](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1240)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The NFT token ID as an integer string.
+
+#### Defined in
+
+[src/types/nft-types.ts:1242](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1242)
+
+
+================================================================================
+File: docs-md\interfaces\BaseNftCollection.md
+Size: 1.4 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / BaseNftCollection
+
+# Interface: BaseNftCollection
+
+A base collection object as part of an [Nft](Nft.md).
+
+## Table of contents
+
+### Properties
+
+- [bannerImageUrl](BaseNftCollection.md#bannerimageurl)
+- [externalUrl](BaseNftCollection.md#externalurl)
+- [name](BaseNftCollection.md#name)
+- [slug](BaseNftCollection.md#slug)
+
+## Properties
+
+### bannerImageUrl
+
+• `Optional` **bannerImageUrl**: `string`
+
+The banner image URL for the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1296](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1296)
+
+___
+
+### externalUrl
+
+• `Optional` **externalUrl**: `string`
+
+The external URL for the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1294](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1294)
+
+___
+
+### name
+
+• **name**: `string`
+
+The name of the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1290](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1290)
+
+___
+
+### slug
+
+• `Optional` **slug**: `string`
+
+The OpenSea human-readable slug of the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1292](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1292)
+
+
+================================================================================
+File: docs-md\interfaces\Block.md
+Size: 3.11 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / Block
+
+# Interface: Block
+
+## Hierarchy
+
+- `_Block`
+
+  ↳ **`Block`**
+
+## Table of contents
+
+### Properties
+
+- [\_difficulty](Block.md#_difficulty)
+- [baseFeePerGas](Block.md#basefeepergas)
+- [difficulty](Block.md#difficulty)
+- [extraData](Block.md#extradata)
+- [gasLimit](Block.md#gaslimit)
+- [gasUsed](Block.md#gasused)
+- [hash](Block.md#hash)
+- [miner](Block.md#miner)
+- [nonce](Block.md#nonce)
+- [number](Block.md#number)
+- [parentHash](Block.md#parenthash)
+- [timestamp](Block.md#timestamp)
+- [transactions](Block.md#transactions)
+
+## Properties
+
+### \_difficulty
+
+• **\_difficulty**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.\_difficulty
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
+
+___
+
+### baseFeePerGas
+
+• `Optional` **baseFeePerGas**: ``null`` \| [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.baseFeePerGas
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
+
+___
+
+### difficulty
+
+• **difficulty**: `number`
+
+#### Inherited from
+
+\_Block.difficulty
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
+
+___
+
+### extraData
+
+• **extraData**: `string`
+
+#### Inherited from
+
+\_Block.extraData
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
+
+___
+
+### gasLimit
+
+• **gasLimit**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.gasLimit
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
+
+___
+
+### gasUsed
+
+• **gasUsed**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.gasUsed
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
+
+___
+
+### hash
+
+• **hash**: `string`
+
+#### Inherited from
+
+\_Block.hash
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
+
+___
+
+### miner
+
+• **miner**: `string`
+
+#### Inherited from
+
+\_Block.miner
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
+
+___
+
+### nonce
+
+• **nonce**: `string`
+
+#### Inherited from
+
+\_Block.nonce
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
+
+___
+
+### number
+
+• **number**: `number`
+
+#### Inherited from
+
+\_Block.number
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
+
+___
+
+### parentHash
+
+• **parentHash**: `string`
+
+#### Inherited from
+
+\_Block.parentHash
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
+
+___
+
+### timestamp
+
+• **timestamp**: `number`
+
+#### Inherited from
+
+\_Block.timestamp
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
+
+___
+
+### transactions
+
+• **transactions**: `string`[]
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:49
+
+
+================================================================================
+File: docs-md\interfaces\BlockWithTransactions.md
+Size: 3.41 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / BlockWithTransactions
+
+# Interface: BlockWithTransactions
+
+## Hierarchy
+
+- `_Block`
+
+  ↳ **`BlockWithTransactions`**
+
+## Table of contents
+
+### Properties
+
+- [\_difficulty](BlockWithTransactions.md#_difficulty)
+- [baseFeePerGas](BlockWithTransactions.md#basefeepergas)
+- [difficulty](BlockWithTransactions.md#difficulty)
+- [extraData](BlockWithTransactions.md#extradata)
+- [gasLimit](BlockWithTransactions.md#gaslimit)
+- [gasUsed](BlockWithTransactions.md#gasused)
+- [hash](BlockWithTransactions.md#hash)
+- [miner](BlockWithTransactions.md#miner)
+- [nonce](BlockWithTransactions.md#nonce)
+- [number](BlockWithTransactions.md#number)
+- [parentHash](BlockWithTransactions.md#parenthash)
+- [timestamp](BlockWithTransactions.md#timestamp)
+- [transactions](BlockWithTransactions.md#transactions)
+
+## Properties
+
+### \_difficulty
+
+• **\_difficulty**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.\_difficulty
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:41
+
+___
+
+### baseFeePerGas
+
+• `Optional` **baseFeePerGas**: ``null`` \| [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.baseFeePerGas
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:46
+
+___
+
+### difficulty
+
+• **difficulty**: `number`
+
+#### Inherited from
+
+\_Block.difficulty
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:40
+
+___
+
+### extraData
+
+• **extraData**: `string`
+
+#### Inherited from
+
+\_Block.extraData
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:45
+
+___
+
+### gasLimit
+
+• **gasLimit**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.gasLimit
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:42
+
+___
+
+### gasUsed
+
+• **gasUsed**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+\_Block.gasUsed
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:43
+
+___
+
+### hash
+
+• **hash**: `string`
+
+#### Inherited from
+
+\_Block.hash
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:35
+
+___
+
+### miner
+
+• **miner**: `string`
+
+#### Inherited from
+
+\_Block.miner
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:44
+
+___
+
+### nonce
+
+• **nonce**: `string`
+
+#### Inherited from
+
+\_Block.nonce
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:39
+
+___
+
+### number
+
+• **number**: `number`
+
+#### Inherited from
+
+\_Block.number
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:37
+
+___
+
+### parentHash
+
+• **parentHash**: `string`
+
+#### Inherited from
+
+\_Block.parentHash
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:36
+
+___
+
+### timestamp
+
+• **timestamp**: `number`
+
+#### Inherited from
+
+\_Block.timestamp
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:38
+
+___
+
+### transactions
+
+• **transactions**: [`TransactionResponse`](TransactionResponse.md)[]
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:52
+
+
+================================================================================
+File: docs-md\interfaces\ComputeRarityResponse.md
+Size: 563 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / ComputeRarityResponse
+
+# Interface: ComputeRarityResponse
+
+Response object for the [NftNamespace.computeRarity](../classes/NftNamespace.md#computerarity) method.
+
+## Table of contents
+
+### Properties
+
+- [rarities](ComputeRarityResponse.md#rarities)
+
+## Properties
+
+### rarities
+
+• **rarities**: [`NftAttributeRarity`](NftAttributeRarity.md)[]
+
+#### Defined in
+
+[src/types/nft-types.ts:851](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L851)
+
+
+================================================================================
+File: docs-md\interfaces\CustomGraphqlWebhook.md
+Size: 3.94 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / CustomGraphqlWebhook
+
+# Interface: CustomGraphqlWebhook
+
+The Custom Webhook can track any event on every block (think transfers, staking,
+minting, burning, approvals, etc.)
+This can be used to notify your app with real time changes whenever an
+EOA or a smart contract performs any action on-chain.
+
+## Hierarchy
+
+- [`Webhook`](Webhook.md)
+
+  ↳ **`CustomGraphqlWebhook`**
+
+## Table of contents
+
+### Properties
+
+- [appId](CustomGraphqlWebhook.md#appid)
+- [id](CustomGraphqlWebhook.md#id)
+- [isActive](CustomGraphqlWebhook.md#isactive)
+- [network](CustomGraphqlWebhook.md#network)
+- [signingKey](CustomGraphqlWebhook.md#signingkey)
+- [timeCreated](CustomGraphqlWebhook.md#timecreated)
+- [type](CustomGraphqlWebhook.md#type)
+- [url](CustomGraphqlWebhook.md#url)
+- [version](CustomGraphqlWebhook.md#version)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+The app id of the app used for the webhook. This field is only present on
+[MinedTransactionWebhook](MinedTransactionWebhook.md) and [DroppedTransactionWebhook](DroppedTransactionWebhook.md)
+
+#### Inherited from
+
+[Webhook](Webhook.md).[appId](Webhook.md#appid)
+
+#### Defined in
+
+[src/types/types.ts:1123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1123)
+
+___
+
+### id
+
+• **id**: `string`
+
+The webhook's unique id.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[id](Webhook.md#id)
+
+#### Defined in
+
+[src/types/types.ts:1104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1104)
+
+___
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is currently active
+
+#### Inherited from
+
+[Webhook](Webhook.md).[isActive](Webhook.md#isactive)
+
+#### Defined in
+
+[src/types/types.ts:1112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1112)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network the webhook is on.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[network](Webhook.md#network)
+
+#### Defined in
+
+[src/types/types.ts:1106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1106)
+
+___
+
+### signingKey
+
+• **signingKey**: `string`
+
+The signing key used to verify payloads for the webhook.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[signingKey](Webhook.md#signingkey)
+
+#### Defined in
+
+[src/types/types.ts:1116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1116)
+
+___
+
+### timeCreated
+
+• **timeCreated**: `string`
+
+The creation time of the webhook as an ISO string.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[timeCreated](Webhook.md#timecreated)
+
+#### Defined in
+
+[src/types/types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1114)
+
+___
+
+### type
+
+• **type**: [`GRAPHQL`](../enums/WebhookType.md#graphql)
+
+The type of webhook.
+
+#### Overrides
+
+[Webhook](Webhook.md).[type](Webhook.md#type)
+
+#### Defined in
+
+[src/types/types.ts:1194](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1194)
+
+___
+
+### url
+
+• **url**: `string`
+
+The url that the webhook sends its payload to.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[url](Webhook.md#url)
+
+#### Defined in
+
+[src/types/types.ts:1110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1110)
+
+___
+
+### version
+
+• **version**: [`WebhookVersion`](../enums/WebhookVersion.md)
+
+The webhook version. All newly created webhooks default to V2.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[version](Webhook.md#version)
+
+#### Defined in
+
+[src/types/types.ts:1118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1118)
+
+
+================================================================================
+File: docs-md\interfaces\CustomGraphqlWebhookConfig.md
+Size: 597 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / CustomGraphqlWebhookConfig
+
+# Interface: CustomGraphqlWebhookConfig
+
+Response object for the [NotifyNamespace.getGraphqlQuery](../classes/NotifyNamespace.md#getgraphqlquery) method.
+
+## Table of contents
+
+### Properties
+
+- [graphqlQuery](CustomGraphqlWebhookConfig.md#graphqlquery)
+
+## Properties
+
+### graphqlQuery
+
+• **graphqlQuery**: `string`
+
+The graphql query for the webhook.
+
+#### Defined in
+
+[src/types/types.ts:1227](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1227)
+
+
+================================================================================
+File: docs-md\interfaces\CustomGraphqlWebhookParams.md
+Size: 2.38 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / CustomGraphqlWebhookParams
+
+# Interface: CustomGraphqlWebhookParams
+
+Params to pass in when calling [NotifyNamespace.createWebhook](../classes/NotifyNamespace.md#createwebhook) in order
+to create a [CustomGraphqlWebhook](CustomGraphqlWebhook.md)
+
+## Table of contents
+
+### Properties
+
+- [appId](CustomGraphqlWebhookParams.md#appid)
+- [graphqlQuery](CustomGraphqlWebhookParams.md#graphqlquery)
+- [network](CustomGraphqlWebhookParams.md#network)
+- [skipEmptyMessages](CustomGraphqlWebhookParams.md#skipemptymessages)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+App IDs are now required for graphQL webhooks. You can find the app ID
+following the steps here:
+[https://docs.alchemy.com/reference/notify-api-faq#where-can-i-find-the-app-id](https://docs.alchemy.com/reference/notify-api-faq#where-can-i-find-the-app-id).
+
+The webhook will be created on the app and network associated with the appId.
+To find the app id of a project, go to the Alchemy Dashboard in the Apps tab.
+After clicking on an app, the app id is the string in the URL following 'apps/'.
+
+Note that although this property is marked as optional, it is *actually required*
+for creating a custom GraphQL webhook. This is a workaround to avoid a breaking
+change in the API.
+
+#### Defined in
+
+[src/types/types.ts:1290](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1290)
+
+___
+
+### graphqlQuery
+
+• **graphqlQuery**: `string`
+
+GraphQL query
+
+#### Defined in
+
+[src/types/types.ts:1266](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1266)
+
+___
+
+### network
+
+• `Optional` **network**: [`Network`](../enums/Network.md)
+
+Optional network to create the webhook on. If omitted, the webhook will be
+created on network of the app provided in the api key config.
+
+#### Defined in
+
+[src/types/types.ts:1271](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1271)
+
+___
+
+### skipEmptyMessages
+
+• `Optional` **skipEmptyMessages**: `boolean`
+
+Whether to only receive webhooks if the query on the block is not empty.
+Defaults to false.
+
+#### Defined in
+
+[src/types/types.ts:1276](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1276)
+
+
+================================================================================
+File: docs-md\interfaces\DebugCallTrace.md
+Size: 3.17 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugCallTrace
+
+# Interface: DebugCallTrace
+
+Debug result returned when using a [DebugCallTracer](DebugCallTracer.md).
+
+## Table of contents
+
+### Properties
+
+- [calls](DebugCallTrace.md#calls)
+- [error](DebugCallTrace.md#error)
+- [from](DebugCallTrace.md#from)
+- [gas](DebugCallTrace.md#gas)
+- [gasUsed](DebugCallTrace.md#gasused)
+- [input](DebugCallTrace.md#input)
+- [output](DebugCallTrace.md#output)
+- [revertReason](DebugCallTrace.md#revertreason)
+- [to](DebugCallTrace.md#to)
+- [type](DebugCallTrace.md#type)
+- [value](DebugCallTrace.md#value)
+
+## Properties
+
+### calls
+
+• `Optional` **calls**: [`DebugCallTrace`](DebugCallTrace.md)[]
+
+Array of sub-calls executed as part of the original call.
+
+#### Defined in
+
+[src/types/types.ts:1545](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1545)
+
+___
+
+### error
+
+• `Optional` **error**: `string`
+
+Optional error field.
+
+#### Defined in
+
+[src/types/types.ts:1541](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1541)
+
+___
+
+### from
+
+• **from**: `string`
+
+From address of the transaction.
+
+#### Defined in
+
+[src/types/types.ts:1527](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1527)
+
+___
+
+### gas
+
+• **gas**: `string`
+
+Gas provided for call as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1533](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1533)
+
+___
+
+### gasUsed
+
+• **gasUsed**: `string`
+
+Gas used during the call as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1535](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1535)
+
+___
+
+### input
+
+• **input**: `string`
+
+Call data.
+
+#### Defined in
+
+[src/types/types.ts:1537](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1537)
+
+___
+
+### output
+
+• **output**: `string`
+
+Return data.
+
+#### Defined in
+
+[src/types/types.ts:1539](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1539)
+
+___
+
+### revertReason
+
+• `Optional` **revertReason**: `string`
+
+Solidity revert reason, if the call reverted.
+
+#### Defined in
+
+[src/types/types.ts:1543](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1543)
+
+___
+
+### to
+
+• **to**: `string`
+
+To address of the transaction.
+
+#### Defined in
+
+[src/types/types.ts:1529](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1529)
+
+___
+
+### type
+
+• **type**: `string`
+
+The type of call: `CALL` or `CREATE` for the top-level call.
+
+#### Defined in
+
+[src/types/types.ts:1525](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1525)
+
+___
+
+### value
+
+• **value**: `string`
+
+Amount of value transfer as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1531](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1531)
+
+
+================================================================================
+File: docs-md\interfaces\DebugCallTracer.md
+Size: 1.46 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugCallTracer
+
+# Interface: DebugCallTracer
+
+Tracer used with debug methods in the [DebugNamespace](../classes/DebugNamespace.md).
+
+This tracer tracks all call frames executed during a transaction, including
+depth 0. The returned result [DebugCallTrace](DebugCallTrace.md) is a nested list of call
+frames executed as part of the call.
+
+Here are some things to note when using the call tracer:
+- Calls to precompiles are also included in the result.
+- In case a frame reverts, the field output will contain the raw return data.
+- In case the top level frame reverts, its `revertReason` field will contain
+  the parsed reason of revert as returned by the Solidity contract
+
+## Table of contents
+
+### Properties
+
+- [onlyTopCall](DebugCallTracer.md#onlytopcall)
+- [type](DebugCallTracer.md#type)
+
+## Properties
+
+### onlyTopCall
+
+• `Optional` **onlyTopCall**: `boolean`
+
+Whether to only trace the main (top-level) calls and ignore sub-calls.
+Defaults to `false`.
+
+#### Defined in
+
+[src/types/types.ts:1497](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1497)
+
+___
+
+### type
+
+• **type**: [`CALL_TRACER`](../enums/DebugTracerType.md#call_tracer)
+
+Specified type is `CALL_TRACER`.
+
+#### Defined in
+
+[src/types/types.ts:1492](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1492)
+
+
+================================================================================
+File: docs-md\interfaces\DebugPrestate.md
+Size: 1.19 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugPrestate
+
+# Interface: DebugPrestate
+
+The
+
+## Table of contents
+
+### Properties
+
+- [balance](DebugPrestate.md#balance)
+- [code](DebugPrestate.md#code)
+- [nonce](DebugPrestate.md#nonce)
+- [storage](DebugPrestate.md#storage)
+
+## Properties
+
+### balance
+
+• **balance**: `string`
+
+Balance of the account in wei as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1588](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1588)
+
+___
+
+### code
+
+• **code**: `string`
+
+Hex-encoded bytecode.
+
+#### Defined in
+
+[src/types/types.ts:1592](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1592)
+
+___
+
+### nonce
+
+• **nonce**: `number`
+
+Nonce
+
+#### Defined in
+
+[src/types/types.ts:1590](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1590)
+
+___
+
+### storage
+
+• **storage**: `Record`<`string`, `string`\>
+
+Storage slots of the contract.
+
+#### Defined in
+
+[src/types/types.ts:1594](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1594)
+
+
+================================================================================
+File: docs-md\interfaces\DebugPrestateTracer.md
+Size: 1.24 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugPrestateTracer
+
+# Interface: DebugPrestateTracer
+
+Tracer used with debug methods in the [DebugNamespace](../classes/DebugNamespace.md).
+
+This tracer replays the transaction and tracks every part of state that was
+touched during the transaction.
+
+Returns a [DebugPrestateTrace](../modules.md#debugprestatetrace). This contains sufficient information to
+create a local execution of the transaction from a custom assembled genesis
+block.
+
+## Table of contents
+
+### Properties
+
+- [onlyTopCall](DebugPrestateTracer.md#onlytopcall)
+- [type](DebugPrestateTracer.md#type)
+
+## Properties
+
+### onlyTopCall
+
+• `Optional` **onlyTopCall**: `boolean`
+
+Whether to only trace the main (top-level) calls and ignore sub-calls.
+Defaults to `false`.
+
+#### Defined in
+
+[src/types/types.ts:1517](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1517)
+
+___
+
+### type
+
+• **type**: [`PRESTATE_TRACER`](../enums/DebugTracerType.md#prestate_tracer)
+
+Specified type is `PRESTATE_TRACER`.
+
+#### Defined in
+
+[src/types/types.ts:1512](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1512)
+
+
+================================================================================
+File: docs-md\interfaces\DebugTransaction.md
+Size: 2.15 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DebugTransaction
+
+# Interface: DebugTransaction
+
+Transaction object used in [DebugNamespace.traceCall](../classes/DebugNamespace.md#tracecall), [TransactNamespace.simulateAssetChanges](../classes/TransactNamespace.md#simulateassetchanges) and [TransactNamespace.simulateExecution](../classes/TransactNamespace.md#simulateexecution).
+
+## Table of contents
+
+### Properties
+
+- [data](DebugTransaction.md#data)
+- [from](DebugTransaction.md#from)
+- [gas](DebugTransaction.md#gas)
+- [gasPrice](DebugTransaction.md#gasprice)
+- [to](DebugTransaction.md#to)
+- [value](DebugTransaction.md#value)
+
+## Properties
+
+### data
+
+• `Optional` **data**: `string`
+
+The data associated with the transaction.
+
+#### Defined in
+
+[src/types/types.ts:1425](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1425)
+
+___
+
+### from
+
+• `Optional` **from**: `string`
+
+The address the transaction is sent from.
+
+#### Defined in
+
+[src/types/types.ts:1417](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1417)
+
+___
+
+### gas
+
+• `Optional` **gas**: `string`
+
+The gas provided for the transaction execution, as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1419](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1419)
+
+___
+
+### gasPrice
+
+• `Optional` **gasPrice**: `string`
+
+The gas price to use as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1421](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1421)
+
+___
+
+### to
+
+• `Optional` **to**: `string`
+
+The address the transaction is directed to.
+
+#### Defined in
+
+[src/types/types.ts:1415](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1415)
+
+___
+
+### value
+
+• `Optional` **value**: `string`
+
+The value associated with the transaction as a hex string.
+
+#### Defined in
+
+[src/types/types.ts:1423](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1423)
+
+
+================================================================================
+File: docs-md\interfaces\DecodedCallParam.md
+Size: 1.09 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DecodedCallParam
+
+# Interface: DecodedCallParam
+
+The input or output parameters from a [DecodedDebugCallTrace](DecodedDebugCallTrace.md).
+
+## Hierarchy
+
+- **`DecodedCallParam`**
+
+  ↳ [`DecodedLogInput`](DecodedLogInput.md)
+
+## Table of contents
+
+### Properties
+
+- [name](DecodedCallParam.md#name)
+- [type](DecodedCallParam.md#type)
+- [value](DecodedCallParam.md#value)
+
+## Properties
+
+### name
+
+• **name**: `string`
+
+The name of the parameter.
+
+#### Defined in
+
+[src/types/types.ts:965](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L965)
+
+___
+
+### type
+
+• **type**: `string`
+
+The type of the parameter.
+
+#### Defined in
+
+[src/types/types.ts:967](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L967)
+
+___
+
+### value
+
+• **value**: `string`
+
+Value of the parameter.
+
+#### Defined in
+
+[src/types/types.ts:963](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L963)
+
+
+================================================================================
+File: docs-md\interfaces\DecodedDebugCallTrace.md
+Size: 1.48 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DecodedDebugCallTrace
+
+# Interface: DecodedDebugCallTrace
+
+Decoded representation of the call trace that is part of a
+[SimulationCallTrace](SimulationCallTrace.md).
+
+## Table of contents
+
+### Properties
+
+- [authority](DecodedDebugCallTrace.md#authority)
+- [inputs](DecodedDebugCallTrace.md#inputs)
+- [methodName](DecodedDebugCallTrace.md#methodname)
+- [outputs](DecodedDebugCallTrace.md#outputs)
+
+## Properties
+
+### authority
+
+• **authority**: [`ETHERSCAN`](../enums/DecodingAuthority.md#etherscan)
+
+The source used to provide the decoded call trace.
+
+#### Defined in
+
+[src/types/types.ts:988](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L988)
+
+___
+
+### inputs
+
+• **inputs**: [`DecodedCallParam`](DecodedCallParam.md)[]
+
+Method inputs.
+
+#### Defined in
+
+[src/types/types.ts:984](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L984)
+
+___
+
+### methodName
+
+• **methodName**: `string`
+
+The smart contract method called.
+
+#### Defined in
+
+[src/types/types.ts:982](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L982)
+
+___
+
+### outputs
+
+• **outputs**: [`DecodedCallParam`](DecodedCallParam.md)[]
+
+Method outputs.
+
+#### Defined in
+
+[src/types/types.ts:986](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L986)
+
+
+================================================================================
+File: docs-md\interfaces\DecodedLog.md
+Size: 1.14 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DecodedLog
+
+# Interface: DecodedLog
+
+Decoded representation of the debug log that is part of a
+[SimulationDebugLog](SimulationDebugLog.md).
+
+## Table of contents
+
+### Properties
+
+- [authority](DecodedLog.md#authority)
+- [eventName](DecodedLog.md#eventname)
+- [inputs](DecodedLog.md#inputs)
+
+## Properties
+
+### authority
+
+• **authority**: [`ETHERSCAN`](../enums/DecodingAuthority.md#etherscan)
+
+The source used to provide the decoded log.
+
+#### Defined in
+
+[src/types/types.ts:1021](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1021)
+
+___
+
+### eventName
+
+• **eventName**: `string`
+
+The decoded name of the log event.
+
+#### Defined in
+
+[src/types/types.ts:1017](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1017)
+
+___
+
+### inputs
+
+• **inputs**: [`DecodedLogInput`](DecodedLogInput.md)[]
+
+The decoded inputs to the log.
+
+#### Defined in
+
+[src/types/types.ts:1019](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1019)
+
+
+================================================================================
+File: docs-md\interfaces\DecodedLogInput.md
+Size: 1.64 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DecodedLogInput
+
+# Interface: DecodedLogInput
+
+The input parameters from a [DecodedLog](DecodedLog.md).
+
+## Hierarchy
+
+- [`DecodedCallParam`](DecodedCallParam.md)
+
+  ↳ **`DecodedLogInput`**
+
+## Table of contents
+
+### Properties
+
+- [indexed](DecodedLogInput.md#indexed)
+- [name](DecodedLogInput.md#name)
+- [type](DecodedLogInput.md#type)
+- [value](DecodedLogInput.md#value)
+
+## Properties
+
+### indexed
+
+• **indexed**: `boolean`
+
+Whether the log is marked as indexed in the smart contract.
+
+#### Defined in
+
+[src/types/types.ts:973](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L973)
+
+___
+
+### name
+
+• **name**: `string`
+
+The name of the parameter.
+
+#### Inherited from
+
+[DecodedCallParam](DecodedCallParam.md).[name](DecodedCallParam.md#name)
+
+#### Defined in
+
+[src/types/types.ts:965](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L965)
+
+___
+
+### type
+
+• **type**: `string`
+
+The type of the parameter.
+
+#### Inherited from
+
+[DecodedCallParam](DecodedCallParam.md).[type](DecodedCallParam.md#type)
+
+#### Defined in
+
+[src/types/types.ts:967](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L967)
+
+___
+
+### value
+
+• **value**: `string`
+
+Value of the parameter.
+
+#### Inherited from
+
+[DecodedCallParam](DecodedCallParam.md).[value](DecodedCallParam.md#value)
+
+#### Defined in
+
+[src/types/types.ts:963](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L963)
+
+
+================================================================================
+File: docs-md\interfaces\DeployResult.md
+Size: 888 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DeployResult
+
+# Interface: DeployResult
+
+The response object for the [findContractDeployer](../classes/CoreNamespace.md#findcontractdeployer) function.
+
+## Table of contents
+
+### Properties
+
+- [blockNumber](DeployResult.md#blocknumber)
+- [deployerAddress](DeployResult.md#deployeraddress)
+
+## Properties
+
+### blockNumber
+
+• **blockNumber**: `number`
+
+The block number the contract was deployed in.
+
+#### Defined in
+
+[src/types/types.ts:684](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L684)
+
+___
+
+### deployerAddress
+
+• `Optional` **deployerAddress**: `string`
+
+The address of the contract deployer, if it is available.
+
+#### Defined in
+
+[src/types/types.ts:681](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L681)
+
+
+================================================================================
+File: docs-md\interfaces\DisplayNftForContract.md
+Size: 843 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DisplayNftForContract
+
+# Interface: DisplayNftForContract
+
+Sample owned NFT on a [NftContract](NftContract.md), used to display placeholder info.
+
+## Table of contents
+
+### Properties
+
+- [name](DisplayNftForContract.md#name)
+- [tokenId](DisplayNftForContract.md#tokenid)
+
+## Properties
+
+### name
+
+• `Optional` **name**: `string`
+
+The name of the NFT, if available.
+
+#### Defined in
+
+[src/types/nft-types.ts:576](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L576)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+A token id of an NFT owned by the owner on the contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:574](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L574)
+
+
+================================================================================
+File: docs-md\interfaces\DroppedTransactionWebhook.md
+Size: 3.99 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / DroppedTransactionWebhook
+
+# Interface: DroppedTransactionWebhook
+
+A Dropped Transaction webhook is used to notify your app whenever a
+transaction sent through your API key gets dropped. This can be useful if you
+want to notify customers that their transactions were dropped.
+
+## Hierarchy
+
+- [`Webhook`](Webhook.md)
+
+  ↳ **`DroppedTransactionWebhook`**
+
+## Table of contents
+
+### Properties
+
+- [appId](DroppedTransactionWebhook.md#appid)
+- [id](DroppedTransactionWebhook.md#id)
+- [isActive](DroppedTransactionWebhook.md#isactive)
+- [network](DroppedTransactionWebhook.md#network)
+- [signingKey](DroppedTransactionWebhook.md#signingkey)
+- [timeCreated](DroppedTransactionWebhook.md#timecreated)
+- [type](DroppedTransactionWebhook.md#type)
+- [url](DroppedTransactionWebhook.md#url)
+- [version](DroppedTransactionWebhook.md#version)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+The app id of the app used for the webhook. This field is only present on
+[MinedTransactionWebhook](MinedTransactionWebhook.md) and [DroppedTransactionWebhook](DroppedTransactionWebhook.md)
+
+#### Inherited from
+
+[Webhook](Webhook.md).[appId](Webhook.md#appid)
+
+#### Defined in
+
+[src/types/types.ts:1123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1123)
+
+___
+
+### id
+
+• **id**: `string`
+
+The webhook's unique id.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[id](Webhook.md#id)
+
+#### Defined in
+
+[src/types/types.ts:1104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1104)
+
+___
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is currently active
+
+#### Inherited from
+
+[Webhook](Webhook.md).[isActive](Webhook.md#isactive)
+
+#### Defined in
+
+[src/types/types.ts:1112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1112)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network the webhook is on.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[network](Webhook.md#network)
+
+#### Defined in
+
+[src/types/types.ts:1106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1106)
+
+___
+
+### signingKey
+
+• **signingKey**: `string`
+
+The signing key used to verify payloads for the webhook.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[signingKey](Webhook.md#signingkey)
+
+#### Defined in
+
+[src/types/types.ts:1116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1116)
+
+___
+
+### timeCreated
+
+• **timeCreated**: `string`
+
+The creation time of the webhook as an ISO string.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[timeCreated](Webhook.md#timecreated)
+
+#### Defined in
+
+[src/types/types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1114)
+
+___
+
+### type
+
+• **type**: [`DROPPED_TRANSACTION`](../enums/WebhookType.md#dropped_transaction)
+
+The type of webhook.
+
+#### Overrides
+
+[Webhook](Webhook.md).[type](Webhook.md#type)
+
+#### Defined in
+
+[src/types/types.ts:1157](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1157)
+
+___
+
+### url
+
+• **url**: `string`
+
+The url that the webhook sends its payload to.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[url](Webhook.md#url)
+
+#### Defined in
+
+[src/types/types.ts:1110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1110)
+
+___
+
+### version
+
+• **version**: [`WebhookVersion`](../enums/WebhookVersion.md)
+
+The webhook version. All newly created webhooks default to V2.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[version](Webhook.md#version)
+
+#### Defined in
+
+[src/types/types.ts:1118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1118)
+
+
+================================================================================
+File: docs-md\interfaces\ERC1155Metadata.md
+Size: 753 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / ERC1155Metadata
+
+# Interface: ERC1155Metadata
+
+Metadata object returned in a [AssetTransfersResult](AssetTransfersResult.md) object if the asset
+transferred is an ERC1155.
+
+## Table of contents
+
+### Properties
+
+- [tokenId](ERC1155Metadata.md#tokenid)
+- [value](ERC1155Metadata.md#value)
+
+## Properties
+
+### tokenId
+
+• **tokenId**: `string`
+
+#### Defined in
+
+[src/types/nft-types.ts:920](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L920)
+
+___
+
+### value
+
+• **value**: `string`
+
+#### Defined in
+
+[src/types/nft-types.ts:921](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L921)
+
+
+================================================================================
+File: docs-md\interfaces\EventFilter.md
+Size: 1.03 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / EventFilter
+
+# Interface: EventFilter
+
+Filter object used to filter logs by when using [CoreNamespace.getLogs](../classes/CoreNamespace.md#getlogs)
+
+## Hierarchy
+
+- **`EventFilter`**
+
+  ↳ [`FilterByBlockHash`](FilterByBlockHash.md)
+
+  ↳ [`Filter`](Filter.md)
+
+## Table of contents
+
+### Properties
+
+- [address](EventFilter.md#address)
+- [topics](EventFilter.md#topics)
+
+## Properties
+
+### address
+
+• `Optional` **address**: `string` \| `string`[]
+
+The address to filter by. If omitted, filters for all addresses.
+
+#### Defined in
+
+[src/types/types.ts:1573](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1573)
+
+___
+
+### topics
+

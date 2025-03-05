@@ -1,0 +1,4087 @@
+
+[src/types/nft-types.ts:1170](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1170)
+
+
+================================================================================
+File: docs-md\interfaces\NftContractForOwner.md
+Size: 5.7 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftContractForOwner
+
+# Interface: NftContractForOwner
+
+Represents a single NFT contract data in the [GetContractsForOwnerResponse](GetContractsForOwnerResponse.md).
+
+## Hierarchy
+
+- [`NftContract`](NftContract.md)
+
+  ↳ **`NftContractForOwner`**
+
+## Table of contents
+
+### Properties
+
+- [address](NftContractForOwner.md#address)
+- [contractDeployer](NftContractForOwner.md#contractdeployer)
+- [deployedBlockNumber](NftContractForOwner.md#deployedblocknumber)
+- [displayNft](NftContractForOwner.md#displaynft)
+- [image](NftContractForOwner.md#image)
+- [isSpam](NftContractForOwner.md#isspam)
+- [name](NftContractForOwner.md#name)
+- [numDistinctTokensOwned](NftContractForOwner.md#numdistincttokensowned)
+- [openSeaMetadata](NftContractForOwner.md#openseametadata)
+- [symbol](NftContractForOwner.md#symbol)
+- [tokenType](NftContractForOwner.md#tokentype)
+- [totalBalance](NftContractForOwner.md#totalbalance)
+- [totalSupply](NftContractForOwner.md#totalsupply)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+The address of the NFT contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[address](NftContract.md#address)
+
+#### Defined in
+
+[src/types/nft-types.ts:1159](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1159)
+
+___
+
+### contractDeployer
+
+• `Optional` **contractDeployer**: `string`
+
+The address that deployed the NFT contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[contractDeployer](NftContract.md#contractdeployer)
+
+#### Defined in
+
+[src/types/nft-types.ts:1174](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1174)
+
+___
+
+### deployedBlockNumber
+
+• `Optional` **deployedBlockNumber**: `number`
+
+The block number the NFT contract deployed in.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[deployedBlockNumber](NftContract.md#deployedblocknumber)
+
+#### Defined in
+
+[src/types/nft-types.ts:1176](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1176)
+
+___
+
+### displayNft
+
+• **displayNft**: [`DisplayNftForContract`](DisplayNftForContract.md)
+
+Object containing an NFT owned by the owner for this particular contract.
+Use this to display a sample NFT for the contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:565](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L565)
+
+___
+
+### image
+
+• **image**: [`NftImage`](NftImage.md)
+
+Object containing different URLs for the NFT media.
+
+#### Defined in
+
+[src/types/nft-types.ts:568](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L568)
+
+___
+
+### isSpam
+
+• **isSpam**: `boolean`
+
+Whether the NFT contract is considered spam.
+
+#### Defined in
+
+[src/types/nft-types.ts:559](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L559)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+The name of the contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[name](NftContract.md#name)
+
+#### Defined in
+
+[src/types/nft-types.ts:1163](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1163)
+
+___
+
+### numDistinctTokensOwned
+
+• **numDistinctTokensOwned**: `string`
+
+Number of distinct token IDs held by the owner. For non-fungible tokens
+this will be equal to the totalBalance, but it may be lower if the user
+holds some fungible ERC1155 tokens.
+
+#### Defined in
+
+[src/types/nft-types.ts:556](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L556)
+
+___
+
+### openSeaMetadata
+
+• **openSeaMetadata**: [`OpenSeaCollectionMetadata`](OpenSeaCollectionMetadata.md)
+
+OpenSea's metadata for the contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[openSeaMetadata](NftContract.md#openseametadata)
+
+#### Defined in
+
+[src/types/nft-types.ts:1172](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1172)
+
+___
+
+### symbol
+
+• `Optional` **symbol**: `string`
+
+The symbol of the contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[symbol](NftContract.md#symbol)
+
+#### Defined in
+
+[src/types/nft-types.ts:1165](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1165)
+
+___
+
+### tokenType
+
+• **tokenType**: [`NftTokenType`](../enums/NftTokenType.md)
+
+The type of the token in the contract.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[tokenType](NftContract.md#tokentype)
+
+#### Defined in
+
+[src/types/nft-types.ts:1161](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1161)
+
+___
+
+### totalBalance
+
+• **totalBalance**: `string`
+
+Sum of NFT balances across all token IDs held by the owner. For
+non-fungible tokens this will be equal to the numDistinctTokensOwned, but
+it may be higher if the user holds some fungible ERC1155 tokens.
+
+#### Defined in
+
+[src/types/nft-types.ts:549](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L549)
+
+___
+
+### totalSupply
+
+• `Optional` **totalSupply**: `string`
+
+The number of NFTs in the contract as an integer string. This field is only
+available on ERC-721 contracts.
+
+#### Inherited from
+
+[NftContract](NftContract.md).[totalSupply](NftContract.md#totalsupply)
+
+#### Defined in
+
+[src/types/nft-types.ts:1170](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1170)
+
+
+================================================================================
+File: docs-md\interfaces\NftContractNftsResponse.md
+Size: 1.04 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftContractNftsResponse
+
+# Interface: NftContractNftsResponse
+
+The response object for the [getNftsForContract](../classes/NftNamespace.md#getnftsforcontract) function. The object
+contains the NFTs with metadata inside the NFT contract.
+
+## Table of contents
+
+### Properties
+
+- [nfts](NftContractNftsResponse.md#nfts)
+- [pageKey](NftContractNftsResponse.md#pagekey)
+
+## Properties
+
+### nfts
+
+• **nfts**: [`Nft`](Nft.md)[]
+
+An array of NFTs with metadata.
+
+#### Defined in
+
+[src/types/nft-types.ts:1108](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1108)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Pagination token that can be passed into another request to fetch the next
+NFTs. If there is no page key, then there are no more NFTs to fetch.
+
+#### Defined in
+
+[src/types/nft-types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1114)
+
+
+================================================================================
+File: docs-md\interfaces\NftContractOwner.md
+Size: 1.03 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftContractOwner
+
+# Interface: NftContractOwner
+
+An object representing the owner of an NFT and its corresponding token
+balances in a [GetOwnersForContractWithTokenBalancesResponse](GetOwnersForContractWithTokenBalancesResponse.md) object.
+
+## Table of contents
+
+### Properties
+
+- [ownerAddress](NftContractOwner.md#owneraddress)
+- [tokenBalances](NftContractOwner.md#tokenbalances)
+
+## Properties
+
+### ownerAddress
+
+• **ownerAddress**: `string`
+
+The NFT's owner address.
+
+#### Defined in
+
+[src/types/nft-types.ts:366](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L366)
+
+___
+
+### tokenBalances
+
+• **tokenBalances**: [`NftContractTokenBalance`](NftContractTokenBalance.md)[]
+
+A list of objects containing token balances for the provided NFT contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:369](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L369)
+
+
+================================================================================
+File: docs-md\interfaces\NftContractTokenBalance.md
+Size: 928 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftContractTokenBalance
+
+# Interface: NftContractTokenBalance
+
+An object representing the owned token and balance values in a
+[GetOwnersForContractWithTokenBalancesResponse](GetOwnersForContractWithTokenBalancesResponse.md) object.
+
+## Table of contents
+
+### Properties
+
+- [balance](NftContractTokenBalance.md#balance)
+- [tokenId](NftContractTokenBalance.md#tokenid)
+
+## Properties
+
+### balance
+
+• **balance**: `string`
+
+The token id balance for the provided owner.
+
+#### Defined in
+
+[src/types/nft-types.ts:380](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L380)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The token id owned in the NFT contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:378](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L378)
+
+
+================================================================================
+File: docs-md\interfaces\NftFilter.md
+Size: 965 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftFilter
+
+# Interface: NftFilter
+
+NFT to track on a [NftActivityWebhook](NftActivityWebhook.md) or [NftMetadataUpdateWebhook](NftMetadataUpdateWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](NftFilter.md#contractaddress)
+- [tokenId](NftFilter.md#tokenid)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The contract address of the NFT.
+
+#### Defined in
+
+[src/types/types.ts:1310](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1310)
+
+___
+
+### tokenId
+
+• `Optional` **tokenId**: [`BigNumberish`](../modules.md#bignumberish)
+
+The token id of the NFT to track. If this field is omitted, defaults to
+tracking all NFTs for the provided contract address.
+
+#### Defined in
+
+[src/types/types.ts:1315](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1315)
+
+
+================================================================================
+File: docs-md\interfaces\NftFiltersResponse.md
+Size: 1.17 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftFiltersResponse
+
+# Interface: NftFiltersResponse
+
+Response object for the [NotifyNamespace.getNftFilters](../classes/NotifyNamespace.md#getnftfilters) method.
+
+## Table of contents
+
+### Properties
+
+- [filters](NftFiltersResponse.md#filters)
+- [pageKey](NftFiltersResponse.md#pagekey)
+- [totalCount](NftFiltersResponse.md#totalcount)
+
+## Properties
+
+### filters
+
+• **filters**: [`NftFilter`](NftFilter.md)[]
+
+The NFT filters on the provided webhook.
+
+#### Defined in
+
+[src/types/types.ts:1321](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1321)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key used to fetch the remaining filters.
+
+#### Defined in
+
+[src/types/types.ts:1325](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1325)
+
+___
+
+### totalCount
+
+• **totalCount**: `number`
+
+The total number of NFT filters on the webhook.
+
+#### Defined in
+
+[src/types/types.ts:1323](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1323)
+
+
+================================================================================
+File: docs-md\interfaces\NftImage.md
+Size: 1.91 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftImage
+
+# Interface: NftImage
+
+Media URLs and information for an NFT.
+
+## Table of contents
+
+### Properties
+
+- [cachedUrl](NftImage.md#cachedurl)
+- [contentType](NftImage.md#contenttype)
+- [originalUrl](NftImage.md#originalurl)
+- [pngUrl](NftImage.md#pngurl)
+- [size](NftImage.md#size)
+- [thumbnailUrl](NftImage.md#thumbnailurl)
+
+## Properties
+
+### cachedUrl
+
+• `Optional` **cachedUrl**: `string`
+
+URL of the image stored in Alchemy's cache.
+
+#### Defined in
+
+[src/types/nft-types.ts:51](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L51)
+
+___
+
+### contentType
+
+• `Optional` **contentType**: `string`
+
+The type of the media image.
+
+#### Defined in
+
+[src/types/nft-types.ts:57](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L57)
+
+___
+
+### originalUrl
+
+• `Optional` **originalUrl**: `string`
+
+The original URL of the image as stored on the contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:61](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L61)
+
+___
+
+### pngUrl
+
+• `Optional` **pngUrl**: `string`
+
+URL of the image in png format
+
+#### Defined in
+
+[src/types/nft-types.ts:55](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L55)
+
+___
+
+### size
+
+• `Optional` **size**: `number`
+
+The size of the media asset in bytes.
+
+#### Defined in
+
+[src/types/nft-types.ts:59](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L59)
+
+___
+
+### thumbnailUrl
+
+• `Optional` **thumbnailUrl**: `string`
+
+URL of a thumbnail sized image.
+
+#### Defined in
+
+[src/types/nft-types.ts:53](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L53)
+
+
+================================================================================
+File: docs-md\interfaces\NftMetadata.md
+Size: 2.28 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftMetadata
+
+# Interface: NftMetadata
+
+Represents NFT metadata that holds fields. Note that since there is no
+standard metadata format, the fields are not guaranteed to be present.
+
+## Hierarchy
+
+- `Record`<`string`, `any`\>
+
+  ↳ **`NftMetadata`**
+
+## Table of contents
+
+### Properties
+
+- [attributes](NftMetadata.md#attributes)
+- [background\_color](NftMetadata.md#background_color)
+- [description](NftMetadata.md#description)
+- [external\_url](NftMetadata.md#external_url)
+- [image](NftMetadata.md#image)
+- [name](NftMetadata.md#name)
+
+## Properties
+
+### attributes
+
+• `Optional` **attributes**: `Record`<`string`, `any`\>[]
+
+The traits, attributes, and characteristics for the NFT asset.
+
+#### Defined in
+
+[src/types/nft-types.ts:45](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L45)
+
+___
+
+### background\_color
+
+• `Optional` **background\_color**: `string`
+
+Background color of the NFT item. Usually defined as a 6 character hex string.
+
+#### Defined in
+
+[src/types/nft-types.ts:42](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L42)
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+A human-readable description of the NFT asset.
+
+#### Defined in
+
+[src/types/nft-types.ts:30](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L30)
+
+___
+
+### external\_url
+
+• `Optional` **external\_url**: `string`
+
+The image URL that appears along the top of the NFT asset page. This tends
+to be the highest resolution image.
+
+#### Defined in
+
+[src/types/nft-types.ts:39](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L39)
+
+___
+
+### image
+
+• `Optional` **image**: `string`
+
+URL to the NFT asset image.
+
+#### Defined in
+
+[src/types/nft-types.ts:33](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L33)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+Name of the NFT asset.
+
+#### Defined in
+
+[src/types/nft-types.ts:27](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L27)
+
+
+================================================================================
+File: docs-md\interfaces\NftMetadataBatchOptions.md
+Size: 1.28 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftMetadataBatchOptions
+
+# Interface: NftMetadataBatchOptions
+
+Additional options for the [NftNamespace.getNftMetadataBatch](../classes/NftNamespace.md#getnftmetadatabatch) method.
+
+## Table of contents
+
+### Properties
+
+- [refreshCache](NftMetadataBatchOptions.md#refreshcache)
+- [tokenUriTimeoutInMs](NftMetadataBatchOptions.md#tokenuritimeoutinms)
+
+## Properties
+
+### refreshCache
+
+• `Optional` **refreshCache**: `boolean`
+
+Whether to refresh the metadata for the given NFT token before returning
+the response. Defaults to false for faster response times.
+
+#### Defined in
+
+[src/types/nft-types.ts:445](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L445)
+
+___
+
+### tokenUriTimeoutInMs
+
+• `Optional` **tokenUriTimeoutInMs**: `number`
+
+No set timeout by default - When metadata is requested, this parameter is
+the timeout (in milliseconds) for the website hosting the metadata to
+respond. If you want to only access the cache and not live fetch any
+metadata for cache misses then set this value to 0.
+
+#### Defined in
+
+[src/types/nft-types.ts:439](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L439)
+
+
+================================================================================
+File: docs-md\interfaces\NftMetadataBatchToken.md
+Size: 1.37 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftMetadataBatchToken
+
+# Interface: NftMetadataBatchToken
+
+Represents an NFT token to fetch metadata for in a
+[NftNamespace.getNftMetadataBatch](../classes/NftNamespace.md#getnftmetadatabatch) method.
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](NftMetadataBatchToken.md#contractaddress)
+- [tokenId](NftMetadataBatchToken.md#tokenid)
+- [tokenType](NftMetadataBatchToken.md#tokentype)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The NFT contract address. Limited to ERC721 and ERC1155 tokens.
+
+#### Defined in
+
+[src/types/nft-types.ts:422](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L422)
+
+___
+
+### tokenId
+
+• **tokenId**: [`BigNumberish`](../modules.md#bignumberish)
+
+The id of the NFT.
+
+#### Defined in
+
+[src/types/nft-types.ts:425](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L425)
+
+___
+
+### tokenType
+
+• `Optional` **tokenType**: [`ERC721`](../enums/NftTokenType.md#erc721) \| [`ERC1155`](../enums/NftTokenType.md#erc1155)
+
+Optional field to specify the type of token to speed up the query.
+
+#### Defined in
+
+[src/types/nft-types.ts:428](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L428)
+
+
+================================================================================
+File: docs-md\interfaces\NftMetadataUpdateWebhook.md
+Size: 3.94 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftMetadataUpdateWebhook
+
+# Interface: NftMetadataUpdateWebhook
+
+The NFT Metadata Update Webhook tracks all ERC721 and ERC1155 metadata updates.
+This can be used to notify your app with real time state changes when an NFT's
+metadata changes.
+
+## Hierarchy
+
+- [`Webhook`](Webhook.md)
+
+  ↳ **`NftMetadataUpdateWebhook`**
+
+## Table of contents
+
+### Properties
+
+- [appId](NftMetadataUpdateWebhook.md#appid)
+- [id](NftMetadataUpdateWebhook.md#id)
+- [isActive](NftMetadataUpdateWebhook.md#isactive)
+- [network](NftMetadataUpdateWebhook.md#network)
+- [signingKey](NftMetadataUpdateWebhook.md#signingkey)
+- [timeCreated](NftMetadataUpdateWebhook.md#timecreated)
+- [type](NftMetadataUpdateWebhook.md#type)
+- [url](NftMetadataUpdateWebhook.md#url)
+- [version](NftMetadataUpdateWebhook.md#version)
+
+## Properties
+
+### appId
+
+• `Optional` **appId**: `string`
+
+The app id of the app used for the webhook. This field is only present on
+[MinedTransactionWebhook](MinedTransactionWebhook.md) and [DroppedTransactionWebhook](DroppedTransactionWebhook.md)
+
+#### Inherited from
+
+[Webhook](Webhook.md).[appId](Webhook.md#appid)
+
+#### Defined in
+
+[src/types/types.ts:1123](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1123)
+
+___
+
+### id
+
+• **id**: `string`
+
+The webhook's unique id.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[id](Webhook.md#id)
+
+#### Defined in
+
+[src/types/types.ts:1104](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1104)
+
+___
+
+### isActive
+
+• **isActive**: `boolean`
+
+Whether the webhook is currently active
+
+#### Inherited from
+
+[Webhook](Webhook.md).[isActive](Webhook.md#isactive)
+
+#### Defined in
+
+[src/types/types.ts:1112](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1112)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network the webhook is on.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[network](Webhook.md#network)
+
+#### Defined in
+
+[src/types/types.ts:1106](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1106)
+
+___
+
+### signingKey
+
+• **signingKey**: `string`
+
+The signing key used to verify payloads for the webhook.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[signingKey](Webhook.md#signingkey)
+
+#### Defined in
+
+[src/types/types.ts:1116](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1116)
+
+___
+
+### timeCreated
+
+• **timeCreated**: `string`
+
+The creation time of the webhook as an ISO string.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[timeCreated](Webhook.md#timecreated)
+
+#### Defined in
+
+[src/types/types.ts:1114](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1114)
+
+___
+
+### type
+
+• **type**: [`NFT_METADATA_UPDATE`](../enums/WebhookType.md#nft_metadata_update)
+
+The type of webhook.
+
+#### Overrides
+
+[Webhook](Webhook.md).[type](Webhook.md#type)
+
+#### Defined in
+
+[src/types/types.ts:1184](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1184)
+
+___
+
+### url
+
+• **url**: `string`
+
+The url that the webhook sends its payload to.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[url](Webhook.md#url)
+
+#### Defined in
+
+[src/types/types.ts:1110](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1110)
+
+___
+
+### version
+
+• **version**: [`WebhookVersion`](../enums/WebhookVersion.md)
+
+The webhook version. All newly created webhooks default to V2.
+
+#### Inherited from
+
+[Webhook](Webhook.md).[version](Webhook.md#version)
+
+#### Defined in
+
+[src/types/types.ts:1118](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1118)
+
+
+================================================================================
+File: docs-md\interfaces\NftMint.md
+Size: 1.4 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftMint
+
+# Interface: NftMint
+
+Mint information for the NFT.
+
+## Table of contents
+
+### Properties
+
+- [blockNumber](NftMint.md#blocknumber)
+- [mintAddress](NftMint.md#mintaddress)
+- [timestamp](NftMint.md#timestamp)
+- [transactionHash](NftMint.md#transactionhash)
+
+## Properties
+
+### blockNumber
+
+• `Optional` **blockNumber**: `number`
+
+The block number that the NFT was minted on.
+
+#### Defined in
+
+[src/types/nft-types.ts:825](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L825)
+
+___
+
+### mintAddress
+
+• `Optional` **mintAddress**: `string`
+
+The address that the NFT was minted to.
+
+#### Defined in
+
+[src/types/nft-types.ts:823](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L823)
+
+___
+
+### timestamp
+
+• `Optional` **timestamp**: `string`
+
+The timestamp the NFT was minted on.
+
+#### Defined in
+
+[src/types/nft-types.ts:827](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L827)
+
+___
+
+### transactionHash
+
+• `Optional` **transactionHash**: `string`
+
+The transaction hash of the transaction that minted the NFT.
+
+#### Defined in
+
+[src/types/nft-types.ts:829](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L829)
+
+
+================================================================================
+File: docs-md\interfaces\NftRawMetadata.md
+Size: 1.14 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftRawMetadata
+
+# Interface: NftRawMetadata
+
+The raw metadata for the NFT based on the metadata URI on the NFT contract.
+
+## Table of contents
+
+### Properties
+
+- [error](NftRawMetadata.md#error)
+- [metadata](NftRawMetadata.md#metadata)
+- [tokenUri](NftRawMetadata.md#tokenuri)
+
+## Properties
+
+### error
+
+• `Optional` **error**: `string`
+
+Error message if the raw metadata could not be fetched.
+
+#### Defined in
+
+[src/types/nft-types.ts:1308](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1308)
+
+___
+
+### metadata
+
+• **metadata**: `Record`<`string`, `any`\>
+
+The raw metadata parsed from the raw token URI.
+
+#### Defined in
+
+[src/types/nft-types.ts:1306](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1306)
+
+___
+
+### tokenUri
+
+• `Optional` **tokenUri**: `string`
+
+The raw token URI on the NFT contract.
+
+#### Defined in
+
+[src/types/nft-types.ts:1304](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1304)
+
+
+================================================================================
+File: docs-md\interfaces\NftSale.md
+Size: 4.84 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSale
+
+# Interface: NftSale
+
+Represents a single NFT sale data in the [GetNftSalesResponse](GetNftSalesResponse.md).
+
+## Table of contents
+
+### Properties
+
+- [blockNumber](NftSale.md#blocknumber)
+- [bundleIndex](NftSale.md#bundleindex)
+- [buyerAddress](NftSale.md#buyeraddress)
+- [contractAddress](NftSale.md#contractaddress)
+- [logIndex](NftSale.md#logindex)
+- [marketplace](NftSale.md#marketplace)
+- [marketplaceAddress](NftSale.md#marketplaceaddress)
+- [protocolFee](NftSale.md#protocolfee)
+- [quantity](NftSale.md#quantity)
+- [royaltyFee](NftSale.md#royaltyfee)
+- [sellerAddress](NftSale.md#selleraddress)
+- [sellerFee](NftSale.md#sellerfee)
+- [taker](NftSale.md#taker)
+- [tokenId](NftSale.md#tokenid)
+- [transactionHash](NftSale.md#transactionhash)
+
+## Properties
+
+### blockNumber
+
+• **blockNumber**: `number`
+
+The block number the NFT sale took place in.
+
+#### Defined in
+
+[src/types/nft-types.ts:762](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L762)
+
+___
+
+### bundleIndex
+
+• **bundleIndex**: `number`
+
+The index of the token within the bundle of NFTs sold in the sale.
+
+#### Defined in
+
+[src/types/nft-types.ts:768](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L768)
+
+___
+
+### buyerAddress
+
+• **buyerAddress**: `string`
+
+The address of the buyer in the NFT sale.
+
+#### Defined in
+
+[src/types/nft-types.ts:744](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L744)
+
+___
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The NFT contract address.
+
+#### Defined in
+
+[src/types/nft-types.ts:735](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L735)
+
+___
+
+### logIndex
+
+• **logIndex**: `number`
+
+The log number of the sale event emitted within the block.
+
+#### Defined in
+
+[src/types/nft-types.ts:765](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L765)
+
+___
+
+### marketplace
+
+• **marketplace**: [`NftSaleMarketplace`](../enums/NftSaleMarketplace.md)
+
+The marketplace the sale took place on.
+
+#### Defined in
+
+[src/types/nft-types.ts:729](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L729)
+
+___
+
+### marketplaceAddress
+
+• **marketplaceAddress**: `string`
+
+The marketplace address the sale was on.
+
+#### Defined in
+
+[src/types/nft-types.ts:732](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L732)
+
+___
+
+### protocolFee
+
+• **protocolFee**: [`NftSaleFeeData`](NftSaleFeeData.md)
+
+The payment from buyer to the marketplace.
+
+#### Defined in
+
+[src/types/nft-types.ts:756](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L756)
+
+___
+
+### quantity
+
+• **quantity**: `string`
+
+The number of tokens sold in the sale as a decimal integer string.
+
+#### Defined in
+
+[src/types/nft-types.ts:741](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L741)
+
+___
+
+### royaltyFee
+
+• **royaltyFee**: [`NftSaleFeeData`](NftSaleFeeData.md)
+
+The payment from buyer to the royalty address of the NFT collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:759](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L759)
+
+___
+
+### sellerAddress
+
+• **sellerAddress**: `string`
+
+The address of the seller in the NFT sale.
+
+#### Defined in
+
+[src/types/nft-types.ts:747](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L747)
+
+___
+
+### sellerFee
+
+• **sellerFee**: [`NftSaleFeeData`](NftSaleFeeData.md)
+
+The payment from buyer to the seller.
+
+#### Defined in
+
+[src/types/nft-types.ts:753](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L753)
+
+___
+
+### taker
+
+• **taker**: [`NftSaleTakerType`](../enums/NftSaleTakerType.md)
+
+Whether the price taker in the trade was the buyer or the seller.
+
+#### Defined in
+
+[src/types/nft-types.ts:750](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L750)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The decimal token ID of the NFT being sold.
+
+#### Defined in
+
+[src/types/nft-types.ts:738](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L738)
+
+___
+
+### transactionHash
+
+• **transactionHash**: `string`
+
+The transactionHash of the NFT sale.
+
+#### Defined in
+
+[src/types/nft-types.ts:771](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L771)
+
+
+================================================================================
+File: docs-md\interfaces\NftSaleFeeData.md
+Size: 1.35 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSaleFeeData
+
+# Interface: NftSaleFeeData
+
+Fee detail for an NFT sale.
+
+## Table of contents
+
+### Properties
+
+- [amount](NftSaleFeeData.md#amount)
+- [decimals](NftSaleFeeData.md#decimals)
+- [symbol](NftSaleFeeData.md#symbol)
+- [tokenAddress](NftSaleFeeData.md#tokenaddress)
+
+## Properties
+
+### amount
+
+• `Optional` **amount**: `string`
+
+The fee payment amount as a decimal integer string.
+
+#### Defined in
+
+[src/types/nft-types.ts:791](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L791)
+
+___
+
+### decimals
+
+• `Optional` **decimals**: `number`
+
+The number of decimals of the token used for the payment.
+
+#### Defined in
+
+[src/types/nft-types.ts:799](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L799)
+
+___
+
+### symbol
+
+• `Optional` **symbol**: `string`
+
+The symbol of the token used for the payment.
+
+#### Defined in
+
+[src/types/nft-types.ts:796](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L796)
+
+___
+
+### tokenAddress
+
+• `Optional` **tokenAddress**: `string`
+
+#### Defined in
+
+[src/types/nft-types.ts:793](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L793)
+
+
+================================================================================
+File: docs-md\interfaces\NftSaleValidAt.md
+Size: 1.14 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftSaleValidAt
+
+# Interface: NftSaleValidAt
+
+The block information at which the NFT sale information is valid at.
+
+## Table of contents
+
+### Properties
+
+- [blockHash](NftSaleValidAt.md#blockhash)
+- [blockNumber](NftSaleValidAt.md#blocknumber)
+- [blockTimestamp](NftSaleValidAt.md#blocktimestamp)
+
+## Properties
+
+### blockHash
+
+• `Optional` **blockHash**: `string`
+
+The block hash. Used to detect reorgs.
+
+#### Defined in
+
+[src/types/nft-types.ts:779](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L779)
+
+___
+
+### blockNumber
+
+• **blockNumber**: `number`
+
+The block number the sale information is valid at.
+
+#### Defined in
+
+[src/types/nft-types.ts:777](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L777)
+
+___
+
+### blockTimestamp
+
+• `Optional` **blockTimestamp**: `string`
+
+The timestamp for the block.
+
+#### Defined in
+
+[src/types/nft-types.ts:781](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L781)
+
+
+================================================================================
+File: docs-md\interfaces\NftWebhookParams.md
+Size: 1.11 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / NftWebhookParams
+
+# Interface: NftWebhookParams
+
+Params to pass in when calling [NotifyNamespace.createWebhook](../classes/NotifyNamespace.md#createwebhook) in order
+to create a [NftActivityWebhook](NftActivityWebhook.md) or [NftMetadataUpdateWebhook](NftMetadataUpdateWebhook.md).
+
+## Table of contents
+
+### Properties
+
+- [filters](NftWebhookParams.md#filters)
+- [network](NftWebhookParams.md#network)
+
+## Properties
+
+### filters
+
+• **filters**: [`NftFilter`](NftFilter.md)[]
+
+Array of NFT filters the webhook should track.
+
+#### Defined in
+
+[src/types/types.ts:1252](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1252)
+
+___
+
+### network
+
+• `Optional` **network**: [`Network`](../enums/Network.md)
+
+Optional network to create the webhook on. If omitted, the webhook will be
+created on network of the app provided in the api key config.
+
+#### Defined in
+
+[src/types/types.ts:1257](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1257)
+
+
+================================================================================
+File: docs-md\interfaces\OpenSeaCollectionMetadata.md
+Size: 4.34 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OpenSeaCollectionMetadata
+
+# Interface: OpenSeaCollectionMetadata
+
+OpenSea's metadata for an NFT collection.
+
+## Table of contents
+
+### Properties
+
+- [bannerImageUrl](OpenSeaCollectionMetadata.md#bannerimageurl)
+- [collectionName](OpenSeaCollectionMetadata.md#collectionname)
+- [collectionSlug](OpenSeaCollectionMetadata.md#collectionslug)
+- [description](OpenSeaCollectionMetadata.md#description)
+- [discordUrl](OpenSeaCollectionMetadata.md#discordurl)
+- [externalUrl](OpenSeaCollectionMetadata.md#externalurl)
+- [floorPrice](OpenSeaCollectionMetadata.md#floorprice)
+- [imageBannerUrl](OpenSeaCollectionMetadata.md#imagebannerurl)
+- [imageUrl](OpenSeaCollectionMetadata.md#imageurl)
+- [lastIngestedAt](OpenSeaCollectionMetadata.md#lastingestedat)
+- [safelistRequestStatus](OpenSeaCollectionMetadata.md#safelistrequeststatus)
+- [twitterUsername](OpenSeaCollectionMetadata.md#twitterusername)
+
+## Properties
+
+### bannerImageUrl
+
+• `Optional` **bannerImageUrl**: `string`
+
+The banner image URL determined by OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1135](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1135)
+
+___
+
+### collectionName
+
+• `Optional` **collectionName**: `string`
+
+The name of the collection on OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1122](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1122)
+
+___
+
+### collectionSlug
+
+• `Optional` **collectionSlug**: `string`
+
+The slug of the collection on OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1124](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1124)
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+The description of the collection on OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1137](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1137)
+
+___
+
+### discordUrl
+
+• `Optional` **discordUrl**: `string`
+
+The Discord URL of the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1143](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1143)
+
+___
+
+### externalUrl
+
+• `Optional` **externalUrl**: `string`
+
+The homepage of the collection as determined by OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1139](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1139)
+
+___
+
+### floorPrice
+
+• `Optional` **floorPrice**: `number`
+
+The floor price of the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1120](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1120)
+
+___
+
+### imageBannerUrl
+
+• `Optional` **imageBannerUrl**: `string`
+
+The banner image URL determined by OpenSea.
+
+**`deprecated`** Use [bannerImageUrl](OpenSeaCollectionMetadata.md#bannerimageurl) instead.
+
+#### Defined in
+
+[src/types/nft-types.ts:1133](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1133)
+
+___
+
+### imageUrl
+
+• `Optional` **imageUrl**: `string`
+
+The image URL determined by OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1128](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1128)
+
+___
+
+### lastIngestedAt
+
+• **lastIngestedAt**: `string`
+
+Timestamp of when the OpenSea metadata was last ingested by Alchemy.
+
+#### Defined in
+
+[src/types/nft-types.ts:1145](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1145)
+
+___
+
+### safelistRequestStatus
+
+• `Optional` **safelistRequestStatus**: [`OpenSeaSafelistRequestStatus`](../enums/OpenSeaSafelistRequestStatus.md)
+
+The approval status of the collection on OpenSea.
+
+#### Defined in
+
+[src/types/nft-types.ts:1126](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1126)
+
+___
+
+### twitterUsername
+
+• `Optional` **twitterUsername**: `string`
+
+The Twitter handle of the collection.
+
+#### Defined in
+
+[src/types/nft-types.ts:1141](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1141)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedBaseNft.md
+Size: 1.3 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedBaseNft
+
+# Interface: OwnedBaseNft
+
+Represents an NFT without metadata owned by an address.
+
+## Hierarchy
+
+- [`BaseNft`](BaseNft.md)
+
+  ↳ **`OwnedBaseNft`**
+
+## Table of contents
+
+### Properties
+
+- [balance](OwnedBaseNft.md#balance)
+- [contractAddress](OwnedBaseNft.md#contractaddress)
+- [tokenId](OwnedBaseNft.md#tokenid)
+
+## Properties
+
+### balance
+
+• **balance**: `string`
+
+The token balance of the NFT.
+
+#### Defined in
+
+[src/types/nft-types.ts:294](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L294)
+
+___
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The contract address of the NFT.
+
+#### Inherited from
+
+[BaseNft](BaseNft.md).[contractAddress](BaseNft.md#contractaddress)
+
+#### Defined in
+
+[src/types/nft-types.ts:1240](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1240)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The NFT token ID as an integer string.
+
+#### Inherited from
+
+[BaseNft](BaseNft.md).[tokenId](BaseNft.md#tokenid)
+
+#### Defined in
+
+[src/types/nft-types.ts:1242](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1242)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedBaseNftsResponse.md
+Size: 1.88 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedBaseNftsResponse
+
+# Interface: OwnedBaseNftsResponse
+
+The response object for the [getNftsForOwner](../classes/NftNamespace.md#getnftsforowner) and
+[getNftsForOwnerIterator](../classes/NftNamespace.md#getnftsforowneriterator) functions. The object contains the NFTs
+without metadata owned by the provided address, along with pagination
+information and the total count.
+
+## Table of contents
+
+### Properties
+
+- [ownedNfts](OwnedBaseNftsResponse.md#ownednfts)
+- [pageKey](OwnedBaseNftsResponse.md#pagekey)
+- [totalCount](OwnedBaseNftsResponse.md#totalcount)
+- [validAt](OwnedBaseNftsResponse.md#validat)
+
+## Properties
+
+### ownedNfts
+
+• **ownedNfts**: [`OwnedBaseNft`](OwnedBaseNft.md)[]
+
+The NFTs owned by the provided address.
+
+#### Defined in
+
+[src/types/nft-types.ts:260](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L260)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Pagination token that can be passed into another request to fetch the next
+NFTs. If there is no page key, then there are no more NFTs to fetch.
+
+#### Defined in
+
+[src/types/nft-types.ts:266](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L266)
+
+___
+
+### totalCount
+
+• **totalCount**: `number`
+
+The total count of NFTs owned by the provided address.
+
+#### Defined in
+
+[src/types/nft-types.ts:269](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L269)
+
+___
+
+### validAt
+
+• **validAt**: [`OwnedNftsValidAt`](OwnedNftsValidAt.md)
+
+Block Information of the block as of which the corresponding data is valid
+
+#### Defined in
+
+[src/types/nft-types.ts:274](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L274)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedNft.md
+Size: 5.05 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedNft
+
+# Interface: OwnedNft
+
+Represents an NFT with metadata owned by an address.
+
+## Hierarchy
+
+- [`Nft`](Nft.md)
+
+  ↳ **`OwnedNft`**
+
+## Table of contents
+
+### Properties
+
+- [acquiredAt](OwnedNft.md#acquiredat)
+- [balance](OwnedNft.md#balance)
+- [collection](OwnedNft.md#collection)
+- [contract](OwnedNft.md#contract)
+- [description](OwnedNft.md#description)
+- [image](OwnedNft.md#image)
+- [mint](OwnedNft.md#mint)
+- [name](OwnedNft.md#name)
+- [raw](OwnedNft.md#raw)
+- [timeLastUpdated](OwnedNft.md#timelastupdated)
+- [tokenId](OwnedNft.md#tokenid)
+- [tokenType](OwnedNft.md#tokentype)
+- [tokenUri](OwnedNft.md#tokenuri)
+
+## Properties
+
+### acquiredAt
+
+• `Optional` **acquiredAt**: [`AcquiredAt`](AcquiredAt.md)
+
+Time at which the NFT was most recently acquired by the user. Only
+available when specifying `orderBy: NftOrdering.TRANSFERTIME` in the
+request.
+
+#### Inherited from
+
+[Nft](Nft.md).[acquiredAt](Nft.md#acquiredat)
+
+#### Defined in
+
+[src/types/nft-types.ts:1278](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1278)
+
+___
+
+### balance
+
+• **balance**: `string`
+
+The token balance of the NFT.
+
+#### Defined in
+
+[src/types/nft-types.ts:284](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L284)
+
+___
+
+### collection
+
+• `Optional` **collection**: [`BaseNftCollection`](BaseNftCollection.md)
+
+Collection metadata for the NFT, if available.
+
+#### Inherited from
+
+[Nft](Nft.md).[collection](Nft.md#collection)
+
+#### Defined in
+
+[src/types/nft-types.ts:1280](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1280)
+
+___
+
+### contract
+
+• **contract**: [`NftContractForNft`](NftContractForNft.md)
+
+The NFT's underlying contract and relevant contract metadata.
+
+#### Inherited from
+
+[Nft](Nft.md).[contract](Nft.md#contract)
+
+#### Defined in
+
+[src/types/nft-types.ts:1256](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1256)
+
+___
+
+### description
+
+• `Optional` **description**: `string`
+
+The NFT description.
+
+#### Inherited from
+
+[Nft](Nft.md).[description](Nft.md#description)
+
+#### Defined in
+
+[src/types/nft-types.ts:1264](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1264)
+
+___
+
+### image
+
+• **image**: [`NftImage`](NftImage.md)
+
+Media URLs and information for the NFT
+
+#### Inherited from
+
+[Nft](Nft.md).[image](Nft.md#image)
+
+#### Defined in
+
+[src/types/nft-types.ts:1266](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1266)
+
+___
+
+### mint
+
+• `Optional` **mint**: [`NftMint`](NftMint.md)
+
+Mint information for the NFT.
+
+#### Inherited from
+
+[Nft](Nft.md).[mint](Nft.md#mint)
+
+#### Defined in
+
+[src/types/nft-types.ts:1282](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1282)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+The NFT name.
+
+#### Inherited from
+
+[Nft](Nft.md).[name](Nft.md#name)
+
+#### Defined in
+
+[src/types/nft-types.ts:1262](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1262)
+
+___
+
+### raw
+
+• **raw**: [`NftRawMetadata`](NftRawMetadata.md)
+
+The raw metadata for the NFT based on the metadata URI on the NFT contract.
+
+#### Inherited from
+
+[Nft](Nft.md).[raw](Nft.md#raw)
+
+#### Defined in
+
+[src/types/nft-types.ts:1268](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1268)
+
+___
+
+### timeLastUpdated
+
+• **timeLastUpdated**: `string`
+
+When the NFT was last updated in the blockchain. Represented in ISO-8601 format.
+
+#### Inherited from
+
+[Nft](Nft.md).[timeLastUpdated](Nft.md#timelastupdated)
+
+#### Defined in
+
+[src/types/nft-types.ts:1272](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1272)
+
+___
+
+### tokenId
+
+• **tokenId**: `string`
+
+The NFT token ID as an integer string.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenId](Nft.md#tokenid)
+
+#### Defined in
+
+[src/types/nft-types.ts:1258](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1258)
+
+___
+
+### tokenType
+
+• **tokenType**: [`NftTokenType`](../enums/NftTokenType.md)
+
+The type of NFT.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenType](Nft.md#tokentype)
+
+#### Defined in
+
+[src/types/nft-types.ts:1260](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1260)
+
+___
+
+### tokenUri
+
+• `Optional` **tokenUri**: `string`
+
+URIs for accessing the NFT's metadata blob.
+
+#### Inherited from
+
+[Nft](Nft.md).[tokenUri](Nft.md#tokenuri)
+
+#### Defined in
+
+[src/types/nft-types.ts:1270](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L1270)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedNftsResponse.md
+Size: 1.84 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedNftsResponse
+
+# Interface: OwnedNftsResponse
+
+The response object for the [getNftsForOwner](../classes/NftNamespace.md#getnftsforowner) and
+[getNftsForOwnerIterator](../classes/NftNamespace.md#getnftsforowneriterator) functions. The object contains the NFTs with
+metadata owned by the provided address, along with pagination information and
+the total count.
+
+## Table of contents
+
+### Properties
+
+- [ownedNfts](OwnedNftsResponse.md#ownednfts)
+- [pageKey](OwnedNftsResponse.md#pagekey)
+- [totalCount](OwnedNftsResponse.md#totalcount)
+- [validAt](OwnedNftsResponse.md#validat)
+
+## Properties
+
+### ownedNfts
+
+• **ownedNfts**: [`OwnedNft`](OwnedNft.md)[]
+
+The NFTs owned by the provided address.
+
+#### Defined in
+
+[src/types/nft-types.ts:233](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L233)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Pagination token that can be passed into another request to fetch the next
+NFTs. If there is no page key, then there are no more NFTs to fetch.
+
+#### Defined in
+
+[src/types/nft-types.ts:239](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L239)
+
+___
+
+### totalCount
+
+• **totalCount**: `number`
+
+The total count of NFTs owned by the provided address.
+
+#### Defined in
+
+[src/types/nft-types.ts:242](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L242)
+
+___
+
+### validAt
+
+• **validAt**: [`OwnedNftsValidAt`](OwnedNftsValidAt.md)
+
+Block Information of the block as of which the corresponding data is valid
+
+#### Defined in
+
+[src/types/nft-types.ts:247](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L247)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedNftsValidAt.md
+Size: 1.15 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedNftsValidAt
+
+# Interface: OwnedNftsValidAt
+
+The block information at which the NFT sale information is valid at.
+
+## Table of contents
+
+### Properties
+
+- [blockHash](OwnedNftsValidAt.md#blockhash)
+- [blockNumber](OwnedNftsValidAt.md#blocknumber)
+- [blockTimestamp](OwnedNftsValidAt.md#blocktimestamp)
+
+## Properties
+
+### blockHash
+
+• **blockHash**: `string`
+
+The block hash. Used to detect reorgs.
+
+#### Defined in
+
+[src/types/nft-types.ts:302](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L302)
+
+___
+
+### blockNumber
+
+• `Optional` **blockNumber**: `number`
+
+The block number the sale information is valid at.
+
+#### Defined in
+
+[src/types/nft-types.ts:300](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L300)
+
+___
+
+### blockTimestamp
+
+• `Optional` **blockTimestamp**: `string`
+
+The timestamp for the block.
+
+#### Defined in
+
+[src/types/nft-types.ts:304](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L304)
+
+
+================================================================================
+File: docs-md\interfaces\OwnedToken.md
+Size: 3.02 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / OwnedToken
+
+# Interface: OwnedToken
+
+Represents an owned token on a [GetTokensForOwnerResponse](GetTokensForOwnerResponse.md).
+
+## Table of contents
+
+### Properties
+
+- [balance](OwnedToken.md#balance)
+- [contractAddress](OwnedToken.md#contractaddress)
+- [decimals](OwnedToken.md#decimals)
+- [error](OwnedToken.md#error)
+- [logo](OwnedToken.md#logo)
+- [name](OwnedToken.md#name)
+- [rawBalance](OwnedToken.md#rawbalance)
+- [symbol](OwnedToken.md#symbol)
+
+## Properties
+
+### balance
+
+• `Optional` **balance**: `string`
+
+The formatted value of the balance field as a hex string. This value is
+undefined if the [error](OwnedToken.md#error) field is present, or if the `decimals` field=
+is undefined.
+
+#### Defined in
+
+[src/types/types.ts:302](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L302)
+
+___
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The contract address of the token.
+
+#### Defined in
+
+[src/types/types.ts:291](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L291)
+
+___
+
+### decimals
+
+• `Optional` **decimals**: `number`
+
+The number of decimals of the token. Is undefined if not defined in the
+contract and not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:318](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L318)
+
+___
+
+### error
+
+• `Optional` **error**: `string`
+
+Error from fetching the token balances. If this field is defined, none of
+the other fields will be defined.
+
+#### Defined in
+
+[src/types/types.ts:325](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L325)
+
+___
+
+### logo
+
+• `Optional` **logo**: `string`
+
+URL link to the token's logo. Is undefined if the logo is not available.
+
+#### Defined in
+
+[src/types/types.ts:320](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L320)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+The token's name. Is undefined if the name is not defined in the contract and
+not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:308](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L308)
+
+___
+
+### rawBalance
+
+• `Optional` **rawBalance**: `string`
+
+The raw value of the balance field as a hex string. This value is undefined
+if the [error](OwnedToken.md#error) field is present.
+
+#### Defined in
+
+[src/types/types.ts:296](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L296)
+
+___
+
+### symbol
+
+• `Optional` **symbol**: `string`
+
+The token's symbol. Is undefined if the symbol is not defined in the contract
+and not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:313](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L313)
+
+
+================================================================================
+File: docs-md\interfaces\RawContract.md
+Size: 1.34 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / RawContract
+
+# Interface: RawContract
+
+Information about the underlying contract for the asset that was transferred
+in a [AssetTransfersResult](AssetTransfersResult.md) object.
+
+## Table of contents
+
+### Properties
+
+- [address](RawContract.md#address)
+- [decimal](RawContract.md#decimal)
+- [value](RawContract.md#value)
+
+## Properties
+
+### address
+
+• **address**: ``null`` \| `string`
+
+The contract address. `null` if it was an internal or external transfer.
+
+#### Defined in
+
+[src/types/nft-types.ts:938](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L938)
+
+___
+
+### decimal
+
+• **decimal**: ``null`` \| `string`
+
+The number of decimals in the contract as a hex string. `null` if the value
+is not in the contract and not available from other sources.
+
+#### Defined in
+
+[src/types/nft-types.ts:944](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L944)
+
+___
+
+### value
+
+• **value**: ``null`` \| `string`
+
+The raw transfer value as a hex string. `null` if the transfer was for an
+ERC721 or ERC1155 token.
+
+#### Defined in
+
+[src/types/nft-types.ts:935](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L935)
+
+
+================================================================================
+File: docs-md\interfaces\RefreshContractResult.md
+Size: 1.34 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / RefreshContractResult
+
+# Interface: RefreshContractResult
+
+The refresh result response object returned by [refreshContract](../classes/NftNamespace.md#refreshcontract).
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](RefreshContractResult.md#contractaddress)
+- [progress](RefreshContractResult.md#progress)
+- [refreshState](RefreshContractResult.md#refreshstate)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+The NFT contract address that was passed in to be refreshed.
+
+#### Defined in
+
+[src/types/types.ts:611](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L611)
+
+___
+
+### progress
+
+• **progress**: ``null`` \| `string`
+
+Percentage of tokens currently refreshed, represented as an integer string.
+Field can be null if the refresh has not occurred.
+
+#### Defined in
+
+[src/types/types.ts:620](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L620)
+
+___
+
+### refreshState
+
+• **refreshState**: [`NftRefreshState`](../enums/NftRefreshState.md)
+
+The current state of the refresh request.
+
+#### Defined in
+
+[src/types/types.ts:614](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L614)
+
+
+================================================================================
+File: docs-md\interfaces\SearchContractMetadataResponse.md
+Size: 474 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SearchContractMetadataResponse
+
+# Interface: SearchContractMetadataResponse
+
+## Table of contents
+
+### Properties
+
+- [contracts](SearchContractMetadataResponse.md#contracts)
+
+## Properties
+
+### contracts
+
+• **contracts**: [`NftContract`](NftContract.md)[]
+
+#### Defined in
+
+[src/types/nft-types.ts:844](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/nft-types.ts#L844)
+
+
+================================================================================
+File: docs-md\interfaces\SendPrivateTransactionOptions.md
+Size: 920 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SendPrivateTransactionOptions
+
+# Interface: SendPrivateTransactionOptions
+
+Options for the [TransactNamespace.sendPrivateTransaction](../classes/TransactNamespace.md#sendprivatetransaction) method.
+
+## Table of contents
+
+### Properties
+
+- [fast](SendPrivateTransactionOptions.md#fast)
+
+## Properties
+
+### fast
+
+• **fast**: `boolean`
+
+Whether to use fast-mode. Defaults to false. Please note that fast mode
+transactions cannot be cancelled using
+[TransactNamespace.cancelPrivateTransaction](../classes/TransactNamespace.md#cancelprivatetransaction). method.
+
+See [https://docs.flashbots.net/flashbots-protect/rpc/fast-mode](https://docs.flashbots.net/flashbots-protect/rpc/fast-mode) for
+more details.
+
+#### Defined in
+
+[src/types/types.ts:818](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L818)
+
+
+================================================================================
+File: docs-md\interfaces\SimulateAssetChangesChange.md
+Size: 4.49 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateAssetChangesChange
+
+# Interface: SimulateAssetChangesChange
+
+Represents an asset change from a call to
+[TransactNamespace.simulateAssetChanges](../classes/TransactNamespace.md#simulateassetchanges).
+
+## Table of contents
+
+### Properties
+
+- [amount](SimulateAssetChangesChange.md#amount)
+- [assetType](SimulateAssetChangesChange.md#assettype)
+- [changeType](SimulateAssetChangesChange.md#changetype)
+- [contractAddress](SimulateAssetChangesChange.md#contractaddress)
+- [decimals](SimulateAssetChangesChange.md#decimals)
+- [from](SimulateAssetChangesChange.md#from)
+- [logo](SimulateAssetChangesChange.md#logo)
+- [name](SimulateAssetChangesChange.md#name)
+- [rawAmount](SimulateAssetChangesChange.md#rawamount)
+- [symbol](SimulateAssetChangesChange.md#symbol)
+- [to](SimulateAssetChangesChange.md#to)
+- [tokenId](SimulateAssetChangesChange.md#tokenid)
+
+## Properties
+
+### amount
+
+• `Optional` **amount**: `string`
+
+The amount as an integer string. This value is calculated by applying the
+`decimals` field to the `rawAmount` field. Only available on TRANSFER
+changes for NATIVE and ERC20 assets, or ERC721/ERC1155 disapprove changes
+(field set to '0').
+
+#### Defined in
+
+[src/types/types.ts:904](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L904)
+
+___
+
+### assetType
+
+• **assetType**: [`SimulateAssetType`](../enums/SimulateAssetType.md)
+
+The type of asset from the transaction.
+
+#### Defined in
+
+[src/types/types.ts:880](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L880)
+
+___
+
+### changeType
+
+• **changeType**: [`SimulateChangeType`](../enums/SimulateChangeType.md)
+
+The type of change from the transaction.
+
+#### Defined in
+
+[src/types/types.ts:883](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L883)
+
+___
+
+### contractAddress
+
+• `Optional` **contractAddress**: `string`
+
+The contract address of the asset. Only applicable to ERC20, ERC721,
+ERC1155, NFT and SPECIAL_NFT transactions.
+
+#### Defined in
+
+[src/types/types.ts:923](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L923)
+
+___
+
+### decimals
+
+• `Optional` **decimals**: `number`
+
+The number of decimals used by the ERC20 token. Set to 0 for APPROVE
+changes. Field is undefined if it's not defined in the contract and not
+available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:917](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L917)
+
+___
+
+### from
+
+• **from**: `string`
+
+The from address.
+
+#### Defined in
+
+[src/types/types.ts:886](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L886)
+
+___
+
+### logo
+
+• `Optional` **logo**: `string`
+
+URL for the logo of the asset, if available. Only applicable to ERC20 transactions.
+
+#### Defined in
+
+[src/types/types.ts:928](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L928)
+
+___
+
+### name
+
+• `Optional` **name**: `string`
+
+The name of the asset transferred, if available.
+
+#### Defined in
+
+[src/types/types.ts:907](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L907)
+
+___
+
+### rawAmount
+
+• `Optional` **rawAmount**: `string`
+
+The raw amount as an integer string. Only available on TRANSFER changes for
+NATIVE and ERC20 assets, or ERC721/ERC1155 disapprove changes (field set to
+'0').
+
+#### Defined in
+
+[src/types/types.ts:896](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L896)
+
+___
+
+### symbol
+
+• `Optional` **symbol**: `string`
+
+The symbol of the asset transferred if available.
+
+#### Defined in
+
+[src/types/types.ts:910](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L910)
+
+___
+
+### to
+
+• **to**: `string`
+
+The to address.
+
+#### Defined in
+
+[src/types/types.ts:889](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L889)
+
+___
+
+### tokenId
+
+• `Optional` **tokenId**: `string`
+
+The token id of the asset transferred. Only applicable to ERC721,
+ERC1155 and SPECIAL_NFT NFTs.
+
+#### Defined in
+
+[src/types/types.ts:934](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L934)
+
+
+================================================================================
+File: docs-md\interfaces\SimulateAssetChangesError.md
+Size: 653 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateAssetChangesError
+
+# Interface: SimulateAssetChangesError
+
+The error field returned in a [SimulateAssetChangesResponse](SimulateAssetChangesResponse.md) if the
+simulation failed.
+
+## Hierarchy
+
+- `Record`<`string`, `any`\>
+
+  ↳ **`SimulateAssetChangesError`**
+
+## Table of contents
+
+### Properties
+
+- [message](SimulateAssetChangesError.md#message)
+
+## Properties
+
+### message
+
+• **message**: `string`
+
+The error message.
+
+#### Defined in
+
+[src/types/types.ts:871](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L871)
+
+
+================================================================================
+File: docs-md\interfaces\SimulateAssetChangesResponse.md
+Size: 1.41 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateAssetChangesResponse
+
+# Interface: SimulateAssetChangesResponse
+
+Response object for the [TransactNamespace.simulateAssetChanges](../classes/TransactNamespace.md#simulateassetchanges) method.
+
+## Table of contents
+
+### Properties
+
+- [changes](SimulateAssetChangesResponse.md#changes)
+- [error](SimulateAssetChangesResponse.md#error)
+- [gasUsed](SimulateAssetChangesResponse.md#gasused)
+
+## Properties
+
+### changes
+
+• **changes**: [`SimulateAssetChangesChange`](SimulateAssetChangesChange.md)[]
+
+An array of asset changes that resulted from the transaction.
+
+#### Defined in
+
+[src/types/types.ts:942](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L942)
+
+___
+
+### error
+
+• `Optional` **error**: [`SimulateAssetChangesError`](SimulateAssetChangesError.md)
+
+Optional error field that is present if an error occurred.
+
+#### Defined in
+
+[src/types/types.ts:949](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L949)
+
+___
+
+### gasUsed
+
+• `Optional` **gasUsed**: `string`
+
+The amount of gas used by the transaction represented as a hex string. The
+field is undefined if an error occurred.
+
+#### Defined in
+
+[src/types/types.ts:947](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L947)
+
+
+================================================================================
+File: docs-md\interfaces\SimulateExecutionResponse.md
+Size: 1.08 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulateExecutionResponse
+
+# Interface: SimulateExecutionResponse
+
+Response object for the [TransactNamespace.simulateExecution](../classes/TransactNamespace.md#simulateexecution) method.
+
+## Table of contents
+
+### Properties
+
+- [calls](SimulateExecutionResponse.md#calls)
+- [logs](SimulateExecutionResponse.md#logs)
+
+## Properties
+
+### calls
+
+• **calls**: [`SimulationCallTrace`](SimulationCallTrace.md)[]
+
+An array of traces generated during simulation that represent the execution
+of the transaction along with the decoded calls if available.
+
+#### Defined in
+
+[src/types/types.ts:1044](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1044)
+
+___
+
+### logs
+
+• **logs**: [`SimulationDebugLog`](SimulationDebugLog.md)[]
+
+An array of logs emitted during simulation along with the decoded logs if
+available.
+
+#### Defined in
+
+[src/types/types.ts:1050](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1050)
+
+
+================================================================================
+File: docs-md\interfaces\SimulationCallTrace.md
+Size: 3.41 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulationCallTrace
+
+# Interface: SimulationCallTrace
+
+Debug call trace in a [SimulateExecutionResponse](SimulateExecutionResponse.md).
+
+## Hierarchy
+
+- `Omit`<[`DebugCallTrace`](DebugCallTrace.md), ``"revertReason"`` \| ``"calls"``\>
+
+  ↳ **`SimulationCallTrace`**
+
+## Table of contents
+
+### Properties
+
+- [decoded](SimulationCallTrace.md#decoded)
+- [error](SimulationCallTrace.md#error)
+- [from](SimulationCallTrace.md#from)
+- [gas](SimulationCallTrace.md#gas)
+- [gasUsed](SimulationCallTrace.md#gasused)
+- [input](SimulationCallTrace.md#input)
+- [output](SimulationCallTrace.md#output)
+- [to](SimulationCallTrace.md#to)
+- [type](SimulationCallTrace.md#type)
+- [value](SimulationCallTrace.md#value)
+
+## Properties
+
+### decoded
+
+• `Optional` **decoded**: [`DecodedDebugCallTrace`](DecodedDebugCallTrace.md)
+
+A decoded version of the call. Provided on a best-effort basis.
+
+#### Defined in
+
+[src/types/types.ts:1007](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1007)
+
+___
+
+### error
+
+• `Optional` **error**: `string`
+
+Optional error field.
+
+#### Inherited from
+
+Omit.error
+
+#### Defined in
+
+[src/types/types.ts:1541](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1541)
+
+___
+
+### from
+
+• **from**: `string`
+
+From address of the transaction.
+
+#### Inherited from
+
+Omit.from
+
+#### Defined in
+
+[src/types/types.ts:1527](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1527)
+
+___
+
+### gas
+
+• **gas**: `string`
+
+Gas provided for call as a hex string.
+
+#### Inherited from
+
+Omit.gas
+
+#### Defined in
+
+[src/types/types.ts:1533](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1533)
+
+___
+
+### gasUsed
+
+• **gasUsed**: `string`
+
+Gas used during the call as a hex string.
+
+#### Inherited from
+
+Omit.gasUsed
+
+#### Defined in
+
+[src/types/types.ts:1535](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1535)
+
+___
+
+### input
+
+• **input**: `string`
+
+Call data.
+
+#### Inherited from
+
+Omit.input
+
+#### Defined in
+
+[src/types/types.ts:1537](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1537)
+
+___
+
+### output
+
+• **output**: `string`
+
+Return data.
+
+#### Inherited from
+
+Omit.output
+
+#### Defined in
+
+[src/types/types.ts:1539](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1539)
+
+___
+
+### to
+
+• **to**: `string`
+
+To address of the transaction.
+
+#### Inherited from
+
+Omit.to
+
+#### Defined in
+
+[src/types/types.ts:1529](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1529)
+
+___
+
+### type
+
+• **type**: [`DebugCallType`](../enums/DebugCallType.md)
+
+The type of call.
+
+#### Overrides
+
+Omit.type
+
+#### Defined in
+
+[src/types/types.ts:1005](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1005)
+
+___
+
+### value
+
+• **value**: `string`
+
+Amount of value transfer as a hex string.
+
+#### Inherited from
+
+Omit.value
+
+#### Defined in
+
+[src/types/types.ts:1531](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1531)
+
+
+================================================================================
+File: docs-md\interfaces\SimulationDebugLog.md
+Size: 1.38 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / SimulationDebugLog
+
+# Interface: SimulationDebugLog
+
+Debug log in a [SimulateExecutionResponse](SimulateExecutionResponse.md).
+
+## Table of contents
+
+### Properties
+
+- [address](SimulationDebugLog.md#address)
+- [data](SimulationDebugLog.md#data)
+- [decoded](SimulationDebugLog.md#decoded)
+- [topics](SimulationDebugLog.md#topics)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+The address of the contract that generated the log.
+
+#### Defined in
+
+[src/types/types.ts:1031](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1031)
+
+___
+
+### data
+
+• **data**: `string`
+
+The data included the log.
+
+#### Defined in
+
+[src/types/types.ts:1033](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1033)
+
+___
+
+### decoded
+
+• `Optional` **decoded**: [`DecodedLog`](DecodedLog.md)
+
+A decoded version of the log. Provided on a best-effort basis.
+
+#### Defined in
+
+[src/types/types.ts:1035](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1035)
+
+___
+
+### topics
+
+• **topics**: `string`[]
+
+An array of topics in the log.
+
+#### Defined in
+
+[src/types/types.ts:1029](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L1029)
+
+
+================================================================================
+File: docs-md\interfaces\TokenAddressRequest.md
+Size: 944 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenAddressRequest
+
+# Interface: TokenAddressRequest
+
+The parameter field of [PricesNamespace.getTokenPriceByAddress](../classes/PricesNamespace.md#gettokenpricebyaddress).
+Represents a network and address pair for getting token prices.
+
+## Table of contents
+
+### Properties
+
+- [address](TokenAddressRequest.md#address)
+- [network](TokenAddressRequest.md#network)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+The contract address to get prices for.
+
+#### Defined in
+
+[src/types/prices-types.ts:13](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L13)
+
+___
+
+### network
+
+• **network**: [`Network`](../enums/Network.md)
+
+The network to get prices for.
+
+#### Defined in
+
+[src/types/prices-types.ts:11](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L11)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalanceFailure.md
+Size: 908 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalanceFailure
+
+# Interface: TokenBalanceFailure
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](TokenBalanceFailure.md#contractaddress)
+- [error](TokenBalanceFailure.md#error)
+- [tokenBalance](TokenBalanceFailure.md#tokenbalance)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+#### Defined in
+
+[src/types/types.ts:255](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L255)
+
+___
+
+### error
+
+• **error**: `string`
+
+#### Defined in
+
+[src/types/types.ts:257](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L257)
+
+___
+
+### tokenBalance
+
+• **tokenBalance**: ``null``
+
+#### Defined in
+
+[src/types/types.ts:256](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L256)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalancesOptionsDefaultTokens.md
+Size: 670 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalancesOptionsDefaultTokens
+
+# Interface: TokenBalancesOptionsDefaultTokens
+
+Optional params to pass into `getTokenBalances()` to fetch the top 100 tokens
+instead of passing in an array of contract addresses to fetch balances for.
+
+## Table of contents
+
+### Properties
+
+- [type](TokenBalancesOptionsDefaultTokens.md#type)
+
+## Properties
+
+### type
+
+• **type**: [`DEFAULT_TOKENS`](../enums/TokenBalanceType.md#default_tokens)
+
+The top 100 token type.
+
+#### Defined in
+
+[src/types/types.ts:222](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L222)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalancesOptionsErc20.md
+Size: 955 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalancesOptionsErc20
+
+# Interface: TokenBalancesOptionsErc20
+
+Optional params to pass into `getTokenBalances()` to fetch all ERC-20 tokens
+instead of passing in an array of contract addresses to fetch balances for.
+
+## Table of contents
+
+### Properties
+
+- [pageKey](TokenBalancesOptionsErc20.md#pagekey)
+- [type](TokenBalancesOptionsErc20.md#type)
+
+## Properties
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+Optional page key for pagination (only applicable to TokenBalanceType.ERC20)
+
+#### Defined in
+
+[src/types/types.ts:213](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L213)
+
+___
+
+### type
+
+• **type**: [`ERC20`](../enums/TokenBalanceType.md#erc20)
+
+The ERC-20 token type.
+
+#### Defined in
+
+[src/types/types.ts:210](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L210)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalancesResponse.md
+Size: 822 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalancesResponse
+
+# Interface: TokenBalancesResponse
+
+## Hierarchy
+
+- **`TokenBalancesResponse`**
+
+  ↳ [`TokenBalancesResponseErc20`](TokenBalancesResponseErc20.md)
+
+## Table of contents
+
+### Properties
+
+- [address](TokenBalancesResponse.md#address)
+- [tokenBalances](TokenBalancesResponse.md#tokenbalances)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+#### Defined in
+
+[src/types/types.ts:239](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L239)
+
+___
+
+### tokenBalances
+
+• **tokenBalances**: [`TokenBalance`](../modules.md#tokenbalance)[]
+
+#### Defined in
+
+[src/types/types.ts:240](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L240)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalancesResponseErc20.md
+Size: 1.62 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalancesResponseErc20
+
+# Interface: TokenBalancesResponseErc20
+
+Response object for when the [TokenBalancesOptionsErc20](TokenBalancesOptionsErc20.md) options are
+used. A page key may be returned if the provided address has many transfers.
+
+## Hierarchy
+
+- [`TokenBalancesResponse`](TokenBalancesResponse.md)
+
+  ↳ **`TokenBalancesResponseErc20`**
+
+## Table of contents
+
+### Properties
+
+- [address](TokenBalancesResponseErc20.md#address)
+- [pageKey](TokenBalancesResponseErc20.md#pagekey)
+- [tokenBalances](TokenBalancesResponseErc20.md#tokenbalances)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+#### Inherited from
+
+[TokenBalancesResponse](TokenBalancesResponse.md).[address](TokenBalancesResponse.md#address)
+
+#### Defined in
+
+[src/types/types.ts:239](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L239)
+
+___
+
+### pageKey
+
+• `Optional` **pageKey**: `string`
+
+An optional page key to passed into the next request to fetch the next page
+of token balances.
+
+#### Defined in
+
+[src/types/types.ts:234](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L234)
+
+___
+
+### tokenBalances
+
+• **tokenBalances**: [`TokenBalance`](../modules.md#tokenbalance)[]
+
+#### Inherited from
+
+[TokenBalancesResponse](TokenBalancesResponse.md).[tokenBalances](TokenBalancesResponse.md#tokenbalances)
+
+#### Defined in
+
+[src/types/types.ts:240](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L240)
+
+
+================================================================================
+File: docs-md\interfaces\TokenBalanceSuccess.md
+Size: 908 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenBalanceSuccess
+
+# Interface: TokenBalanceSuccess
+
+## Table of contents
+
+### Properties
+
+- [contractAddress](TokenBalanceSuccess.md#contractaddress)
+- [error](TokenBalanceSuccess.md#error)
+- [tokenBalance](TokenBalanceSuccess.md#tokenbalance)
+
+## Properties
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+#### Defined in
+
+[src/types/types.ts:248](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L248)
+
+___
+
+### error
+
+• **error**: ``null``
+
+#### Defined in
+
+[src/types/types.ts:250](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L250)
+
+___
+
+### tokenBalance
+
+• **tokenBalance**: `string`
+
+#### Defined in
+
+[src/types/types.ts:249](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L249)
+
+
+================================================================================
+File: docs-md\interfaces\TokenMetadataResponse.md
+Size: 1.67 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenMetadataResponse
+
+# Interface: TokenMetadataResponse
+
+Response object for the [CoreNamespace.getTokenMetadata](../classes/CoreNamespace.md#gettokenmetadata) method.
+
+## Table of contents
+
+### Properties
+
+- [decimals](TokenMetadataResponse.md#decimals)
+- [logo](TokenMetadataResponse.md#logo)
+- [name](TokenMetadataResponse.md#name)
+- [symbol](TokenMetadataResponse.md#symbol)
+
+## Properties
+
+### decimals
+
+• **decimals**: ``null`` \| `number`
+
+The number of decimals of the token. Returns `null` if not defined in the
+contract and not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:350](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L350)
+
+___
+
+### logo
+
+• **logo**: ``null`` \| `string`
+
+URL link to the token's logo. Is `null` if the logo is not available.
+
+#### Defined in
+
+[src/types/types.ts:353](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L353)
+
+___
+
+### name
+
+• **name**: ``null`` \| `string`
+
+The token's name. Is `null` if the name is not defined in the contract and
+not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:338](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L338)
+
+___
+
+### symbol
+
+• **symbol**: ``null`` \| `string`
+
+The token's symbol. Is `null` if the symbol is not defined in the contract
+and not available from other sources.
+
+#### Defined in
+
+[src/types/types.ts:344](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L344)
+
+
+================================================================================
+File: docs-md\interfaces\TokenPrice.md
+Size: 1.11 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenPrice
+
+# Interface: TokenPrice
+
+Represents a token's price information at a specific point in time.
+
+## Table of contents
+
+### Properties
+
+- [currency](TokenPrice.md#currency)
+- [lastUpdatedAt](TokenPrice.md#lastupdatedat)
+- [value](TokenPrice.md#value)
+
+## Properties
+
+### currency
+
+• **currency**: `string`
+
+The currency the price is denominated in (e.g. 'usd').
+
+#### Defined in
+
+[src/types/prices-types.ts:56](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L56)
+
+___
+
+### lastUpdatedAt
+
+• **lastUpdatedAt**: `string`
+
+ISO timestamp of when the price was last updated.
+
+#### Defined in
+
+[src/types/prices-types.ts:60](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L60)
+
+___
+
+### value
+
+• **value**: `string`
+
+The price value as a string to preserve precision.
+
+#### Defined in
+
+[src/types/prices-types.ts:58](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L58)
+
+
+================================================================================
+File: docs-md\interfaces\TokenPriceByAddressResult.md
+Size: 1.55 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenPriceByAddressResult
+
+# Interface: TokenPriceByAddressResult
+
+The result object returned for each address in a
+[GetTokenPriceByAddressResponse](GetTokenPriceByAddressResponse.md).
+
+## Table of contents
+
+### Properties
+
+- [address](TokenPriceByAddressResult.md#address)
+- [error](TokenPriceByAddressResult.md#error)
+- [network](TokenPriceByAddressResult.md#network)
+- [prices](TokenPriceByAddressResult.md#prices)
+
+## Properties
+
+### address
+
+• **address**: `string`
+
+The token's contract address.
+
+#### Defined in
+
+[src/types/prices-types.ts:83](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L83)
+
+___
+
+### error
+
+• **error**: ``null`` \| [`TokenPriceError`](TokenPriceError.md)
+
+Error information if the request failed, null otherwise.
+
+#### Defined in
+
+[src/types/prices-types.ts:87](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L87)
+
+___
+
+### network
+
+• **network**: `string`
+
+The network the token is on.
+
+#### Defined in
+
+[src/types/prices-types.ts:81](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L81)
+
+___
+
+### prices
+
+• **prices**: [`TokenPrice`](TokenPrice.md)[]
+
+Array of price data for the token. Empty if there was an error.
+
+#### Defined in
+
+[src/types/prices-types.ts:85](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L85)
+
+
+================================================================================
+File: docs-md\interfaces\TokenPriceBySymbolResult.md
+Size: 1.26 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenPriceBySymbolResult
+
+# Interface: TokenPriceBySymbolResult
+
+The result object returned for each symbol in a
+[GetTokenPriceBySymbolResponse](GetTokenPriceBySymbolResponse.md).
+
+## Table of contents
+
+### Properties
+
+- [error](TokenPriceBySymbolResult.md#error)
+- [prices](TokenPriceBySymbolResult.md#prices)
+- [symbol](TokenPriceBySymbolResult.md#symbol)
+
+## Properties
+
+### error
+
+• **error**: ``null`` \| [`TokenPriceError`](TokenPriceError.md)
+
+Error information if the request failed, null otherwise.
+
+#### Defined in
+
+[src/types/prices-types.ts:102](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L102)
+
+___
+
+### prices
+
+• **prices**: [`TokenPrice`](TokenPrice.md)[]
+
+Array of price data for the token. Empty if there was an error.
+
+#### Defined in
+
+[src/types/prices-types.ts:100](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L100)
+
+___
+
+### symbol
+
+• **symbol**: `string`
+
+The token symbol that was queried.
+
+#### Defined in
+
+[src/types/prices-types.ts:98](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L98)
+
+
+================================================================================
+File: docs-md\interfaces\TokenPriceError.md
+Size: 520 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TokenPriceError
+
+# Interface: TokenPriceError
+
+Error information returned when a token price request fails.
+
+## Table of contents
+
+### Properties
+
+- [message](TokenPriceError.md#message)
+
+## Properties
+
+### message
+
+• **message**: `string`
+
+The error message describing why the request failed.
+
+#### Defined in
+
+[src/types/prices-types.ts:70](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/prices-types.ts#L70)
+
+
+================================================================================
+File: docs-md\interfaces\TransactionReceipt.md
+Size: 3.54 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionReceipt
+
+# Interface: TransactionReceipt
+
+## Table of contents
+
+### Properties
+
+- [blockHash](TransactionReceipt.md#blockhash)
+- [blockNumber](TransactionReceipt.md#blocknumber)
+- [byzantium](TransactionReceipt.md#byzantium)
+- [confirmations](TransactionReceipt.md#confirmations)
+- [contractAddress](TransactionReceipt.md#contractaddress)
+- [cumulativeGasUsed](TransactionReceipt.md#cumulativegasused)
+- [effectiveGasPrice](TransactionReceipt.md#effectivegasprice)
+- [from](TransactionReceipt.md#from)
+- [gasUsed](TransactionReceipt.md#gasused)
+- [logs](TransactionReceipt.md#logs)
+- [logsBloom](TransactionReceipt.md#logsbloom)
+- [root](TransactionReceipt.md#root)
+- [status](TransactionReceipt.md#status)
+- [to](TransactionReceipt.md#to)
+- [transactionHash](TransactionReceipt.md#transactionhash)
+- [transactionIndex](TransactionReceipt.md#transactionindex)
+- [type](TransactionReceipt.md#type)
+
+## Properties
+
+### blockHash
+
+• **blockHash**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:73
+
+___
+
+### blockNumber
+
+• **blockNumber**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:76
+
+___
+
+### byzantium
+
+• **byzantium**: `boolean`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:80
+
+___
+
+### confirmations
+
+• **confirmations**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:77
+
+___
+
+### contractAddress
+
+• **contractAddress**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:68
+
+___
+
+### cumulativeGasUsed
+
+• **cumulativeGasUsed**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:78
+
+___
+
+### effectiveGasPrice
+
+• **effectiveGasPrice**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:79
+
+___
+
+### from
+
+• **from**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:67
+
+___
+
+### gasUsed
+
+• **gasUsed**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:71
+
+___
+
+### logs
+
+• **logs**: [`Log`](Log.md)[]
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:75
+
+___
+
+### logsBloom
+
+• **logsBloom**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:72
+
+___
+
+### root
+
+• `Optional` **root**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:70
+
+___
+
+### status
+
+• `Optional` **status**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:82
+
+___
+
+### to
+
+• **to**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:66
+
+___
+
+### transactionHash
+
+• **transactionHash**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:74
+
+___
+
+### transactionIndex
+
+• **transactionIndex**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:69
+
+___
+
+### type
+
+• **type**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:81
+
+
+================================================================================
+File: docs-md\interfaces\TransactionReceiptsBlockHash.md
+Size: 582 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionReceiptsBlockHash
+
+# Interface: TransactionReceiptsBlockHash
+
+The parameter field of [TransactionReceiptsParams](../modules.md#transactionreceiptsparams).
+
+## Table of contents
+
+### Properties
+
+- [blockHash](TransactionReceiptsBlockHash.md#blockhash)
+
+## Properties
+
+### blockHash
+
+• **blockHash**: `string`
+
+The block hash to get transaction receipts for.
+
+#### Defined in
+
+[src/types/types.ts:640](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L640)
+
+
+================================================================================
+File: docs-md\interfaces\TransactionReceiptsBlockNumber.md
+Size: 598 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionReceiptsBlockNumber
+
+# Interface: TransactionReceiptsBlockNumber
+
+The parameter field of [TransactionReceiptsParams](../modules.md#transactionreceiptsparams).
+
+## Table of contents
+
+### Properties
+
+- [blockNumber](TransactionReceiptsBlockNumber.md#blocknumber)
+
+## Properties
+
+### blockNumber
+
+• **blockNumber**: `string`
+
+The block number to get transaction receipts for.
+
+#### Defined in
+
+[src/types/types.ts:630](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L630)
+
+
+================================================================================
+File: docs-md\interfaces\TransactionReceiptsResponse.md
+Size: 658 B
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionReceiptsResponse
+
+# Interface: TransactionReceiptsResponse
+
+Response object for a [CoreNamespace.getTransactionReceipts](../classes/CoreNamespace.md#gettransactionreceipts) call.
+
+## Table of contents
+
+### Properties
+
+- [receipts](TransactionReceiptsResponse.md#receipts)
+
+## Properties
+
+### receipts
+
+• **receipts**: ``null`` \| [`TransactionReceipt`](TransactionReceipt.md)[]
+
+A list of transaction receipts for the queried block.
+
+#### Defined in
+
+[src/types/types.ts:659](https://github.com/alchemyplatform/alchemy-sdk-js/blob/8f119ad1/src/types/types.ts#L659)
+
+
+================================================================================
+File: docs-md\interfaces\TransactionResponse.md
+Size: 5.42 kB
+================================================================================
+
+[alchemy-sdk](../README.md) / [Exports](../modules.md) / TransactionResponse
+
+# Interface: TransactionResponse
+
+## Hierarchy
+
+- `Transaction`
+
+  ↳ **`TransactionResponse`**
+
+## Table of contents
+
+### Properties
+
+- [accessList](TransactionResponse.md#accesslist)
+- [blockHash](TransactionResponse.md#blockhash)
+- [blockNumber](TransactionResponse.md#blocknumber)
+- [chainId](TransactionResponse.md#chainid)
+- [confirmations](TransactionResponse.md#confirmations)
+- [data](TransactionResponse.md#data)
+- [from](TransactionResponse.md#from)
+- [gasLimit](TransactionResponse.md#gaslimit)
+- [gasPrice](TransactionResponse.md#gasprice)
+- [hash](TransactionResponse.md#hash)
+- [maxFeePerGas](TransactionResponse.md#maxfeepergas)
+- [maxPriorityFeePerGas](TransactionResponse.md#maxpriorityfeepergas)
+- [nonce](TransactionResponse.md#nonce)
+- [r](TransactionResponse.md#r)
+- [raw](TransactionResponse.md#raw)
+- [s](TransactionResponse.md#s)
+- [timestamp](TransactionResponse.md#timestamp)
+- [to](TransactionResponse.md#to)
+- [type](TransactionResponse.md#type)
+- [v](TransactionResponse.md#v)
+- [value](TransactionResponse.md#value)
+
+### Methods
+
+- [wait](TransactionResponse.md#wait)
+
+## Properties
+
+### accessList
+
+• `Optional` **accessList**: `AccessList`
+
+#### Inherited from
+
+Transaction.accessList
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:40
+
+___
+
+### blockHash
+
+• `Optional` **blockHash**: `string`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:26
+
+___
+
+### blockNumber
+
+• `Optional` **blockNumber**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:25
+
+___
+
+### chainId
+
+• **chainId**: `number`
+
+#### Inherited from
+
+Transaction.chainId
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:35
+
+___
+
+### confirmations
+
+• **confirmations**: `number`
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:28
+
+___
+
+### data
+
+• **data**: `string`
+
+#### Inherited from
+
+Transaction.data
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:33
+
+___
+
+### from
+
+• **from**: `string`
+
+#### Overrides
+
+Transaction.from
+
+#### Defined in
+
+node_modules/@ethersproject/abstract-provider/lib/index.d.ts:29
+
+___
+
+### gasLimit
+
+• **gasLimit**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+Transaction.gasLimit
+
+#### Defined in
+
+node_modules/@ethersproject/transactions/lib/index.d.ts:31
+
+___
+
+### gasPrice
+
+• `Optional` **gasPrice**: [`BigNumber`](../classes/BigNumber.md)
+
+#### Inherited from
+
+Transaction.gasPrice
+
+#### Defined in
+
