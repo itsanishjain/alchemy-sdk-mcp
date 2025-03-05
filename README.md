@@ -1,5 +1,7 @@
 # Alchemy MCP Plugin
 
+[![smithery badge](https://smithery.ai/badge/@itsanishjain/alchemy-sdk-mcp)](https://smithery.ai/server/@itsanishjain/alchemy-sdk-mcp)
+
 This MCP plugin provides integration with the Alchemy SDK for blockchain and NFT operations.
 
 ## Features
@@ -11,6 +13,15 @@ This MCP plugin provides integration with the Alchemy SDK for blockchain and NFT
 
 ## Setup
 
+### Installing via Smithery
+
+To install alchemy-sdk-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@itsanishjain/alchemy-sdk-mcp):
+
+```bash
+npx -y @smithery/cli install @itsanishjain/alchemy-sdk-mcp --client claude
+```
+
+### Manual Installation
 1. Install dependencies:
 ```bash
 npm install
