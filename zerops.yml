@@ -1,0 +1,41 @@
+zerops:
+  - setup: alpine0
+    # ==== how to build your application ====
+    build:
+      # what technologies should the build
+      # container be based on (can be an array)
+      os: alpine
+      base: nodejs@20
+
+      # what commands to use to build your app
+      buildCommands:
+        - npm i
+      # select which files / folders to deploy
+      # after the build succesfully finished
+      deployFiles:
+        - ./
+
+      # *optional*: which files / folders
+      # to cache for the next build run
+      cache:
+        - node_modules
+        - yarn.lock
+
+    # ==== how to run your application ====
+    run:
+      # what technology should the runtime
+      # container be based on, can be extended
+      # in `run.prepareCommands` using
+      # `zsc install nodejs@20`
+      base: nodejs@20
+      os: alpine
+      envVariables:
+        PORT: "8081"
+      # what ports your app listens on
+      # and whether it supports http traffic
+      ports:
+        - port: 8081
+          httpSupport: true
+
+      # how to start your application
+      start: npm start
