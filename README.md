@@ -69,3 +69,7 @@ The server implements comprehensive logging using console.error for better debug
 - [Setup] logs for initialization
 - [API] logs for API calls
 - [Error] logs for error handling
+
+
+
+$env:ALCHEMY_API_KEY="KRdhdsBezoTMVajIknIxlXgBHc1Pprpw"; node dist/index.js
