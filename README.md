@@ -4,6 +4,10 @@
 
 This MCP plugin provides integration with the Alchemy SDK for blockchain and NFT operations.
 
+<a href="https://glama.ai/mcp/servers/p99w73336q">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/p99w73336q/badge" alt="Alchemy Plugin MCP server" />
+</a>
+
 ## Features
 
 - Get NFTs for a wallet address
